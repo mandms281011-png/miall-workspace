@@ -439,7 +439,7 @@ footer .logo{}
         <a href="events.html" style="color:inherit">イベント</a>　/　<a href="rules.html" style="color:inherit">ご利用ルール</a>　/　<a href="terms.html" style="color:inherit">会員規約</a>　/　<a href="privacy.html" style="color:inherit">プライバシーポリシー</a>
       </div>
     </div>
-    <div class="copy"><span style="display:block;margin-bottom:10px">テーマフラワー：<b style="color:rgba(255,255,255,.9);font-weight:400">ラナンキュラス</b>　—　花言葉は「とても魅力的」</span>運営：株式会社Siayell　／　© miall community workspace　<span style="opacity:.55;font-size:11px">更新 2026-08-24 19:27</span></div>
+    <div class="copy"><span style="display:block;margin-bottom:10px">テーマフラワー：<b style="color:rgba(255,255,255,.9);font-weight:400">ラナンキュラス</b>　—　花言葉は「とても魅力的」</span>運営：株式会社Siayell　／　© miall community workspace　<span style="opacity:.55;font-size:11px">更新 2026-08-24 19:38</span></div>
   </div>
 </footer>
 
@@ -450,6 +450,12 @@ footer .logo{}
  function u(){var y=window.scrollY||0;h.classList.toggle('scrolled', y> (t?t.offsetHeight:0)+8);}
  u();window.addEventListener('scroll',u,{passive:true});})();
 </script>
+<!-- ============ スマホ用の固定バー ============ -->
+<div class="stickycta">
+  <a class="btn btn-ghost" href="price.html#price">料金を見る</a>
+  <a class="btn" href="https://lin.ee/6v6NCVt" target="_blank" rel="noopener">無料で見学を申し込む</a>
+</div>
+
 <!-- ============ CHATBOT ミオ ============ -->
 <style>
 .mio-fab{position:fixed;right:20px;bottom:20px;z-index:900;display:flex;align-items:center;gap:12px;background:var(--ivory);border:1px solid var(--gold-500);border-radius:999px;padding:8px 20px 8px 8px;cursor:pointer;box-shadow:0 14px 34px rgba(61,54,44,.18);transition:.25s;font-family:var(--sans)}
@@ -733,6 +739,101 @@ footer .logo{}
 .btn-pulse:hover::after{animation-play-state:paused}
 @media(prefers-reduced-motion:reduce){
   .btn-pulse,.btn-pulse::after{animation:none}
+}
+
+/* ==================================================================
+   デザイン強化 ── 輪郭をはっきりさせる（2026-08-24）
+   ・地色を少し深く、カードを明るく → 面の境目が見える
+   ・文字を濃く → 読みやすさと精度感
+   ・花のもやを半分に → 写真と文字が立つ
+   ・メンタリングを濃色の面に → ページ全体が締まる
+   ================================================================== */
+:root{
+  --cream:#f5f1e8;                 /* 地色を一段深く */
+  --ivory:#fffdf7;                 /* カードは明るく（純白ではない） */
+  --blush-soft:#f9f5ec;
+  --blush:#efe8d8;
+  --rose-100:#e2dac8;
+  --rose-200:#cfc4ab;
+  --ink:#26221d;                   /* 文字を濃く */
+  --ink-soft:#575046;
+  --ink-mute:#8a8276;
+  --shadow-photo:0 26px 64px rgba(38,34,29,.22), 0 6px 16px rgba(38,34,29,.10);
+}
+body{font-size:16.5px;line-height:1.85;letter-spacing:.015em}
+
+/* --- 花のもやを半分に。花は残るが、文字と写真が前に出る --- */
+.softbg::before{opacity:calc(var(--bgop,.13) * .5)}
+.photobg::after{box-shadow:inset 0 0 0 1px rgba(203,174,107,.28)}
+
+/* --- 見出し：大きく、詰めて、濃く --- */
+h2.sec,.sec{letter-spacing:.02em;color:var(--ink);font-size:clamp(25px,4.1vw,42px);line-height:1.5}
+.hero h1{letter-spacing:.02em;font-size:clamp(32px,6.6vw,62px)}
+.kicker{font-family:var(--sans);font-weight:500;font-size:11px;letter-spacing:.3em;color:var(--rose-700)}
+.center .kicker::after{content:"";display:block;width:26px;height:2px;background:var(--gold-grad);margin:12px auto 0}
+
+/* --- カード：実体のある影と、はっきりした角 --- */
+.card,.eq-box,.entry>div,.pro,.goal-lines div,.rule-list div,.ev{
+  background:var(--ivory);
+  border:1px solid rgba(38,34,29,.08);
+  border-radius:10px;
+  box-shadow:0 1px 2px rgba(38,34,29,.04), 0 12px 28px rgba(38,34,29,.07);
+  transition:transform .25s ease, box-shadow .25s ease}
+.card:hover,.pro:hover,.eq-box:hover,.ev:hover{
+  transform:translateY(-3px);
+  box-shadow:0 2px 4px rgba(38,34,29,.05), 0 20px 40px rgba(38,34,29,.11)}
+.goal-lines div{border-top:3px solid var(--gold-500);border-radius:0 0 10px 10px}
+.school-list li{background:var(--ivory);border:1px solid rgba(38,34,29,.08);border-left:3px solid var(--gold-500);
+  border-radius:0 8px 8px 0;box-shadow:0 8px 20px rgba(38,34,29,.05)}
+
+/* --- ボタン：面で押す --- */
+.btn{border-radius:6px;font-weight:500;letter-spacing:.08em;
+  box-shadow:0 10px 24px rgba(122,95,33,.26);transition:.22s}
+.btn:hover{transform:translateY(-2px);box-shadow:0 14px 32px rgba(122,95,33,.32)}
+.btn-lg{padding:19px 46px;font-size:16.5px}
+.btn-ghost{background:var(--ivory);border:1.5px solid var(--gold-600);color:var(--rose-900);
+  box-shadow:0 6px 18px rgba(38,34,29,.07)}
+.btn-ghost:hover{background:var(--blush-soft);border-color:var(--rose-900)}
+
+/* --- 写真：白いベールを外して、くっきり見せる --- */
+.hero-photo,.mentor-photo,.goal-photo,.band-photo,.school-photo,.cta-photo{border-radius:10px}
+.hero-photo::after,.mentor-photo::after,.goal-photo::after,.band-photo::after,.school-photo::after{
+  box-shadow:inset 0 0 0 1px rgba(38,34,29,.10)}
+
+/* --- ★ 濃色の面：ここでページ全体が締まる --- */
+.mentor{background:linear-gradient(158deg,#2e2922 0%,#3f382e 55%,#282320 100%);border-block:0}
+.mentor::after{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;
+  background:linear-gradient(112deg,transparent 38%,rgba(232,213,166,.07) 50%,transparent 62%)}
+.mentor .kicker{color:#e0c88f}
+.mentor .kicker::after{background:linear-gradient(90deg,#e8d5a6,#a5843a)}
+.mentor .hairline{background:rgba(232,213,166,.3)}
+.mentor h2.sec{color:#fdfbf6}
+.mentor .mentor-body p{color:rgba(253,251,246,.80)}
+.mentor .mentor-body .big{color:#fdfbf6}
+.mentor b[style]{color:#e8d5a6!important}
+.mentor p[style]{color:rgba(253,251,246,.58)!important}
+.mentor .imgnote{color:rgba(253,251,246,.45)}
+.mentor .mentor-photo::after{box-shadow:inset 0 0 0 1px rgba(232,213,166,.35)}
+.mentor.softbg::before{opacity:.07;filter:brightness(1.6)}
+
+/* --- 節の境目をはっきり --- */
+section{position:relative}
+.price,.worry,.rules{border-block:1px solid var(--rose-100)}
+
+/* --- ヘッダー：スクロールしたら影で浮かせる --- */
+header.scrolled{box-shadow:0 6px 24px rgba(38,34,29,.07)}
+
+/* --- スマホ：下に固定の申し込みバー（人気LPの定番） --- */
+.stickycta{position:fixed;left:0;right:0;bottom:0;z-index:880;display:none;gap:8px;
+  background:rgba(245,241,232,.95);backdrop-filter:blur(12px);
+  border-top:1px solid var(--rose-200);
+  padding:10px 12px calc(10px + env(safe-area-inset-bottom))}
+.stickycta a{flex:1;text-align:center;padding:14px 8px;font-size:14px;letter-spacing:.04em;border-radius:6px}
+@media(max-width:760px){
+  .stickycta{display:flex}
+  body{padding-bottom:82px}
+  .mio-fab{bottom:88px}
+  .mio-panel{bottom:88px;height:calc(100vh - 108px)}
 }
 </style>
 <script>
