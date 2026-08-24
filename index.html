@@ -776,6 +776,24 @@ main>section{margin-top:-1px!important;margin-bottom:-1px!important}
  .cta::before{background-size:88vw auto!important;background-position:120% 8%!important;opacity:.14!important}
 }
 </style>
+
+<style id="miall-clean-flower-placement">
+.hero.photobg::after{display:none!important}
+.hero.photobg::before{inset:0!important;background:radial-gradient(circle at 82% 44%,rgba(232,213,166,.18),transparent 34%),linear-gradient(180deg,#faf8f4 0%,#faf8f4 72%,#f8f3e9 100%)!important;z-index:0!important}
+.hero-bouquet-art{position:absolute;z-index:1;right:-1vw;top:48%;transform:translateY(-50%);width:min(650px,49vw);height:auto;display:block;filter:drop-shadow(0 28px 45px rgba(61,54,44,.14));mask-image:radial-gradient(ellipse,#000 58%,rgba(0,0,0,.78) 70%,transparent 88%);-webkit-mask-image:radial-gradient(ellipse,#000 58%,rgba(0,0,0,.78) 70%,transparent 88%)}
+.hero>.wrap{z-index:2!important}
+.ranunculus-bridge{display:none!important}
+.vinv::before,#faq::before{display:none!important}
+.cta::before{display:none!important}
+.cta-bouquet-art{position:absolute;z-index:-1;right:-70px;top:44%;transform:translateY(-50%);width:min(480px,38vw);height:auto;opacity:.2;mask-image:radial-gradient(ellipse,#000 45%,transparent 80%);-webkit-mask-image:radial-gradient(ellipse,#000 45%,transparent 80%);pointer-events:none}
+.tf-shot{max-width:430px!important;transform:none!important}
+.tf-shot img{width:100%;height:auto!important;aspect-ratio:auto!important;object-fit:contain!important}
+@media(max-width:760px){
+ .hero-bouquet-art{right:-38vw;top:30%;width:112vw;opacity:.34}
+ .hero>.wrap{position:relative}
+ .cta-bouquet-art{right:-52vw;width:110vw;opacity:.12}
+}
+</style>
 </head>
 <body>
 
@@ -805,6 +823,7 @@ main>section{margin-top:-1px!important;margin-bottom:-1px!important}
 
 <!-- ============ HERO ============ -->
 <section class="hero photobg" style="--bg:url('images/ranunculus-flow.png')">
+  <img class="hero-bouquet-art" src="images/ranunculus-grand.png" alt="">
   <div class="wrap">
     <span class="eyebrow">女性限定　コミュニティワークスペース</span>
     <h1 class="serif">自分を見つけた人から、<br><em class="shine">輝きはじめる</em>。</h1>
@@ -1402,6 +1421,7 @@ main>section{margin-top:-1px!important;margin-bottom:-1px!important}
 
 <!-- ============ CTA ============ -->
 <section class="cta" id="contact">
+  <img class="cta-bouquet-art" src="images/ranunculus-wrapped.png" alt="">
   <div class="narrow">
     <div class="cta-split">
       <figure class="cta-photo">
