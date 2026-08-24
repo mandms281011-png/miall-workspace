@@ -668,6 +668,24 @@ main section::after{border-top:0!important;border-bottom:0!important}
 .hero.photobg::after{box-shadow:none!important;background:linear-gradient(180deg,transparent 58%,rgba(248,243,233,.62) 82%,#f8f3e9 100%)!important}
 .ranunculus-bridge{background:linear-gradient(180deg,#f8f3e9 0%,rgba(248,243,233,.7) 45%,transparent 100%)}
 </style>
+
+<style id="miall-new-ranunculus-art">
+.hero.photobg{background-image:
+ linear-gradient(90deg,rgba(250,248,244,.985) 0%,rgba(250,248,244,.95) 34%,rgba(250,248,244,.67) 58%,rgba(250,248,244,.18) 100%),
+ url("images/ranunculus-flow.png")!important;background-size:cover!important;background-position:center 52%!important}
+.hero.photobg::before{content:"";position:absolute;inset:auto 0 0;height:38%;pointer-events:none;background:linear-gradient(180deg,transparent,#f8f3e9);z-index:0}
+.ranunculus-bridge__image{width:min(690px,54vw);aspect-ratio:1.45;border-radius:0;mask-image:linear-gradient(90deg,transparent 0%,#000 15%,#000 87%,transparent 100%)}
+.ranunculus-bridge__image img{object-position:56% 55%;transform:scale(1.02)}
+.vinv{background-image:
+ linear-gradient(180deg,rgba(248,243,233,.94),rgba(253,251,246,.82) 45%,rgba(250,248,244,.96)),
+ url("images/ranunculus-flow.png")!important;background-size:cover!important;background-position:center!important}
+.tf::before{background-image:url("images/ranunculus-flow.png")!important;background-position:center!important;opacity:.22!important}
+.cta{background-image:linear-gradient(180deg,rgba(250,248,244,.9),rgba(250,248,244,.58) 32%,rgba(250,248,244,.5) 70%,#f2e6cc),url("images/ranunculus-flow.png")!important}
+@media(max-width:760px){
+ .hero.photobg{background-image:linear-gradient(180deg,rgba(250,248,244,.84),rgba(250,248,244,.7) 58%,#f8f3e9 100%),url("images/ranunculus-flow.png")!important;background-position:58% center!important}
+ .ranunculus-bridge__image{width:100vw;right:-30vw}
+}
+</style>
 </head>
 <body>
 
@@ -696,7 +714,7 @@ main section::after{border-top:0!important;border-bottom:0!important}
 </header>
 
 <!-- ============ HERO ============ -->
-<section class="hero photobg" style="--bg:url('images/hero-flower.jpg')">
+<section class="hero photobg" style="--bg:url('images/ranunculus-flow.png')">
   <div class="wrap">
     <span class="eyebrow">女性限定　コミュニティワークスペース</span>
     <h1 class="serif">自分を見つけた人から、<br><em class="shine">輝きはじめる</em>。</h1>
