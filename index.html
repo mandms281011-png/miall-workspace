@@ -158,6 +158,16 @@ header.scrolled{border-bottom-color:var(--rose-100)}
 .goal.photobg::after{box-shadow:inset 0 0 180px 70px rgba(251,248,242,.94), inset 0 0 0 1px rgba(203,174,107,.20)}
 .goal.photobg .goal-lines div{background:rgba(253,251,246,.92);backdrop-filter:blur(2px)}
 
+/* ---------- テーマフラワー：花束を見せる ---------- */
+.tf{background:var(--ivory);border-block:1px solid var(--gold-500)}
+.tf .tf-inner{display:grid;gap:clamp(26px,4vw,56px);grid-template-columns:1fr;align-items:center;text-align:center;max-width:none}
+@media(min-width:860px){.tf .tf-inner{grid-template-columns:1.05fr .95fr;text-align:left}}
+.tf-shot{border-radius:12px;overflow:hidden;box-shadow:var(--shadow-photo);position:relative}
+.tf-shot img{width:100%;height:auto;display:block}
+.tf-shot::after{content:"";position:absolute;inset:0;pointer-events:none;border-radius:12px;
+  box-shadow:inset 0 0 0 1px rgba(38,34,29,.10)}
+@media(min-width:860px){.tf .tf-words{justify-content:flex-start}}
+
 /* ---------- WHAT REMAINS：花束を下にうっすら ---------- */
 .wr.photobg{
   background-image:
@@ -575,11 +585,9 @@ footer .logo{}
     </dl>
     <figure class="hero-photo">
       <img src="images/hero.jpg" alt="観葉植物と大きな窓のある明るいスペースで、コーヒーを片手に笑いながら話している女性たち" width="1692" height="929">
-      <figcaption>イメージ</figcaption>
     </figure>
     <!-- TODO: 実際の店内写真が撮れたら差し替える（現在はイメージ写真） -->
   </div>
-  <span class="imgnote">イメージ</span>
 </section>
 
 <!-- ============ VIDEO INVITE ============ -->
@@ -601,7 +609,6 @@ footer .logo{}
       </div>
     </div>
   </div>
-  <span class="imgnote">イメージ</span>
 </section>
 
 <!-- ============ WHO ============ -->
@@ -712,7 +719,6 @@ footer .logo{}
     </div>
     <p class="allin">打合せも、発表も、着替えも、運動も。ここで完結します。</p>
   </div>
-  <span class="imgnote">イメージ</span>
 </section>
 
 <!-- ============ MENTORING ============ -->
@@ -725,7 +731,6 @@ footer .logo{}
 
       <figure class="mentor-photo">
         <img src="images/mentoring.jpg" alt="窓辺の丸テーブルで、向かい合って話している2人の女性" width="1693" height="929">
-        <figcaption>イメージ</figcaption>
       </figure>
 
     <div class="mentor-grid">
@@ -751,7 +756,6 @@ footer .logo{}
       </div>
     </div>
   </div>
-  <span class="imgnote">イメージ</span>
 </section>
 
 <!-- ============ PROFESSIONALS ============ -->
@@ -847,7 +851,6 @@ footer .logo{}
       </p>
     </div>
   </div>
-  <span class="imgnote">テーマフラワー：ラナンキュラス</span>
 </section>
 
 <!-- ============ COMMUNITY ============ -->
@@ -861,7 +864,6 @@ footer .logo{}
     <div class="band">
       <figure class="band-photo">
         <img src="images/club.jpg" alt="テーブルを囲んで、花やドライフラワーを手に笑い合っている女性たち" width="1717" height="916">
-        <figcaption>イメージ</figcaption>
       </figure>
       <div class="band-body">
         <p style="font-family:var(--serif);font-size:clamp(19px,2.6vw,26px);line-height:1.7;letter-spacing:.04em;color:var(--rose-700)">同好会は、<br>自由に作れます。</p>
@@ -879,7 +881,6 @@ footer .logo{}
     <div class="school-grid" style="margin-top:clamp(28px,4vw,48px)">
       <figure class="school-photo">
         <img src="images/miallkai.jpg" alt="大きなテーブルを囲んで、料理を前に笑いながら話している女性たち" width="1693" height="929">
-        <figcaption>イメージ</figcaption>
       </figure>
       <div>
         <p style="font-family:var(--serif);font-size:clamp(19px,2.6vw,26px);line-height:1.7;letter-spacing:.04em;color:var(--rose-700)">月1回の miall 会は、<br>おいしいものを食べながら。</p>
@@ -899,7 +900,6 @@ footer .logo{}
     <div class="band">
       <figure class="band-photo">
         <img src="images/teach.jpg" alt="スクリーンの前でマイクを持って話す女性と、手を挙げて参加している女性たち" width="1672" height="941">
-        <figcaption>イメージ</figcaption>
       </figure>
       <div class="band-body">
         <p style="font-family:var(--serif);font-size:clamp(19px,2.6vw,26px);line-height:1.7;letter-spacing:.04em;color:var(--rose-700)">教わる側から、<br>教える側へ。</p>
@@ -919,7 +919,6 @@ footer .logo{}
     <div class="school-grid" style="margin-top:clamp(28px,4vw,48px)">
       <figure class="school-photo">
         <img src="images/retreat.jpg" alt="山あいのテラスで、ブランケットをかけてお茶を飲みながら話している女性たち" width="1746" height="901">
-        <figcaption>イメージ</figcaption>
       </figure>
       <div>
         <p style="font-family:var(--serif);font-size:clamp(19px,2.6vw,26px);line-height:1.7;letter-spacing:.04em;color:var(--rose-700)">年に何度か、<br>少し遠くまで行きます。</p>
@@ -965,7 +964,6 @@ footer .logo{}
     </p>
       <figure class="goal-photo">
         <img src="images/goal.jpg" alt="ノートパソコンを囲んで、拍手をしながら笑い合っている女性たち" width="1672" height="941">
-        <figcaption>イメージ</figcaption>
       </figure>
 
     <div class="goal-lines">
@@ -980,7 +978,6 @@ footer .logo{}
       <a class="btn btn-ghost" href="rules.html">ふたつの約束を読む</a>
     </div>
   </div>
-  <span class="imgnote">イメージ</span>
 </section>
 
 <!-- ============ LEARNING ============ -->
@@ -994,7 +991,6 @@ footer .logo{}
     <div class="school-grid">
       <figure class="school-photo">
         <img src="images/school.jpg" alt="モニターの資料を前に、講師の女性が話し、参加している女性たちが手を挙げている様子" width="1672" height="941">
-        <figcaption>イメージ</figcaption>
       </figure>
       <div>
         <p style="font-size:15.5px;color:var(--ink-soft)">
@@ -1016,13 +1012,15 @@ footer .logo{}
       </div>
     </div>
   </div>
-  <span class="imgnote">イメージ</span>
 </section>
 
 <!-- ============ THEME FLOWER ============ -->
-<section class="tf photobg" style="--bg:url('images/flower-stems.jpg')">
+<section class="tf">
   <div class="wrap">
     <div class="tf-inner">
+      <figure class="tf-shot">
+        <img src="images/flowers-ribbon.jpg" alt="白と黄色のラナンキュラスの花束" width="1600" height="1600">
+      </figure>
       <div>
         <hr class="hairline" style="max-width:120px"><span class="kicker" style="display:block">THEME FLOWER</span>
         <p class="tf-name">ラナンキュラス<span>RANUNCULUS</span></p>
@@ -1039,7 +1037,6 @@ footer .logo{}
       </div>
     </div>
   </div>
-  <span class="imgnote">イメージ</span>
 </section>
 
 <!-- ============ PROMISE ============ -->
@@ -1072,7 +1069,6 @@ footer .logo{}
       <b style="color:var(--ink);font-weight:500">ここに来る意味は、帰るときに何か持っていることです。</b>
     </p>
   </div>
-  <span class="imgnote">テーマフラワー：ラナンキュラス</span>
 </section>
 
 <!-- ============ PRICE (別ページへ) ============ -->
@@ -1148,7 +1144,6 @@ footer .logo{}
           <source srcset="images/joy.webp" type="image/webp">
           <img src="images/joy.png" alt="両手を上げて笑っている女性" width="860" height="1249">
         </picture>
-        <figcaption>イメージ</figcaption>
       </figure>
       <div class="cta-copy">
     <p class="florio">
@@ -1194,11 +1189,11 @@ footer .logo{}
       <div class="fmeta">
         <b>営業時間</b>　9:00 – 21:00<br>
         <b>所在地</b>　長野県長野市鶴賀問御所町1241-1 長野銀座信越ビル 8階<br>
-        <b>お問い合わせ</b>　<a href="mailto:siayell20240308@gmail.com" style="color:inherit">siayell20240308@gmail.com</a>　<br>
+        <b>お問い合わせ</b>　<a href="https://lin.ee/6v6NCVt" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline">公式LINE</a>　<span style="opacity:.6;font-size:.92em">（見学・ドロップイン・ご質問はこちらから）</span>　<br>
         <a href="events.html" style="color:inherit">イベント</a>　/　<a href="rules.html" style="color:inherit">ご利用ルール</a>　/　<a href="terms.html" style="color:inherit">会員規約</a>　/　<a href="privacy.html" style="color:inherit">プライバシーポリシー</a>
       </div>
     </div>
-    <div class="copy"><span style="display:block;margin-bottom:10px">テーマフラワー：<b style="color:rgba(255,255,255,.9);font-weight:400">ラナンキュラス</b>　—　花言葉は「とても魅力的」</span>運営：株式会社Siayell　／　© miall community workspace　<span style="opacity:.55;font-size:11px">更新 2026-08-24 19:43</span></div>
+    <div class="copy"><span style="display:block;margin-bottom:10px">テーマフラワー：<b style="color:rgba(255,255,255,.9);font-weight:400">ラナンキュラス</b>　—　花言葉は「とても魅力的」</span>運営：株式会社Siayell　／　© miall community workspace　<span style="opacity:.55;font-size:11px">更新 2026-08-24 19:51</span></div>
   </div>
 </footer>
 
@@ -1389,7 +1384,7 @@ footer .logo{}
     });
     if(best) return best.a;
     return '🙇\u200d♀️ ごめんなさい、それはお答えできませんでした。<br><br>'
-      + '<a href="' + LINE_URL + '">公式LINE</a> か <a href="mailto:' + MAIL + '">こちらのメール</a> までお気軽にどうぞ。<br>'
+      + '<a href="' + LINE_URL + '" target="_blank" rel="noopener">公式LINE</a> からお気軽にどうぞ。<br>'
       + '代表か担当が、お返事します。';
   }
 
@@ -1594,6 +1589,38 @@ header.scrolled{box-shadow:0 6px 24px rgba(38,34,29,.07)}
   .mio-fab{bottom:88px}
   .mio-panel{bottom:88px;height:calc(100vh - 108px)}
 }
+
+/* --- 金色の文字：薄すぎて消えていたので、濃い金に --- */
+.shine{
+  background:linear-gradient(102deg,#8a6c28 0%,#b8963f 20%,#6f5722 46%,#a5843a 72%,#7d6122 100%);
+  background-size:170% 100%;
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+  filter:drop-shadow(0 1px 0 rgba(255,253,247,.55))}
+/* 濃色の面の上では、明るい金に反転させる */
+.mentor .shine,.cta-dark .shine{
+  background:linear-gradient(102deg,#f2e2b8 0%,#e8d5a6 26%,#cfae6b 52%,#f0dcae 78%,#e0c88f 100%);
+  -webkit-background-clip:text;background-clip:text;
+  filter:none}
+/* 大きく出す問いかけは、金だけに頼らず濃さも確保 */
+.askme q .shine{font-weight:600}
+.hero-quote b.shine{font-weight:600}
+@media(prefers-reduced-motion:reduce){.shine{animation:none}}
+
+/* --- 小さい画面では見出しを少しだけ小さく（不自然な改行を防ぐ） --- */
+@media(max-width:400px){
+  h2.sec,.sec{font-size:22.5px;line-height:1.6}
+  .hero h1{font-size:30px}
+  .askme q{font-size:25px}
+}
+
+/* --- 改行の調整（行末に1文字だけ残るのを防ぐ） --- */
+/* word-break:auto-phrase は日本語の文節で折り返す指定 */
+h2.sec,.sec,.card h3,.eq-box h4,.pro-name,.tf-name,.askme q,.hero h1,.goal-lines b,.school-list b{
+  word-break:auto-phrase}
+.pro-name{font-size:clamp(17px,1.45vw,20px);line-height:1.55}
+.goal h2.sec{font-size:clamp(23px,3.4vw,36px)}
+.card h3{font-size:17.5px;text-wrap:balance}
+.eq-box h4{text-wrap:balance}
 </style>
 <script>
 (function(){
