@@ -1,0 +1,785 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>会員規約｜コミュニティワークスペース miall</title>
+<meta name="description" content="コミュニティワークスペース miall の会員規約。利用資格、会費、ゲストの同伴、セミナー開催、禁止事項などを定めています。">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+
+
+:root{
+  /* 白とチャコールの中で、ゴールドは線と小さな面だけに */
+  --cream:#faf8f4; --ivory:#fdfbf6; --blush:#f4efe4; --blush-soft:#fbf8f2;
+  --rose-100:#e9e3d6; --rose-200:#d8cfba; --rose-400:#c1a86f;
+  --rose-600:#ac8b41; --rose-700:#96762f; --rose-900:#6f5722;
+  --sage-100:#f1eee6; --sage-600:#a49b85;
+  --gold-500:#cbae6b; --gold-600:#b09349;
+  --gold-grad:linear-gradient(105deg,#e8d5a6 0%,#c2a35f 38%,#9a7a31 62%,#dcc492 100%);
+  --champagne:#f7efdd; --champagne-deep:#f2e6cc;
+  --ink:#33312d; --ink-soft:#6f6b63; --ink-mute:#a5a099;
+  --shadow-photo:0 18px 44px rgba(61,54,44,.16), 0 4px 12px rgba(61,54,44,.08);
+  --serif:"Shippori Mincho","Hiragino Mincho ProN",serif;
+  --sans:"Noto Sans JP","Hiragino Sans","Yu Gothic",sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--cream);color:var(--ink);font-family:var(--sans);font-weight:400;line-height:1.9;font-size:16px;letter-spacing:.02em;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+.serif{font-family:var(--serif)}
+.wrap{width:min(1080px,92vw);margin-inline:auto}
+.narrow{width:min(760px,92vw);margin-inline:auto}
+section{padding:clamp(64px,9vw,120px) 0}
+
+/* ---------- header ---------- */
+header{position:sticky;top:0;z-index:50;background:rgba(250,248,244,.92);backdrop-filter:blur(12px);border-bottom:1px solid transparent;transition:border-color .3s ease}
+header.scrolled{border-bottom-color:var(--rose-100)}
+.hd{display:flex;align-items:center;justify-content:space-between;padding:14px 0;gap:16px}
+.logo{font-family:var(--serif);font-size:22px;letter-spacing:.18em;background:var(--gold-grad);background-size:220% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:sheen 7s ease-in-out infinite}
+.logo small{display:block;font-family:var(--sans);font-size:10px;letter-spacing:.24em;color:var(--ink-mute);margin-top:2px}
+.hd nav{display:none;gap:26px;font-size:13.5px;color:var(--ink-soft)}
+.hd nav a{color:inherit;text-decoration:none}
+.hd nav a:hover{color:var(--rose-700)}
+@media(min-width:900px){.hd nav{display:flex}}
+.btn{display:inline-block;background:linear-gradient(160deg,#c2a35f 0%,#a5843a 45%,#8a6c28 100%);color:#fff;text-decoration:none;padding:13px 26px;border-radius:3px;font-size:14px;letter-spacing:.08em;white-space:nowrap;transition:.25s;box-shadow:0 6px 18px rgba(61,54,44,.13)}
+.btn:hover{background:linear-gradient(160deg,#cfb072 0%,#9a7a31 55%,#7d6122 100%);transform:translateY(-1px)}
+.btn-ghost{background:var(--ivory);color:var(--rose-700);border:1px solid var(--gold-500);box-shadow:none}
+.btn-ghost:hover{background:var(--blush-soft);border-color:var(--rose-600);color:var(--ink)}
+.btn-lg{padding:18px 44px;font-size:16px}
+
+/* ---------- hero ---------- */
+.hero{position:relative;padding:clamp(70px,11vw,140px) 0 clamp(60px,8vw,110px);background:
+  radial-gradient(60% 70% at 78% 18%,var(--blush) 0%,transparent 60%),
+  radial-gradient(50% 60% at 12% 85%,var(--sage-100) 0%,transparent 62%),var(--cream)}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:12px;letter-spacing:.22em;color:var(--rose-700);border:1px solid var(--rose-200);background:var(--ivory);padding:7px 16px;border-radius:2px;margin-bottom:28px}
+.hero h1{font-family:var(--serif);font-weight:500;font-size:clamp(30px,6.2vw,58px);line-height:1.5;letter-spacing:.04em}
+.hero h1 em{font-style:normal;color:var(--rose-700)}
+.hero p.lead{margin-top:28px;font-size:clamp(15px,1.7vw,17.5px);color:var(--ink-soft);max-width:40em}
+.hero-cta{display:flex;flex-wrap:wrap;gap:14px;margin-top:40px}
+.hero-facts{display:flex;flex-wrap:wrap;gap:0;margin-top:52px;border-top:1px solid var(--rose-100);padding-top:26px}
+.hero-facts div{padding-right:34px;margin-right:34px;border-right:1px solid var(--rose-100)}
+.hero-facts div:last-child{border:0}
+.hero-facts dt{font-size:11.5px;letter-spacing:.2em;color:var(--ink-mute)}
+.hero-facts dd{font-family:var(--serif);font-size:clamp(19px,2.4vw,25px);color:var(--ink);margin-top:5px}
+.hero-photo{margin-top:56px;aspect-ratio:16/7;border-radius:6px;background:linear-gradient(135deg,var(--blush) 0%,var(--sage-100) 100%);display:grid;place-items:center;color:var(--ink-mute);font-size:13px;letter-spacing:.12em;border:1px dashed var(--rose-200)}
+
+/* ---------- headings ---------- */
+.kicker{font-size:11.5px;letter-spacing:.26em;color:var(--rose-700);margin-bottom:16px}
+h2.sec{font-family:var(--serif);font-weight:500;font-size:clamp(24px,3.8vw,38px);line-height:1.55;letter-spacing:.04em}
+h2.sec + p.sub{margin-top:20px;color:var(--ink-soft);font-size:15.5px}
+.center{text-align:center}
+.center .kicker{margin-inline:auto}
+
+/* ---------- cards ---------- */
+.grid{display:grid;gap:20px}
+.g3{grid-template-columns:1fr}
+@media(min-width:760px){.g3{grid-template-columns:repeat(3,1fr)}}
+.g2{grid-template-columns:1fr}
+@media(min-width:760px){.g2{grid-template-columns:repeat(2,1fr)}}
+.card{background:var(--ivory);border:1px solid var(--rose-100);border-radius:4px;padding:30px 26px}
+.card h3{font-family:var(--serif);font-weight:500;font-size:18.5px;color:var(--rose-700);margin-bottom:12px;line-height:1.6}
+.card p{font-size:14.5px;color:var(--ink-soft)}
+.num{font-family:var(--serif);font-size:12px;letter-spacing:.2em;color:var(--rose-400);display:block;margin-bottom:14px}
+
+/* ---------- worry ---------- */
+.worry{background:var(--ivory)}
+.worry ul{list-style:none;display:grid;gap:14px;margin-top:36px}
+.worry li{background:var(--cream);border-left:2px solid var(--rose-200);padding:18px 22px;font-size:15.5px;color:var(--ink-soft)}
+.worry li b{color:var(--ink);font-weight:500}
+
+/* ---------- equipment ---------- */
+.eq{display:grid;gap:18px;grid-template-columns:1fr;margin-top:44px}
+@media(min-width:700px){.eq{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1000px){.eq{grid-template-columns:repeat(4,1fr)}}
+.eq-box{background:var(--ivory);border:1px solid var(--rose-100);border-radius:4px;padding:26px 24px}
+.eq-box h4{font-family:var(--serif);font-size:16px;color:var(--rose-700);letter-spacing:.06em;padding-bottom:12px;margin-bottom:14px;border-bottom:1px solid var(--rose-100)}
+.eq-box ul{list-style:none;font-size:14.5px;color:var(--ink-soft)}
+.eq-box li{padding:5px 0 5px 18px;position:relative}
+.eq-box li::before{content:"";position:absolute;left:0;top:14px;width:6px;height:6px;border-radius:50%;background:var(--rose-200)}
+.allin{margin-top:34px;text-align:center;font-family:var(--serif);font-size:clamp(17px,2.4vw,22px);color:var(--rose-700);letter-spacing:.06em}
+
+/* ---------- mentoring ---------- */
+.mentor{background:linear-gradient(158deg,var(--champagne) 0%,#fdf9ef 48%,var(--champagne-deep) 100%);color:var(--ink);border-block:1px solid var(--gold-500)}
+.mentor .kicker{color:var(--rose-700)}
+.mentor h2.sec{color:var(--ink)}
+.mentor p{color:var(--ink-soft)}
+.mentor-grid{display:grid;gap:34px;grid-template-columns:1fr;align-items:center;margin-top:44px}
+@media(min-width:860px){.mentor-grid{grid-template-columns:1.15fr .85fr}}
+.mentor-body p+p{margin-top:18px}
+.mentor-body .big{font-family:var(--serif);font-size:clamp(20px,2.8vw,27px);line-height:1.7;color:var(--ink)}
+
+/* ---------- community ---------- */
+.club{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+.club span{background:var(--blush);color:var(--rose-700);border:1px solid var(--rose-100);border-radius:2px;padding:7px 17px;font-size:13.5px}
+
+/* ---------- price ---------- */
+.price{background:var(--ivory)}
+.price-card{background:var(--cream);border:1px solid var(--rose-200);border-radius:6px;padding:clamp(32px,5vw,54px);text-align:center;margin-top:44px;position:relative;overflow:hidden}
+.price-card::before{content:"";position:absolute;inset:0 0 auto 0;height:3px;background:linear-gradient(90deg,var(--rose-400),var(--gold-500),var(--sage-600))}
+.price-name{font-size:12px;letter-spacing:.26em;color:var(--ink-mute)}
+.price-rows{display:grid;gap:22px;grid-template-columns:1fr;margin-top:30px}
+@media(min-width:700px){.price-rows{grid-template-columns:1fr 1fr;gap:0}}
+.price-rows>div{padding:22px 16px}
+@media(min-width:700px){.price-rows>div:first-child{border-right:1px solid var(--rose-100)}}
+.plabel{font-size:13px;letter-spacing:.18em;color:var(--ink-soft)}
+.pmain{font-family:var(--serif);color:var(--rose-700);margin-top:10px;line-height:1.2}
+.pmain b{font-size:clamp(38px,7vw,56px);font-weight:500}
+.pmain i{font-style:normal;font-size:16px;margin-left:4px;color:var(--ink-soft)}
+.psub{font-size:13px;color:var(--ink-mute);margin-top:10px}
+.badge{display:inline-block;background:var(--rose-700);color:#fff;font-size:12px;letter-spacing:.1em;padding:4px 13px;border-radius:2px;margin-top:12px}
+.price-note{margin-top:30px;padding-top:24px;border-top:1px dashed var(--rose-200);font-size:14px;color:var(--ink-soft)}
+.entry{display:grid;gap:16px;grid-template-columns:1fr;margin-top:38px}
+@media(min-width:760px){.entry{grid-template-columns:repeat(2,1fr)}}
+.entry div{background:var(--ivory);border:1px solid var(--rose-100);border-radius:4px;padding:24px;text-align:center}
+.entry h4{font-family:var(--serif);font-size:16px;color:var(--ink);margin-bottom:8px}
+.entry strong{display:block;font-family:var(--serif);font-size:26px;color:var(--rose-700);font-weight:500}
+.entry small{display:block;font-size:12.5px;color:var(--ink-mute);margin-top:8px;line-height:1.7}
+
+/* ---------- opening offer ---------- */
+.topbar{background:linear-gradient(90deg,var(--champagne) 0%,#fbf4e4 50%,var(--champagne) 100%);color:var(--ink-soft);text-align:center;font-size:13px;letter-spacing:.08em;padding:10px 16px;line-height:1.7}
+.topbar b{font-weight:500;color:var(--rose-700)}
+.topbar s{opacity:.55}
+.topbar .free{font-family:var(--serif);font-size:17px;margin-inline:4px;color:var(--rose-700)}
+
+.offer{position:relative;margin-top:44px;background:var(--ivory);border:1px solid var(--gold-500);border-radius:4px;padding:clamp(30px,4.5vw,46px) clamp(22px,4vw,44px);text-align:center;overflow:hidden;box-shadow:0 12px 34px rgba(61,54,44,.08)}
+.offer::before{content:"";position:absolute;inset:0;background:radial-gradient(70% 120% at 50% -10%,var(--blush) 0%,transparent 65%);pointer-events:none}
+.offer-tag{position:relative;display:inline-block;background:linear-gradient(160deg,#c2a35f 0%,#8a6c28 100%);color:#fff;font-size:11.5px;letter-spacing:.24em;padding:6px 20px;border-radius:2px;margin-bottom:22px}
+.offer h3{position:relative;font-family:var(--serif);font-weight:500;font-size:clamp(19px,2.8vw,26px);letter-spacing:.05em;color:var(--ink);line-height:1.6}
+.offer-line{position:relative;display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:clamp(12px,3vw,28px);margin-top:26px}
+.offer-old{font-family:var(--serif);font-size:clamp(20px,3.4vw,30px);color:var(--ink-mute);text-decoration:line-through;text-decoration-color:var(--rose-400);text-decoration-thickness:2px}
+.offer-arrow{color:var(--rose-600);font-size:22px}
+.offer-new{font-family:var(--serif);color:var(--rose-700);line-height:1}
+.offer-new b{font-size:clamp(54px,11vw,86px);font-weight:500;letter-spacing:-.01em}
+.offer-new i{font-style:normal;font-size:clamp(18px,2.6vw,24px);margin-left:4px}
+.offer-note{position:relative;margin-top:24px;font-size:14.5px;color:var(--ink-soft)}
+.offer-note b{color:var(--rose-700);font-weight:500}
+.offer-cta{position:relative;margin-top:28px}
+
+/* ---------- referral ---------- */
+.ref{background:var(--sage-100)}
+.ref-box{background:var(--ivory);border-radius:4px;padding:clamp(30px,4.5vw,48px);text-align:center;border:1px solid var(--rose-100)}
+.ref-flow{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:14px;margin-top:28px}
+.ref-flow div{background:var(--cream);border:1px solid var(--rose-100);border-radius:4px;padding:18px 26px;font-size:14px}
+.ref-flow div b{display:block;font-family:var(--serif);color:var(--rose-700);font-size:19px;margin-top:6px;font-weight:500}
+.ref-flow i{font-style:normal;color:var(--rose-400);font-size:20px}
+
+/* ---------- rules / faq ---------- */
+.rules{background:var(--ivory)}
+.rule-list{display:grid;gap:16px;margin-top:38px}
+.rule-list div{display:grid;grid-template-columns:1fr;gap:6px;background:var(--cream);border-radius:4px;padding:20px 24px}
+@media(min-width:760px){.rule-list div{grid-template-columns:190px 1fr;gap:22px;align-items:baseline}}
+.rule-list dt,.rule-list b{font-family:var(--serif);color:var(--rose-700);font-size:15.5px;font-weight:500}
+.rule-list p{font-size:14.5px;color:var(--ink-soft)}
+details{border-bottom:1px solid var(--rose-100);padding:6px 0}
+summary{cursor:pointer;list-style:none;padding:18px 34px 18px 0;font-size:15.5px;position:relative;font-weight:500}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"＋";position:absolute;right:6px;top:18px;color:var(--rose-400);font-size:16px;transition:.2s}
+details[open] summary::after{content:"−"}
+details p{padding:0 0 20px;font-size:14.5px;color:var(--ink-soft)}
+
+/* ---------- cta ---------- */
+.cta{background:linear-gradient(160deg,var(--blush-soft) 0%,var(--cream) 60%,var(--sage-100) 100%);text-align:center}
+.cta h2{font-family:var(--serif);font-weight:500;font-size:clamp(24px,4.2vw,40px);line-height:1.6;letter-spacing:.04em}
+.cta p{margin-top:24px;color:var(--ink-soft);font-size:15.5px}
+.cta .hero-cta{justify-content:center;margin-top:38px}
+
+/* ---------- footer ---------- */
+footer{background:var(--champagne-deep);color:var(--ink-soft);padding:56px 0 40px;font-size:13.5px;border-top:1px solid var(--gold-500)}
+footer .logo{}
+.fgrid{display:grid;gap:26px;grid-template-columns:1fr}
+@media(min-width:760px){.fgrid{grid-template-columns:1fr 1fr;align-items:end}}
+.fmeta{line-height:2}
+.fmeta b{color:var(--ink);font-weight:500}
+.copy{margin-top:36px;padding-top:22px;border-top:1px solid var(--rose-200);font-size:12px;color:var(--ink-mute)}
+.todo{background:#fffbe8;border:1px dashed var(--gold-500);color:#7a5c17;font-size:12.5px;padding:3px 9px;border-radius:3px;display:inline-block}
+
+/* ---------- rules page ---------- */
+.page-head{padding:clamp(56px,8vw,96px) 0 clamp(30px,4vw,50px);background:radial-gradient(60% 80% at 78% 10%,var(--blush) 0%,transparent 62%),var(--cream)}
+.page-head h1{font-family:var(--serif);font-weight:500;font-size:clamp(26px,4.6vw,42px);line-height:1.55;letter-spacing:.04em;margin-top:8px}
+.page-head p{margin-top:22px;color:var(--ink-soft);font-size:15.5px;max-width:40em}
+.breadcrumb{font-size:12.5px;color:var(--ink-mute);letter-spacing:.08em}
+.breadcrumb a{color:var(--rose-700);text-decoration:none}
+.breadcrumb a:hover{text-decoration:underline}
+
+.creed{background:linear-gradient(158deg,var(--champagne) 0%,#fdf9ef 48%,var(--champagne-deep) 100%);color:var(--ink);text-align:center;border-block:1px solid var(--gold-500)}
+.creed .kicker{color:var(--rose-700)}
+.creed h2{font-family:var(--serif);font-weight:500;font-size:clamp(22px,3.8vw,34px);line-height:1.65;letter-spacing:.05em}
+.creed p{margin-top:24px;color:var(--ink-soft);font-size:15.5px}
+.creed-two{display:grid;gap:18px;grid-template-columns:1fr;margin-top:40px;text-align:left}
+@media(min-width:760px){.creed-two{grid-template-columns:1fr 1fr}}
+.creed-two div{background:var(--ivory);border:1px solid var(--gold-500);border-radius:4px;padding:26px 24px;box-shadow:0 10px 28px rgba(51,49,45,.06)}
+.creed-two b{display:block;font-family:var(--serif);font-size:19px;font-weight:500;margin-bottom:10px;color:var(--rose-700)}
+.creed-two span{font-size:14.5px;color:var(--ink-soft);line-height:1.9}
+
+.rulebook{counter-reset:r}
+.rule{display:grid;grid-template-columns:1fr;gap:8px;padding:30px 0;border-bottom:1px solid var(--rose-100)}
+@media(min-width:800px){.rule{grid-template-columns:52px 250px 1fr;gap:26px;align-items:baseline}}
+.rule .n{counter-increment:r;font-family:var(--serif);font-size:14px;color:var(--rose-400);letter-spacing:.1em}
+.rule .n::before{content:counter(r,decimal-leading-zero)}
+.rule h3{font-family:var(--serif);font-weight:500;font-size:17.5px;color:var(--rose-700);line-height:1.6}
+.rule p{font-size:14.5px;color:var(--ink-soft)}
+.rule p+p{margin-top:10px}
+.rule strong{color:var(--ink);font-weight:500}
+
+.hard{background:var(--blush-soft);border-left:3px solid var(--rose-700);padding:22px 26px;margin-top:14px;border-radius:0 4px 4px 0}
+.hard b{color:var(--rose-700);font-weight:500}
+.backlink{text-align:center;padding:clamp(50px,7vw,84px) 0;background:var(--cream)}
+
+
+/* ---------- shiny ---------- */
+.shine{
+  background:var(--gold-grad);
+  background-size:220% 100%;
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+  animation:sheen 7s ease-in-out infinite;
+}
+@keyframes sheen{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+
+/* 金の細いヘアライン */
+.hairline{height:1px;border:0;background:linear-gradient(90deg,transparent 0%,var(--gold-500) 22%,#f0e2bd 50%,var(--gold-500) 78%,transparent 100%);margin:0 0 18px}
+.center .hairline{max-width:180px;margin-inline:auto}
+
+/* 濃い面に光沢をのせる */
+.mentor,.creed{position:relative;isolation:isolate}
+.mentor::after,.creed::after{
+  content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;
+  background:
+    radial-gradient(54% 64% at 80% -8%,rgba(255,253,248,.85) 0%,transparent 62%),
+    radial-gradient(42% 52% at 6% 110%,rgba(203,174,107,.16) 0%,transparent 66%),
+    linear-gradient(102deg,transparent 34%,rgba(255,253,248,.5) 47%,transparent 60%);
+}
+
+/* ヒーローに光の差し込み */
+.hero::after{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(108deg,transparent 30%,rgba(255,252,242,.55) 46%,transparent 62%);
+}
+.hero>*{position:relative;z-index:1}
+
+/* 数字とロゴの艶 */
+.pmain b,.offer-new b{background:var(--gold-grad);background-size:220% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:sheen 7s ease-in-out infinite}
+
+/* 写真の縁に光 */
+.hero-photo::after{content:"";position:absolute;inset:0;pointer-events:none;border-radius:6px;box-shadow:inset 0 0 0 1px rgba(203,174,107,.55)}
+
+/* カードに触れたときの艶 */
+.card,.eq-box{transition:box-shadow .35s ease,transform .35s ease,border-color .35s ease}
+.card:hover,.eq-box:hover{border-color:var(--gold-500);box-shadow:0 12px 30px rgba(43,40,35,.08);transform:translateY(-2px)}
+
+@media(prefers-reduced-motion:reduce){
+  .shine,.pmain b,.offer-new b{animation:none}
+}
+
+
+/* ---------- terms page ---------- */
+.toc{background:var(--ivory);border:1px solid var(--rose-100);border-top:2px solid var(--gold-500);border-radius:0 0 3px 3px;padding:26px 28px;margin-top:38px}
+.toc h3{font-family:var(--serif);font-size:14px;letter-spacing:.16em;color:var(--rose-700);margin-bottom:16px;font-weight:500}
+.toc ol{list-style:none;display:grid;gap:7px 22px;grid-template-columns:1fr;font-size:14px}
+@media(min-width:700px){.toc ol{grid-template-columns:1fr 1fr}}
+@media(min-width:1000px){.toc ol{grid-template-columns:repeat(3,1fr)}}
+.toc a{color:var(--ink-soft);text-decoration:none;display:block;padding:3px 0}
+.toc a:hover{color:var(--rose-700)}
+
+.terms{counter-reset:none;margin-top:44px}
+.terms article{padding:26px 0;border-bottom:1px solid var(--rose-100)}
+.terms h2{font-family:var(--serif);font-weight:500;font-size:18px;letter-spacing:.05em;color:var(--rose-700);margin-bottom:14px;scroll-margin-top:120px}
+.terms p{font-size:14.5px;color:var(--ink-soft);margin-bottom:10px}
+.terms ol,.terms ul{margin:0 0 10px 1.3em;font-size:14.5px;color:var(--ink-soft)}
+.terms li{padding:4px 0}
+.terms strong,.terms b{color:var(--ink);font-weight:500}
+.terms .sub{font-family:var(--serif);font-size:14px;color:var(--ink);margin:16px 0 8px;letter-spacing:.06em}
+.terms .note{font-size:13px;color:var(--ink-mute);margin-top:12px;line-height:1.85}
+.pending{background:#fffbe8;border:1px dashed var(--gold-600);border-radius:3px;padding:18px 20px;font-size:14px;color:#7a5c17;margin:12px 0}
+.pending b{color:#7a5c17}
+.terms-foot{margin-top:44px;background:var(--ivory);border:1px solid var(--rose-100);border-radius:3px;padding:28px}
+.terms-foot dl{display:grid;gap:10px;font-size:14.5px}
+.terms-foot dt{font-family:var(--serif);color:var(--rose-700);font-size:13.5px;letter-spacing:.1em}
+.terms-foot dd{color:var(--ink-soft);margin-bottom:8px}
+
+.todo{display:none!important}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <b>オープニング会員募集中</b>　入会金 <s>11,000円</s> → <b class="free">0円</b>
+</div>
+
+<header>
+  <div class="wrap hd">
+    <div class="logo">miall<small>COMMUNITY WORKSPACE</small></div>
+    <nav>
+      <a href="index.html#about">この場所について</a>
+      <a href="index.html#equipment">設備</a>
+      <a href="events.html">イベント</a>
+      <a href="price.html">料金</a>
+      <a href="rules.html">ご利用ルール</a>
+      <a href="terms.html">会員規約</a>
+    </nav>
+    <a class="btn" href="index.html#contact">見学のお申し込み</a>
+  </div>
+</header>
+
+<section class="page-head">
+  <div class="narrow">
+    <div class="breadcrumb"><a href="index.html">TOP</a>　/　会員規約</div>
+    <h1 class="serif">会員規約</h1>
+    <p>
+      コミュニティワークスペース miall をご利用いただくうえでの、<br>
+      当社と会員のみなさまとの取り決めです。<br>
+      日々の過ごし方については、<a href="rules.html" style="color:var(--rose-700)">ご利用ルール</a>をご覧ください。
+    </p>
+    <div class="toc">
+      <h3>目次</h3>
+      <ol><li><a href="#t1">第1条（目的）</a></li>
+<li><a href="#t2">第2条（定義）</a></li>
+<li><a href="#t3">第3条（利用資格）</a></li>
+<li><a href="#t4">第4条（入会）</a></li>
+<li><a href="#t5">第5条（会費）</a></li>
+<li><a href="#t6">第6条（利用時間）</a></li>
+<li><a href="#t7">第7条（会費に含まれるサービス）</a></li>
+<li><a href="#t7b">第7条の2（同好会）</a></li>
+<li><a href="#t7c">第7条の3（会員紹介特典）</a></li>
+<li><a href="#t8">第8条（ゲストの同伴）</a></li>
+<li><a href="#t9">第9条（セミナー等の開催および集客）</a></li>
+<li><a href="#t10">第10条（会員の責任）</a></li>
+<li><a href="#t11">第11条（禁止事項）</a></li>
+<li><a href="#t12">第12条（違反時の措置）</a></li>
+<li><a href="#t13">第13条（退会）</a></li>
+<li><a href="#t14">第14条（年払会員の中途退会）</a></li>
+<li><a href="#t15">第15条（休会）</a></li>
+<li><a href="#t15b">第15条の2（防犯カメラ）</a></li>
+<li><a href="#t16">第16条（会員情報の取扱い）</a></li>
+<li><a href="#t17">第17条（免責）</a></li>
+<li><a href="#t18">第18条（反社会的勢力の排除）</a></li>
+<li><a href="#t19">第19条（規約の変更）</a></li>
+<li><a href="#t20">第20条（準拠法・管轄）</a></li></ol>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:clamp(20px,3vw,40px)">
+  <div class="narrow">
+    <div class="terms">
+<article><h2 id="t1">第1条（目的）</h2>
+<p>本規約は、<strong>株式会社Siayell</strong>（以下「当社」）が運営するコミュニティワークスペース miall（以下「本施設」）の利用条件および当社と会員との権利義務関係を定めるものです。</p>
+</article>
+<article><h2 id="t2">第2条（定義）</h2>
+<ol><li>「会員」とは、本規約に同意し、当社所定の手続きにより入会の承認を受けた個人をいいます。</li><li>「ゲスト」とは、会員に同伴して本施設を利用する者をいいます。</li><li>「本サービス」とは、本施設およびこれに付随して当社が提供するサービスをいいます。</li></ol>
+</article>
+<article><h2 id="t3">第3条（利用資格）</h2>
+<ol><li>本施設は、更衣・化粧室等の設備の性質および会員が安心して利用できる環境を確保する必要から、<strong>女性の方のみ</strong>を利用対象とします。</li><li>会員は、満18歳以上であることを要します。未成年者の入会には親権者の同意を要します。</li><li>前各項のほか、当社が別途定める基準を満たさない場合、入会をお断りすることがあります。</li></ol>
+</article>
+<article><h2 id="t4">第4条（入会）</h2>
+<ol><li>入会希望者は、当社所定の方法により申し込み、本規約に同意するものとします。</li><li>当社は、申込内容を確認のうえ入会の可否を判断します。<strong>当社は理由を開示することなく入会をお断りできるものとします。</strong></li><li>入会金は11,000円（税込）とします。ただし当社が定める期間・条件においては、これを減額または無料とすることがあります。</li></ol>
+</article>
+<article><h2 id="t5">第5条（会費）</h2>
+<ol><li>会費は次のとおりとします（いずれも消費税込）。<ul><li>月払：<strong>16,500円／月</strong>（本体15,000円）</li><li>年払：<strong>178,200円／年</strong>（本体162,000円）</li></ul></li><li>会費は、当社所定の決済方法（クレジットカード等）により、あらかじめお支払いいただきます。</li><li><strong>現金でのお支払いは、原則としてお受けしておりません。</strong>ただし、3ヶ月分をまとめて前納いただける場合に限り、現金でのお支払いに応じることがあります。</li><li><strong>納入済みの会費は、本規約に別段の定めがある場合を除き、返金いたしません。</strong></li><li>会費の支払いが確認できない場合、当社は本サービスの提供を停止し、または会員資格を取り消すことができます。</li></ol>
+</article>
+<article><h2 id="t6">第6条（利用時間）</h2>
+<p>本施設の利用可能時間は<strong>9:00〜21:00</strong>とします。当社は、設備点検・臨時休業等により利用時間を変更することがあり、この場合は事前に会員へ通知します。</p>
+</article>
+<article><h2 id="t7">第7条（会費に含まれるサービス）</h2>
+<p>会費には次のものが含まれます。</p>
+<p class="sub">設備等</p>
+<ol><li>本施設内スペースの利用（回数制限なし）</li><li>電源（コンセント）およびWi-Fiの利用</li><li>フリードリンクおよびおやつ（無農薬・オーガニックにこだわったもの）</li><li>トレーニングスペースおよびトレーニンググッズの利用</li><li>ロッカー、更衣室および冷蔵庫の利用（冷蔵庫は記名のうえ当日限りとします）</li><li>プリンター、プロジェクター（4K対応のものを含みます）、スクリーン、モニター、マイクおよび筆記用具の利用</li><li>ゲスト1名の同時利用</li></ol>
+<p class="sub">機会等</p>
+<ol start="8"><li>月1回のメンタリング（1回30分・公式LINEにてご予約）</li><li>月1回の miall会への参加資格（<strong>飲食をともなうため、参加には別途会費を申し受けます。会費の額は開催ごとに定め、事前にご案内します</strong>。ゲストの同伴が可能）</li><li>当社が提供する無料セミナー（オンライン）</li><li>会員による勉強会・セミナーおよび同好会活動への参加</li></ol>
+<p class="note">※第8号のメンタリングは<strong>月1回・1回あたり30分</strong>とし、ご予約は公式LINEにて承ります。担当は当社代表または当社が指定した者とします。会員数が30名を超えた場合、当社はこれをグループ形式（1組4〜5名・60分程度）に変更することがあります。<br>※miall会の会費、有料セミナー、学びの場（連続講座）、リトリートその他別途参加費を定める企画の費用は、月会費に含まれません。これらには会員価格を設ける場合があります。</p>
+</article>
+<article><h2 id="t7b">第7条の2（同好会）</h2>
+<ol><li>会員は、会員3名以上により同好会を結成することができます。</li><li>同好会の活動内容は会員の自主性に委ねられますが、本規約および利用ルールに従うものとします。</li><li><strong>金融・投資を扱う同好会においては、一般的な知識の共有にとどめるものとし、特定の金融商品の推奨、個別の投資判断の助言および勧誘を行ってはなりません。</strong>個別の判断は、有資格の専門家または公的窓口にご相談ください。</li><li>当社は、同好会の活動内容および会員間で生じた事項について責任を負いません。</li></ol>
+</article>
+<article><h2 id="t7c">第7条の3（会員紹介特典）</h2>
+<ol><li>会員の紹介により本施設の見学または体験利用があった場合、当社は、紹介した会員および紹介を受けた方の双方に、Starbucks eチケット500円分を進呈します。</li><li>前項の特典は、<strong>ご紹介の都度進呈します</strong>（回数の制限はありません）。ただし、同一の方をご紹介いただいた場合は初回のみとします。</li><li>本特典は、会員間の勧誘行為を推奨するものではありません。相手方が求めていない紹介行為は、第11条第4号に該当する場合があります。</li></ol>
+</article>
+<article><h2 id="t8">第8条（ゲストの同伴）</h2>
+<ol><li>会員は、<strong>同時に1名まで</strong>ゲストを同伴して本施設を利用できます。追加の料金は発生しません。</li><li>ゲストのみでの利用はできません。</li><li>ゲストは第3条第1項の利用対象の定めに従うものとします。</li><li><strong>ゲストの行為については、同伴した会員が責任を負う</strong>ものとし、ゲストが本規約または利用ルールに違反した場合、当該会員の違反とみなします。</li></ol>
+</article>
+<article><h2 id="t9">第9条（セミナー等の開催および集客）</h2>
+<ol><li>会員は、当社の事前の承認を得て、本施設においてセミナー・講座・説明会等（以下「セミナー等」）を開催することができます。</li><li><strong>セミナー等において集客を行う場合、参加者名簿に記載のある者に限り本施設を利用できます。</strong></li><li>会員は、開催の2日前までに、日時・内容・参加者名簿を当社に提出するものとします。</li><li>名簿に記載のない者の入館は認められません。</li><li>当社は、内容が第11条各号に該当するおそれがあると判断した場合、開催の承認を取り消すことができます。</li></ol>
+</article>
+<article><h2 id="t10">第10条（会員の責任）</h2>
+<ol><li>会員は、自己の責任において本施設を利用するものとします。</li><li>会員は、本施設内に持ち込んだ物品を自己の責任で管理するものとし、<strong>当社は盗難・紛失・破損について責任を負いません。</strong></li><li>会員が本施設の設備・什器を故意または過失により損壊した場合、その損害を賠償するものとします。</li><li>入館用の鍵・カード等の貸与・譲渡・複製はできません。紛失した場合は速やかに届け出るものとし、再発行の実費<span class="todo">要記載：金額</span>を申し受けます。</li></ol>
+</article>
+<article><h2 id="t11">第11条（禁止事項）</h2>
+<p>会員およびゲストは、本施設において次の行為を行ってはなりません。</p>
+<ol><li>連鎖販売取引（ネットワークビジネス・MLM）の勧誘</li><li>投資・保険・金融商品の勧誘（会員本人の業務として行う場合を含め、他の会員が求めていない場合）</li><li>宗教活動・政治活動および布教・勧誘</li><li>他の会員に対する、相手方が明示または黙示に拒絶している営業行為・勧誘</li><li>他の会員またはゲストへの迷惑行為、誹謗中傷、つきまとい</li><li><strong>他の会員、第三者またはその事業について、誹謗中傷、侮辱その他これに類する言動を行うこと</strong></li><li><strong>他の会員の活動または成果を否定し、見下し、あるいは妨げる言動を継続的に行うこと</strong></li><li>他の会員が写り込む写真・動画を、本人の同意なく撮影または公開すること</li><li>本施設で知り得た他の会員の個人情報・業務上の情報を、正当な理由なく第三者に開示すること</li><li>会員資格の第三者への貸与・譲渡</li><li>本施設を住所・所在地として表示すること（当社が別途認めた場合を除く）</li><li>法令または公序良俗に反する行為</li><li>その他、当社が不適切と判断する行為</li></ol>
+</article>
+<article><h2 id="t12">第12条（違反時の措置）</h2>
+<ol><li>会員が本規約に違反した場合、当社は、是正の勧告、利用の一時停止、または<strong>会員資格の取消し（強制退会）</strong>を行うことができます。</li><li>第11条第1号から第4号までに該当する行為については、<strong>当社は催告なく直ちに会員資格を取り消すことができる</strong>ものとします。</li><li>第11条第6号および第7号に該当する言動については、当社は是正を求めたうえ、なお改善されない場合に会員資格を取り消すことができるものとします。本施設は会員が互いを応援し合う場であることを前提としており、<strong>この前提を損なう言動は、他の会員の利益を直接に害するもの</strong>と位置づけます。</li><li>前各項による資格取消しの場合、<strong>納入済みの会費は返金しません。</strong></li></ol>
+</article>
+<article><h2 id="t13">第13条（退会）</h2>
+<ol><li>会員は、<strong>退会を希望する月の前月末日まで</strong>に当社所定の方法で届け出ることにより退会できます。</li><li>届出が期限を過ぎた場合、退会は翌々月の扱いとなり、当月分および翌月分の会費が発生します。</li></ol>
+</article>
+<article><h2 id="t14">第14条（年払会員の中途退会）</h2>
+<ol><li><strong>年払会費は、契約期間の途中でご退会される場合も返金いたしません。</strong>ただし、当社の責めに帰すべき事由による場合はこの限りではありません。</li><li>年払会費は、1年間ご利用いただくことを前提とした割引価格であるため、期間の途中でのご退会について日割りまたは月割りによる精算は行いません。</li><li>ご退会の届出は、第13条の定めによります。</li></ol>
+</article>
+<article><h2 id="t15">第15条（休会）</h2>
+<div class="pending"><b>要検討：</b>休会制度を設けるかどうかを決めてから公開してください。設ける場合の案：連続3ヶ月を上限、休会中の会費は月額3,000円（税込）、本施設の利用は不可、期間満了後は自動的に在籍が再開。</div>
+</article>
+<article><h2 id="t15b">第15条の2（防犯カメラ）</h2>
+<ol><li>当社は、防犯および会員の安全確保を目的として、本施設の<strong>入り口および室内</strong>に防犯カメラを設置しています。</li><li>更衣室および化粧室には設置していません。</li><li>記録した映像は、前項の目的の範囲でのみ使用し、保存期間は<strong>3ヶ月</strong>とします。閲覧できる者は、藤澤 美嘉（株式会社Siayell 代表）および当社が指定した担当者に限ります。</li><li>法令に基づく場合または人の生命・身体・財産の保護のために必要な場合を除き、第三者に提供することはありません。</li></ol>
+</article>
+<article><h2 id="t16">第16条（会員情報の取扱い）</h2>
+<ol><li>当社は、会員から取得した個人情報を、本サービスの提供、連絡、および会員向け案内の目的の範囲で利用します。</li><li>当社は、法令に基づく場合を除き、会員の同意なく個人情報を第三者に提供しません。</li><li>第9条に基づき提出された参加者名簿は、本施設の入館管理の目的にのみ使用し、目的達成後は速やかに廃棄します。</li></ol>
+</article>
+<article><h2 id="t17">第17条（免責）</h2>
+<ol><li>当社は、天災地変、設備の故障、通信回線の障害その他やむを得ない事由により本サービスを提供できない場合、これによって会員に生じた損害について責任を負いません。</li><li><strong>会員間で生じた取引・紛争について、当社は当事者となりません。</strong>当社は必要に応じて仲介を試みますが、解決を保証するものではありません。</li><li>当社の責に帰すべき事由により会員に損害が生じた場合であっても、当社の賠償責任は、<strong>会員が当社に支払った直近12ヶ月分の会費相当額を上限</strong>とします。ただし当社に故意または重過失がある場合はこの限りではありません。</li></ol>
+</article>
+<article><h2 id="t18">第18条（反社会的勢力の排除）</h2>
+<p>会員は、自己が暴力団その他の反社会的勢力に該当しないこと、および将来にわたって該当しないことを表明・保証します。これに反することが判明した場合、当社は催告なく会員資格を取り消すことができ、この場合の会費は返金しません。</p>
+</article>
+<article><h2 id="t19">第19条（規約の変更）</h2>
+<p>当社は、必要と判断した場合、本規約を変更することができます。変更する場合は、変更後の内容および効力発生日を、効力発生日の30日前までに本施設内の掲示または電子メール等により周知します。</p>
+</article>
+<article><h2 id="t20">第20条（準拠法・管轄）</h2>
+<p>本規約は日本法に準拠します。本サービスに関して紛争が生じた場合、<strong>長野地方裁判所</strong>を第一審の専属的合意管轄裁判所とします。</p>
+</article>
+    </div>
+
+    <div class="terms-foot">
+      <p class="sub" style="margin-top:0">附則</p>
+      <p style="font-size:14.5px;color:var(--ink-soft)">本規約は 2026年9月1日 より施行します。</p>
+      <dl style="margin-top:20px">
+        <dt>事業者名</dt><dd>株式会社Siayell</dd>
+        <dt>所在地</dt><dd>長野県長野市鶴賀問御所町1241-1 長野銀座信越ビル 8階</dd>
+        <dt>連絡先</dt><dd><a href="mailto:siayell20240308@gmail.com" style="color:var(--rose-700)">siayell20240308@gmail.com</a></dd>
+      </dl>
+    </div>
+
+    <div style="margin-top:38px;display:flex;flex-wrap:wrap;gap:14px;justify-content:center">
+      <a class="btn btn-lg btn-ghost" href="rules.html">ご利用ルールを読む</a>
+      <a class="btn btn-lg" href="index.html#contact">見学を申し込む（無料）</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="fgrid">
+      <div>
+        <div class="logo">miall<small>COMMUNITY WORKSPACE</small></div>
+        <p style="margin-top:16px;max-width:26em;line-height:1.9">
+          自分を見つけた人から、輝きはじめる。<br>前に進みたい女性のための、長野・女性限定コミュニティワークスペース。
+        </p>
+      </div>
+      <div class="fmeta">
+        <b>営業時間</b>　9:00 – 21:00<br>
+        <b>所在地</b>　長野県長野市鶴賀問御所町1241-1 長野銀座信越ビル 8階<br>
+        <b>お問い合わせ</b>　<a href="mailto:siayell20240308@gmail.com" style="color:inherit">siayell20240308@gmail.com</a>　<span class="todo">要記載：公式LINE</span><br>
+        <a href="events.html" style="color:inherit">イベント</a>　/　<a href="rules.html" style="color:inherit">ご利用ルール</a>　/　<a href="terms.html" style="color:inherit">会員規約</a>　/　<a href="privacy.html" style="color:inherit">プライバシーポリシー</a>
+      </div>
+    </div>
+    <div class="copy"><span style="display:block;margin-bottom:10px">テーマフラワー：<b style="color:rgba(255,255,255,.9);font-weight:400">ラナンキュラス</b>　—　花言葉は「とても魅力的」</span>運営：株式会社Siayell　／　© miall community workspace　<span style="opacity:.55;font-size:11px">更新 2026-08-24 18:36</span></div>
+  </div>
+</footer>
+
+
+<script>
+(function(){var h=document.querySelector('header');if(!h)return;
+ var t=document.querySelector('.topbar');
+ function u(){var y=window.scrollY||0;h.classList.toggle('scrolled', y> (t?t.offsetHeight:0)+8);}
+ u();window.addEventListener('scroll',u,{passive:true});})();
+</script>
+<!-- ============ CHATBOT ミオ ============ -->
+<style>
+.mio-fab{position:fixed;right:20px;bottom:20px;z-index:900;display:flex;align-items:center;gap:12px;background:var(--ivory);border:1px solid var(--gold-500);border-radius:999px;padding:8px 20px 8px 8px;cursor:pointer;box-shadow:0 14px 34px rgba(61,54,44,.18);transition:.25s;font-family:var(--sans)}
+.mio-fab:hover{transform:translateY(-2px);box-shadow:0 18px 40px rgba(61,54,44,.22)}
+.mio-fab img{width:46px;height:46px;border-radius:50%;object-fit:cover;display:block}
+.mio-fab span{font-size:13.5px;color:var(--ink);letter-spacing:.06em;white-space:nowrap}
+.mio-fab span small{display:block;font-size:10.5px;letter-spacing:.16em;color:var(--ink-mute);margin-top:2px}
+@media(max-width:520px){.mio-fab span{display:none}.mio-fab{padding:8px;right:16px;bottom:16px}}
+
+.mio-panel{position:fixed;right:20px;bottom:20px;z-index:901;width:min(380px,calc(100vw - 32px));height:min(600px,calc(100vh - 40px));background:var(--cream);border:1px solid var(--gold-500);border-radius:8px;box-shadow:0 26px 60px rgba(61,54,44,.28);display:none;flex-direction:column;overflow:hidden;font-family:var(--sans)}
+.mio-panel.open{display:flex}
+@media(max-width:520px){.mio-panel{right:8px;bottom:8px;width:calc(100vw - 16px);height:calc(100vh - 24px)}}
+
+.mio-head{display:flex;align-items:center;gap:12px;padding:14px 16px;background:linear-gradient(160deg,var(--champagne) 0%,#fdf9ef 100%);border-bottom:1px solid var(--rose-100);flex:none}
+.mio-head img{width:42px;height:42px;border-radius:50%;object-fit:cover}
+.mio-head b{font-family:var(--serif);font-size:16px;font-weight:500;color:var(--ink);letter-spacing:.08em;display:block}
+.mio-head small{font-size:11px;color:var(--ink-mute);letter-spacing:.1em}
+.mio-close{margin-left:auto;background:none;border:0;font-size:20px;line-height:1;color:var(--ink-mute);cursor:pointer;padding:6px}
+.mio-close:hover{color:var(--ink)}
+
+.mio-log{flex:1;overflow-y:auto;padding:18px 16px;display:flex;flex-direction:column;gap:14px}
+.mio-row{display:flex;gap:10px;align-items:flex-start}
+.mio-row.me{justify-content:flex-end}
+.mio-row img{width:30px;height:30px;border-radius:50%;object-fit:cover;flex:none}
+.mio-bubble{max-width:80%;background:var(--ivory);border:1px solid var(--rose-100);border-radius:2px 12px 12px 12px;padding:12px 15px;font-size:14px;line-height:1.9;color:var(--ink);box-shadow:0 4px 12px rgba(61,54,44,.05);
+  overflow-wrap:anywhere;line-break:strict;text-align:left}
+@media(max-width:520px){.mio-bubble{max-width:86%;font-size:13.5px}}
+.mio-bubble a{word-break:break-all}
+.mio-row.me .mio-bubble{background:linear-gradient(160deg,#c2a35f 0%,#a5843a 100%);color:#fff;border:0;border-radius:12px 2px 12px 12px}
+.mio-bubble a{color:var(--rose-700)}
+.mio-bubble b{font-weight:500}
+
+.mio-chips{display:flex;flex-wrap:wrap;gap:7px;padding:0 16px 12px}
+.mio-chips button{background:var(--ivory);border:1px solid var(--gold-500);color:var(--rose-700);border-radius:999px;padding:7px 14px;font-size:12.5px;cursor:pointer;font-family:var(--sans);transition:.2s}
+.mio-chips button:hover{background:var(--blush-soft)}
+
+.mio-form{display:flex;gap:8px;padding:12px 14px;border-top:1px solid var(--rose-100);background:var(--ivory);flex:none}
+.mio-form input{flex:1;border:1px solid var(--rose-200);border-radius:3px;padding:11px 13px;font-size:14px;font-family:var(--sans);color:var(--ink);background:var(--cream)}
+.mio-form input:focus{outline:0;border-color:var(--gold-500)}
+.mio-form button{background:linear-gradient(160deg,#c2a35f 0%,#8a6c28 100%);color:#fff;border:0;border-radius:3px;padding:0 18px;font-size:13.5px;cursor:pointer;font-family:var(--sans);letter-spacing:.06em}
+.mio-typing{display:inline-flex;gap:5px;align-items:center;padding:4px 2px}
+.mio-typing i{width:6px;height:6px;border-radius:50%;background:var(--rose-400);display:block;animation:mioDot 1.2s ease-in-out infinite}
+.mio-typing i:nth-child(2){animation-delay:.15s}
+.mio-typing i:nth-child(3){animation-delay:.3s}
+@keyframes mioDot{0%,60%,100%{opacity:.3;transform:translateY(0)}30%{opacity:1;transform:translateY(-3px)}}
+@media(prefers-reduced-motion:reduce){.mio-typing i{animation:none;opacity:.6}}
+.mio-note{font-size:10.5px;color:var(--ink-mute);text-align:center;padding:0 14px 10px;background:var(--ivory);line-height:1.7}
+</style>
+
+<button class="mio-fab" id="mioFab" aria-label="ミオに質問する">
+  <img src="images/mio.png" alt="">
+  <span>ミオに聞いてみる<small>MIALL CONCIERGE</small></span>
+</button>
+
+<div class="mio-panel" id="mioPanel" role="dialog" aria-label="ミオとのチャット">
+  <div class="mio-head">
+    <img src="images/mio.png" alt="">
+    <div>
+      <b>ミオ</b>
+      <small>miall コンシェルジュ</small>
+    </div>
+    <button class="mio-close" id="mioClose" aria-label="閉じる">×</button>
+  </div>
+  <div class="mio-log" id="mioLog"></div>
+  <div class="mio-chips" id="mioChips"></div>
+  <form class="mio-form" id="mioForm">
+    <input id="mioInput" type="text" placeholder="気になることを入れてください" autocomplete="off">
+    <button type="submit">送る</button>
+  </form>
+  <p class="mio-note">ミオはAIです。まちがえることもありますので、<br>大事なことは公式LINEでご確認ください。</p>
+</div>
+
+<script>
+(function(){
+  /* AIの返答を返すエンドポイント。空文字にするとキーワード応答だけで動く。 */
+  var API_URL = "https://miall-lp.vercel.app/api/workspace-chat";
+  var LINE_URL = "#";                       /* TODO: 公式LINEのURL */
+  var MAIL = "siayell20240308@gmail.com";
+  var AV = "images/mio.png";
+
+  var KB = [
+    {k:["料金","会費","いくら","値段","月額","価格","月謝","費用"],
+     a:'💐 月会費は <b>16,500円（税込）</b>です。<br>年払いなら <b>月あたり14,850円</b>。<br>1年で19,800円おトクになります。<br><br>スペースも設備も、月1回のメンタリングも同好会も、ぜんぶ込みです。<br><a href="price.html">料金のページを見る →</a>'},
+    {k:["入会金","初期費用","オープニング","先着"],
+     a:'🎫 入会金は通常11,000円ですが、<b>いまなら0円</b>です。<br>オープニング会員さま限定なので、この機会にぜひ。<br><a href="price.html">くわしくはこちら →</a>'},
+    {k:["見学","体験","申し込み","申込","予約","行きたい","行ってみたい"],
+     a:'☺️ <b>見学は無料</b>です。<br>30分ほど、ゆっくりご案内します。<br><br>その日に決めていただかなくて大丈夫。<br>まずは雰囲気を見にいらしてください。<br><br>公式LINEからご希望の日時をお送りくださいね。<br><a href="index.html#contact">お申し込みはこちら →</a>'},
+    {k:["ドロップイン","一日","1日","単発","ビジター"],
+     a:'☕️ 1日だけのご利用は <b>3,000円</b>です。<br>公式LINEからご予約くださいね。<br><br>月6日以上お使いになるなら、会員のほうがおトクです。'},
+    {k:["設備","何がある","wi-fi","wifi","ワイファイ","電源","コンセント","プリンター","プロジェクター","モニター","マイク","ロッカー","更衣室","冷蔵庫"],
+     a:'✨ ぜんぶ会費に入っています。<br><br>🖥 Wi-Fi・コンセント・スペース使い放題<br>🖨 プリンター・プロジェクター・スクリーン・モニター・マイク<br>☕️ フリードリンク・おやつ・冷蔵庫<br>👜 ロッカー・更衣室<br>🏃‍♀️ トレーニングスペース・グッズ<br><br>あとから買い足すものはありません。'},
+    {k:["ドリンク","飲み物","おやつ","軽食","食べ物","オーガニック","無農薬"],
+     a:'☕️ フリードリンクとおやつをご用意しています。<br><b>無農薬・オーガニックにこだわった</b>良質なものばかりです。<br><br>追加のお代はいただきません。'},
+    {k:["メンタリング","相談","面談","藤澤","代表","コンサル"],
+     a:'🌿 <b>月1回・30分の個別メンタリング</b>が会費に入っています。<br><br>担当は代表の藤澤美嘉。<br>値段のつけ方、次にどこへ広げるか、売れる形のつくり方。<br>そういうお話を、ひとりずつうかがいます。<br><br>ご予約は公式LINEから。<br>※今後、会員数によってマネージャークラスが担当することもあります。'},
+    {k:["miall会","ミアル会","交流","飲み会","食事会"],
+     a:'🍽 月に1回、<b>おいしいものを食べながら</b>近況を話す会です。<br>かしこまった集まりではありません。<br><br>お友だちをお連れいただくのも大歓迎です。<br>※毎回、会費制です（お食事代として）。ご参加は自由です。'},
+    {k:["同好会","サークル","部活","ai同好会","占い","金融同好会"],
+     a:'🤝 同好会は<b>自由に作れます</b>。<br>AI、占い、金融など、興味の合う方が集まればそれで成立です。<br><br>場所と機材は運営がご用意します。'},
+    {k:["学び","講座","スクール","セミナー","勉強","動画編集","栄養学"],
+     a:'📖 AI・動画編集・栄養学など、<br>仕事につながるテーマで連続講座をひらいています。<br><br>会員さまに講師をお願いすることもあります。<br>※講座は会費とは別のお申し込みです。会員価格をご用意しています。'},
+    {k:["資金","調達","助成金","補助金","融資","借り","銀行","創業","開業資金","お金を借り","エンジェル","投資家","出資","vc"],
+     a:'💰 <b>資金調達や助成金のご相談もできます。</b><br><br>借りるべきか、使える制度があるか、そもそも今なのか。<br>金融の現場を長く見てきた人間が近くにいますので、<br>調べる前にまず聞いていただけます。<br><br>🤝 <b>エンジェル投資家コミュニティとも連携</b>しています。<br>借りる以外の道を考えたいときにも、その世界を知っている方に話を聞けます。<br><br>ご相談はメンタリングの中でも大丈夫です。<br>※お受けするのはご相談とお引き合わせまでです。申請の代行はしておりませんし、出資をお約束するものでもありません。'},
+    {k:["専門家","プロ","講師","誰がいる","サポート","山岡","西尾","板倉","水田","経営者","人脈","つながり先","ファスティング","化粧品","メイク","カウンセラー","心理","栄養士","管理栄養士","栄養"],
+     a:'✨ <b>心身ともに支えられる専門家</b>が集まっています。<br><br>🌱 <b>山岡玲子さん</b>／ファスティング日本一<br>💼 <b>西尾真由子さん</b>／大和証券で日本一。金融と接遇のプロ<br>💄 <b>板倉直美さん</b>／オーガニック化粧品開発者・AI×人間力講師<br>🤝 <b>水田真衣子さん</b>／1,000人以上の経営者コミュニティを運営<br><br>ほかに心理カウンセラーや管理栄養士も。<br>まだまだたくさんいらっしゃいます。<br>※それぞれの専門サービスは会費とは別です。会員価格があります。'},
+    {k:["リトリート","イベント","農業","遠く","旅"],
+     a:'🌾 年に何度か、リトリートや農業体験など<br>外に出る企画もしています。<br><br>※一部の企画は参加費をいただきます。<br><a href="events.html">今月の予定を見る →</a>'},
+    {k:["場所","住所","アクセス","どこ","地図"],
+     a:'📍 長野県長野市鶴賀問御所町1241-1<br>長野銀座信越ビル 8階です。<br><br>長野駅から歩いていただけます。<br>お車の方は近隣のコインパーキングをご利用ください。'},
+    {k:["駐車","駐車場","車","パーキング","停め","とめ"],
+     a:'🚗 専用の駐車場はご用意していません。<br><b>近隣のコインパーキング</b>をご利用ください。<br><br>ビルの周辺にいくつかございます。'},
+    {k:["時間","何時","営業","開いて","夜","朝"],
+     a:'🕘 <b>9:00〜21:00</b> です。<br>朝から夜まで、好きなときにお使いいただけます。<br><br>お片づけを含めて時間内にお願いしますね。'},
+    {k:["女性","男性","男","性別"],
+     a:'🌸 <b>女性限定</b>です。<br>気を使わずに集中していただけることを大切にしています。<br><br>ゲストとしてお越しの方も同じです。'},
+    {k:["ゲスト","同伴","友達","友だち","連れて","客","打合せ","商談","面談場所"],
+     a:'👭 会員さまおひとりにつき、<b>1名までご一緒</b>いただけます。<br>追加料金はかかりません。<br><br>打合せや商談にもどうぞ。<br>※ゲストの方だけでのご利用はできません。'},
+    {k:["自分の講座","開催","主催","集客","名簿","講師"],
+     a:'🎤 会員さまがこの場で講座をひらけます。<br>プロジェクター・スクリーン・マイクをお使いいただけます。<br><br>※集客をともなう場合は、名簿にお名前のある方のみご入館いただけます。<br>※開催の2日前までに、日時・内容・名簿をお知らせください。'},
+    {k:["支払","払い","クレジット","カード","現金","決済"],
+     a:'💳 クレジットカードでの自動継続が原則です。<br><br>※現金でのお支払いは原則としてお受けしておりません。<br>3ヶ月分をまとめて前納いただける場合のみ、ご相談ください。'},
+    {k:["退会","やめ","解約","年払い","返金"],
+     a:'📝 退会は、ご希望の月の<b>前月末日まで</b>にお知らせください。<br><br>年払いの会費は、途中でおやめになる場合も返金いたしかねます。<br>1年ご利用いただく前提の割引価格のためです。<br><br>迷われているなら、まず月払いからが安心です。'},
+    {k:["紹介","スタバ","スターバックス","特典"],
+     a:'🎁 ご紹介でお越しの方と、ご紹介くださった会員さま。<br><b>どちらにも Starbucks eチケット500円分</b>をお贈りしています。<br><br>ご紹介の都度お受け取りいただけます。'},
+    {k:["ルール","規約","禁止","悪口","応援","約束"],
+     a:'🤍 約束は、ふたつだけです。<br><br><b>悪口を言わない。</b><br><b>人を応援できる人でいる。</b><br><br>これだけで、安心して過ごせる場所になります。<br><a href="rules.html">ご利用ルール →</a>　<a href="terms.html">会員規約 →</a>'},
+    {k:["カメラ","防犯","セキュリティ","安全"],
+     a:'🔒 防犯のため、入り口と室内にカメラがあります。<br><b>更衣室・化粧室にはありません。</b><br><br>映像は3ヶ月保存し、防犯と安全確保のためだけに使います。'},
+    {k:["動画","ムービー","覚醒"],
+     a:'🎥 約10分の<b>魅力覚醒動画</b>があります。<br>登録なしで、そのままご覧いただけます。<br><a href="video.html">動画を見る →</a>'},
+    {k:["休会","休み","お休み"],
+     a:'🌙 休会については、個別にご相談させてください。<br>公式LINEかメールでお気軽にどうぞ。'},
+    {k:["インボイス","領収書","経費"],
+     a:'🧾 領収書は発行しています。<br><br>※適格請求書発行事業者（インボイス）の登録はしておりませんので、<br>インボイスの発行はできません。'},
+    {k:["会社員","副業","独立","フリーランス","誰が","どんな人"],
+     a:'🌷 ご自分でお仕事をされている方、副業や独立の準備中の方、<br>リモートワークの方などがいらっしゃいます。<br><br>「これから何か始めたい」という気持ちがあれば、それで十分です。'},
+    {k:["ラナンキュラス","花","花言葉","テーマ"],
+     a:'💐 テーマフラワーはラナンキュラスです。<br>花言葉は<b>「とても魅力的」</b>。<br><br>幾重にも花びらを重ねて、ゆっくりひらいていく花です。'}
+  ];
+
+  var CHIPS = ["💐 料金は？","☺️ 見学したい","✨ どんな設備？","🌿 メンタリングって？","📍 場所はどこ？","💰 資金の相談は？"];
+
+  var log = document.getElementById('mioLog');
+  var chips = document.getElementById('mioChips');
+  var panel = document.getElementById('mioPanel');
+  var fab = document.getElementById('mioFab');
+  var started = false;
+
+  function bubble(text, me){
+    var row = document.createElement('div');
+    row.className = 'mio-row' + (me ? ' me' : '');
+    if(!me){
+      var av = document.createElement('img'); av.src = AV; av.alt = ''; row.appendChild(av);
+    }
+    var b = document.createElement('div');
+    b.className = 'mio-bubble';
+    b.innerHTML = text;
+    row.appendChild(b);
+    log.appendChild(row);
+    log.scrollTop = log.scrollHeight;
+  }
+
+  /* AIが使えないときに備えた、キーワードでの受け答え */
+  function localAnswer(q){
+    var s = q.toLowerCase().replace(/\s/g,'');
+    var best = null, score = 0;
+    KB.forEach(function(item){
+      var n = 0;
+      item.k.forEach(function(w){ if(s.indexOf(w.toLowerCase()) >= 0) n += w.length; });
+      if(n > score){ score = n; best = item; }
+    });
+    if(best) return best.a;
+    return '🙇\u200d♀️ ごめんなさい、それはお答えできませんでした。<br><br>'
+      + '<a href="' + LINE_URL + '">公式LINE</a> か <a href="mailto:' + MAIL + '">こちらのメール</a> までお気軽にどうぞ。<br>'
+      + '代表か担当が、お返事します。';
+  }
+
+  function escapeHtml(t){
+    return String(t)
+      .replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')
+      .replace(/"/g,'&quot;');
+  }
+
+  var history = [];   /* AIに渡す会話履歴 */
+  var busy = false;
+
+  function typing(){
+    var row = document.createElement('div');
+    row.className = 'mio-row';
+    var av = document.createElement('img'); av.src = AV; av.alt = ''; row.appendChild(av);
+    var b = document.createElement('div');
+    b.className = 'mio-bubble';
+    b.innerHTML = '<span class="mio-typing"><i></i><i></i><i></i></span>';
+    row.appendChild(b);
+    log.appendChild(row);
+    log.scrollTop = log.scrollHeight;
+    return row;
+  }
+
+  function ask(q){
+    if(busy) return;
+    busy = true;
+    bubble(q, true);
+    history.push({ role: 'user', content: q });
+    var wait = typing();
+
+    var done = function(html, plain){
+      wait.remove();
+      bubble(html);
+      history.push({ role: 'assistant', content: plain || html.replace(/<[^>]+>/g,'') });
+      if(history.length > 24) history = history.slice(-24);
+      busy = false;
+    };
+
+    if(!API_URL){
+      setTimeout(function(){ done(localAnswer(q)); }, 420);
+      return;
+    }
+
+    var ctrl = typeof AbortController !== 'undefined' ? new AbortController() : null;
+    var timer = setTimeout(function(){ if(ctrl) ctrl.abort(); }, 20000);
+
+    fetch(API_URL, {
+      method: 'POST',
+      headers: { 'content-type': 'application/json' },
+      body: JSON.stringify({ messages: history }),
+      signal: ctrl ? ctrl.signal : undefined
+    })
+      .then(function(r){ if(!r.ok) throw new Error('http ' + r.status); return r.json(); })
+      .then(function(d){
+        clearTimeout(timer);
+        if(!d || !d.reply) throw new Error('empty');
+        done(escapeHtml(d.reply).replace(/\n/g,'<br>'), d.reply);
+      })
+      .catch(function(){
+        clearTimeout(timer);
+        done(localAnswer(q));   /* つながらないときはキーワードで答える */
+      });
+  }
+
+  function start(){
+    if(started) return; started = true;
+    bubble('こんにちは😊<br>miall のコンシェルジュ、<b>ミオ</b>です。<br><br>この場所のことで、<br>気になることはありますか？<br><br>下のボタンからでも、<br>直接入力でも大丈夫ですよ。');
+    CHIPS.forEach(function(c){
+      var b = document.createElement('button');
+      b.type = 'button'; b.textContent = c;
+      b.onclick = function(){ ask(c.replace(/^[^\u3040-\u30ff\u4e00-\u9fff\w]+/, '')); };  /* 絵文字は質問に含めない */
+      chips.appendChild(b);
+    });
+  }
+
+  fab.onclick = function(){ panel.classList.add('open'); fab.style.display='none'; start(); document.getElementById('mioInput').focus(); };
+  document.getElementById('mioClose').onclick = function(){ panel.classList.remove('open'); fab.style.display=''; };
+  document.getElementById('mioForm').onsubmit = function(e){
+    e.preventDefault();
+    var i = document.getElementById('mioInput');
+    var v = i.value.trim();
+    if(!v) return;
+    i.value = '';
+    ask(v);
+  };
+})();
+</script>
+
+<!-- ============ 見学CTAの点滅（やわらかいパルス） ============ -->
+<style>
+@keyframes miallPulse{
+  0%,100%{box-shadow:0 6px 18px rgba(61,54,44,.13), 0 0 0 0 rgba(203,174,107,.55);transform:translateY(0)}
+  50%    {box-shadow:0 10px 26px rgba(61,54,44,.20), 0 0 0 12px rgba(203,174,107,0);transform:translateY(-2px)}
+}
+@keyframes miallSweep{
+  0%{left:-140%}
+  55%,100%{left:140%}
+}
+.btn-pulse{position:relative;overflow:hidden;animation:miallPulse 2.6s ease-in-out infinite}
+.btn-pulse::after{content:"";position:absolute;top:-60%;left:-140%;width:60%;height:220%;pointer-events:none;
+  background:linear-gradient(100deg,transparent 0%,rgba(255,255,255,.55) 50%,transparent 100%);
+  transform:rotate(14deg);animation:miallSweep 2.6s ease-in-out infinite}
+.btn-pulse:hover{animation-play-state:paused}
+.btn-pulse:hover::after{animation-play-state:paused}
+@media(prefers-reduced-motion:reduce){
+  .btn-pulse,.btn-pulse::after{animation:none}
+}
+</style>
+<script>
+(function(){
+  document.querySelectorAll('a.btn').forEach(function(a){
+    if(/見学/.test(a.textContent||'')) a.classList.add('btn-pulse');
+  });
+})();
+</script>
+
+</body>
+</html>
