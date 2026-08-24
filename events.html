@@ -3,996 +3,236 @@
 <head>
 <meta charset="utf-8">
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-<meta http-equiv="Pragma" content="no-cache">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>イベント｜コミュニティワークスペース miall</title>
-<meta name="description" content="miall の集まりの予定。miall会・見学・ドロップイン・学びの場・リトリートは、会員でない方にも開いています。">
+<meta name="description" content="miallのイベントカレンダー。ラナンキュラスのように、一人ひとりの魅力がひらく時間を。">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600&family=Noto+Sans+JP:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
-
-
-
 :root{
-  /* 白とチャコールの中で、ゴールドは線と小さな面だけに */
-  --cream:#faf8f4; --ivory:#fdfbf6; --blush:#f4efe4; --blush-soft:#fbf8f2;
-  --rose-100:#e9e3d6; --rose-200:#d8cfba; --rose-400:#c1a86f;
-  --rose-600:#ac8b41; --rose-700:#96762f; --rose-900:#6f5722;
-  --sage-100:#f1eee6; --sage-600:#a49b85;
-  --gold-500:#cbae6b; --gold-600:#b09349;
-  --gold-grad:linear-gradient(105deg,#e8d5a6 0%,#c2a35f 38%,#9a7a31 62%,#dcc492 100%);
-  --champagne:#f7efdd; --champagne-deep:#f2e6cc;
-  --ink:#33312d; --ink-soft:#6f6b63; --ink-mute:#a5a099;
-  --shadow-photo:0 18px 44px rgba(61,54,44,.16), 0 4px 12px rgba(61,54,44,.08);
+  --wine:#6d2038;--wine-deep:#32141f;--rose:#b85b74;--petal:#f2bdc7;
+  --ivory:#fffaf3;--cream:#f7efe5;--gold:#c7a35c;--gold-light:#ead59d;
+  --ink:#241b1e;--muted:#706268;--line:rgba(109,32,56,.14);
   --serif:"Shippori Mincho","Hiragino Mincho ProN",serif;
-  --sans:"Noto Sans JP","Hiragino Sans","Yu Gothic",sans-serif;
+  --sans:"Noto Sans JP","Hiragino Sans","Yu Gothic",sans-serif
 }
 *{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-body{background:var(--cream);color:var(--ink);font-family:var(--sans);font-weight:400;line-height:1.9;font-size:16px;letter-spacing:.02em;-webkit-font-smoothing:antialiased}
-img{max-width:100%;display:block}
-.serif{font-family:var(--serif)}
-.wrap{width:min(1080px,92vw);margin-inline:auto}
-.narrow{width:min(760px,92vw);margin-inline:auto}
-section{padding:clamp(64px,9vw,120px) 0}
-
-/* ---------- header ---------- */
-header{position:sticky;top:0;z-index:50;background:rgba(250,248,244,.92);backdrop-filter:blur(12px);border-bottom:1px solid transparent;transition:border-color .3s ease}
-header.scrolled{border-bottom-color:var(--rose-100)}
-.hd{display:flex;align-items:center;justify-content:space-between;padding:14px 0;gap:16px}
-.logo{font-family:var(--serif);font-size:22px;letter-spacing:.18em;background:var(--gold-grad);background-size:220% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:sheen 7s ease-in-out infinite}
-.logo small{display:block;font-family:var(--sans);font-size:10px;letter-spacing:.24em;color:var(--ink-mute);margin-top:2px}
-.hd nav{display:none;gap:26px;font-size:13.5px;color:var(--ink-soft)}
-.hd nav a{color:inherit;text-decoration:none}
-.hd nav a:hover{color:var(--rose-700)}
-@media(min-width:900px){.hd nav{display:flex}}
-.btn{display:inline-block;background:linear-gradient(160deg,#c2a35f 0%,#a5843a 45%,#8a6c28 100%);color:#fff;text-decoration:none;padding:13px 26px;border-radius:3px;font-size:14px;letter-spacing:.08em;white-space:nowrap;transition:.25s;box-shadow:0 6px 18px rgba(61,54,44,.13)}
-.btn:hover{background:linear-gradient(160deg,#cfb072 0%,#9a7a31 55%,#7d6122 100%);transform:translateY(-1px)}
-.btn-ghost{background:var(--ivory);color:var(--rose-700);border:1px solid var(--gold-500);box-shadow:none}
-.btn-ghost:hover{background:var(--blush-soft);border-color:var(--rose-600);color:var(--ink)}
-.btn-lg{padding:18px 44px;font-size:16px}
-
-/* ---------- hero ---------- */
-.hero{position:relative;padding:clamp(70px,11vw,140px) 0 clamp(60px,8vw,110px);background:
-  radial-gradient(60% 70% at 78% 18%,var(--blush) 0%,transparent 60%),
-  radial-gradient(50% 60% at 12% 85%,var(--sage-100) 0%,transparent 62%),var(--cream)}
-.eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:12px;letter-spacing:.22em;color:var(--rose-700);border:1px solid var(--rose-200);background:var(--ivory);padding:7px 16px;border-radius:2px;margin-bottom:28px}
-.hero h1{font-family:var(--serif);font-weight:500;font-size:clamp(30px,6.2vw,58px);line-height:1.5;letter-spacing:.04em}
-.hero h1 em{font-style:normal;color:var(--rose-700)}
-.hero p.lead{margin-top:28px;font-size:clamp(15px,1.7vw,17.5px);color:var(--ink-soft);max-width:40em}
-.hero-cta{display:flex;flex-wrap:wrap;gap:14px;margin-top:40px}
-.hero-facts{display:flex;flex-wrap:wrap;gap:0;margin-top:52px;border-top:1px solid var(--rose-100);padding-top:26px}
-.hero-facts div{padding-right:34px;margin-right:34px;border-right:1px solid var(--rose-100)}
-.hero-facts div:last-child{border:0}
-.hero-facts dt{font-size:11.5px;letter-spacing:.2em;color:var(--ink-mute)}
-.hero-facts dd{font-family:var(--serif);font-size:clamp(19px,2.4vw,25px);color:var(--ink);margin-top:5px}
-.hero-photo{margin-top:56px;aspect-ratio:16/7;border-radius:6px;background:linear-gradient(135deg,var(--blush) 0%,var(--sage-100) 100%);display:grid;place-items:center;color:var(--ink-mute);font-size:13px;letter-spacing:.12em;border:1px dashed var(--rose-200)}
-
-/* ---------- headings ---------- */
-.kicker{font-size:11.5px;letter-spacing:.26em;color:var(--rose-700);margin-bottom:16px}
-h2.sec{font-family:var(--serif);font-weight:500;font-size:clamp(24px,3.8vw,38px);line-height:1.55;letter-spacing:.04em}
-h2.sec + p.sub{margin-top:20px;color:var(--ink-soft);font-size:15.5px}
-.center{text-align:center}
-.center .kicker{margin-inline:auto}
-
-/* ---------- cards ---------- */
-.grid{display:grid;gap:20px}
-.g3{grid-template-columns:1fr}
-@media(min-width:760px){.g3{grid-template-columns:repeat(3,1fr)}}
-.g2{grid-template-columns:1fr}
-@media(min-width:760px){.g2{grid-template-columns:repeat(2,1fr)}}
-.card{background:var(--ivory);border:1px solid var(--rose-100);border-radius:4px;padding:30px 26px}
-.card h3{font-family:var(--serif);font-weight:500;font-size:18.5px;color:var(--rose-700);margin-bottom:12px;line-height:1.6}
-.card p{font-size:14.5px;color:var(--ink-soft)}
-.num{font-family:var(--serif);font-size:12px;letter-spacing:.2em;color:var(--rose-400);display:block;margin-bottom:14px}
-
-/* ---------- worry ---------- */
-.worry{background:var(--ivory)}
-.worry ul{list-style:none;display:grid;gap:14px;margin-top:36px}
-.worry li{background:var(--cream);border-left:2px solid var(--rose-200);padding:18px 22px;font-size:15.5px;color:var(--ink-soft)}
-.worry li b{color:var(--ink);font-weight:500}
-
-/* ---------- equipment ---------- */
-.eq{display:grid;gap:18px;grid-template-columns:1fr;margin-top:44px}
-@media(min-width:700px){.eq{grid-template-columns:repeat(2,1fr)}}
-@media(min-width:1000px){.eq{grid-template-columns:repeat(4,1fr)}}
-.eq-box{background:var(--ivory);border:1px solid var(--rose-100);border-radius:4px;padding:26px 24px}
-.eq-box h4{font-family:var(--serif);font-size:16px;color:var(--rose-700);letter-spacing:.06em;padding-bottom:12px;margin-bottom:14px;border-bottom:1px solid var(--rose-100)}
-.eq-box ul{list-style:none;font-size:14.5px;color:var(--ink-soft)}
-.eq-box li{padding:5px 0 5px 18px;position:relative}
-.eq-box li::before{content:"";position:absolute;left:0;top:14px;width:6px;height:6px;border-radius:50%;background:var(--rose-200)}
-.allin{margin-top:34px;text-align:center;font-family:var(--serif);font-size:clamp(17px,2.4vw,22px);color:var(--rose-700);letter-spacing:.06em}
-
-/* ---------- mentoring ---------- */
-.mentor{background:linear-gradient(158deg,var(--champagne) 0%,#fdf9ef 48%,var(--champagne-deep) 100%);color:var(--ink);border-block:1px solid var(--gold-500)}
-.mentor .kicker{color:var(--rose-700)}
-.mentor h2.sec{color:var(--ink)}
-.mentor p{color:var(--ink-soft)}
-.mentor-grid{display:grid;gap:34px;grid-template-columns:1fr;align-items:center;margin-top:44px}
-@media(min-width:860px){.mentor-grid{grid-template-columns:1.15fr .85fr}}
-.mentor-body p+p{margin-top:18px}
-.mentor-body .big{font-family:var(--serif);font-size:clamp(20px,2.8vw,27px);line-height:1.7;color:var(--ink)}
-
-/* ---------- community ---------- */
-.club{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
-.club span{background:var(--blush);color:var(--rose-700);border:1px solid var(--rose-100);border-radius:2px;padding:7px 17px;font-size:13.5px}
-
-/* ---------- price ---------- */
-.price{background:var(--ivory)}
-.price-card{background:var(--cream);border:1px solid var(--rose-200);border-radius:6px;padding:clamp(32px,5vw,54px);text-align:center;margin-top:44px;position:relative;overflow:hidden}
-.price-card::before{content:"";position:absolute;inset:0 0 auto 0;height:3px;background:linear-gradient(90deg,var(--rose-400),var(--gold-500),var(--sage-600))}
-.price-name{font-size:12px;letter-spacing:.26em;color:var(--ink-mute)}
-.price-rows{display:grid;gap:22px;grid-template-columns:1fr;margin-top:30px}
-@media(min-width:700px){.price-rows{grid-template-columns:1fr 1fr;gap:0}}
-.price-rows>div{padding:22px 16px}
-@media(min-width:700px){.price-rows>div:first-child{border-right:1px solid var(--rose-100)}}
-.plabel{font-size:13px;letter-spacing:.18em;color:var(--ink-soft)}
-.pmain{font-family:var(--serif);color:var(--rose-700);margin-top:10px;line-height:1.2}
-.pmain b{font-size:clamp(38px,7vw,56px);font-weight:500}
-.pmain i{font-style:normal;font-size:16px;margin-left:4px;color:var(--ink-soft)}
-.psub{font-size:13px;color:var(--ink-mute);margin-top:10px}
-.badge{display:inline-block;background:var(--rose-700);color:#fff;font-size:12px;letter-spacing:.1em;padding:4px 13px;border-radius:2px;margin-top:12px}
-.price-note{margin-top:30px;padding-top:24px;border-top:1px dashed var(--rose-200);font-size:14px;color:var(--ink-soft)}
-.entry{display:grid;gap:16px;grid-template-columns:1fr;margin-top:38px}
-@media(min-width:760px){.entry{grid-template-columns:repeat(2,1fr)}}
-.entry div{background:var(--ivory);border:1px solid var(--rose-100);border-radius:4px;padding:24px;text-align:center}
-.entry h4{font-family:var(--serif);font-size:16px;color:var(--ink);margin-bottom:8px}
-.entry strong{display:block;font-family:var(--serif);font-size:26px;color:var(--rose-700);font-weight:500}
-.entry small{display:block;font-size:12.5px;color:var(--ink-mute);margin-top:8px;line-height:1.7}
-
-/* ---------- opening offer ---------- */
-.topbar{background:linear-gradient(90deg,var(--champagne) 0%,#fbf4e4 50%,var(--champagne) 100%);color:var(--ink-soft);text-align:center;font-size:13px;letter-spacing:.08em;padding:10px 16px;line-height:1.7}
-.topbar b{font-weight:500;color:var(--rose-700)}
-.topbar s{opacity:.55}
-.topbar .free{font-family:var(--serif);font-size:17px;margin-inline:4px;color:var(--rose-700)}
-
-.offer{position:relative;margin-top:44px;background:var(--ivory);border:1px solid var(--gold-500);border-radius:4px;padding:clamp(30px,4.5vw,46px) clamp(22px,4vw,44px);text-align:center;overflow:hidden;box-shadow:0 12px 34px rgba(61,54,44,.08)}
-.offer::before{content:"";position:absolute;inset:0;background:radial-gradient(70% 120% at 50% -10%,var(--blush) 0%,transparent 65%);pointer-events:none}
-.offer-tag{position:relative;display:inline-block;background:linear-gradient(160deg,#c2a35f 0%,#8a6c28 100%);color:#fff;font-size:11.5px;letter-spacing:.24em;padding:6px 20px;border-radius:2px;margin-bottom:22px}
-.offer h3{position:relative;font-family:var(--serif);font-weight:500;font-size:clamp(19px,2.8vw,26px);letter-spacing:.05em;color:var(--ink);line-height:1.6}
-.offer-line{position:relative;display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:clamp(12px,3vw,28px);margin-top:26px}
-.offer-old{font-family:var(--serif);font-size:clamp(20px,3.4vw,30px);color:var(--ink-mute);text-decoration:line-through;text-decoration-color:var(--rose-400);text-decoration-thickness:2px}
-.offer-arrow{color:var(--rose-600);font-size:22px}
-.offer-new{font-family:var(--serif);color:var(--rose-700);line-height:1}
-.offer-new b{font-size:clamp(54px,11vw,86px);font-weight:500;letter-spacing:-.01em}
-.offer-new i{font-style:normal;font-size:clamp(18px,2.6vw,24px);margin-left:4px}
-.offer-note{position:relative;margin-top:24px;font-size:14.5px;color:var(--ink-soft)}
-.offer-note b{color:var(--rose-700);font-weight:500}
-.offer-cta{position:relative;margin-top:28px}
-
-/* ---------- referral ---------- */
-.ref{background:var(--sage-100)}
-.ref-box{background:var(--ivory);border-radius:4px;padding:clamp(30px,4.5vw,48px);text-align:center;border:1px solid var(--rose-100)}
-.ref-flow{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:14px;margin-top:28px}
-.ref-flow div{background:var(--cream);border:1px solid var(--rose-100);border-radius:4px;padding:18px 26px;font-size:14px}
-.ref-flow div b{display:block;font-family:var(--serif);color:var(--rose-700);font-size:19px;margin-top:6px;font-weight:500}
-.ref-flow i{font-style:normal;color:var(--rose-400);font-size:20px}
-
-/* ---------- rules / faq ---------- */
-.rules{background:var(--ivory)}
-.rule-list{display:grid;gap:16px;margin-top:38px}
-.rule-list div{display:grid;grid-template-columns:1fr;gap:6px;background:var(--cream);border-radius:4px;padding:20px 24px}
-@media(min-width:760px){.rule-list div{grid-template-columns:190px 1fr;gap:22px;align-items:baseline}}
-.rule-list dt,.rule-list b{font-family:var(--serif);color:var(--rose-700);font-size:15.5px;font-weight:500}
-.rule-list p{font-size:14.5px;color:var(--ink-soft)}
-details{border-bottom:1px solid var(--rose-100);padding:6px 0}
-summary{cursor:pointer;list-style:none;padding:18px 34px 18px 0;font-size:15.5px;position:relative;font-weight:500}
-summary::-webkit-details-marker{display:none}
-summary::after{content:"＋";position:absolute;right:6px;top:18px;color:var(--rose-400);font-size:16px;transition:.2s}
-details[open] summary::after{content:"−"}
-details p{padding:0 0 20px;font-size:14.5px;color:var(--ink-soft)}
-
-/* ---------- cta ---------- */
-.cta{position:relative;isolation:isolate;text-align:center;overflow:hidden;padding-bottom:clamp(90px,13vw,190px);
-  background:
-    linear-gradient(180deg,rgba(250,248,244,.96) 0%,rgba(250,248,244,.90) 34%,rgba(250,248,244,.62) 68%,rgba(250,248,244,.42) 100%),
-    url("images/flowers-noribbon.jpg") center bottom/cover no-repeat,
-    var(--cream);
-  border-block:1px solid var(--gold-500)}
-.cta::after{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;
-  box-shadow:inset 0 0 120px 30px rgba(250,248,244,.75), inset 0 0 0 1px rgba(203,174,107,.25)}
-.florio{font-family:var(--serif);font-size:clamp(14px,1.9vw,17px);letter-spacing:.1em;color:var(--rose-700);margin-bottom:22px;line-height:1.9}
-.florio small{display:block;font-family:var(--sans);font-size:11.5px;letter-spacing:.22em;color:var(--ink-mute);margin-bottom:8px}
-.cta h2{font-family:var(--serif);font-weight:500;font-size:clamp(24px,4.2vw,40px);line-height:1.6;letter-spacing:.04em}
-.cta p{margin-top:24px;color:var(--ink-soft);font-size:15.5px}
-.cta .hero-cta{justify-content:center;margin-top:38px}
-
-/* ---------- footer ---------- */
-footer{background:var(--champagne-deep);color:var(--ink-soft);padding:56px 0 40px;font-size:13.5px;border-top:1px solid var(--gold-500)}
-footer .logo{}
-.fgrid{display:grid;gap:26px;grid-template-columns:1fr}
-@media(min-width:760px){.fgrid{grid-template-columns:1fr 1fr;align-items:end}}
+html{scroll-behavior:smooth}
+body{background:var(--ivory);color:var(--ink);font-family:var(--sans);line-height:1.85;overflow-x:hidden}
+a{color:inherit}
+img{display:block;max-width:100%}
+.wrap{width:min(1180px,92vw);margin:auto}
+.narrow{width:min(900px,92vw);margin:auto}
+.topbar{padding:8px 16px;text-align:center;color:#fff;background:linear-gradient(90deg,var(--wine-deep),var(--wine),var(--wine-deep));font-size:12px;letter-spacing:.12em}
+.topbar b{color:var(--gold-light)}
+header{position:sticky;top:0;z-index:50;background:rgba(255,250,243,.9);backdrop-filter:blur(16px);border-bottom:1px solid var(--line);transition:.3s}
+header.scrolled{box-shadow:0 12px 32px rgba(50,20,31,.09)}
+.hd{min-height:76px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.logo{font:500 25px/1 var(--serif);letter-spacing:.18em;color:var(--wine)}
+.logo small{display:block;font:500 8px/1.4 var(--sans);letter-spacing:.28em;color:var(--gold);margin-top:7px}
+nav{display:flex;gap:25px;font-size:12.5px;color:var(--muted)}
+nav a{text-decoration:none;position:relative}
+nav a::after{content:"";position:absolute;left:0;right:100%;bottom:-7px;height:1px;background:var(--wine);transition:.25s}
+nav a:hover::after{right:0}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:50px;padding:0 26px;border-radius:999px;text-decoration:none;color:#fff;background:linear-gradient(135deg,#8c314e,var(--wine));font-size:13px;letter-spacing:.08em;box-shadow:0 10px 24px rgba(109,32,56,.2);transition:.3s}
+.btn:hover{transform:translateY(-3px);box-shadow:0 15px 34px rgba(109,32,56,.3)}
+.btn-light{color:var(--wine);background:rgba(255,250,243,.94);border:1px solid rgba(255,255,255,.65);box-shadow:none}
+.hero{position:relative;min-height:690px;display:grid;align-items:center;overflow:hidden;background:var(--wine-deep);isolation:isolate}
+.hero-photo{position:absolute;inset:0;z-index:-3;background:url("images/flowers-noribbon.jpg") center 55%/cover no-repeat;transform:scale(1.06);transition:transform .15s linear}
+.hero::before{content:"";position:absolute;inset:0;z-index:-2;background:linear-gradient(90deg,rgba(35,10,21,.92) 0%,rgba(59,17,35,.74) 42%,rgba(59,17,35,.12) 77%),linear-gradient(0deg,rgba(35,10,21,.38),transparent 52%)}
+.hero::after{content:"";position:absolute;width:52vw;height:52vw;border:1px solid rgba(234,213,157,.34);border-radius:50%;right:-17vw;top:-18vw;z-index:-1;box-shadow:0 0 0 60px rgba(234,213,157,.035),0 0 0 120px rgba(234,213,157,.025)}
+.hero-inner{padding:95px 0 110px;color:#fff}
+.eyebrow{font-size:11px;letter-spacing:.32em;color:var(--gold-light);margin-bottom:27px}
+.hero h1{font:500 clamp(38px,6.7vw,76px)/1.35 var(--serif);letter-spacing:.045em;text-wrap:balance}
+.hero h1 span{display:block;color:var(--gold-light);font-size:.46em;letter-spacing:.13em;margin-top:12px}
+.hero-copy{max-width:34em;margin-top:28px;font-size:15px;color:rgba(255,255,255,.84);letter-spacing:.04em}
+.hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:38px}
+.flower-word{position:absolute;right:3vw;bottom:-.18em;font:500 clamp(70px,13vw,190px)/1 var(--serif);color:rgba(255,255,255,.075);letter-spacing:.02em;pointer-events:none}
+.scroll-cue{position:absolute;bottom:28px;left:50%;transform:translateX(-50%);font-size:9px;letter-spacing:.3em;color:rgba(255,255,255,.65)}
+.scroll-cue::after{content:"";display:block;width:1px;height:34px;margin:10px auto 0;background:linear-gradient(var(--gold-light),transparent);animation:drop 1.8s ease-in-out infinite}
+@keyframes drop{0%{transform:scaleY(0);transform-origin:top}45%{transform:scaleY(1);transform-origin:top}55%{transform:scaleY(1);transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+.glow{position:fixed;width:360px;height:360px;border-radius:50%;pointer-events:none;z-index:0;background:radial-gradient(circle,rgba(242,189,199,.18),transparent 67%);transform:translate(-50%,-50%);mix-blend-mode:multiply}
+.intro{position:relative;padding:100px 0 70px;text-align:center;background:radial-gradient(circle at 15% 0,rgba(242,189,199,.2),transparent 27%),var(--ivory)}
+.kicker{font-size:10px;letter-spacing:.32em;color:var(--wine);margin-bottom:14px}
+.intro h2{font:500 clamp(27px,4.3vw,46px)/1.55 var(--serif);color:var(--wine-deep)}
+.intro p{margin-top:20px;color:var(--muted);font-size:14px}
+.legend{display:flex;justify-content:center;flex-wrap:wrap;gap:10px;margin-top:27px}
+.tag{display:inline-flex;align-items:center;padding:4px 12px;border-radius:999px;font-size:10px;letter-spacing:.08em}
+.tag-guest{background:var(--wine);color:#fff}
+.tag-member{background:var(--cream);border:1px solid var(--line);color:var(--muted)}
+.calendar-section{padding:15px 0 115px;background:linear-gradient(180deg,var(--ivory),var(--cream))}
+.cal-shell{position:relative;background:rgba(255,253,249,.93);border:1px solid rgba(109,32,56,.12);border-radius:28px;padding:clamp(22px,4vw,48px);box-shadow:0 35px 90px rgba(70,35,43,.12);overflow:hidden}
+.cal-shell::before{content:"RANUNCULUS";position:absolute;right:-18px;top:55px;writing-mode:vertical-rl;font:500 10px var(--serif);letter-spacing:.35em;color:rgba(109,32,56,.2)}
+.cal-head{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:30px;padding-right:22px}
+.cal-head h2{font:500 25px var(--serif);color:var(--wine)}
+.cal-head h2 b{font-size:55px;line-height:.8;margin:0 5px;color:var(--wine-deep)}
+.cal-head span{font:500 10px var(--sans);letter-spacing:.3em;color:var(--gold)}
+.cal-grid{display:grid;grid-template-columns:repeat(7,1fr);border-left:1px solid var(--line);border-top:1px solid var(--line)}
+.cal-dow,.cal-cell{border-right:1px solid var(--line);border-bottom:1px solid var(--line)}
+.cal-dow{text-align:center;padding:10px 3px;color:var(--muted);font-size:10px;letter-spacing:.1em;background:rgba(247,239,229,.65)}
+.cal-cell{min-height:95px;padding:10px;position:relative;transition:.28s;background:rgba(255,255,255,.48)}
+.cal-cell .n{font:500 14px var(--serif)}
+.cal-cell.sun .n,.cal-dow.sun{color:#bd5d72}
+.cal-cell.sat .n,.cal-dow.sat{color:#76659d}
+.cal-cell.empty{background:rgba(247,239,229,.42)}
+.cal-cell.has{cursor:pointer;background:linear-gradient(145deg,#8d3452,var(--wine-deep));color:#fff;overflow:hidden}
+.cal-cell.has::after{content:"";position:absolute;width:80px;height:80px;border-radius:50%;right:-30px;bottom:-35px;border:1px solid rgba(234,213,157,.5);box-shadow:0 0 0 12px rgba(234,213,157,.08),0 0 0 24px rgba(234,213,157,.04)}
+.cal-cell.has:hover{transform:translateY(-7px) scale(1.035);z-index:4;box-shadow:0 18px 35px rgba(109,32,56,.3)}
+.ev-name{display:block;font:500 11px/1.5 var(--serif);margin-top:15px;position:relative;z-index:1}
+.event-card{display:grid;grid-template-columns:150px 1fr auto;align-items:center;gap:26px;margin-top:35px;padding:28px;border-radius:18px;background:var(--wine-deep);color:#fff;box-shadow:0 18px 50px rgba(50,20,31,.2);transition:.35s}
+.event-card.active{transform:scale(1.012);box-shadow:0 25px 70px rgba(109,32,56,.32),0 0 0 4px rgba(199,163,92,.22)}
+.event-date{font:500 32px var(--serif);color:var(--gold-light);border-right:1px solid rgba(255,255,255,.18)}
+.event-date small{font:400 11px var(--sans);color:rgba(255,255,255,.62)}
+.event-body h3{font:500 21px var(--serif);margin-bottom:6px}
+.event-body p{font-size:12.5px;color:rgba(255,255,255,.67)}
+.anytime{display:flex;justify-content:space-between;gap:20px;margin-top:16px;padding:18px 22px;border:1px solid var(--line);border-radius:14px;background:rgba(255,255,255,.62);font-size:12px;color:var(--muted)}
+.anytime b{font-family:var(--serif);color:var(--wine)}
+.note{text-align:center;margin-top:30px;color:var(--muted);font-size:12.5px}
+.note a{color:var(--wine);font-weight:500}
+.big-cta{padding:105px 0;text-align:center;color:#fff;background:linear-gradient(rgba(50,20,31,.78),rgba(50,20,31,.88)),url("images/flowers-noribbon.jpg") center/cover fixed}
+.big-cta small{letter-spacing:.3em;color:var(--gold-light)}
+.big-cta h2{font:500 clamp(28px,4.5vw,48px)/1.55 var(--serif);margin:17px 0 30px}
+footer{padding:55px 0 100px;background:#21171a;color:rgba(255,255,255,.58);font-size:12px}
+.fgrid{display:grid;grid-template-columns:1fr 1.3fr;gap:40px;align-items:end}
+footer .logo{color:var(--gold-light)}
 .fmeta{line-height:2}
-.fmeta b{color:var(--ink);font-weight:500}
-.copy{margin-top:36px;padding-top:22px;border-top:1px solid var(--rose-200);font-size:12px;color:var(--ink-mute)}
-.todo{background:#fffbe8;border:1px dashed var(--gold-500);color:#7a5c17;font-size:12.5px;padding:3px 9px;border-radius:3px;display:inline-block}
-
-/* ---------- rules page ---------- */
-.page-head{padding:clamp(56px,8vw,96px) 0 clamp(30px,4vw,50px);background:radial-gradient(60% 80% at 78% 10%,var(--blush) 0%,transparent 62%),var(--cream)}
-.page-head h1{font-family:var(--serif);font-weight:500;font-size:clamp(26px,4.6vw,42px);line-height:1.55;letter-spacing:.04em;margin-top:8px}
-.page-head p{margin-top:22px;color:var(--ink-soft);font-size:15.5px;max-width:40em}
-.breadcrumb{font-size:12.5px;color:var(--ink-mute);letter-spacing:.08em}
-.breadcrumb a{color:var(--rose-700);text-decoration:none}
-.breadcrumb a:hover{text-decoration:underline}
-
-.creed{background:linear-gradient(158deg,var(--champagne) 0%,#fdf9ef 48%,var(--champagne-deep) 100%);color:var(--ink);text-align:center;border-block:1px solid var(--gold-500)}
-.creed .kicker{color:var(--rose-700)}
-.creed h2{font-family:var(--serif);font-weight:500;font-size:clamp(22px,3.8vw,34px);line-height:1.65;letter-spacing:.05em}
-.creed p{margin-top:24px;color:var(--ink-soft);font-size:15.5px}
-.creed-two{display:grid;gap:18px;grid-template-columns:1fr;margin-top:40px;text-align:left}
-@media(min-width:760px){.creed-two{grid-template-columns:1fr 1fr}}
-.creed-two div{background:var(--ivory);border:1px solid var(--gold-500);border-radius:4px;padding:26px 24px;box-shadow:0 10px 28px rgba(51,49,45,.06)}
-.creed-two b{display:block;font-family:var(--serif);font-size:19px;font-weight:500;margin-bottom:10px;color:var(--rose-700)}
-.creed-two span{font-size:14.5px;color:var(--ink-soft);line-height:1.9}
-
-.rulebook{counter-reset:r}
-.rule{display:grid;grid-template-columns:1fr;gap:8px;padding:30px 0;border-bottom:1px solid var(--rose-100)}
-@media(min-width:800px){.rule{grid-template-columns:52px 250px 1fr;gap:26px;align-items:baseline}}
-.rule .n{counter-increment:r;font-family:var(--serif);font-size:14px;color:var(--rose-400);letter-spacing:.1em}
-.rule .n::before{content:counter(r,decimal-leading-zero)}
-.rule h3{font-family:var(--serif);font-weight:500;font-size:17.5px;color:var(--rose-700);line-height:1.6}
-.rule p{font-size:14.5px;color:var(--ink-soft)}
-.rule p+p{margin-top:10px}
-.rule strong{color:var(--ink);font-weight:500}
-
-.hard{background:var(--blush-soft);border-left:3px solid var(--rose-700);padding:22px 26px;margin-top:14px;border-radius:0 4px 4px 0}
-.hard b{color:var(--rose-700);font-weight:500}
-.backlink{text-align:center;padding:clamp(50px,7vw,84px) 0;background:var(--cream)}
-
-
-/* ---------- shiny ---------- */
-.shine{
-  background:var(--gold-grad);
-  background-size:220% 100%;
-  -webkit-background-clip:text;background-clip:text;color:transparent;
-  animation:sheen 7s ease-in-out infinite;
+.copy{margin-top:30px;padding-top:18px;border-top:1px solid rgba(255,255,255,.1)}
+.reveal{opacity:0;transform:translateY(34px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.7,.2,1)}
+.reveal.in{opacity:1;transform:none}
+.mio-fab{position:fixed;right:20px;bottom:20px;z-index:80;display:flex;align-items:center;gap:10px;border:1px solid rgba(199,163,92,.55);border-radius:999px;padding:7px 17px 7px 7px;background:rgba(255,250,243,.95);box-shadow:0 14px 38px rgba(50,20,31,.2);cursor:pointer;color:var(--wine);font-family:var(--sans)}
+.mio-fab img{width:43px;height:43px;object-fit:cover;border-radius:50%}
+.mio-pop{position:fixed;right:20px;bottom:85px;z-index:79;width:min(320px,calc(100vw - 32px));padding:24px;background:var(--ivory);border:1px solid var(--line);border-radius:18px;box-shadow:0 20px 60px rgba(50,20,31,.22);display:none}
+.mio-pop.open{display:block;animation:pop .35s ease}
+.mio-pop b{font-family:var(--serif);color:var(--wine);font-size:17px}
+.mio-pop p{font-size:12.5px;color:var(--muted);margin:10px 0 15px}
+.mio-pop a{font-size:12px;color:var(--wine)}
+@keyframes pop{from{opacity:0;transform:translateY(12px) scale(.96)}}
+.stickycta{display:none}
+@media(max-width:900px){nav{display:none}.hero{min-height:620px}.hero::before{background:linear-gradient(90deg,rgba(35,10,21,.89),rgba(59,17,35,.45))}.event-card{grid-template-columns:110px 1fr}.event-card .btn{grid-column:1/-1}.cal-cell{min-height:78px}.ev-name{font-size:9px}}
+@media(max-width:620px){
+  .hd{min-height:65px}.hd>.btn{padding:0 16px;min-height:42px;font-size:11px}
+  .hero{min-height:590px}.hero-inner{padding:75px 0 105px}.hero h1{font-size:39px}.hero-copy{font-size:13px}
+  .glow{display:none}.intro{padding:75px 0 50px}.calendar-section{padding-bottom:80px}.cal-shell{border-radius:18px;padding:17px 10px}
+  .cal-head{padding:6px 9px;margin-bottom:22px}.cal-head h2{font-size:17px}.cal-head h2 b{font-size:43px}
+  .cal-cell{min-height:59px;padding:6px}.cal-cell .n{font-size:11px}.ev-name{font-size:7px;line-height:1.25;margin-top:8px;word-break:break-all}
+  .event-card{grid-template-columns:1fr;padding:22px;gap:13px}.event-date{border-right:0;border-bottom:1px solid rgba(255,255,255,.16);padding-bottom:11px}
+  .anytime{display:block}.anytime span{display:block;margin-top:7px}.fgrid{grid-template-columns:1fr}
+  .stickycta{position:fixed;display:flex;left:0;right:0;bottom:0;z-index:70;background:rgba(255,250,243,.96);backdrop-filter:blur(12px);padding:9px 12px calc(9px + env(safe-area-inset-bottom));border-top:1px solid var(--line)}
+  .stickycta .btn{width:100%;min-height:48px}.mio-fab{bottom:76px}body{padding-bottom:65px}
 }
-@keyframes sheen{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
-
-/* 金の細いヘアライン */
-.hairline{height:1px;border:0;background:linear-gradient(90deg,transparent 0%,var(--gold-500) 22%,#f0e2bd 50%,var(--gold-500) 78%,transparent 100%);margin:0 0 18px}
-.center .hairline{max-width:180px;margin-inline:auto}
-
-/* 濃い面に光沢をのせる */
-.mentor,.creed{position:relative;isolation:isolate}
-.mentor::after,.creed::after{
-  content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;
-  background:
-    radial-gradient(54% 64% at 80% -8%,rgba(255,253,248,.85) 0%,transparent 62%),
-    radial-gradient(42% 52% at 6% 110%,rgba(203,174,107,.16) 0%,transparent 66%),
-    linear-gradient(102deg,transparent 34%,rgba(255,253,248,.5) 47%,transparent 60%);
-}
-
-/* ヒーローに光の差し込み */
-.hero::after{
-  content:"";position:absolute;inset:0;pointer-events:none;
-  background:linear-gradient(108deg,transparent 30%,rgba(255,252,242,.55) 46%,transparent 62%);
-}
-.hero>*{position:relative;z-index:1}
-
-/* 数字とロゴの艶 */
-.pmain b,.offer-new b{background:var(--gold-grad);background-size:220% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:sheen 7s ease-in-out infinite}
-
-/* 写真の縁に光 */
-.hero-photo::after{content:"";position:absolute;inset:0;pointer-events:none;border-radius:6px;box-shadow:inset 0 0 0 1px rgba(203,174,107,.55)}
-
-/* カードに触れたときの艶 */
-.card,.eq-box{transition:box-shadow .35s ease,transform .35s ease,border-color .35s ease}
-.card:hover,.eq-box:hover{border-color:var(--gold-500);box-shadow:0 12px 30px rgba(43,40,35,.08);transform:translateY(-2px)}
-
-@media(prefers-reduced-motion:reduce){
-  .shine,.pmain b,.offer-new b{animation:none}
-}
-
-
-/* ---------- terms page ---------- */
-.toc{background:var(--ivory);border:1px solid var(--rose-100);border-top:2px solid var(--gold-500);border-radius:0 0 3px 3px;padding:26px 28px;margin-top:38px}
-.toc h3{font-family:var(--serif);font-size:14px;letter-spacing:.16em;color:var(--rose-700);margin-bottom:16px;font-weight:500}
-.toc ol{list-style:none;display:grid;gap:7px 22px;grid-template-columns:1fr;font-size:14px}
-@media(min-width:700px){.toc ol{grid-template-columns:1fr 1fr}}
-@media(min-width:1000px){.toc ol{grid-template-columns:repeat(3,1fr)}}
-.toc a{color:var(--ink-soft);text-decoration:none;display:block;padding:3px 0}
-.toc a:hover{color:var(--rose-700)}
-
-.terms{counter-reset:none;margin-top:44px}
-.terms article{padding:26px 0;border-bottom:1px solid var(--rose-100)}
-.terms h2{font-family:var(--serif);font-weight:500;font-size:18px;letter-spacing:.05em;color:var(--rose-700);margin-bottom:14px;scroll-margin-top:120px}
-.terms p{font-size:14.5px;color:var(--ink-soft);margin-bottom:10px}
-.terms ol,.terms ul{margin:0 0 10px 1.3em;font-size:14.5px;color:var(--ink-soft)}
-.terms li{padding:4px 0}
-.terms strong,.terms b{color:var(--ink);font-weight:500}
-.terms .sub{font-family:var(--serif);font-size:14px;color:var(--ink);margin:16px 0 8px;letter-spacing:.06em}
-.terms .note{font-size:13px;color:var(--ink-mute);margin-top:12px;line-height:1.85}
-.pending{background:#fffbe8;border:1px dashed var(--gold-600);border-radius:3px;padding:18px 20px;font-size:14px;color:#7a5c17;margin:12px 0}
-.pending b{color:#7a5c17}
-.terms-foot{margin-top:44px;background:var(--ivory);border:1px solid var(--rose-100);border-radius:3px;padding:28px}
-.terms-foot dl{display:grid;gap:10px;font-size:14.5px}
-.terms-foot dt{font-family:var(--serif);color:var(--rose-700);font-size:13.5px;letter-spacing:.1em}
-.terms-foot dd{color:var(--ink-soft);margin-bottom:8px}
-
-
-/* ---------- schedule ---------- */
-.sched{margin-top:44px}
-.sched-head{display:flex;flex-wrap:wrap;align-items:baseline;gap:14px;margin-bottom:20px}
-.sched-head h2{font-family:var(--serif);font-weight:500;font-size:clamp(21px,3vw,28px);letter-spacing:.05em;color:var(--ink)}
-.sched-head span{font-size:12.5px;letter-spacing:.14em;color:var(--ink-mute)}
-.day{display:grid;grid-template-columns:1fr;gap:4px;background:var(--ivory);border:1px solid var(--rose-100);border-left:2px solid var(--gold-500);border-radius:0 4px 4px 0;padding:18px 22px;margin-bottom:12px;box-shadow:0 6px 18px rgba(61,54,44,.05)}
-@media(min-width:680px){.day{grid-template-columns:7.5em 1fr;gap:0 22px;align-items:baseline}}
-.day .d{font-family:var(--serif);font-size:20px;color:var(--rose-700);letter-spacing:.04em;line-height:1.4}
-.day .d small{font-family:var(--sans);font-size:12.5px;color:var(--ink-mute);margin-left:6px}
-.day h4{font-family:var(--serif);font-weight:500;font-size:16.5px;color:var(--ink);margin-bottom:6px;display:flex;flex-wrap:wrap;align-items:center;gap:10px}
-.day p{font-size:14px;color:var(--ink-soft);line-height:1.85}
-.day .time{font-size:13px;color:var(--ink-mute);letter-spacing:.04em}
-.day.anytime{border-left-color:var(--rose-200);background:var(--blush-soft)}
-.rhythm{margin-top:34px;background:var(--ivory);border:1px solid var(--rose-100);border-top:2px solid var(--gold-500);border-radius:0 0 4px 4px;padding:26px 28px}
-.rhythm h3{font-family:var(--serif);font-size:14.5px;letter-spacing:.14em;color:var(--rose-700);margin-bottom:16px;font-weight:500}
-.rhythm ul{list-style:none;display:grid;gap:9px;font-size:14px;color:var(--ink-soft)}
-.rhythm li{padding-left:18px;position:relative}
-.rhythm li::before{content:"";position:absolute;left:0;top:12px;width:6px;height:6px;border-radius:50%;background:var(--gold-500)}
-.rhythm b{color:var(--ink);font-weight:500}
-
-/* ---------- events ---------- */
-.legend{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:30px}
-.legend span{display:inline-flex;align-items:center;gap:8px;font-size:13px;color:var(--ink-soft)}
-.tag{display:inline-block;font-size:11.5px;letter-spacing:.1em;padding:4px 12px;border-radius:2px;white-space:nowrap}
-.tag-guest{background:linear-gradient(160deg,#c2a35f 0%,#8a6c28 100%);color:#fff}
-.tag-member{background:var(--ivory);border:1px solid var(--rose-200);color:var(--ink-soft)}
-
-.evlist{display:grid;gap:16px;margin-top:38px}
-.ev{background:var(--ivory);border:1px solid var(--rose-100);border-left:2px solid var(--gold-500);border-radius:0 4px 4px 0;padding:26px 28px;box-shadow:0 8px 22px rgba(61,54,44,.06)}
-.ev-top{display:flex;flex-wrap:wrap;align-items:baseline;gap:12px;margin-bottom:10px}
-.ev-top h3{font-family:var(--serif);font-weight:500;font-size:19px;color:var(--rose-700);letter-spacing:.04em}
-.ev-when{font-size:13px;color:var(--ink-mute);letter-spacing:.06em}
-.ev p{font-size:14.5px;color:var(--ink-soft);line-height:1.9}
-.ev dl{display:grid;grid-template-columns:1fr;gap:6px;margin-top:14px;padding-top:14px;border-top:1px dashed var(--rose-200);font-size:13.5px}
-@media(min-width:640px){.ev dl{grid-template-columns:auto 1fr;gap:6px 18px}}
-.ev dt{font-family:var(--serif);color:var(--rose-700);letter-spacing:.06em}
-.ev dd{color:var(--ink-soft)}
-
-.cal{margin-top:40px;background:var(--ivory);border:1px solid var(--rose-100);border-top:2px solid var(--gold-500);border-radius:0 0 4px 4px;padding:28px}
-.cal h3{font-family:var(--serif);font-size:15px;letter-spacing:.14em;color:var(--rose-700);margin-bottom:18px;font-weight:500}
-.cal table{width:100%;border-collapse:collapse;font-size:14px}
-.cal th,.cal td{text-align:left;padding:11px 10px;border-bottom:1px solid var(--rose-100);vertical-align:top}
-.cal th{font-family:var(--serif);font-weight:500;color:var(--ink);white-space:nowrap;width:9em}
-.cal td{color:var(--ink-soft)}
-.cal tr:last-child th,.cal tr:last-child td{border-bottom:0}
-
-.todo{display:none!important}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;scroll-behavior:auto!important}.reveal{opacity:1;transform:none}.hero-photo{transform:none!important}.big-cta{background-attachment:scroll}}
 </style>
 </head>
 <body>
-
-<div class="topbar">
-  <b>オープニング会員募集中</b>　入会金 <s>11,000円</s> → <b class="free">0円</b>
-</div>
-
-<header>
+<div class="glow" id="glow"></div>
+<div class="topbar">オープニング会員募集中　入会金 <b>11,000円 → 0円</b></div>
+<header id="header">
   <div class="wrap hd">
-    <div class="logo">miall<small>COMMUNITY WORKSPACE</small></div>
+    <a class="logo" href="index.html" style="text-decoration:none">miall<small>COMMUNITY WORKSPACE</small></a>
     <nav>
-      <a href="index.html#about">この場所について</a>
-      <a href="events.html">イベント</a>
-      <a href="index.html#access">アクセス</a>
-        <a href="price.html">料金</a>
-      <a href="rules.html">ご利用ルール</a>
-      <a href="terms.html">会員規約</a>
+      <a href="index.html#about">この場所について</a><a href="events.html">イベント</a><a href="index.html#access">アクセス</a><a href="price.html">料金</a><a href="rules.html">ご利用ルール</a>
     </nav>
     <a class="btn" href="index.html#contact">見学のお申し込み</a>
   </div>
 </header>
 
-<section class="page-head">
+<main>
+<section class="hero">
+  <div class="hero-photo" id="heroPhoto"></div>
+  <div class="wrap hero-inner">
+    <p class="eyebrow">MIALL EVENT CALENDAR</p>
+    <h1>出会いから、<br>魅力がひらく。<span>イベントカレンダー</span></h1>
+    <p class="hero-copy">ラナンキュラスが幾重にも花びらをひらくように。<br>新しい学びやご縁が、あなたの可能性を華やかに広げます。</p>
+    <div class="hero-actions">
+      <a class="btn" href="#calendar">9月の予定を見る</a>
+      <a class="btn btn-light" href="https://lin.ee/6v6NCVt" target="_blank" rel="noopener">公式LINEで申し込む</a>
+    </div>
+  </div>
+  <div class="flower-word">miall</div>
+  <div class="scroll-cue">SCROLL</div>
+</section>
+
+<section class="intro reveal">
   <div class="narrow">
-    <div class="breadcrumb"><a href="index.html">TOP</a>　/　イベントカレンダー</div>
-    <h1 class="serif">イベントカレンダー</h1>
-    <p>
-      その月の予定をまとめています。<br>
-      <b style="color:var(--ink);font-weight:500">印のある日は、会員でない方もご参加いただけます。</b>
-    </p>
+    <p class="kicker">SEPTEMBER 2026</p>
+    <h2>ここで過ごす時間が、<br>次の一歩につながる。</h2>
+    <p>イベントのある日をタップすると、詳しい内容をご覧いただけます。</p>
+    <div class="legend"><span class="tag tag-guest">ゲスト参加OK</span><span class="tag tag-member">会員限定</span></div>
   </div>
 </section>
 
-<section style="padding-top:clamp(14px,2.4vw,30px)">
+<section class="calendar-section" id="calendar">
   <div class="narrow">
-    <div class="cal">
-      <div class="cal-head">
-        <h2>2026年<b>9</b>月</h2>
-        <span>SEPTEMBER</span>
-      </div>
-
+    <div class="cal-shell reveal">
+      <div class="cal-head"><h2>2026年 <b>9</b>月</h2><span>SEPTEMBER</span></div>
       <div class="cal-grid">
         <div class="cal-dow sun">日</div><div class="cal-dow">月</div><div class="cal-dow">火</div><div class="cal-dow">水</div><div class="cal-dow">木</div><div class="cal-dow">金</div><div class="cal-dow sat">土</div>
-        <div class="cal-cell empty"></div>
-        <div class="cal-cell empty"></div>
-        <div class="cal-cell"><span class="n">1</span></div>
-        <div class="cal-cell"><span class="n">2</span></div>
-        <div class="cal-cell"><span class="n">3</span></div>
-        <div class="cal-cell"><span class="n">4</span></div>
-        <div class="cal-cell sat"><span class="n">5</span></div>
-        <div class="cal-cell sun"><span class="n">6</span></div>
-        <div class="cal-cell"><span class="n">7</span></div>
-        <div class="cal-cell"><span class="n">8</span></div>
-        <div class="cal-cell"><span class="n">9</span></div>
-        <div class="cal-cell"><span class="n">10</span></div>
-        <div class="cal-cell"><span class="n">11</span></div>
-        <div class="cal-cell sat has"><span class="n">12</span><span class="ev-name">オープニングセミナー</span></div>
-        <div class="cal-cell sun"><span class="n">13</span></div>
-        <div class="cal-cell"><span class="n">14</span></div>
-        <div class="cal-cell"><span class="n">15</span></div>
-        <div class="cal-cell"><span class="n">16</span></div>
-        <div class="cal-cell"><span class="n">17</span></div>
-        <div class="cal-cell"><span class="n">18</span></div>
-        <div class="cal-cell sat"><span class="n">19</span></div>
-        <div class="cal-cell sun"><span class="n">20</span></div>
-        <div class="cal-cell"><span class="n">21</span></div>
-        <div class="cal-cell"><span class="n">22</span></div>
-        <div class="cal-cell"><span class="n">23</span></div>
-        <div class="cal-cell"><span class="n">24</span></div>
-        <div class="cal-cell"><span class="n">25</span></div>
-        <div class="cal-cell sat"><span class="n">26</span></div>
-        <div class="cal-cell sun"><span class="n">27</span></div>
-        <div class="cal-cell"><span class="n">28</span></div>
-        <div class="cal-cell"><span class="n">29</span></div>
-        <div class="cal-cell"><span class="n">30</span></div>
-        <div class="cal-cell empty"></div>
-        <div class="cal-cell empty"></div>
-        <div class="cal-cell empty"></div>
+        <div class="cal-cell empty"></div><div class="cal-cell empty"></div>
+        <div class="cal-cell"><span class="n">1</span></div><div class="cal-cell"><span class="n">2</span></div><div class="cal-cell"><span class="n">3</span></div><div class="cal-cell"><span class="n">4</span></div><div class="cal-cell sat"><span class="n">5</span></div>
+        <div class="cal-cell sun"><span class="n">6</span></div><div class="cal-cell"><span class="n">7</span></div><div class="cal-cell"><span class="n">8</span></div><div class="cal-cell"><span class="n">9</span></div><div class="cal-cell"><span class="n">10</span></div><div class="cal-cell"><span class="n">11</span></div>
+        <div class="cal-cell sat has" id="eventDay" tabindex="0" role="button" aria-label="9月12日 オープニングセミナーの詳細"><span class="n">12</span><span class="ev-name">オープニング<br>セミナー</span></div>
+        <div class="cal-cell sun"><span class="n">13</span></div><div class="cal-cell"><span class="n">14</span></div><div class="cal-cell"><span class="n">15</span></div><div class="cal-cell"><span class="n">16</span></div><div class="cal-cell"><span class="n">17</span></div><div class="cal-cell"><span class="n">18</span></div><div class="cal-cell sat"><span class="n">19</span></div>
+        <div class="cal-cell sun"><span class="n">20</span></div><div class="cal-cell"><span class="n">21</span></div><div class="cal-cell"><span class="n">22</span></div><div class="cal-cell"><span class="n">23</span></div><div class="cal-cell"><span class="n">24</span></div><div class="cal-cell"><span class="n">25</span></div><div class="cal-cell sat"><span class="n">26</span></div>
+        <div class="cal-cell sun"><span class="n">27</span></div><div class="cal-cell"><span class="n">28</span></div><div class="cal-cell"><span class="n">29</span></div><div class="cal-cell"><span class="n">30</span></div><div class="cal-cell empty"></div><div class="cal-cell empty"></div><div class="cal-cell empty"></div>
       </div>
-
-      <ul class="cal-list">
-        <li>
-          <span class="cl-date">9/12<small>（土）</small></span>
-          <span class="cl-body">
-            <b>オープニングセミナー</b> <span class="tag tag-guest">ゲスト参加OK</span>
-            <small>お時間は決まりしだい<a href="https://lin.ee/6v6NCVt" target="_blank" rel="noopener">公式LINE</a>でお知らせします。</small>
-          </span>
-        </li>
-      </ul>
-
-      <div class="cal-any">
-        <b>随時　9:00〜21:00・事前予約制</b>
-        <span>見学（無料）／ドロップイン（3,000円）／メンタリング（会員限定）</span>
-      </div>
-
-      <p class="cal-note">
-        そのほかの企画は、決まりしだい<a href="https://lin.ee/6v6NCVt" target="_blank" rel="noopener">公式LINE</a>でお知らせします。<br>
-        ご参加のお申し込みは、いずれも<a href="https://lin.ee/6v6NCVt" target="_blank" rel="noopener">公式LINE</a>から承ります。
-      </p>
-
-      <div class="cal-cta">
-        <a class="btn btn-lg" href="https://lin.ee/6v6NCVt" target="_blank" rel="noopener">公式LINEで申し込む</a>
-      </div>
+      <article class="event-card" id="eventDetail">
+        <div class="event-date">9.12 <small>土曜日</small></div>
+        <div class="event-body"><h3>オープニングセミナー <span class="tag tag-guest">ゲスト参加OK</span></h3><p>お時間は決まりしだい、公式LINEでお知らせします。</p></div>
+        <a class="btn" href="https://lin.ee/6v6NCVt" target="_blank" rel="noopener">参加を申し込む</a>
+      </article>
+      <div class="anytime"><b>随時　9:00〜21:00・事前予約制</b><span>見学（無料）／ドロップイン（3,000円）／メンタリング（会員限定）</span></div>
+      <p class="note">そのほかの企画は、決まりしだい<a href="https://lin.ee/6v6NCVt" target="_blank" rel="noopener">公式LINE</a>でお知らせします。</p>
     </div>
   </div>
 </section>
+
+<section class="big-cta reveal">
+  <div class="narrow">
+    <small>LET YOUR CHARM BLOOM</small>
+    <h2>あなたの魅力がひらく時間を、<br>miallで。</h2>
+    <a class="btn btn-light" href="https://lin.ee/6v6NCVt" target="_blank" rel="noopener">公式LINEで申し込む</a>
+  </div>
+</section>
+</main>
 
 <footer>
   <div class="wrap">
     <div class="fgrid">
-      <div>
-        <div class="logo">miall<small>COMMUNITY WORKSPACE</small></div>
-        <p style="margin-top:16px;max-width:26em;line-height:1.9">
-          自分を見つけた人から、輝きはじめる。<br>前に進みたい女性のための、女性限定のコミュニティワークスペース。
-        </p>
-      </div>
-      <div class="fmeta">
-        <b>営業時間</b>　9:00 – 21:00<br>
-        <b>所在地</b>　長野県長野市鶴賀問御所町1241-1 長野銀座信越ビル 8階<br>
-        <b>お問い合わせ</b>　<a href="https://lin.ee/6v6NCVt" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline">公式LINE</a>　<span style="opacity:.6;font-size:.92em">（見学・ドロップイン・ご質問はこちらから）</span>　<br>
-        <a href="rules.html" style="color:inherit">ご利用ルール</a>　/　<a href="terms.html" style="color:inherit">会員規約</a>　/　<a href="privacy.html" style="color:inherit">プライバシーポリシー</a>
-      </div>
+      <div><div class="logo">miall<small>COMMUNITY WORKSPACE</small></div><p style="margin-top:16px">自分を見つけた人から、輝きはじめる。<br>前に進みたい女性のためのコミュニティワークスペース。</p></div>
+      <div class="fmeta"><b>営業時間</b>　9:00 – 21:00<br><b>所在地</b>　長野県長野市鶴賀問御所町1241-1 長野銀座信越ビル 8階<br><b>お問い合わせ</b>　<a href="https://lin.ee/6v6NCVt" target="_blank" rel="noopener">公式LINE</a></div>
     </div>
-    <div class="copy"><span style="display:block;margin-bottom:10px">テーマフラワー：<b style="color:rgba(255,255,255,.9);font-weight:400">ラナンキュラス</b>　—　花言葉は「とても魅力的」</span>運営：株式会社Siayell　／　© miall community workspace　<span style="opacity:.55;font-size:11px">更新 2026-08-24 20:45</span></div>
+    <div class="copy">テーマフラワー：ラナンキュラス — 花言葉は「とても魅力的」<br>運営：株式会社Siayell　／　© miall community workspace</div>
   </div>
 </footer>
-<!-- ============ スマホ用の固定バー ============ -->
-<div class="stickycta">
-  <a class="btn btn-ghost" href="video.html">魅力覚醒動画を見る</a>
-  <a class="btn" href="https://lin.ee/6v6NCVt" target="_blank" rel="noopener">無料で見学を申し込む</a>
-</div>
 
-<!-- ============ CHATBOT ミオ ============ -->
-<style>
-.mio-fab{position:fixed;right:20px;bottom:20px;z-index:900;display:flex;align-items:center;gap:12px;background:var(--ivory);border:1px solid var(--gold-500);border-radius:999px;padding:8px 20px 8px 8px;cursor:pointer;box-shadow:0 14px 34px rgba(61,54,44,.18);transition:.25s;font-family:var(--sans)}
-.mio-fab:hover{transform:translateY(-2px);box-shadow:0 18px 40px rgba(61,54,44,.22)}
-.mio-fab img{width:46px;height:46px;border-radius:50%;object-fit:cover;display:block}
-.mio-fab span{font-size:13.5px;color:var(--ink);letter-spacing:.06em;white-space:nowrap}
-.mio-fab span small{display:block;font-size:10.5px;letter-spacing:.16em;color:var(--ink-mute);margin-top:2px}
-@media(max-width:520px){.mio-fab span{display:none}.mio-fab{padding:8px;right:16px;bottom:16px}}
-
-.mio-panel{position:fixed;right:20px;bottom:20px;z-index:901;width:min(380px,calc(100vw - 32px));height:min(600px,calc(100vh - 40px));background:var(--cream);border:1px solid var(--gold-500);border-radius:8px;box-shadow:0 26px 60px rgba(61,54,44,.28);display:none;flex-direction:column;overflow:hidden;font-family:var(--sans)}
-.mio-panel.open{display:flex}
-@media(max-width:520px){.mio-panel{right:8px;bottom:8px;width:calc(100vw - 16px);height:calc(100vh - 24px)}}
-
-.mio-head{display:flex;align-items:center;gap:12px;padding:14px 16px;background:linear-gradient(160deg,var(--champagne) 0%,#fdf9ef 100%);border-bottom:1px solid var(--rose-100);flex:none}
-.mio-head img{width:42px;height:42px;border-radius:50%;object-fit:cover}
-.mio-head b{font-family:var(--serif);font-size:16px;font-weight:500;color:var(--ink);letter-spacing:.08em;display:block}
-.mio-head small{font-size:11px;color:var(--ink-mute);letter-spacing:.1em}
-.mio-close{margin-left:auto;background:none;border:0;font-size:20px;line-height:1;color:var(--ink-mute);cursor:pointer;padding:6px}
-.mio-close:hover{color:var(--ink)}
-
-.mio-log{flex:1;overflow-y:auto;padding:18px 16px;display:flex;flex-direction:column;gap:14px}
-.mio-row{display:flex;gap:10px;align-items:flex-start}
-.mio-row.me{justify-content:flex-end}
-.mio-row img{width:30px;height:30px;border-radius:50%;object-fit:cover;flex:none}
-.mio-bubble{max-width:80%;background:var(--ivory);border:1px solid var(--rose-100);border-radius:2px 12px 12px 12px;padding:12px 15px;font-size:14px;line-height:1.9;color:var(--ink);box-shadow:0 4px 12px rgba(61,54,44,.05);
-  overflow-wrap:anywhere;line-break:strict;text-align:left}
-@media(max-width:520px){.mio-bubble{max-width:86%;font-size:13.5px}}
-.mio-bubble a{word-break:break-all}
-.mio-row.me .mio-bubble{background:linear-gradient(160deg,#c2a35f 0%,#a5843a 100%);color:#fff;border:0;border-radius:12px 2px 12px 12px}
-.mio-bubble a{color:var(--rose-700)}
-.mio-bubble b{font-weight:500}
-
-.mio-chips{display:flex;flex-wrap:wrap;gap:7px;padding:0 16px 12px}
-.mio-chips button{background:var(--ivory);border:1px solid var(--gold-500);color:var(--rose-700);border-radius:999px;padding:7px 14px;font-size:12.5px;cursor:pointer;font-family:var(--sans);transition:.2s}
-.mio-chips button:hover{background:var(--blush-soft)}
-
-.mio-form{display:flex;gap:8px;padding:12px 14px;border-top:1px solid var(--rose-100);background:var(--ivory);flex:none}
-.mio-form input{flex:1;border:1px solid var(--rose-200);border-radius:3px;padding:11px 13px;font-size:14px;font-family:var(--sans);color:var(--ink);background:var(--cream)}
-.mio-form input:focus{outline:0;border-color:var(--gold-500)}
-.mio-form button{background:linear-gradient(160deg,#c2a35f 0%,#8a6c28 100%);color:#fff;border:0;border-radius:3px;padding:0 18px;font-size:13.5px;cursor:pointer;font-family:var(--sans);letter-spacing:.06em}
-.mio-typing{display:inline-flex;gap:5px;align-items:center;padding:4px 2px}
-.mio-typing i{width:6px;height:6px;border-radius:50%;background:var(--rose-400);display:block;animation:mioDot 1.2s ease-in-out infinite}
-.mio-typing i:nth-child(2){animation-delay:.15s}
-.mio-typing i:nth-child(3){animation-delay:.3s}
-@keyframes mioDot{0%,60%,100%{opacity:.3;transform:translateY(0)}30%{opacity:1;transform:translateY(-3px)}}
-@media(prefers-reduced-motion:reduce){.mio-typing i{animation:none;opacity:.6}}
-.mio-note{font-size:10.5px;color:var(--ink-mute);text-align:center;padding:0 14px 10px;background:var(--ivory);line-height:1.7}
-</style>
-
-<button class="mio-fab" id="mioFab" aria-label="ミオに質問する">
-  <img src="images/mio.png" alt="">
-  <span>ミオに聞いてみる<small>MIALL CONCIERGE</small></span>
-</button>
-
-<div class="mio-panel" id="mioPanel" role="dialog" aria-label="ミオとのチャット">
-  <div class="mio-head">
-    <img src="images/mio.png" alt="">
-    <div>
-      <b>ミオ</b>
-      <small>miall コンシェルジュ</small>
-    </div>
-    <button class="mio-close" id="mioClose" aria-label="閉じる">×</button>
-  </div>
-  <div class="mio-log" id="mioLog"></div>
-  <div class="mio-chips" id="mioChips"></div>
-  <form class="mio-form" id="mioForm">
-    <input id="mioInput" type="text" placeholder="気になることを入れてください" autocomplete="off">
-    <button type="submit">送る</button>
-  </form>
-  <p class="mio-note">ミオはAIです。まちがえることもありますので、<br>大事なことは公式LINEでご確認ください。</p>
-</div>
+<button class="mio-fab" id="mioFab" aria-label="ミオに質問する"><img src="images/mio.png" alt=""><span>ミオに聞いてみる</span></button>
+<div class="mio-pop" id="mioPop"><b>こんにちは、ミオです。</b><p>イベント・見学・料金について、公式LINEからお気軽に聞いてくださいね。</p><a href="https://lin.ee/6v6NCVt" target="_blank" rel="noopener">公式LINEで質問する →</a></div>
+<div class="stickycta"><a class="btn" href="https://lin.ee/6v6NCVt" target="_blank" rel="noopener">無料で見学を申し込む</a></div>
 
 <script>
 (function(){
-  /* AIの返答を返すエンドポイント。空文字にするとキーワード応答だけで動く。 */
-  var API_URL = "https://miall-lp.vercel.app/api/workspace-chat";
-  var LINE_URL = "https://lin.ee/6v6NCVt";  /* 公式LINE（ワークスペース） */
-  var MAIL = "siayell20240308@gmail.com";
-  var AV = "images/mio.png";
-
-  var KB = [
-    {k:["料金","会費","いくら","値段","月額","価格","月謝","費用"],
-     a:'💐 月会費は <b>16,500円（税込）</b>です。<br>年払いなら <b>月あたり14,850円</b>。<br>1年で19,800円おトクになります。<br><br>スペースも設備も、月1回のメンタリングも同好会も、ぜんぶ込みです。<br><a href="price.html">料金のページを見る →</a>'},
-    {k:["入会金","初期費用","オープニング","先着"],
-     a:'🎫 入会金は通常11,000円ですが、<b>いまなら0円</b>です。<br>オープニング会員さま限定なので、この機会にぜひ。<br><a href="price.html">くわしくはこちら →</a>'},
-    {k:["見学","体験","申し込み","申込","予約","行きたい","行ってみたい"],
-     a:'☺️ <b>見学は無料</b>です。<br>30分ほど、ゆっくりご案内します。<br><br>その日に決めていただかなくて大丈夫。<br>まずは雰囲気を見にいらしてください。<br><br>公式LINEからご希望の日時をお送りくださいね。<br><a href="index.html#contact">お申し込みはこちら →</a>'},
-    {k:["ドロップイン","一日","1日","単発","ビジター"],
-     a:'☕️ 1日だけのご利用は <b>3,000円</b>です。<br>公式LINEからご予約くださいね。<br><br>月6日以上お使いになるなら、会員のほうがおトクです。'},
-    {k:["設備","何がある","wi-fi","wifi","ワイファイ","電源","コンセント","プリンター","プロジェクター","モニター","マイク","ロッカー","更衣室","冷蔵庫"],
-     a:'✨ ぜんぶ会費に入っています。<br><br>🖥 Wi-Fi・コンセント・スペース使い放題<br>🖨 プリンター・プロジェクター・スクリーン・モニター・マイク<br>☕️ フリードリンク・おやつ・冷蔵庫<br>👜 ロッカー・更衣室<br>🏃‍♀️ トレーニングスペース・グッズ<br><br>あとから買い足すものはありません。'},
-    {k:["ドリンク","飲み物","おやつ","軽食","食べ物","オーガニック","無農薬"],
-     a:'☕️ フリードリンクとおやつをご用意しています。<br><b>無農薬・オーガニックにこだわった</b>良質なものばかりです。<br><br>追加のお代はいただきません。'},
-    {k:["メンタリング","相談","面談","藤澤","代表","コンサル"],
-     a:'🌿 <b>月1回・30分の個別メンタリング</b>が会費に入っています。<br><br>担当は代表の藤澤美嘉。<br>値段のつけ方、次にどこへ広げるか、売れる形のつくり方。<br>そういうお話を、ひとりずつうかがいます。<br><br>ご予約は公式LINEから。<br>※今後、会員数によってマネージャークラスが担当することもあります。'},
-    {k:["miall会","ミアル会","交流","飲み会","食事会"],
-     a:'🍽 月に1回、<b>おいしいものを食べながら</b>近況を話す会です。<br>かしこまった集まりではありません。<br><br>お友だちをお連れいただくのも大歓迎です。<br>※毎回、会費制です（お食事代として）。ご参加は自由です。'},
-    {k:["同好会","サークル","部活","ai同好会","占い","金融同好会"],
-     a:'🤝 同好会は<b>自由に作れます</b>。<br>AI、占い、金融など、興味の合う方が集まればそれで成立です。<br><br>場所と機材は運営がご用意します。'},
-    {k:["学び","講座","スクール","セミナー","勉強","動画編集","栄養学"],
-     a:'📖 AI・動画編集・栄養学など、<br>仕事につながるテーマで連続講座をひらいています。<br><br>会員さまに講師をお願いすることもあります。<br>※講座は会費とは別のお申し込みです。会員価格をご用意しています。'},
-    {k:["資金","調達","助成金","補助金","融資","借り","銀行","創業","開業資金","お金を借り","エンジェル","投資家","出資","vc"],
-     a:'💰 <b>資金調達や助成金のご相談もできます。</b><br><br>借りるべきか、使える制度があるか、そもそも今なのか。<br>金融の現場を長く見てきた人間が近くにいますので、<br>調べる前にまず聞いていただけます。<br><br>🤝 <b>エンジェル投資家コミュニティとも連携</b>しています。<br>借りる以外の道を考えたいときにも、その世界を知っている方に話を聞けます。<br><br>ご相談はメンタリングの中でも大丈夫です。<br>※お受けするのはご相談とお引き合わせまでです。申請の代行はしておりませんし、出資をお約束するものでもありません。'},
-    {k:["専門家","プロ","講師","誰がいる","サポート","経営者","コミュニティ","人脈","つながり先","ファスティング","化粧品","メイク","カウンセラー","心理","栄養士","管理栄養士","栄養"],
-     a:'✨ <b>心身ともに支えられる専門家</b>が集まっています。<br><br>🌱 <b>ファスティングの専門家</b>／日本一の実績<br>💼 <b>金融と接遇のプロ</b>／大手証券で法人個人とも日本一<br>💄 <b>オーガニック化粧品の開発者</b>／AI×人間力講師<br>🤝 <b>経営者コミュニティの主宰</b>／1,000人以上を運営<br><br>ほかに心理カウンセラーや管理栄養士も。<br>まだまだたくさんいらっしゃいます。<br><br>お名前や詳しいご経歴は、見学のときにご紹介しますね。<br>※それぞれの専門サービスは会費とは別です。会員価格があります。'},
-    {k:["リトリート","イベント","農業","遠く","旅","予定","日程","いつ","オープニングセミナー"],
-     a:'📅 直近は <b>9月12日（土）のオープニングセミナー</b>です。<br>ゲストの方もご参加いただけます。<br>お時間は決まりしだい公式LINEでお知らせします。<br><br>そのほか、miall会・同好会・学びの場・リトリートなどの企画があります。<br><a href="events.html">今月の予定を見る →</a>'},
-    {k:["場所","住所","アクセス","どこ","地図"],
-     a:'📍 長野県長野市鶴賀問御所町1241-1<br>長野銀座信越ビル 8階です。<br><br>長野駅から歩いていただけます。<br>お車の方は近隣のコインパーキングをご利用ください。'},
-    {k:["駐車","駐車場","車","パーキング","停め","とめ"],
-     a:'🚗 専用の駐車場はご用意していません。<br><b>近隣のコインパーキング</b>をご利用ください。<br><br>ビルの周辺にいくつかございます。'},
-    {k:["時間","何時","営業","開いて","夜","朝"],
-     a:'🕘 <b>9:00〜21:00</b> です。<br>朝から夜まで、好きなときにお使いいただけます。<br><br>お片づけを含めて時間内にお願いしますね。'},
-    {k:["女性","男性","男","性別"],
-     a:'🌸 <b>女性限定</b>です。<br>気を使わずに集中していただけることを大切にしています。<br><br>ゲストとしてお越しの方も同じです。'},
-    {k:["ゲスト","同伴","友達","友だち","連れて","客","打合せ","商談","面談場所"],
-     a:'👭 会員さまおひとりにつき、<b>1名までご一緒</b>いただけます。<br>追加料金はかかりません。<br><br>打合せや商談にもどうぞ。<br>※ゲストの方だけでのご利用はできません。'},
-    {k:["自分の講座","開催","主催","集客","名簿","講師"],
-     a:'🎤 会員さまがこの場で講座をひらけます。<br>プロジェクター・スクリーン・マイクをお使いいただけます。<br><br>※集客をともなう場合は、名簿にお名前のある方のみご入館いただけます。<br>※開催の2日前までに、日時・内容・名簿をお知らせください。'},
-    {k:["支払","払い","クレジット","カード","現金","決済"],
-     a:'💳 クレジットカードでの自動継続が原則です。<br><br>※現金でのお支払いは原則としてお受けしておりません。<br>3ヶ月分をまとめて前納いただける場合のみ、ご相談ください。'},
-    {k:["退会","やめ","解約","年払い","返金"],
-     a:'📝 退会は、ご希望の月の<b>前月末日まで</b>にお知らせください。<br><br>年払いの会費は、途中でおやめになる場合も返金いたしかねます。<br>1年ご利用いただく前提の割引価格のためです。<br><br>迷われているなら、まず月払いからが安心です。'},
-    {k:["紹介","スタバ","スターバックス","特典"],
-     a:'🎁 ご紹介でお越しの方と、ご紹介くださった会員さま。<br><b>どちらにも Starbucks eチケット500円分</b>をお贈りしています。<br><br>ご紹介の都度お受け取りいただけます。'},
-    {k:["ルール","規約","禁止","悪口","応援","約束"],
-     a:'🤍 約束は、ふたつだけです。<br><br><b>悪口を言わない。</b><br><b>人を応援できる人でいる。</b><br><br>これだけで、安心して過ごせる場所になります。<br><a href="rules.html">ご利用ルール →</a>　<a href="terms.html">会員規約 →</a>'},
-    {k:["カメラ","防犯","セキュリティ","安全"],
-     a:'🔒 防犯のため、入り口と室内にカメラがあります。<br><b>更衣室・化粧室にはありません。</b><br><br>映像は3ヶ月保存し、防犯と安全確保のためだけに使います。'},
-    {k:["動画","ムービー","覚醒"],
-     a:'🎥 約10分の<b>魅力覚醒動画</b>があります。<br>登録なしで、そのままご覧いただけます。<br><a href="video.html">動画を見る →</a>'},
-    {k:["休会","休み","お休み"],
-     a:'🌙 休会については、個別にご相談させてください。<br>公式LINEかメールでお気軽にどうぞ。'},
-    {k:["インボイス","領収書","経費"],
-     a:'🧾 領収書は発行しています。<br><br>※適格請求書発行事業者（インボイス）の登録はしておりませんので、<br>インボイスの発行はできません。'},
-    {k:["会社員","副業","独立","フリーランス","誰が","どんな人"],
-     a:'🌷 ご自分でお仕事をされている方、副業や独立の準備中の方、<br>リモートワークの方などがいらっしゃいます。<br><br>「これから何か始めたい」という気持ちがあれば、それで十分です。'},
-    {k:["ラナンキュラス","花","花言葉","テーマ"],
-     a:'💐 テーマフラワーはラナンキュラスです。<br>花言葉は<b>「とても魅力的」</b>。<br><br>幾重にも花びらを重ねて、ゆっくりひらいていく花です。'}
-  ];
-
-  var CHIPS = ["💐 料金は？","☺️ 見学したい","✨ どんな設備？","🌿 メンタリングって？","📍 場所はどこ？","💰 資金の相談は？"];
-
-  var log = document.getElementById('mioLog');
-  var chips = document.getElementById('mioChips');
-  var panel = document.getElementById('mioPanel');
-  var fab = document.getElementById('mioFab');
-  var started = false;
-
-  function bubble(text, me){
-    var row = document.createElement('div');
-    row.className = 'mio-row' + (me ? ' me' : '');
-    if(!me){
-      var av = document.createElement('img'); av.src = AV; av.alt = ''; row.appendChild(av);
+  var header=document.getElementById("header"),photo=document.getElementById("heroPhoto"),glow=document.getElementById("glow");
+  addEventListener("scroll",function(){
+    header.classList.toggle("scrolled",scrollY>20);
+    if(photo) photo.style.transform="scale(1.06) translateY("+(scrollY*.045)+"px)";
+  },{passive:true});
+  addEventListener("pointermove",function(e){
+    if(glow){glow.style.left=e.clientX+"px";glow.style.top=e.clientY+"px"}
+    if(photo && scrollY<700){
+      var x=(e.clientX/innerWidth-.5)*10,y=(e.clientY/innerHeight-.5)*8;
+      photo.style.transform="scale(1.075) translate("+x+"px,"+y+"px)";
     }
-    var b = document.createElement('div');
-    b.className = 'mio-bubble';
-    b.innerHTML = text;
-    row.appendChild(b);
-    log.appendChild(row);
-    log.scrollTop = log.scrollHeight;
-  }
-
-  /* AIが使えないときに備えた、キーワードでの受け答え */
-  function localAnswer(q){
-    var s = q.toLowerCase().replace(/\s/g,'');
-    var best = null, score = 0;
-    KB.forEach(function(item){
-      var n = 0;
-      item.k.forEach(function(w){ if(s.indexOf(w.toLowerCase()) >= 0) n += w.length; });
-      if(n > score){ score = n; best = item; }
-    });
-    if(best) return best.a;
-    return '🙇\u200d♀️ ごめんなさい、それはお答えできませんでした。<br><br>'
-      + '<a href="' + LINE_URL + '" target="_blank" rel="noopener">公式LINE</a> からお気軽にどうぞ。<br>'
-      + '代表か担当が、お返事します。';
-  }
-
-  function escapeHtml(t){
-    return String(t)
-      .replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')
-      .replace(/"/g,'&quot;');
-  }
-
-  var history = [];   /* AIに渡す会話履歴 */
-  var busy = false;
-
-  function typing(){
-    var row = document.createElement('div');
-    row.className = 'mio-row';
-    var av = document.createElement('img'); av.src = AV; av.alt = ''; row.appendChild(av);
-    var b = document.createElement('div');
-    b.className = 'mio-bubble';
-    b.innerHTML = '<span class="mio-typing"><i></i><i></i><i></i></span>';
-    row.appendChild(b);
-    log.appendChild(row);
-    log.scrollTop = log.scrollHeight;
-    return row;
-  }
-
-  function ask(q){
-    if(busy) return;
-    busy = true;
-    bubble(q, true);
-    history.push({ role: 'user', content: q });
-    var wait = typing();
-
-    var done = function(html, plain){
-      wait.remove();
-      bubble(html);
-      history.push({ role: 'assistant', content: plain || html.replace(/<[^>]+>/g,'') });
-      if(history.length > 24) history = history.slice(-24);
-      busy = false;
-    };
-
-    if(!API_URL){
-      setTimeout(function(){ done(localAnswer(q)); }, 420);
-      return;
-    }
-
-    var ctrl = typeof AbortController !== 'undefined' ? new AbortController() : null;
-    var timer = setTimeout(function(){ if(ctrl) ctrl.abort(); }, 20000);
-
-    fetch(API_URL, {
-      method: 'POST',
-      headers: { 'content-type': 'application/json' },
-      body: JSON.stringify({ messages: history }),
-      signal: ctrl ? ctrl.signal : undefined
-    })
-      .then(function(r){ if(!r.ok) throw new Error('http ' + r.status); return r.json(); })
-      .then(function(d){
-        clearTimeout(timer);
-        if(!d || !d.reply) throw new Error('empty');
-        done(escapeHtml(d.reply).replace(/\n/g,'<br>'), d.reply);
-      })
-      .catch(function(){
-        clearTimeout(timer);
-        done(localAnswer(q));   /* つながらないときはキーワードで答える */
-      });
-  }
-
-  function start(){
-    if(started) return; started = true;
-    bubble('こんにちは😊<br>miall のコンシェルジュ、<b>ミオ</b>です。<br><br>この場所のことで、<br>気になることはありますか？<br><br>下のボタンからでも、<br>直接入力でも大丈夫ですよ。');
-    CHIPS.forEach(function(c){
-      var b = document.createElement('button');
-      b.type = 'button'; b.textContent = c;
-      b.onclick = function(){ ask(c.replace(/^[^\u3040-\u30ff\u4e00-\u9fff\w]+/, '')); };  /* 絵文字は質問に含めない */
-      chips.appendChild(b);
-    });
-  }
-
-  fab.onclick = function(){ panel.classList.add('open'); fab.style.display='none'; start(); document.getElementById('mioInput').focus(); };
-  document.getElementById('mioClose').onclick = function(){ panel.classList.remove('open'); fab.style.display=''; };
-  document.getElementById('mioForm').onsubmit = function(e){
-    e.preventDefault();
-    var i = document.getElementById('mioInput');
-    var v = i.value.trim();
-    if(!v) return;
-    i.value = '';
-    ask(v);
-  };
+  },{passive:true});
+  var io=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting)e.target.classList.add("in")})},{threshold:.14});
+  document.querySelectorAll(".reveal").forEach(function(el){io.observe(el)});
+  var day=document.getElementById("eventDay"),detail=document.getElementById("eventDetail");
+  function showEvent(){detail.classList.add("active");detail.scrollIntoView({behavior:"smooth",block:"center"});setTimeout(function(){detail.classList.remove("active")},1600)}
+  day.addEventListener("click",showEvent);
+  day.addEventListener("keydown",function(e){if(e.key==="Enter"||e.key===" "){e.preventDefault();showEvent()}});
+  var fab=document.getElementById("mioFab"),pop=document.getElementById("mioPop");
+  fab.addEventListener("click",function(){pop.classList.toggle("open")});
 })();
 </script>
-
-<!-- ============ 見学CTAの点滅（やわらかいパルス） ============ -->
-<style>
-@keyframes miallPulse{
-  0%,100%{box-shadow:0 6px 18px rgba(61,54,44,.13), 0 0 0 0 rgba(203,174,107,.55);transform:translateY(0)}
-  50%    {box-shadow:0 10px 26px rgba(61,54,44,.20), 0 0 0 12px rgba(203,174,107,0);transform:translateY(-2px)}
-}
-@keyframes miallSweep{0%{left:-140%}55%,100%{left:140%}}
-.btn-pulse{position:relative;overflow:hidden;animation:miallPulse 2.6s ease-in-out infinite}
-.btn-pulse::after{content:"";position:absolute;top:-60%;left:-140%;width:60%;height:220%;pointer-events:none;
-  background:linear-gradient(100deg,transparent 0%,rgba(255,255,255,.55) 50%,transparent 100%);
-  transform:rotate(14deg);animation:miallSweep 2.6s ease-in-out infinite}
-.btn-pulse:hover,.btn-pulse:hover::after{animation-play-state:paused}
-@media(prefers-reduced-motion:reduce){.btn-pulse,.btn-pulse::after{animation:none}}
-
-/* ==================================================================
-   デザイン強化 ── 輪郭をはっきりさせる（2026-08-24）
-   ・地色を少し深く、カードを明るく → 面の境目が見える
-   ・文字を濃く → 読みやすさと精度感
-   ・花のもやを半分に → 写真と文字が立つ
-   ・メンタリングを濃色の面に → ページ全体が締まる
-   ================================================================== */
-:root{
-  --cream:#f5f1e8;                 /* 地色を一段深く */
-  --ivory:#fffdf7;                 /* カードは明るく（純白ではない） */
-  --blush-soft:#f9f5ec;
-  --blush:#efe8d8;
-  --rose-100:#e2dac8;
-  --rose-200:#cfc4ab;
-  --ink:#26221d;                   /* 文字を濃く */
-  --ink-soft:#575046;
-  --ink-mute:#8a8276;
-  --shadow-photo:0 26px 64px rgba(38,34,29,.22), 0 6px 16px rgba(38,34,29,.10);
-}
-body{font-size:16.5px;line-height:1.85;letter-spacing:.015em}
-
-/* --- 花のもやを半分に。花は残るが、文字と写真が前に出る --- */
-.softbg::before{opacity:calc(var(--bgop,.13) * .5)}
-.photobg::after{box-shadow:inset 0 0 0 1px rgba(203,174,107,.28)}
-
-/* --- 見出し：大きく、詰めて、濃く --- */
-h2.sec,.sec{letter-spacing:.02em;color:var(--ink);font-size:clamp(25px,4.1vw,42px);line-height:1.5}
-.hero h1{letter-spacing:.02em;font-size:clamp(32px,6.6vw,62px)}
-.kicker{font-family:var(--sans);font-weight:500;font-size:11px;letter-spacing:.3em;color:var(--rose-700)}
-.center .kicker::after{content:"";display:block;width:26px;height:2px;background:var(--gold-grad);margin:12px auto 0}
-
-/* --- カード：実体のある影と、はっきりした角 --- */
-.card,.eq-box,.entry>div,.pro,.goal-lines div,.rule-list div,.ev{
-  background:var(--ivory);
-  border:1px solid rgba(38,34,29,.08);
-  border-radius:10px;
-  box-shadow:0 1px 2px rgba(38,34,29,.04), 0 12px 28px rgba(38,34,29,.07);
-  transition:transform .25s ease, box-shadow .25s ease}
-.card:hover,.pro:hover,.eq-box:hover,.ev:hover{
-  transform:translateY(-3px);
-  box-shadow:0 2px 4px rgba(38,34,29,.05), 0 20px 40px rgba(38,34,29,.11)}
-.goal-lines div{border-top:3px solid var(--gold-500);border-radius:0 0 10px 10px}
-.school-list li{background:var(--ivory);border:1px solid rgba(38,34,29,.08);border-left:3px solid var(--gold-500);
-  border-radius:0 8px 8px 0;box-shadow:0 8px 20px rgba(38,34,29,.05)}
-
-/* --- ボタン：面で押す --- */
-.btn{border-radius:6px;font-weight:500;letter-spacing:.08em;
-  box-shadow:0 10px 24px rgba(122,95,33,.26);transition:.22s}
-.btn:hover{transform:translateY(-2px);box-shadow:0 14px 32px rgba(122,95,33,.32)}
-.btn-lg{padding:19px 46px;font-size:16.5px}
-.btn-ghost{background:var(--ivory);border:1.5px solid var(--gold-600);color:var(--rose-900);
-  box-shadow:0 6px 18px rgba(38,34,29,.07)}
-.btn-ghost:hover{background:var(--blush-soft);border-color:var(--rose-900)}
-
-/* --- 写真：白いベールを外して、くっきり見せる --- */
-.hero-photo,.mentor-photo,.goal-photo,.band-photo,.school-photo,.cta-photo{border-radius:10px}
-.hero-photo::after,.mentor-photo::after,.goal-photo::after,.band-photo::after,.school-photo::after{
-  box-shadow:inset 0 0 0 1px rgba(38,34,29,.10)}
-
-/* --- ★ 濃色の面：ここでページ全体が締まる --- */
-.mentor{background:linear-gradient(158deg,#2e2922 0%,#3f382e 55%,#282320 100%);border-block:0}
-.mentor::after{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;
-  background:linear-gradient(112deg,transparent 38%,rgba(232,213,166,.07) 50%,transparent 62%)}
-.mentor .kicker{color:#e0c88f}
-.mentor .kicker::after{background:linear-gradient(90deg,#e8d5a6,#a5843a)}
-.mentor .hairline{background:rgba(232,213,166,.3)}
-.mentor h2.sec{color:#fdfbf6}
-.mentor .mentor-body p{color:rgba(253,251,246,.80)}
-.mentor .mentor-body .big{color:#fdfbf6}
-.mentor b[style]{color:#e8d5a6!important}
-.mentor p[style]{color:rgba(253,251,246,.58)!important}
-.mentor .imgnote{color:rgba(253,251,246,.45)}
-.mentor .mentor-photo::after{box-shadow:inset 0 0 0 1px rgba(232,213,166,.35)}
-.mentor.softbg::before{opacity:.07;filter:brightness(1.6)}
-
-/* --- 節の境目をはっきり --- */
-section{position:relative}
-.price,.worry,.rules{border-block:1px solid var(--rose-100)}
-
-/* --- ヘッダー：スクロールしたら影で浮かせる --- */
-header.scrolled{box-shadow:0 6px 24px rgba(38,34,29,.07)}
-
-/* --- スマホ：下に固定の申し込みバー（人気LPの定番） --- */
-.stickycta{position:fixed;left:0;right:0;bottom:0;z-index:880;display:none;gap:8px;
-  background:rgba(245,241,232,.95);backdrop-filter:blur(12px);
-  border-top:1px solid var(--rose-200);
-  padding:10px 12px calc(10px + env(safe-area-inset-bottom))}
-.stickycta a{flex:1;text-align:center;padding:14px 8px;font-size:14px;letter-spacing:.04em;border-radius:6px}
-@media(max-width:760px){
-  .stickycta{display:flex}
-  body{padding-bottom:82px}
-  .mio-fab{bottom:88px}
-  .mio-panel{bottom:88px;height:calc(100vh - 108px)}
-}
-
-/* --- 金色の文字：薄すぎて消えていたので、濃い金に --- */
-.shine{
-  background:linear-gradient(102deg,#8a6c28 0%,#b8963f 20%,#6f5722 46%,#a5843a 72%,#7d6122 100%);
-  background-size:170% 100%;
-  -webkit-background-clip:text;background-clip:text;color:transparent;
-  filter:drop-shadow(0 1px 0 rgba(255,253,247,.55))}
-/* 濃色の面の上では、明るい金に反転させる */
-.mentor .shine,.cta-dark .shine{
-  background:linear-gradient(102deg,#f2e2b8 0%,#e8d5a6 26%,#cfae6b 52%,#f0dcae 78%,#e0c88f 100%);
-  -webkit-background-clip:text;background-clip:text;
-  filter:none}
-/* 大きく出す問いかけは、金だけに頼らず濃さも確保 */
-.askme q .shine{font-weight:600}
-.hero-quote b.shine{font-weight:600}
-@media(prefers-reduced-motion:reduce){.shine{animation:none}}
-
-/* --- 小さい画面では見出しを少しだけ小さく（不自然な改行を防ぐ） --- */
-@media(max-width:400px){
-  h2.sec,.sec{font-size:22.5px;line-height:1.6}
-  .hero h1{font-size:30px}
-  .askme q{font-size:25px}
-}
-
-/* --- 改行の調整（行末に1文字だけ残るのを防ぐ） --- */
-/* word-break:auto-phrase は日本語の文節で折り返す指定 */
-h2.sec,.sec,.card h3,.eq-box h4,.pro-name,.tf-name,.askme q,.hero h1,.goal-lines b,.school-list b{
-  word-break:auto-phrase}
-.pro-name{font-size:clamp(17px,1.45vw,20px);line-height:1.55}
-.goal h2.sec{font-size:clamp(23px,3.4vw,36px)}
-.card h3{font-size:17.5px;text-wrap:balance}
-.eq-box h4{text-wrap:balance}
-
-/* --- 濃色の面：黒を締めて、文字をはっきり読ませる --- */
-/* 花を重ねると黒が茶色く濁るので、この面だけ花を外す */
-.mentor.softbg::before{display:none}
-.mentor{background:linear-gradient(160deg,#221e19 0%,#302a22 48%,#1c1915 100%)}
-.mentor::after{background:linear-gradient(112deg,transparent 40%,rgba(240,220,174,.05) 50%,transparent 60%)}
-.mentor h2.sec{color:#fffdf7}
-.mentor .mentor-body p{color:#e6e0d5}
-.mentor .mentor-body .big{color:#fffdf7}
-.mentor b[style]{color:#f2dfab!important;font-weight:600!important}
-.mentor p[style]{color:#b3aa9c!important}
-.mentor .kicker{color:#e8d5a6}
-.mentor .hairline{background:rgba(240,220,174,.35)}
-
-/* --- テーマフラワー：花束を大きくしすぎず、文章と組む --- */
-.tf{padding:clamp(52px,7vw,90px) 0}
-.tf .tf-inner{grid-template-columns:1fr;gap:clamp(22px,3.4vw,44px);align-items:center}
-.tf-shot{max-width:min(300px,66vw);margin-inline:auto;border-radius:10px;
-  box-shadow:0 18px 44px rgba(38,34,29,.16), 0 4px 12px rgba(38,34,29,.08)}
-@media(min-width:760px){
-  .tf .tf-inner{grid-template-columns:minmax(0,320px) 1fr;text-align:left}
-  .tf-shot{margin:0;max-width:320px}
-  .tf .tf-words{justify-content:flex-start}
-}
-.tf-name{margin-top:4px}
-
-/* --- 濃色の面：色合いをやわらげ、細かい文字とリンクを読ませる --- */
-/* 真っ黒に近い黒はきつく、金とも合わないので、温かみのある濃茶に */
-.mentor{background:linear-gradient(160deg,#3b322a 0%,#4a4036 46%,#332c25 100%);
-  border-block:1px solid var(--gold-600)}
-.mentor h2.sec{color:#fffdf7}
-.mentor .mentor-body .big{color:#fffdf7}
-.mentor .mentor-body p{color:#ece6db}
-.mentor b[style]{color:#f5e3b4!important;font-weight:600!important}
-/* いちばん下の注記：暗すぎたので明るく、少し大きく */
-.mentor p[style]{color:#cdc4b4!important;font-size:13.5px!important;line-height:2.05!important}
-/* リンクが青いままだったので金に */
-.mentor a{color:#f0dcae;text-decoration:underline;text-underline-offset:3px;
-  text-decoration-color:rgba(240,220,174,.5)}
-.mentor a:hover{color:#fff6dd;text-decoration-color:#f0dcae}
-.mentor .kicker{color:#eddcb0}
-.mentor .kicker::after{background:linear-gradient(90deg,#f0dcae,#c2a35f)}
-.mentor .hairline{background:rgba(240,220,174,.4)}
-.mentor .mentor-photo{box-shadow:0 26px 60px rgba(0,0,0,.42)}
-.mentor .mentor-photo::after{box-shadow:inset 0 0 0 1px rgba(240,220,174,.32)}
-
-/* ---------- イベントカレンダー ---------- */
-.cal{background:var(--ivory);border:1px solid rgba(38,34,29,.09);border-radius:12px;
-  padding:clamp(20px,3.2vw,34px);box-shadow:0 1px 2px rgba(38,34,29,.04),0 14px 32px rgba(38,34,29,.07)}
-.cal-head{display:flex;align-items:baseline;justify-content:space-between;gap:14px;
-  padding-bottom:16px;border-bottom:1px solid var(--rose-100)}
-.cal-head h2{font-family:var(--serif);font-weight:500;font-size:clamp(20px,3vw,28px);letter-spacing:.06em;color:var(--ink)}
-.cal-head h2 b{font-size:1.5em;font-weight:500;color:var(--rose-700);margin:0 2px}
-.cal-head span{font-size:11px;letter-spacing:.28em;color:var(--ink-mute)}
-
-.cal-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:4px;margin-top:18px}
-.cal-dow{text-align:center;font-size:11.5px;letter-spacing:.12em;color:var(--ink-mute);padding:8px 0 10px}
-.cal-dow.sun{color:#b4756a}.cal-dow.sat{color:#7b8ba4}
-.cal-cell{position:relative;min-height:clamp(46px,9vw,74px);border-radius:7px;background:var(--cream);
-  padding:6px 4px 4px;text-align:center;border:1px solid transparent}
-.cal-cell.empty{background:transparent;border:0}
-.cal-cell .n{display:block;font-family:var(--serif);font-size:clamp(13px,2.2vw,16px);color:var(--ink-soft);line-height:1.2}
-.cal-cell.sun .n{color:#b4756a}.cal-cell.sat .n{color:#7b8ba4}
-.cal-cell.has{background:linear-gradient(160deg,#c2a35f 0%,#a5843a 55%,#8a6c28 100%);
-  border-color:var(--gold-600);box-shadow:0 8px 20px rgba(138,108,40,.26)}
-.cal-cell.has .n{color:#fffdf7;font-weight:500}
-.cal-cell.has .ev-name{display:block;margin-top:3px;font-size:9.5px;line-height:1.3;color:#fff6dd;
-  letter-spacing:.02em;word-break:auto-phrase}
-@media(max-width:520px){.cal-cell.has .ev-name{font-size:8px}}
-
-.cal-list{list-style:none;margin-top:26px;display:grid;gap:12px}
-.cal-list li{display:grid;grid-template-columns:1fr;gap:6px;background:var(--cream);
-  border-left:3px solid var(--gold-500);border-radius:0 8px 8px 0;padding:16px 18px}
-@media(min-width:620px){.cal-list li{grid-template-columns:110px 1fr;gap:18px;align-items:baseline}}
-.cl-date{font-family:var(--serif);font-size:19px;color:var(--rose-700);letter-spacing:.04em}
-.cl-date small{font-size:12px;color:var(--ink-mute);margin-left:2px}
-.cl-body b{font-weight:500;color:var(--ink);font-size:16px}
-.cl-body small{display:block;margin-top:6px;font-size:13px;color:var(--ink-soft);line-height:1.85}
-
-.cal-any{margin-top:16px;background:var(--blush-soft);border:1px dashed var(--rose-200);
-  border-radius:8px;padding:14px 18px;font-size:13.5px;color:var(--ink-soft);line-height:1.9}
-.cal-any b{display:block;color:var(--rose-700);font-weight:500;font-size:13px;letter-spacing:.06em;margin-bottom:2px}
-.cal-note{margin-top:18px;font-size:12.5px;color:var(--ink-mute);line-height:1.95}
-.cal-cta{margin-top:24px;text-align:center}
-</style>
-<script>
-(function(){
-  document.querySelectorAll('a.btn').forEach(function(a){
-    if(/見学/.test(a.textContent||'')) a.classList.add('btn-pulse');
-  });
-  var h=document.querySelector('header');
-  if(h){var t=document.querySelector('.topbar');
-    function u(){h.classList.toggle('scrolled',(window.scrollY||0)>((t?t.offsetHeight:0)+8));}
-    u();window.addEventListener('scroll',u,{passive:true});}
-})();
-</script>
-
 </body>
 </html>
