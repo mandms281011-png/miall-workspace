@@ -716,6 +716,19 @@ main>section{margin-top:-1px!important;margin-bottom:-1px!important}
  .photobg:not(.hero):not(.mentor):not(.cta)::before,.eqbg::before{top:-90px;bottom:-90px;background-position:var(--bgpos,center)}
 }
 </style>
+
+<style id="miall-hero-continuous-image-fix">
+/* One uninterrupted image layer across the complete hero */
+.hero.photobg{background:#faf8f4!important;isolation:isolate}
+.hero.photobg::after{content:"";position:absolute;inset:0!important;width:auto!important;height:auto!important;z-index:-2!important;background:url("images/ranunculus-flow.png") center 52%/cover no-repeat!important;opacity:1!important;box-shadow:none!important;pointer-events:none}
+.hero.photobg::before{content:"";position:absolute;inset:0!important;width:auto!important;height:auto!important;z-index:-1!important;background:
+ linear-gradient(90deg,rgba(250,248,244,.985) 0%,rgba(250,248,244,.94) 34%,rgba(250,248,244,.66) 58%,rgba(250,248,244,.16) 100%),
+ linear-gradient(180deg,rgba(250,248,244,.04) 0%,rgba(250,248,244,.08) 68%,#f8f3e9 100%)!important;pointer-events:none}
+@media(max-width:760px){
+ .hero.photobg::after{background-position:58% center!important}
+ .hero.photobg::before{background:linear-gradient(180deg,rgba(250,248,244,.78),rgba(250,248,244,.66) 62%,#f8f3e9 100%)!important}
+}
+</style>
 </head>
 <body>
 
