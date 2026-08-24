@@ -489,7 +489,7 @@ footer .logo{}
         <a href="events.html" style="color:inherit">イベント</a>　/　<a href="rules.html" style="color:inherit">ご利用ルール</a>　/　<a href="terms.html" style="color:inherit">会員規約</a>　/　<a href="privacy.html" style="color:inherit">プライバシーポリシー</a>
       </div>
     </div>
-    <div class="copy"><span style="display:block;margin-bottom:10px">テーマフラワー：<b style="color:rgba(255,255,255,.9);font-weight:400">ラナンキュラス</b>　—　花言葉は「とても魅力的」</span>運営：株式会社Siayell　／　© miall community workspace　<span style="opacity:.55;font-size:11px">更新 2026-08-24 19:59</span></div>
+    <div class="copy"><span style="display:block;margin-bottom:10px">テーマフラワー：<b style="color:rgba(255,255,255,.9);font-weight:400">ラナンキュラス</b>　—　花言葉は「とても魅力的」</span>運営：株式会社Siayell　／　© miall community workspace　<span style="opacity:.55;font-size:11px">更新 2026-08-24 20:14</span></div>
   </div>
 </footer>
 
@@ -942,6 +942,26 @@ h2.sec,.sec,.card h3,.eq-box h4,.pro-name,.tf-name,.askme q,.hero h1,.goal-lines
   .tf .tf-words{justify-content:flex-start}
 }
 .tf-name{margin-top:4px}
+
+/* --- 濃色の面：色合いをやわらげ、細かい文字とリンクを読ませる --- */
+/* 真っ黒に近い黒はきつく、金とも合わないので、温かみのある濃茶に */
+.mentor{background:linear-gradient(160deg,#3b322a 0%,#4a4036 46%,#332c25 100%);
+  border-block:1px solid var(--gold-600)}
+.mentor h2.sec{color:#fffdf7}
+.mentor .mentor-body .big{color:#fffdf7}
+.mentor .mentor-body p{color:#ece6db}
+.mentor b[style]{color:#f5e3b4!important;font-weight:600!important}
+/* いちばん下の注記：暗すぎたので明るく、少し大きく */
+.mentor p[style]{color:#cdc4b4!important;font-size:13.5px!important;line-height:2.05!important}
+/* リンクが青いままだったので金に */
+.mentor a{color:#f0dcae;text-decoration:underline;text-underline-offset:3px;
+  text-decoration-color:rgba(240,220,174,.5)}
+.mentor a:hover{color:#fff6dd;text-decoration-color:#f0dcae}
+.mentor .kicker{color:#eddcb0}
+.mentor .kicker::after{background:linear-gradient(90deg,#f0dcae,#c2a35f)}
+.mentor .hairline{background:rgba(240,220,174,.4)}
+.mentor .mentor-photo{box-shadow:0 26px 60px rgba(0,0,0,.42)}
+.mentor .mentor-photo::after{box-shadow:inset 0 0 0 1px rgba(240,220,174,.32)}
 </style>
 <script>
 (function(){
