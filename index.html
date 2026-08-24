@@ -794,6 +794,32 @@ main>section{margin-top:-1px!important;margin-bottom:-1px!important}
  .cta-bouquet-art{right:-52vw;width:110vw;opacity:.12}
 }
 </style>
+
+<style id="miall-flower-layer-fix">
+/* 花束を文章レイヤーより前へ。右側に収めて全体を見せる */
+.hero-bouquet-art{
+  z-index:6!important;
+  right:clamp(8px,2.2vw,38px)!important;
+  top:52%!important;
+  width:min(560px,42vw)!important;
+  transform:translateY(-50%)!important;
+  object-fit:contain!important;
+  opacity:.98!important;
+  mask-image:radial-gradient(ellipse at 50% 50%,#000 68%,rgba(0,0,0,.92) 82%,transparent 98%)!important;
+  -webkit-mask-image:radial-gradient(ellipse at 50% 50%,#000 68%,rgba(0,0,0,.92) 82%,transparent 98%)!important;
+  pointer-events:none!important;
+}
+.hero>.wrap{z-index:7!important}
+.hero h1,.hero .eyebrow,.hero-quote,.hero .lead,.hero-cta,.hero-facts,.hero-photo{position:relative;z-index:8}
+@media(min-width:900px){
+  .hero h1,.hero-quote,.hero .lead{max-width:62%}
+  .hero-bouquet-art{top:43%!important}
+}
+@media(max-width:899px){
+  .hero-bouquet-art{z-index:1!important;right:-28vw!important;top:25%!important;width:92vw!important;opacity:.22!important}
+  .hero>.wrap{z-index:2!important}
+}
+</style>
 </head>
 <body>
 
