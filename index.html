@@ -686,6 +686,25 @@ main section::after{border-top:0!important;border-bottom:0!important}
  .ranunculus-bridge__image{width:100vw;right:-30vw}
 }
 </style>
+
+<style id="miall-prevent-image-clipping">
+/* Keep decorative imagery flowing across section boundaries */
+main>section{overflow:visible!important}
+.hero,.hero-photo,.vinv-photo,.tf-shot,.school-photo,.goal-photo,.mentor-photo,.band-photo,.map-wrap{overflow:hidden!important}
+.cta{overflow:visible!important;background:transparent!important;isolation:isolate}
+.cta::before{content:"";position:absolute;z-index:-2;left:0;right:0;top:-240px;bottom:-120px;background:
+ linear-gradient(180deg,transparent 0%,rgba(250,248,244,.7) 18%,rgba(250,248,244,.82) 82%,transparent 100%),
+ url("images/ranunculus-flow.png") center 26%/cover no-repeat;opacity:.58;mask-image:linear-gradient(180deg,transparent 0%,#000 14%,#000 86%,transparent 100%);pointer-events:none}
+.cta::after{content:"";position:absolute;z-index:-1;inset:-120px 0;background:radial-gradient(65% 60% at 72% 38%,rgba(253,251,246,.55),transparent 75%);box-shadow:none!important;pointer-events:none}
+.cta-photo{overflow:visible!important;align-self:end}
+.cta-photo img{max-height:680px;object-fit:contain;object-position:center bottom}
+.photobg:not(.hero),.eqbg,.softbg{background-color:transparent!important}
+.photobg:not(.hero)::after,.eqbg::after{inset:-80px 0!important;mask-image:linear-gradient(180deg,transparent,#000 18%,#000 82%,transparent)}
+@media(max-width:760px){
+ .cta::before{top:-150px;bottom:-80px;background-size:auto 92%;background-position:55% 18%;opacity:.48}
+ .cta-photo img{max-height:520px}
+}
+</style>
 </head>
 <body>
 
