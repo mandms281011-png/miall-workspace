@@ -745,6 +745,37 @@ main>section{margin-top:-1px!important;margin-bottom:-1px!important}
  .hero.photobg::after{top:0!important;right:-18vw!important;width:92vw!important;height:92vw!important;opacity:.7!important}
 }
 </style>
+
+<style id="miall-floral-luxury-layout">
+/* Hero: grand bouquet, softly floating without hard edges */
+.hero.photobg::after{top:18px!important;right:-4vw!important;width:min(760px,58vw)!important;height:min(760px,58vw)!important;background:url("images/ranunculus-grand.png") center/100% 100% no-repeat!important;mask-image:radial-gradient(circle at 50% 48%,#000 36%,rgba(0,0,0,.88) 55%,transparent 78%)!important;-webkit-mask-image:radial-gradient(circle at 50% 48%,#000 36%,rgba(0,0,0,.88) 55%,transparent 78%)!important;opacity:.94!important}
+.hero.photobg::before{background:linear-gradient(90deg,rgba(250,248,244,.99) 0%,rgba(250,248,244,.95) 34%,rgba(250,248,244,.52) 59%,rgba(250,248,244,.04) 100%),linear-gradient(180deg,transparent 72%,#f8f3e9 100%)!important}
+
+/* Flowing bouquet between hero and story */
+.ranunculus-bridge__image{right:-3vw!important;top:-110px!important;width:min(720px,56vw)!important;height:520px!important;aspect-ratio:auto!important;mask-image:radial-gradient(ellipse at 52% 48%,#000 40%,rgba(0,0,0,.78) 62%,transparent 84%)!important}
+.ranunculus-bridge__image img{object-fit:cover!important;object-position:center 58%!important}
+
+/* Movie section: low arrangement, very soft */
+.vinv::before{content:"";position:absolute;left:-7vw;bottom:-170px;width:min(640px,50vw);height:640px;background:url("images/ranunculus-low.png") center/contain no-repeat;opacity:.2;mask-image:radial-gradient(circle,#000 38%,transparent 76%);pointer-events:none}
+
+/* Theme flower: make the two stems a design feature */
+.tf-shot{max-width:440px!important;margin-inline:auto;transform:rotate(-2deg)!important}
+.tf-shot img{aspect-ratio:1/1.12;object-fit:cover;object-position:center}
+.tf::before{background-image:url("images/ranunculus-round.png")!important;opacity:.15!important}
+
+/* FAQ and promise: a soft round bouquet in the page depth */
+#faq{position:relative}
+#faq::before{content:"";position:absolute;right:-10vw;top:-180px;width:560px;height:560px;background:url("images/ranunculus-round.png") center/contain no-repeat;opacity:.1;mask-image:radial-gradient(circle,#000 34%,transparent 75%);pointer-events:none}
+
+/* Contact: wrapped bouquet, not a full-width crop */
+.cta::before{top:-120px!important;bottom:-80px!important;background:url("images/ranunculus-wrapped.png") right 18% center/560px auto no-repeat!important;opacity:.22!important;mask-image:linear-gradient(90deg,transparent 0%,#000 58%,#000 82%,transparent 100%)!important}
+@media(max-width:760px){
+ .hero.photobg::after{right:-28vw!important;top:20px!important;width:105vw!important;height:105vw!important;opacity:.65!important}
+ .ranunculus-bridge__image{right:-35vw!important;width:118vw!important;height:360px!important}
+ .vinv::before{width:90vw;height:90vw;left:-34vw;bottom:-80px}
+ .cta::before{background-size:88vw auto!important;background-position:120% 8%!important;opacity:.14!important}
+}
+</style>
 </head>
 <body>
 
@@ -1231,7 +1262,7 @@ main>section{margin-top:-1px!important;margin-bottom:-1px!important}
   <div class="wrap">
     <div class="tf-inner">
       <figure class="tf-shot">
-        <img src="images/flower-stems.jpg" alt="2本のラナンキュラス" width="1600" height="1600">
+        <img src="images/ranunculus-two.png" alt="2本のラナンキュラス" width="1600" height="1600">
       </figure>
       <div>
         <hr class="hairline" style="max-width:120px"><span class="kicker" style="display:block">THEME FLOWER</span>
