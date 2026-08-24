@@ -605,6 +605,50 @@ section .center .kicker::before{content:"";display:inline-block;width:28px;heigh
   main>section+section::before{width:100px}
 }
 </style>
+
+<style id="miall-organic-color-flow">
+/* Softer continuous color story + stronger ranunculus motif */
+main{overflow:hidden;background:
+ radial-gradient(90% 18% at 100% 13%,rgba(232,213,166,.23),transparent 72%),
+ radial-gradient(75% 16% at 0% 31%,rgba(242,230,204,.38),transparent 75%),
+ radial-gradient(85% 17% at 100% 56%,rgba(232,213,166,.18),transparent 75%),
+ linear-gradient(180deg,#faf8f4 0%,#f8f3e9 20%,#fdfbf6 39%,#f4ecdc 58%,#fbf8f2 79%,#f2e6cc 100%)!important}
+main::before{display:none!important}
+main>section+section::before{display:none!important}
+main>section{background-color:transparent!important}
+.hero.photobg{min-height:860px;background-image:
+ linear-gradient(90deg,rgba(250,248,244,.98) 0%,rgba(250,248,244,.91) 35%,rgba(250,248,244,.48) 62%,rgba(250,248,244,.08) 100%),
+ var(--bg);background-position:58% 36%}
+.hero.photobg::after{background:linear-gradient(180deg,transparent 68%,#f8f3e9 100%);box-shadow:none!important}
+.hero h1{font-size:clamp(38px,6.4vw,68px)}
+.hero-photo{position:relative;z-index:3;margin-bottom:-175px;width:min(760px,70vw);border:8px solid rgba(253,251,246,.72);box-shadow:0 38px 100px rgba(43,40,35,.25)}
+.ranunculus-bridge{height:300px;position:relative;z-index:4;margin-top:-86px;pointer-events:none}
+.ranunculus-bridge__image{position:absolute;right:-5vw;top:-92px;width:min(610px,48vw);aspect-ratio:1.45;overflow:hidden;border-radius:58% 0 0 58%;filter:drop-shadow(-28px 30px 46px rgba(61,54,44,.18));mask-image:linear-gradient(90deg,transparent 0%,#000 19%,#000 86%,transparent 100%)}
+.ranunculus-bridge__image img{width:100%;height:100%;object-fit:cover;object-position:center;transform:scale(1.08)}
+.ranunculus-bridge__words{position:absolute;right:6vw;bottom:18px;text-align:right;color:var(--rose-700)}
+.ranunculus-bridge__words span{display:block;font:500 clamp(18px,2.5vw,31px) var(--serif);letter-spacing:.2em}
+.ranunculus-bridge__words small{font:500 10px var(--sans);letter-spacing:.3em;color:var(--ink-mute)}
+.vinv{margin-top:-135px!important;padding-top:190px!important;background:linear-gradient(180deg,transparent 0%,rgba(247,239,221,.52) 46%,transparent 100%)!important}
+.softbg::before{opacity:calc(var(--bgop,.12) * .22)!important}
+.tf{position:relative;background:linear-gradient(180deg,transparent,rgba(255,253,246,.78) 50%,transparent)!important}
+.tf::before{content:"";position:absolute;inset:-8% -8% -8% 48%;background:url("images/flower-stems.jpg") center/cover no-repeat;opacity:.16;mask-image:radial-gradient(ellipse at center,#000 20%,transparent 72%);pointer-events:none}
+.tf-shot{position:relative;z-index:2;transform:rotate(-1.5deg);border:9px solid rgba(253,251,246,.88);box-shadow:0 34px 84px rgba(61,54,44,.22)}
+.tf-shot::before{content:"";position:absolute;inset:-18px;border:1px solid rgba(203,174,107,.48);border-radius:24px;z-index:3;pointer-events:none}
+.eqbg,.photobg:not(.hero){background-color:transparent!important}
+.eqbg::after,.photobg:not(.hero)::after{background:linear-gradient(180deg,rgba(250,248,244,.18),transparent 24%,transparent 76%,rgba(250,248,244,.18));box-shadow:none!important}
+.mentor{background:linear-gradient(180deg,rgba(250,248,244,0) 0%,#454037 14%,#292720 48%,#454037 86%,rgba(250,248,244,0) 100%)!important}
+.cta{background-image:linear-gradient(180deg,rgba(242,230,204,.08),rgba(250,248,244,.5) 20%,rgba(250,248,244,.5) 76%,#f2e6cc 100%),url("images/flowers-noribbon.jpg")!important;background-position:center,center 62%!important}
+@media(max-width:760px){
+ .hero.photobg{min-height:auto;background-image:linear-gradient(180deg,rgba(250,248,244,.82),rgba(250,248,244,.62) 62%,#f8f3e9 100%),var(--bg)}
+ .hero-photo{width:100%;margin-bottom:-95px;border-width:5px}
+ .ranunculus-bridge{height:245px;margin-top:35px}
+ .ranunculus-bridge__image{right:-24vw;top:-58px;width:92vw}
+ .ranunculus-bridge__words{right:5vw;bottom:15px}
+ .vinv{margin-top:-80px!important;padding-top:145px!important}
+ .tf::before{inset:10% -20% 0 22%;opacity:.11}
+ .tf-shot{transform:none;border-width:5px}
+}
+</style>
 </head>
 <body>
 
