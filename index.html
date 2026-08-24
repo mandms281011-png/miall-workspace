@@ -705,6 +705,17 @@ main>section{overflow:visible!important}
  .cta-photo img{max-height:520px}
 }
 </style>
+
+<style id="miall-seamless-background-layers">
+/* Replace section-bound backgrounds with oversized faded layers */
+.photobg:not(.hero):not(.mentor):not(.cta),.eqbg{background-image:none!important;background-color:transparent!important;isolation:isolate}
+.photobg:not(.hero):not(.mentor):not(.cta)::before,.eqbg::before{content:"";position:absolute;z-index:-2;left:0;right:0;top:-140px;bottom:-140px;background-image:var(--bg);background-size:cover;background-position:var(--bgpos,center);background-repeat:no-repeat;opacity:var(--bgop,.13);mask-image:linear-gradient(180deg,transparent 0%,#000 18%,#000 82%,transparent 100%);pointer-events:none}
+.photobg:not(.hero):not(.mentor):not(.cta)::after,.eqbg::after{content:"";position:absolute;z-index:-1;left:0;right:0;top:-80px;bottom:-80px;background:linear-gradient(180deg,transparent,rgba(253,251,246,.38) 22%,rgba(253,251,246,.38) 78%,transparent);mask-image:linear-gradient(180deg,transparent,#000 22%,#000 78%,transparent);box-shadow:none!important;pointer-events:none}
+main>section{margin-top:-1px!important;margin-bottom:-1px!important}
+@media(max-width:760px){
+ .photobg:not(.hero):not(.mentor):not(.cta)::before,.eqbg::before{top:-90px;bottom:-90px;background-position:var(--bgpos,center)}
+}
+</style>
 </head>
 <body>
 
