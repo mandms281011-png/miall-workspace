@@ -3041,6 +3041,22 @@ footer .logo img{height:56px}
 @media(max-width:900px){
   #professionals::after{left:50%!important;right:auto!important;
     top:50%!important;width:66vw!important;opacity:.24!important}}
+
+/* プロフェッショナル：花を反対側（右）へ（2026-08-25）
+   左だと「資金調達や助成金のご相談も。」の文章の後ろに重なって読みにくかった。
+   右へ移し、さらに節の下の方（文章の少ないところ）へ下ろす。 */
+#professionals::after{
+  left:auto!important;right:0%!important;
+  top:64%!important;width:min(380px,29vw)!important;opacity:.34!important}
+
+/* 右へ動かしたぶん、左右の重心を戻す。
+   料金〜HOUSE RULES のあいだの花を左寄りにして釣り合わせる。 */
+.rband:not(#price)::after{left:30%!important;transform:translateX(-50%)!important}
+
+@media(max-width:900px){
+  #professionals::after{left:50%!important;right:auto!important;
+    top:50%!important;width:66vw!important;opacity:.22!important}
+  .rband:not(#price)::after{left:50%!important}}
 </style>
 <script>
 (function(){
