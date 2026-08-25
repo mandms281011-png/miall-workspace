@@ -2795,6 +2795,20 @@ footer .logo img{height:56px}
   -webkit-mask-image:none!important;mask-image:none!important;
   width:min(500px,38vw)!important;opacity:.26!important}
 @media(max-width:900px){.vinv::after{width:70vw!important;opacity:.13!important}}
+
+/* 再チェックで見つかった2点（2026-08-25）
+   ・アクセスの花が濃さ .6 で見出し「長野駅から、歩いて7分。」の後ろに来ていた
+   ・メンタリングの花が濃さ .5 で本文の後ろに来ていた（濃い地に明るい花＝いちばん読みにくい）
+   ・アクセスの花（2本のラナンキュラス）は茎が下で切れていたのでフェードを追加 */
+#access.bq-tr::after{
+  opacity:.18!important;
+  -webkit-mask-image:linear-gradient(180deg,#000 74%,rgba(0,0,0,.3) 92%,transparent 100%)!important;
+  mask-image:linear-gradient(180deg,#000 74%,rgba(0,0,0,.3) 92%,transparent 100%)!important}
+
+#mentoring::after{opacity:.24!important}
+@media(max-width:900px){
+  #access.bq-tr::after{opacity:.1!important}
+  #mentoring::after{opacity:.1!important}}
 </style>
 <script>
 (function(){
