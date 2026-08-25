@@ -3057,6 +3057,20 @@ footer .logo img{height:56px}
   #professionals::after{left:50%!important;right:auto!important;
     top:50%!important;width:66vw!important;opacity:.22!important}
   .rband:not(#price)::after{left:50%!important}}
+
+/* WHO：花を大きく、文字の真後ろへ（2026-08-25）
+   一覧の帯が不透明で、花が横縞に切られていた。
+   帯を透明にして、花を中央に大きく敷き、文字の背景として見せる。 */
+#about.worry .narrow ul li{
+  background-color:transparent!important;background-image:none!important;
+  backdrop-filter:none!important}
+#about.worry::after{
+  left:50%!important;right:auto!important;
+  top:50%!important;bottom:auto!important;
+  transform:translate(-50%,-50%)!important;
+  width:min(980px,76vw)!important;opacity:.22!important}
+@media(max-width:900px){
+  #about.worry::after{width:92vw!important;opacity:.14!important}}
 </style>
 <script>
 (function(){
