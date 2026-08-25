@@ -2608,6 +2608,45 @@ html,body{overflow-x:hidden}
 @media(max-width:900px){
   .stickycta a{padding-block:16px}
   footer a,.acc-info a{display:inline-block;padding-block:6px}}
+
+/* 左右の偏りを直す（2026-08-25） */
+/* ① CTAの花：表紙と同じ絵・同じ側だったので、絵だけ差し替える。
+      左は「ミオに聞いてみる」の箱が埋めているので、位置は右のまま。 */
+#contact .cta-bouquet-art{
+  content:url("images/ranunculus-rise.webp")!important;
+  width:min(360px,28vw)!important;opacity:.8!important;
+  filter:drop-shadow(0 26px 42px rgba(116,101,74,.22))
+         drop-shadow(0 8px 14px rgba(116,101,74,.10))!important}
+
+/* ② いちばん長いプロフェッショナルの節に、左から花を。
+      長い節に休符がなく、かつ花が右に寄っていたのを同時に直す。 */
+#professionals{position:relative;isolation:isolate;overflow:hidden}
+#professionals>.wrap{position:relative;z-index:2}
+#professionals::after{content:"";position:absolute;z-index:0;pointer-events:none;
+  left:-4%;top:38%;width:min(540px,42vw);aspect-ratio:1067/1169;
+  background-image:url("images/ranunculus-drop.webp")!important;
+  background-size:contain!important;background-repeat:no-repeat!important;
+  background-position:center!important;opacity:.32!important;display:block!important}
+@media(max-width:900px){#professionals::after{width:76vw;left:50%;transform:translateX(-50%);opacity:.15}}
+
+/* ③ 長い節（プロフェッショナル・コミュニティ）の見出しを左寄せにして、
+      中央寄せが12連続する単調さを崩す */
+#professionals>.wrap>.center,#learning>.wrap>.center{
+  text-align:left!important;margin-inline:0!important}
+#professionals>.wrap>.center .hairline,#learning>.wrap>.center .hairline{margin-inline:0!important}
+/* 見出しだけ左に寄せると、下の一文が中央のままで足並みが崩れるので合わせる */
+#professionals>.wrap>.center>p,#learning>.wrap>.center>p{
+  text-align:left!important;margin-inline:0!important}
+
+/* ④ いちばん長いコミュニティの節に、休符として花を1つ（左） */
+#community{position:relative;isolation:isolate}
+#community>.wrap{position:relative;z-index:2}
+#community::before{content:"";position:absolute;z-index:0;pointer-events:none;
+  left:-3%;top:46%;width:min(520px,40vw);aspect-ratio:1146/1116;
+  background-image:url("images/ranunculus-flow.webp");
+  background-size:contain;background-repeat:no-repeat;background-position:center;
+  opacity:.34;transform:scaleX(-1)}
+@media(max-width:900px){#community::before{width:74vw;left:50%;transform:translateX(-50%) scaleX(-1);opacity:.16}}
 </style>
 <script>
 (function(){
