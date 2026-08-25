@@ -2626,7 +2626,7 @@ html,body{overflow-x:hidden}
 /* ① CTAの花：表紙と同じ絵・同じ側だったので、絵だけ差し替える。
       左は「ミオに聞いてみる」の箱が埋めているので、位置は右のまま。 */
 #contact .cta-bouquet-art{
-  content:url("images/ranunculus-rise.webp")!important;
+  content:url("images/ranunculus-dome.webp")!important;
   width:min(360px,28vw)!important;opacity:.8!important;
   filter:drop-shadow(0 26px 42px rgba(116,101,74,.22))
          drop-shadow(0 8px 14px rgba(116,101,74,.10))!important}
@@ -2660,6 +2660,11 @@ html,body{overflow-x:hidden}
   background-size:contain;background-repeat:no-repeat;background-position:center;
   opacity:.34;transform:scaleX(-1)}
 @media(max-width:900px){#community::before{width:74vw;left:50%;transform:translateX(-50%) scaleX(-1);opacity:.16}}
+
+/* MOVIE：仮に置いていた紙包みを、本来ご指定の横たわった花束に差し替え（2026-08-25） */
+.vinv::after{
+  background-image:url("images/ranunculus-lay.webp")!important;
+  aspect-ratio:1200/1108!important;width:min(600px,46vw)!important}
 </style>
 <script>
 (function(){
