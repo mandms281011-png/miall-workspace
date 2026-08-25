@@ -2556,8 +2556,9 @@ html,body{overflow-x:hidden}
 .rband:not(#price)::after{content:"";position:absolute;z-index:0;pointer-events:none;
   left:50%;top:-250px;transform:translateX(-50%);
   width:min(1000px,78vw);aspect-ratio:1098/731;
-  background-image:url("images/ranunculus-sweep.webp");
-  background-size:contain;background-repeat:no-repeat;background-position:center;
+  background-image:url("images/ranunculus-sweep.webp")!important;
+  background-size:contain!important;background-repeat:no-repeat!important;
+  background-position:center!important;
   opacity:.4;
   filter:drop-shadow(0 26px 42px rgba(116,101,74,.16));
   display:block}
@@ -2619,20 +2620,28 @@ html,body{overflow-x:hidden}
 })();
 </script>
 <script>
-/* 最後のCTAが画面に入っているあいだは、下の固定バーを引っ込める。
-   同じ「まずは話を聞いてみる」が二重に並ぶのを避けるため。 */
+/* CTAのボタンが画面に見えているあいだは、下の固定バーを引っ込める。
+   同じ「まずは話を聞いてみる」が二重に並ぶのを避けるため。
+   IntersectionObserver ではなくスクロール判定にしているのは、
+   埋め込みプレビューでも確実に動き、検証できるようにするため。 */
 (function(){
-  // 節ぜんぶではなく、CTAのボタンの並びそのものを見る。
-  // 節は2画面ぶんの高さがあり、節全体で判定すると
-  // ボタンが画面から外れているあいだも下のバーが消えてしまうため。
   var bar=document.querySelector('.stickycta'),
-      cta=document.querySelector('#contact .cta-row')||document.getElementById('contact');
-  if(!bar||!cta||!('IntersectionObserver' in window))return;
-  new IntersectionObserver(function(es){
-    var v=es[0].isIntersecting;
+      cta=document.querySelector('#contact .hero-cta')||document.getElementById('contact');
+  if(!bar||!cta)return;
+  var ticking=false;
+  function apply(){
+    ticking=false;
+    var r=cta.getBoundingClientRect(),
+        seen=Math.max(0,Math.min(r.bottom,innerHeight)-Math.max(r.top,0));
+    // ボタンの並びが6割見えていれば、下のバーは不要
+    var v=r.height>0&&seen/r.height>=0.6;
     bar.classList.toggle('is-away',v);
     document.body.classList.toggle('cta-visible',v);
-  },{threshold:0.6}).observe(cta);
+  }
+  function onScroll(){ if(!ticking){ticking=true;requestAnimationFrame(apply);} }
+  addEventListener('scroll',onScroll,{passive:true});
+  addEventListener('resize',onScroll);
+  apply();
 })();
 </script>
 </body>
