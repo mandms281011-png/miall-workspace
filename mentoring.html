@@ -1182,15 +1182,15 @@ footer .logo img{height:56px}
    「準備中です」の案内と公式LINEのボタンだけが出ます。
    ============================================================ */
 var GFORM = {
-  action: "",
+  action: "https://docs.google.com/forms/d/e/1FAIpQLSeaykVOen6EVCOUlt0pwBbXXBOAJlz-CPui3v1_voBKHlXz0w/formResponse",
   f: {
-    f_kind : "",
-    f_name : "",
-    f_date1: "",
-    f_time1: "",
-    f_date2: "",
-    f_time2: "",
-    f_note : ""
+    f_kind : "entry.2005620554",
+    f_name : "entry.1354337502",
+    f_date1: "entry.277132015",
+    f_time1: "entry.1227468968",
+    f_date2: "entry.926831513",
+    f_time2: "entry.23788869",
+    f_note : "entry.1216262341"
   }
 };
 
@@ -1241,6 +1241,14 @@ var GFORM = {
       form.querySelectorAll('[name="'+key+'"]').forEach(function(el){
         el.name = entry;
       });
+    });
+
+    // このページで使わない項目にも値を入れておく。
+    // Googleフォーム側が必須設定のままなので、空だと弾かれるため。
+    ["entry.1074255134","entry.535459251"].forEach(function(entry){
+      var h = document.createElement('input');
+      h.type = 'hidden'; h.name = entry; h.value = '－';
+      form.appendChild(h);
     });
 
     btn.disabled = true;
