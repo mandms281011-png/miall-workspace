@@ -485,6 +485,10 @@ html body *,html body *::before,html body *::after{
 
 <style>
 /* ============ 申し込みフォーム ============ */
+/* このページでは下の固定バーを出さない。フォームに重なって入力を邪魔するため */
+.stickycta{display:none!important}
+@media(max-width:520px){ .applysec{padding-bottom:96px} } /* ミオのボタンぶんだけ余白 */
+
 .applysec{padding:clamp(30px,4vw,54px) 0 clamp(46px,6vw,80px);background:var(--cream)}
 .applyform{background:var(--ivory);border:1px solid var(--rose-100);border-radius:6px;
   padding:clamp(24px,4vw,44px);box-shadow:0 18px 44px rgba(38,34,29,.07)}
@@ -557,7 +561,7 @@ textarea.finput{resize:vertical;min-height:110px}
       <a href="rules.html">ご利用ルール</a>
       <a href="terms.html">会員規約</a>
     </nav>
-    <a class="btn" href="apply.html">面談を申し込む</a>
+    <a class="btn" href="https://lin.ee/6v6NCVt" target="_blank" rel="noopener">公式LINEで相談</a>
   </div>
 </header>
 
