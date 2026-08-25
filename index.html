@@ -1051,7 +1051,7 @@ main>section{margin-top:-1px!important;margin-bottom:-1px!important}
   </div>
 </section>
 
-<div class="floret"><i></i><span></span><i></i></div>
+
 
 <!-- ============ MENTORING ============ -->
 <section class="mentor softbg" id="mentoring" style="--bg:url('images/flowers-round.jpg');--bgpos:center 26%;--bgop:.14">
@@ -1373,7 +1373,7 @@ main>section{margin-top:-1px!important;margin-bottom:-1px!important}
   </div>
 </section>
 
-<div class="floret"><i></i><span></span><i></i></div>
+
 
 <!-- ============ PROMISE ============ -->
 <section class="photobg wr" style="--bg:url('images/flowers-noribbon.jpg')">
@@ -2412,6 +2412,17 @@ html,body{overflow-x:hidden}
   .vinv::after{width:82vw!important;left:50%!important;
     transform:translateX(-50%)!important;opacity:.2!important}
   #schedule::after{width:92vw;opacity:.16!important}}
+
+/* ② リトリートの節の左下の花を削除（2026-08-25） */
+#community.bq-bl::after{display:none!important;content:none!important}
+
+/* ③ WHO の花束：大きく、影をつけて、帯に切られないように */
+#about.worry .narrow ul li{background-color:transparent!important;backdrop-filter:none!important}
+#about.worry::after{
+  width:min(760px,58vw)!important;right:-3%!important;opacity:.5!important;
+  filter:drop-shadow(0 30px 46px rgba(116,101,74,.22))
+         drop-shadow(0 8px 16px rgba(116,101,74,.10))!important}
+@media(max-width:900px){#about.worry::after{width:82vw!important;opacity:.2!important}}
 </style>
 <script>
 (function(){
