@@ -1272,7 +1272,7 @@ main>section{margin-top:-1px!important;margin-bottom:-1px!important}
   </div>
 </section>
 
-<section style="background:var(--blush-soft);border-block:1px solid var(--gold-500)">
+<section id="schedule" style="background:var(--blush-soft);border-block:1px solid var(--gold-500)">
   <div class="narrow center">
     <hr class="hairline"><span class="kicker">SCHEDULE</span>
     <h2 class="sec" style="font-size:clamp(21px,3.2vw,30px)">いつ、何があるのか。</h2>
@@ -2354,6 +2354,64 @@ html,body{overflow-x:hidden}
   display:block!important;margin:10px auto 0!important;width:min(360px,76vw)!important;
   filter:drop-shadow(0 20px 34px rgba(116,101,74,.24))
          drop-shadow(0 5px 10px rgba(116,101,74,.10))!important}}
+
+/* 案内（MENTORING／OPEN／MEMBERS）が写真に隠れないように（2026-08-25） */
+.hero .hero-facts{position:relative;z-index:9}
+.hero .hero-photo{margin-top:36px!important;position:relative;z-index:1}
+@media(max-width:900px){.hero .hero-photo{margin-left:0!important;margin-top:24px!important}}
+
+/* MOVIE と WHO の背景に、花束を丸ごと置く（2026-08-25） */
+.vinv,#about.worry{position:relative;isolation:isolate;overflow:visible!important}
+.vinv .wrap,#about.worry .narrow{position:relative;z-index:2}
+
+/* MOVIE：左下に、全体が見えるように */
+.vinv::after{content:"";position:absolute;z-index:0;pointer-events:none;
+  left:1%;bottom:5%;width:min(500px,38vw);aspect-ratio:1100/899;
+  background-image:url("images/ranunculus-low.webp")!important;
+  background-size:contain!important;background-repeat:no-repeat!important;
+  background-position:center!important;opacity:.34!important;
+  filter:none!important;mask-image:none!important;-webkit-mask-image:none!important;
+  transform:none!important;display:block!important}
+
+/* WHO：右側に大きく。リストの帯は透けさせて花を見せる */
+#about.worry::after{content:"";position:absolute;z-index:0;pointer-events:none;
+  right:-1%!important;left:auto!important;top:50%!important;bottom:auto!important;
+  transform:translateY(-50%)!important;
+  width:min(560px,44vw)!important;height:auto!important;aspect-ratio:1100/899;
+  background-image:url("images/ranunculus-low.webp")!important;
+  background-size:contain!important;background-repeat:no-repeat!important;
+  background-position:center!important;opacity:.3!important;
+  filter:none!important;mask-image:none!important;-webkit-mask-image:none!important;
+  display:block!important}
+#about.worry .narrow ul li{background-color:rgba(255,253,248,.62)!important;
+  backdrop-filter:saturate(1.02)}
+
+@media(max-width:900px){
+  .vinv::after{width:70vw;left:50%;transform:translateX(-50%)!important;opacity:.22!important}
+  #about.worry::after{width:76vw!important;right:auto!important;left:50%!important;
+    transform:translate(-50%,-50%)!important;opacity:.2!important}}
+
+/* 花を後ろに大きく（2026-08-25） */
+/* MOVIE：左後ろに大きく */
+.vinv::after{
+  left:-4%!important;bottom:0%!important;top:auto!important;
+  width:min(560px,44vw)!important;aspect-ratio:900/1057!important;opacity:.38!important;
+  background-image:url("images/ranunculus-wrapped.webp")!important}
+
+/* SCHEDULE：リボンの花束を、丸ごと後ろに */
+#schedule{position:relative;isolation:isolate;overflow:visible!important}
+#schedule .narrow{position:relative;z-index:2}
+#schedule::after{content:"";position:absolute;z-index:0;pointer-events:none;
+  left:50%;top:50%;transform:translate(-50%,-50%);
+  width:min(700px,55vw);aspect-ratio:1200/929;
+  background-image:url("images/ranunculus-ribbon.webp")!important;
+  background-size:contain!important;background-repeat:no-repeat!important;
+  background-position:center!important;opacity:.26!important;display:block!important}
+
+@media(max-width:900px){
+  .vinv::after{width:82vw!important;left:50%!important;
+    transform:translateX(-50%)!important;opacity:.2!important}
+  #schedule::after{width:92vw;opacity:.16!important}}
 </style>
 <script>
 (function(){
