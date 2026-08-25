@@ -973,6 +973,13 @@ h2.sec,.sec,.card h3,.eq-box h4,.pro-name,.tf-name,.askme q,.hero h1,.goal-lines
 footer .logo img{height:56px}
 @media(max-width:900px){.logo img{height:40px}footer .logo img{height:46px}}
 @media(max-width:520px){.logo img{height:34px}}
+
+/* スマホのロゴが50pxのままだったのを直す
+   （.hd .logo img の方が詳しく指定されていて、画面幅の指定に勝っていたため） */
+@media(max-width:900px){
+  .hd .logo img,footer .logo img,.logo img{height:40px!important}}
+@media(max-width:520px){
+  .hd .logo img,footer .logo img,.logo img{height:32px!important}}
 </style>
 <script>
 (function(){
