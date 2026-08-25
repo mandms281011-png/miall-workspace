@@ -2816,6 +2816,30 @@ footer .logo img{height:56px}
   .hd .logo img,footer .logo img,.logo img{height:40px!important}}
 @media(max-width:520px){
   .hd .logo img,footer .logo img,.logo img{height:32px!important}}
+
+/* 花を見える濃さに戻す（2026-08-25）
+   読みやすさのために濃さを落としすぎ、花がほとんど消えてしまった。
+   濃さは戻し、代わりに「文字のない側へ寄せる」ことで読みやすさを保つ。 */
+
+/* プロフェッショナルは見出しを左寄せにしたので、花は右の余白へ移す */
+#professionals::after{left:auto!important;right:1%!important;opacity:.42!important}
+
+.vinv::after{opacity:.42!important}
+#about.worry::after{opacity:.42!important}
+#community::before{opacity:.4!important}
+#mentoring::after{opacity:.4!important}
+#access.bq-tr::after{opacity:.4!important}
+.rband:not(#price)::after{opacity:.4!important}
+/* 中央の文字の真後ろに来るものだけ、少し控えめに */
+#schedule::after{opacity:.28!important}
+
+@media(max-width:900px){
+  .vinv::after,#about.worry::after,#professionals::after,
+  #community::before,#mentoring::after{opacity:.24!important}
+  #professionals::after{left:50%!important;right:auto!important}
+  #schedule::after{opacity:.18!important}
+  #access.bq-tr::after{opacity:.22!important}
+  .rband:not(#price)::after{opacity:.24!important}}
 </style>
 <script>
 (function(){
