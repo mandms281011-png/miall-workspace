@@ -2207,6 +2207,24 @@ section[style*="background"]{background-color:transparent!important}
 /* 地図は枠が要るので、角丸だけやわらかく */
 .acc-map{overflow:hidden!important;border:0!important;
   box-shadow:0 22px 46px rgba(38,34,29,.12)!important}
+
+/* --- 表紙：最初の画面で花が見えるように（2026-08-25） --- */
+.hero-bouquet-art{
+  top:9%!important;bottom:auto!important;right:-3%!important;
+  width:min(560px,44vw)!important;opacity:1!important}
+/* 左の一枚は、見出しの真後ろを避けて上へ小さく */
+.hero-bouquet-sub{
+  left:-4%!important;top:-14%!important;
+  width:min(260px,21vw)!important;opacity:.3!important}
+@media(max-width:1100px){
+  .hero-bouquet-art{width:40vw!important;top:12%!important}
+}
+@media(max-width:820px){
+  .hero-bouquet-art{
+    position:relative!important;top:auto!important;right:auto!important;
+    width:min(300px,72vw)!important;margin:26px auto -8px!important}
+  .hero-bouquet-sub{display:none!important}
+}
 </style>
 <script>
 (function(){
