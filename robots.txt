@@ -2,3 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /terms.html
 Disallow: /privacy.html
+Disallow: /forms/
