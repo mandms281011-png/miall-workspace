@@ -1471,7 +1471,7 @@ main>section{margin-top:-1px!important;margin-bottom:-1px!important}
   <div class="narrow">
     <div class="center">
       <hr class="hairline"><span class="kicker">ACCESS</span>
-      <h2 class="sec">長野駅から、歩いて。</h2>
+      <h2 class="sec">長野駅から、歩いて7分。</h2>
     </div>
 
     <div class="acc-grid">
@@ -1677,7 +1677,7 @@ main>section{margin-top:-1px!important;margin-bottom:-1px!important}
     {k:["リトリート","イベント","農業","遠く","旅","予定","日程","いつ","オープニングセミナー"],
      a:'📅 直近は <b>9月12日（土）のオープニングセミナー</b>です。<br>ゲストの方もご参加いただけます。<br>お時間は決まりしだい公式LINEでお知らせします。<br><br>そのほか、miall会・同好会・学びの場・リトリートなどの企画があります。<br><a href="events.html">今月の予定を見る →</a>'},
     {k:["場所","住所","アクセス","どこ","地図"],
-     a:'📍 長野県長野市鶴賀問御所町1241-1<br>長野銀座信越ビル 8階です。<br><br>長野駅から歩いていただけます。<br>お車の方は近隣のコインパーキングをご利用ください。'},
+     a:'📍 長野県長野市鶴賀問御所町1241-1<br>長野銀座信越ビル 8階です。<br><br>長野駅から歩いて7分です。<br>お車の方は近隣のコインパーキングをご利用ください。'},
     {k:["駐車","駐車場","車","パーキング","停め","とめ"],
      a:'🚗 専用の駐車場はご用意していません。<br><b>近隣のコインパーキング</b>をご利用ください。<br><br>ビルの周辺にいくつかございます。'},
     {k:["時間","何時","営業","開いて","夜","朝"],
@@ -2434,6 +2434,29 @@ html,body{overflow-x:hidden}
   background-position:bottom right!important;opacity:.5!important;display:block!important;
   filter:drop-shadow(0 18px 32px rgba(0,0,0,.22))!important}
 @media(max-width:900px){#mentoring::after{width:70vw;opacity:.22!important;right:-8%}}
+
+/* 花をすべて大きく（2026-08-25） */
+/* CTAの紙包みの花束 */
+.cta-bouquet-art{width:min(480px,37vw)!important;opacity:.9!important;
+  filter:drop-shadow(0 28px 44px rgba(116,101,74,.24))
+         drop-shadow(0 8px 14px rgba(116,101,74,.10))!important}
+@media(min-width:1400px){.cta-bouquet-art{width:540px!important}}
+
+/* MOVIE */
+.vinv::after{width:min(580px,45vw)!important;opacity:.44!important}
+/* SCHEDULE */
+#schedule::after{width:min(730px,57vw)!important;opacity:.3!important}
+/* メンタリング */
+#mentoring::after{width:min(600px,44vw)!important;opacity:.58!important}
+/* アクセス（2本のラナンキュラス） */
+#access.bq-tr::after{width:min(380px,29vw)!important;opacity:.6!important}
+/* テーマフラワーの2本 */
+@media(min-width:1000px){.tf .tf-inner{grid-template-columns:430px minmax(0,1fr)!important}}
+@media(min-width:1000px){.tf .tf-shot{width:430px!important;max-width:430px!important}}
+.tf .tf-shot img{width:100%!important;height:auto!important;max-width:none!important}
+@media(max-width:900px){
+  .cta-bouquet-art{width:62vw!important}
+  .tf .tf-shot img{width:60vw!important;max-width:none!important}}
 </style>
 <script>
 (function(){
