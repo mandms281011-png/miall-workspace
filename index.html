@@ -861,6 +861,19 @@ main>section{margin-top:-1px!important;margin-bottom:-1px!important}
 @media(max-width:899px){.hero .lightfall{width:76vw;height:68%;right:-22%;opacity:.38}.hero .lightfall i:nth-child(3),.hero .lightfall i:nth-child(4){display:none}}
 @media(prefers-reduced-motion:reduce){.hero .lightfall::before,.hero .lightfall::after,.hero .lightfall i{animation:none}}
 </style>
+
+<style id="miall-lightfall-bright">
+.hero .lightfall{opacity:.94!important;filter:drop-shadow(0 0 18px rgba(255,247,214,.52)) saturate(1.08)!important}
+.hero .lightfall::before{background:linear-gradient(104deg,transparent 0 6%,rgba(255,255,255,.94) 9%,rgba(255,241,185,.42) 11%,transparent 14% 19%,rgba(255,249,220,.76) 22%,transparent 26% 33%,rgba(255,255,255,.98) 37%,rgba(255,230,154,.38) 40%,transparent 44% 51%,rgba(255,248,210,.72) 55%,transparent 59% 67%,rgba(255,255,255,.92) 72%,rgba(255,234,170,.34) 75%,transparent 79% 85%,rgba(255,248,216,.78) 89%,transparent 93%),repeating-linear-gradient(176deg,transparent 0 30px,rgba(255,255,255,.66) 33px,rgba(255,236,174,.24) 36px,transparent 42px 68px)!important;background-size:132% 150%,100% 150px!important;filter:blur(.4px) brightness(1.22)!important}
+.hero .lightfall::after{background:radial-gradient(circle at 86% 8%,#fff 0 1.4%,rgba(255,239,183,.76) 2.2%,transparent 5%),radial-gradient(circle at 67% 22%,rgba(255,255,255,.96) 0 1%,rgba(255,230,151,.62) 2%,transparent 4.5%),radial-gradient(circle at 48% 37%,rgba(255,255,255,.94) 0 .8%,rgba(255,241,194,.55) 1.8%,transparent 4%),radial-gradient(circle at 75% 54%,rgba(255,255,255,.92) 0 1.1%,rgba(255,226,143,.48) 2.1%,transparent 4.6%),radial-gradient(circle at 34% 64%,rgba(255,255,255,.9) 0 .9%,rgba(255,238,182,.48) 1.8%,transparent 4%),radial-gradient(ellipse at 72% 4%,rgba(255,255,255,.98),rgba(255,225,145,.42) 28%,transparent 66%),radial-gradient(ellipse at 48% 46%,rgba(255,255,255,.52),transparent 60%)!important;animation:miallSparkleField 3.4s ease-in-out infinite!important}
+.hero .lightfall i{background:linear-gradient(180deg,rgba(255,255,255,.25),rgba(255,255,255,.96) 17%,rgba(255,234,168,.62) 48%,rgba(255,250,224,.26) 74%,transparent 96%)!important;box-shadow:0 0 12px rgba(255,255,255,.94),0 0 30px rgba(255,222,137,.72)!important;filter:blur(2px)!important}
+.hero .lightfall i::before,.hero .lightfall i::after{content:"";position:absolute;width:5px;height:5px;border-radius:50%;background:#fff;box-shadow:0 0 7px 2px rgba(255,255,255,.95),0 0 16px 5px rgba(255,221,132,.64);animation:miallSingleSpark 2.3s ease-in-out infinite}
+.hero .lightfall i::before{left:-7px;top:30%}.hero .lightfall i::after{right:-8px;top:63%;animation-delay:-1.15s}
+@keyframes miallSparkleField{0%,100%{opacity:.64;transform:translate3d(0,-1.5%,0) scale(.99)}35%{opacity:1}50%{transform:translate3d(-8px,2.5%,0) scale(1.02)}72%{opacity:.78}}
+@keyframes miallSingleSpark{0%,100%{opacity:.18;transform:scale(.35) rotate(0)}45%{opacity:1;transform:scale(1.35) rotate(45deg)}58%{opacity:.55;transform:scale(.72) rotate(70deg)}}
+@media(max-width:899px){.hero .lightfall{opacity:.56!important;filter:drop-shadow(0 0 12px rgba(255,247,214,.4))!important}}
+@media(prefers-reduced-motion:reduce){.hero .lightfall::after,.hero .lightfall i::before,.hero .lightfall i::after{animation:none!important}}
+</style>
 </head>
 <body>
 
