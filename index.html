@@ -2237,6 +2237,53 @@ section[style*="background"]{background-color:transparent!important}
     width:min(260px,62vw)!important;margin:24px auto -6px!important}}
 /* CTAは丸い花束に */
 .cta-bouquet-art{width:min(320px,27vw)!important;opacity:.45!important}
+
+/* ==================================================================
+   花を切らない（2026-08-25）
+   ・背景として敷くと必ず端が切れるので、その使い方をやめる
+   ・切り抜いた花束を「丸ごと」節の中に置く
+   ================================================================== */
+
+/* --- ① 切り取られる背景の花を、すべてやめる --- */
+.photobg::before,.photobg::after,
+.eqbg::before,.eqbg::after,
+.softbg::before,.softbg::after,
+.hero.photobg,.tf.softbg,.vinv.softbg,.goal.photobg,.wr.photobg,
+.rband,.rband::before,.rband::after,
+#equipment,#professionals,#learning,#faq,#access{
+  background-image:none!important}
+.eqbg{background-image:none!important}
+
+/* --- ② 花束は丸ごと、節の中に収める --- */
+.bq{overflow:visible!important;position:relative;isolation:isolate}
+.bq::after{content:""!important;position:absolute!important;z-index:-1!important;
+  pointer-events:none!important;background-repeat:no-repeat!important;
+  background-size:contain!important;background-position:center!important;
+  transform:none!important}
+.bq-br::after{right:3%!important;bottom:4%!important;left:auto!important;top:auto!important;
+  width:min(300px,26vw)!important;aspect-ratio:1100/899!important;
+  background-image:url("images/ranunculus-low.webp")!important;opacity:.6!important}
+.bq-bl::after{left:3%!important;bottom:4%!important;right:auto!important;top:auto!important;
+  width:min(260px,22vw)!important;aspect-ratio:1000/951!important;
+  background-image:url("images/ranunculus-grand.webp")!important;opacity:.55!important}
+.bq-tr::after{right:3%!important;top:6%!important;left:auto!important;bottom:auto!important;
+  width:min(190px,16vw)!important;aspect-ratio:760/1196!important;
+  background-image:url("images/ranunculus-two.webp")!important;opacity:.5!important}
+
+/* --- ③ ヒーローとCTAの花束も、丸ごと見えるように --- */
+.hero{overflow:visible!important}
+.hero-bouquet-art{right:3%!important;bottom:4%!important;top:auto!important;
+  width:min(330px,26vw)!important;opacity:.95!important}
+.cta{overflow:visible!important}
+.cta-bouquet-art{right:3%!important;bottom:4%!important;top:auto!important;
+  width:min(240px,20vw)!important;opacity:.55!important}
+
+/* --- ④ 狭い画面では、文字の邪魔になるので出さない --- */
+@media(max-width:900px){
+  .bq::after,.hero-bouquet-art,.cta-bouquet-art{display:none!important}
+}
+/* 横スクロールが出ないように念のため */
+html,body{overflow-x:hidden}
 </style>
 <script>
 (function(){
