@@ -2423,6 +2423,17 @@ html,body{overflow-x:hidden}
   filter:drop-shadow(0 30px 46px rgba(116,101,74,.22))
          drop-shadow(0 8px 16px rgba(116,101,74,.10))!important}
 @media(max-width:900px){#about.worry::after{width:82vw!important;opacity:.2!important}}
+
+/* メンタリングの節：右側に、流れる茎を（2026-08-25） */
+#mentoring{position:relative;isolation:isolate;overflow:hidden}
+#mentoring .wrap,#mentoring .mentor-grid{position:relative;z-index:2}
+#mentoring::after{content:"";position:absolute;z-index:0;pointer-events:none;
+  right:-2%;bottom:2%;width:min(460px,34vw);aspect-ratio:1146/1116;
+  background-image:url("images/ranunculus-flow.webp")!important;
+  background-size:contain!important;background-repeat:no-repeat!important;
+  background-position:bottom right!important;opacity:.5!important;display:block!important;
+  filter:drop-shadow(0 18px 32px rgba(0,0,0,.22))!important}
+@media(max-width:900px){#mentoring::after{width:70vw;opacity:.22!important;right:-8%}}
 </style>
 <script>
 (function(){
