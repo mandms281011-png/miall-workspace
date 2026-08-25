@@ -757,7 +757,11 @@ footer .logo{}
     });
   }
 
-  fab.onclick = function(){ panel.classList.add('open'); fab.style.display='none'; start(); document.getElementById('mioInput').focus(); };
+  function openMio(){ panel.classList.add('open'); fab.style.display='none'; start(); document.getElementById('mioInput').focus(); }
+  fab.onclick = openMio;
+  // 公式LINEのリッチメニューから #mio で来たときは、その場でミオを開く
+  if(location.hash === '#mio') openMio();
+  window.addEventListener('hashchange', function(){ if(location.hash === '#mio') openMio(); });
   document.getElementById('mioClose').onclick = function(){ panel.classList.remove('open'); fab.style.display=''; };
   document.getElementById('mioForm').onsubmit = function(e){
     e.preventDefault();
