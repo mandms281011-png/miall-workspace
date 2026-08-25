@@ -426,8 +426,9 @@ header,.mio-fab,.mio-panel,.stickycta{z-index:50}
 <style id="miall-static-mode">
 /* 一時静止モード：装飾アニメーションをすべて停止 */
 html{scroll-behavior:auto!important}
-*,*::before,*::after{
+html body *,html body *::before,html body *::after{
   animation:none!important;
+  animation-name:none!important;
   transition:none!important;
 }
 .lightfall,.diamond-gem,.miall-section-sun,
