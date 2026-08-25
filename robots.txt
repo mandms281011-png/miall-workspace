@@ -3,3 +3,4 @@ Allow: /
 Disallow: /terms.html
 Disallow: /privacy.html
 Disallow: /forms/
+Disallow: /tokushoho.html
