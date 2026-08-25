@@ -118,13 +118,14 @@ footer .logo{color:var(--gold-light)}
 }
 @media(prefers-reduced-motion:reduce){*{animation:none!important;scroll-behavior:auto!important}.reveal{opacity:1;transform:none}.hero-photo{transform:none!important}.big-cta{background-attachment:scroll}}
 </style>
+<link rel="icon" type="image/png" href="images/miall-mark.png"><link rel="apple-touch-icon" href="images/miall-icon-ivory.png">
 </head>
 <body>
 <div class="glow" id="glow"></div>
 <div class="topbar">オープニング会員募集中　いまなら<b>入会金なし</b></div>
 <header id="header">
   <div class="wrap hd">
-    <a class="logo" href="index.html" style="text-decoration:none">miall<small>COMMUNITY WORKSPACE</small></a>
+    <a class="logo" href="index.html" style="text-decoration:none"><img src="images/miall-logo-horizontal.png" alt="miall コミュニティワークスペース" width="1241" height="462"></a>
     <nav>
       <a href="index.html#about">この場所について</a><a href="events.html">イベント</a><a href="index.html#access">アクセス</a><a href="price.html">会費</a><a href="rules.html">ご利用ルール</a>
     </nav>
@@ -194,7 +195,7 @@ footer .logo{color:var(--gold-light)}
 <footer>
   <div class="wrap">
     <div class="fgrid">
-      <div><div class="logo">miall<small>COMMUNITY WORKSPACE</small></div><p style="margin-top:16px">自分を見つけた人から、輝きはじめる。<br>前に進みたい女性のためのコミュニティワークスペース。</p></div>
+      <div><div class="logo"><img src="images/miall-logo-horizontal.png" alt="miall コミュニティワークスペース" width="1241" height="462"></div><p style="margin-top:16px">自分を見つけた人から、輝きはじめる。<br>前に進みたい女性のためのコミュニティワークスペース。</p></div>
       <div class="fmeta"><b>営業時間</b>　9:00 – 21:00<br><b>所在地</b>　長野県長野市鶴賀問御所町1241-1 長野銀座信越ビル 8階<br><b>お問い合わせ</b>　<a href="https://lin.ee/6v6NCVt" target="_blank" rel="noopener">公式LINE</a></div>
     </div>
     <div class="copy">テーマフラワー：ラナンキュラス — 花言葉は「とても魅力的」<br>運営：株式会社Siayell　／　© miall community workspace</div>
@@ -285,6 +286,13 @@ footer .logo{color:var(--gold-light)}
 @keyframes mioDot{0%,60%,100%{opacity:.3;transform:translateY(0)}30%{opacity:1;transform:translateY(-3px)}}
 @media(prefers-reduced-motion:reduce){.mio-typing i{animation:none;opacity:.6}}
 .mio-note{font-size:10.5px;color:var(--ink-mute);text-align:center;padding:0 14px 10px;background:var(--ivory);line-height:1.7}
+
+/* ロゴ画像（2026-08-25） */
+.logo img{display:block;width:auto;height:52px;max-width:100%}
+.hd .logo img{height:50px}
+footer .logo img{height:56px}
+@media(max-width:900px){.logo img{height:40px}footer .logo img{height:46px}}
+@media(max-width:520px){.logo img{height:34px}}
 </style>
 
 <button class="mio-fab" id="mioFab" aria-label="ミオに質問する">
