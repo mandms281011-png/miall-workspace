@@ -2666,6 +2666,27 @@ html,body{overflow-x:hidden}
 .vinv::after{
   background-image:url("images/ranunculus-lay.webp")!important;
   aspect-ratio:1200/1108!important;width:min(600px,46vw)!important}
+
+/* 花をバッサリ切らない（2026-08-25 最終）
+   節に overflow:hidden がかかったまま花を枠の外へ出していたため、
+   左端・右端で直線的に切れていた。枠の外に出すのをやめ、切り取りも解除する。 */
+.vinv,#professionals,#mentoring,#community,#schedule,#about.worry,.cta,.tf{
+  overflow:visible!important}
+
+/* 画面の外へはみ出さない位置に寄せ直す（負の値をやめる） */
+.vinv::after{left:0.5%!important;right:auto!important}
+#professionals::after{left:0.5%!important;right:auto!important}
+#community::before{left:0.5%!important;right:auto!important}
+#mentoring::after{right:0.5%!important;left:auto!important}
+#about.worry::after{right:0.5%!important;left:auto!important}
+.hero-bouquet-art{right:1%!important}
+
+/* 別セッションの装飾で、切り取り（mask）や画面外配置が残っているものを止める */
+.hero.photobg::after,.ranunculus-bridge__image,.vinv::before,#faq::before{
+  display:none!important}
+.hero-bouquet-sub{display:none!important}
+
+html,body{overflow-x:hidden}
 </style>
 <script>
 (function(){
