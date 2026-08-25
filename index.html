@@ -1558,7 +1558,7 @@ main>section{margin-top:-1px!important;margin-bottom:-1px!important}
 
 <!-- ============ CTA ============ -->
 <section class="cta" id="contact">
-  <img class="cta-bouquet-art" src="images/ranunculus-wrapped.webp" alt="">
+  <img class="cta-bouquet-art" src="images/ranunculus-grand.webp" alt="">
   <div class="narrow">
     <div class="cta-split">
       <figure class="cta-photo">
@@ -2524,6 +2524,69 @@ html,body{overflow-x:hidden}
 @media(max-width:900px){
   .cta-bouquet-art{width:62vw!important}
   .tf .tf-shot img{width:60vw!important;max-width:none!important}}
+
+/* WHO のリスト：文字を大きく、前の帯のデザインに戻す（2026-08-25） */
+#about.worry .narrow ul{gap:16px!important}
+#about.worry .narrow ul li{
+  background-color:rgba(253,251,246,.86)!important;
+  backdrop-filter:blur(3px)!important;-webkit-backdrop-filter:blur(3px)!important;
+  border:0!important;border-left:2px solid rgba(203,174,107,.6)!important;
+  padding:20px 26px!important;
+  font-size:17.5px!important;line-height:1.95!important}
+@media(max-width:900px){
+  #about.worry .narrow ul li{font-size:16px!important;padding:16px 18px!important}}
+
+/* メンタリングの花：見出しにかからないよう、下の余白へ（2026-08-25） */
+#mentoring::after{
+  top:auto!important;bottom:3%!important;
+  left:auto!important;right:1%!important;
+  transform:none!important}
+@media(max-width:900px){
+  #mentoring::after{bottom:1%!important;right:-6%!important}}
+
+/* 料金とHOUSE RULESのあいだの余白に、流れるラナンキュラス（2026-08-25） */
+.rband:not(#price){position:relative;isolation:isolate;overflow:visible}
+.rband:not(#price)>*{position:relative;z-index:2}
+.rband:not(#price)::after{content:"";position:absolute;z-index:0;pointer-events:none;
+  left:50%;top:-250px;transform:translateX(-50%);
+  width:min(1000px,78vw);aspect-ratio:1098/731;
+  background-image:url("images/ranunculus-sweep.webp");
+  background-size:contain;background-repeat:no-repeat;background-position:center;
+  opacity:.4;
+  filter:drop-shadow(0 26px 42px rgba(116,101,74,.16));
+  display:block}
+@media(max-width:900px){
+  .rband:not(#price)::after{width:98vw;top:-140px;opacity:.26}}
+
+/* CTAの花束：後ろの文字が読めるよう、小さく・薄く・右下へ（2026-08-25） */
+.cta-bouquet-art{
+  width:min(340px,26vw)!important;opacity:.5!important;
+  right:1%!important;bottom:2%!important;top:auto!important;
+  transform:none!important;
+  filter:drop-shadow(0 20px 34px rgba(116,101,74,.18))!important}
+@media(min-width:1400px){.cta-bouquet-art{width:380px!important}}
+@media(max-width:900px){.cta-bouquet-art{width:52vw!important;opacity:.24!important;right:-6%!important}}
+
+/* タップ項目の間隔を整える（2026-08-25） */
+/* ① 最後のCTAが見えているあいだは、下の固定バーを隠す（同じボタンが二重になるため） */
+.stickycta{transition:transform .28s ease,opacity .28s ease}
+.stickycta.is-away{transform:translateY(110%);opacity:0;pointer-events:none}
+/* バーが隠れたら、ミオも本来の位置へ戻す */
+@media(max-width:900px){
+  body.cta-visible .mio-fab{bottom:20px}
+  body.cta-visible .mio-panel{bottom:20px;height:calc(100vh - 40px)}}
+
+/* ② 並んだボタンの間隔を広げる */
+.cta-row,#contact .cta-row,.hero-cta{gap:20px!important}
+.stickycta{gap:12px!important;padding-bottom:calc(10px + env(safe-area-inset-bottom))}
+
+/* ③ ミオと固定バーのすき間を広げる */
+@media(max-width:900px){.mio-fab{bottom:100px}.mio-panel{bottom:100px;height:calc(100vh - 120px)}}
+
+/* ④ 小さすぎるリンクに、指がのる余白をつける */
+@media(max-width:900px){
+  .stickycta a{padding-block:16px}
+  footer a,.acc-info a{display:inline-block;padding-block:6px}}
 </style>
 <script>
 (function(){
@@ -2547,6 +2610,23 @@ html,body{overflow-x:hidden}
   addEventListener("scroll",function(){
     if(hero&&scrollY<innerHeight*1.2){hero.style.backgroundPosition="center calc(36% + "+(scrollY*.035)+"px)"}
   },{passive:true});
+})();
+</script>
+<script>
+/* 最後のCTAが画面に入っているあいだは、下の固定バーを引っ込める。
+   同じ「まずは話を聞いてみる」が二重に並ぶのを避けるため。 */
+(function(){
+  // 節ぜんぶではなく、CTAのボタンの並びそのものを見る。
+  // 節は2画面ぶんの高さがあり、節全体で判定すると
+  // ボタンが画面から外れているあいだも下のバーが消えてしまうため。
+  var bar=document.querySelector('.stickycta'),
+      cta=document.querySelector('#contact .cta-row')||document.getElementById('contact');
+  if(!bar||!cta||!('IntersectionObserver' in window))return;
+  new IntersectionObserver(function(es){
+    var v=es[0].isIntersecting;
+    bar.classList.toggle('is-away',v);
+    document.body.classList.toggle('cta-visible',v);
+  },{threshold:0.6}).observe(cta);
 })();
 </script>
 </body>
