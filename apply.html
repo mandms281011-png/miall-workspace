@@ -504,7 +504,10 @@ html body *,html body *::before,html body *::after{
   transition:border-color .2s, box-shadow .2s;-webkit-appearance:none;appearance:none}
 .finput::placeholder{color:var(--ink-mute)}
 .finput:focus{outline:none;border-color:var(--gold-500);box-shadow:0 0 0 3px rgba(203,174,107,.16)}
-.finput:invalid:not(:placeholder-shown){border-color:#c0705f}
+/* 未入力のうちは赤くしない。送信を押したときだけエラー表示にする
+   （日付とプルダウンには placeholder が無いので、:invalid だけだと最初から赤くなる） */
+.applyform.checked .finput:invalid{border-color:#c0705f;background:#fffaf9}
+.applyform.checked .fradios:has(input:invalid) .fradio{border-color:#c0705f}
 select.finput{background-image:url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%238a8276' stroke-width='1.5'/%3E%3C/svg%3E");
   background-repeat:no-repeat;background-position:right 15px center;padding-right:40px}
 textarea.finput{resize:vertical;min-height:110px}
@@ -1280,6 +1283,7 @@ var GFORM = {
 
     if(!form.checkValidity()){
       e.preventDefault();
+      form.classList.add('checked');
       err.textContent = '入力されていない項目があります。赤くなっているところをご確認ください。';
       err.hidden = false;
       var bad = form.querySelector(':invalid');
