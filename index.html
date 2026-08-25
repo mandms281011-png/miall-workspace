@@ -2840,6 +2840,17 @@ footer .logo img{height:56px}
   #schedule::after{opacity:.18!important}
   #access.bq-tr::after{opacity:.22!important}
   .rband:not(#price)::after{opacity:.24!important}}
+
+/* 左右の重心を戻す（2026-08-25）
+   プロフェッショナルの花を右へ移した結果、花が右6・左3になり
+   重心が中心から92px右へ寄ってしまった。左へ戻す。
+   文字とぶつからないよう、節の下half・やや小さめ・少し薄めにする。 */
+#professionals::after{
+  left:1%!important;right:auto!important;
+  top:56%!important;width:min(400px,31vw)!important;opacity:.38!important}
+@media(max-width:900px){
+  #professionals::after{left:50%!important;right:auto!important;
+    top:50%!important;width:66vw!important;opacity:.24!important}}
 </style>
 <script>
 (function(){
