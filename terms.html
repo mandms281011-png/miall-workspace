@@ -308,7 +308,7 @@ footer .logo{}
 
 
 <style id="miall-morning-window-light">
-/* 全ページ共通：画像の後ろで輝く、窓からの一筋の朝日 */
+/* 全ページ共通：必ず画像・文字の背面で動く、強い朝日 */
 :root{
   --morning-x:0px;
   --morning-y:0px;
@@ -317,90 +317,131 @@ footer .logo{}
 }
 body{position:relative;isolation:isolate}
 #miall-morning-light{display:none!important}
-section{
-  position:relative;
-  isolation:isolate;
+
+/* 最初の画面：ヘッダーから光を開始 */
+.topbar,header{position:relative;isolation:isolate;overflow:hidden}
+.topbar::after,header::before{
+  content:"";
+  position:absolute;
+  z-index:0;
+  pointer-events:none;
+  top:-150%;right:-8%;
+  width:58%;height:390%;
+  background:radial-gradient(ellipse at 76% 8%,
+    rgba(255,255,255,1) 0 9%,
+    rgba(255,247,213,.95) 22%,
+    rgba(255,222,166,.58) 43%,
+    rgba(255,239,205,.24) 63%,
+    transparent 78%);
+  filter:blur(10px) brightness(1.18);
+  transform:translate3d(var(--morning-x),0,0) rotate(var(--morning-angle));
+  animation:miallHeaderSun 7.5s ease-in-out infinite;
 }
+.topbar>* ,header>*{position:relative;z-index:2}
+header .hd{position:relative;z-index:2}
+
+/* 各セクション内では背景のすぐ上、画像・文字より下 */
+section{position:relative;isolation:isolate}
 section>.miall-section-sun{
   position:absolute;
   inset:0;
-  z-index:1;
+  z-index:0;
   overflow:hidden;
   pointer-events:none;
-  mix-blend-mode:normal;
+  mix-blend-mode:soft-light;
   opacity:var(--morning-strength);
 }
-section>*:not(.miall-section-sun){
-  position:relative;
-  z-index:2;
-}
+section>*:not(.miall-section-sun){position:relative;z-index:2}
 .miall-section-sun::before{
   content:"";
   position:absolute;
-  top:-36%;
-  right:-21%;
-  width:min(1180px,88vw);
-  height:185%;
-  clip-path:polygon(72% 0,100% 0,76% 100%,2% 100%);
-  background:radial-gradient(ellipse at 83% 3%,
-    rgba(255,255,255,1) 0 8%,
-    rgba(255,250,220,.98) 14%,
-    rgba(255,226,178,.82) 30%,
-    rgba(255,236,203,.56) 48%,
-    rgba(255,242,204,.30) 65%,
-    transparent 79%);
-  filter:blur(15px) brightness(1.18) saturate(1.04);
+  top:-42%;right:-18%;
+  width:min(1420px,112vw);
+  height:202%;
+  clip-path:polygon(67% 0,100% 0,80% 100%,0 100%);
+  background:radial-gradient(ellipse at 82% 3%,
+    rgba(255,255,255,1) 0 9%,
+    rgba(255,251,226,1) 16%,
+    rgba(255,220,162,.9) 32%,
+    rgba(255,236,198,.68) 50%,
+    rgba(255,245,220,.34) 67%,
+    transparent 82%);
+  filter:blur(13px) brightness(1.3) saturate(1.02);
   transform-origin:84% 2%;
   transform:translate3d(var(--morning-x),var(--morning-y),0) rotate(var(--morning-angle));
-  animation:miallMorningBehindDrift 9s ease-in-out infinite;
+  animation:miallMorningBehindDrift 8s ease-in-out infinite;
 }
 .miall-section-sun::after{
   content:"";
   position:absolute;
-  top:-21%;
-  right:-13%;
-  width:min(820px,65vw);
+  top:-24%;right:-10%;
+  width:min(980px,78vw);
   aspect-ratio:1;
   border-radius:50%;
   background:radial-gradient(circle,
-    rgba(255,255,255,1) 0 7%,
-    rgba(255,244,199,.92) 18%,
-    rgba(255,220,166,.46) 38%,
-    rgba(255,235,181,.22) 59%,
-    transparent 74%);
-  filter:blur(12px) brightness(1.22);
-  animation:miallMorningBehindGlow 6.8s ease-in-out infinite;
+    rgba(255,255,255,1) 0 9%,
+    rgba(255,246,211,.98) 19%,
+    rgba(255,216,154,.58) 40%,
+    rgba(255,238,201,.26) 61%,
+    transparent 77%);
+  filter:blur(11px) brightness(1.34);
+  animation:miallMorningBehindGlow 6.2s ease-in-out infinite;
 }
-/* トップの旧・複数光線と粒は完全に停止 */
+/* 表紙だけは白背景でも朝日がはっきり見える */
+.hero>.miall-section-sun{mix-blend-mode:normal}
+.hero .miall-section-sun::before{
+  right:-10%;width:min(1500px,118vw);
+  background:radial-gradient(ellipse at 81% 2%,
+    rgba(255,255,255,1) 0 10%,
+    rgba(255,249,219,1) 18%,
+    rgba(255,218,155,.82) 35%,
+    rgba(255,236,201,.58) 53%,
+    rgba(255,246,225,.28) 70%,
+    transparent 84%);
+}
 .hero .lightfall{display:none!important}
-@keyframes miallMorningBehindDrift{
-  0%,100%{translate:1.5vw -1vh;scale:.98;opacity:.76}
-  46%{translate:-4.5vw 4vh;scale:1.09;opacity:1}
-  70%{translate:-2.2vw 6vh;scale:1.04;opacity:.9}
-}
-@keyframes miallMorningBehindGlow{
-  0%,100%{transform:translate3d(1vw,-1vh,0) scale(.94);opacity:.66}
-  50%{transform:translate3d(-4vw,4vh,0) scale(1.13);opacity:1}
-}
-/* 花・写真・文字を光より手前で鮮明に保つ */
+
+/* 花・人物・カード・文字は例外なく光より前へ */
 .hero-bouquet-art,.cta-bouquet-art,.tf-shot,.hero-photo,
-.vinv-photo,.mentor-photo,section img,section h1,section h2,
-section h3,section p,section a,section ul,section dl{
+.vinv-photo,.mentor-photo,section img,section picture,section video,
+section h1,section h2,section h3,section p,section a,section ul,
+section ol,section dl,section .card,section .eq-box,section .pro,
+section .goal-lines,section .school-list{
   position:relative;
   z-index:3;
 }
+/* 擬似要素で置かれたラナンキュラスも光より前 */
+.vinv::after,#about.worry::after,#professionals::after,#community::before,
+#mentoring::after,#schedule::after,#access::after,.rband:not(#price)::after{
+  z-index:2!important;
+}
+@keyframes miallHeaderSun{
+  0%,100%{transform:translate3d(2vw,-1vh,0) rotate(-1deg);opacity:.72}
+  50%{transform:translate3d(-5vw,2vh,0) rotate(1deg);opacity:1}
+}
+@keyframes miallMorningBehindDrift{
+  0%,100%{translate:2vw -1vh;scale:.97;opacity:.8}
+  45%{translate:-6vw 5vh;scale:1.12;opacity:1}
+  72%{translate:-3vw 7vh;scale:1.055;opacity:.92}
+}
+@keyframes miallMorningBehindGlow{
+  0%,100%{transform:translate3d(2vw,-2vh,0) scale(.92);opacity:.7}
+  50%{transform:translate3d(-5vw,5vh,0) scale(1.16);opacity:1}
+}
 header,.mio-fab,.mio-panel,.stickycta{z-index:50}
 @media(max-width:900px){
-  section>.miall-section-sun{opacity:calc(var(--morning-strength) * .86)}
+  section>.miall-section-sun{opacity:calc(var(--morning-strength) * .9)}
   .miall-section-sun::before{
-    top:-22%;right:-56%;width:152vw;height:158%;
-    clip-path:polygon(76% 0,100% 0,80% 100%,8% 100%);
-    filter:blur(17px) brightness(1.18);
+    top:-24%;right:-54%;width:168vw;height:172%;
+    clip-path:polygon(71% 0,100% 0,83% 100%,2% 100%);
+    filter:blur(15px) brightness(1.24);
   }
-  .miall-section-sun::after{right:-34%;width:96vw}
+  .miall-section-sun::after{right:-36%;width:108vw}
+  .topbar::after,header::before{right:-28%;width:92%}
 }
 @media(prefers-reduced-motion:reduce){
-  .miall-section-sun::before,.miall-section-sun::after{animation:none!important}
+  .miall-section-sun::before,.miall-section-sun::after,
+  .topbar::after,header::before{animation:none!important}
 }
 </style>
 </head>
