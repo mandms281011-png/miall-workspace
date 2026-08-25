@@ -2747,6 +2747,13 @@ html,body{overflow-x:hidden}
 .vinv,#professionals,#mentoring,#community,#schedule,#about.worry,.cta,.tf,.hero{
   overflow:visible!important}
 html,body{overflow-x:hidden}
+
+/* 料金〜HOUSE RULES のあいだの花も、画面の内側に収める */
+.rband:not(#price){overflow:visible!important}
+.rband:not(#price)::after{
+  width:min(760px,58vw)!important;top:-190px!important;opacity:.22!important}
+@media(max-width:900px){
+  .rband:not(#price)::after{width:78vw!important;top:-110px!important;opacity:.12!important}}
 </style>
 <script>
 (function(){
