@@ -2687,6 +2687,66 @@ html,body{overflow-x:hidden}
 .hero-bouquet-sub{display:none!important}
 
 html,body{overflow-x:hidden}
+
+/* ============================================================
+   花の最終指定（2026-08-25）
+   これまでの指定が二重三重に重なり、画面外へ出て切れていた。
+   ここで位置・大きさ・濃さを全部ひとまとめに決め直す。
+   ・どの花も画面の内側に収める（負の値を使わない）
+   ・文字の後ろに来る花は薄くして、読みやすさを優先する
+   ============================================================ */
+
+/* --- 背面に敷く花：位置と大きさ --- */
+.vinv::after{left:2%!important;right:auto!important;
+  top:auto!important;bottom:4%!important;transform:none!important;
+  width:min(460px,36vw)!important;opacity:.2!important}
+
+#about.worry::after{right:2%!important;left:auto!important;
+  top:50%!important;bottom:auto!important;transform:translateY(-50%)!important;
+  width:min(560px,42vw)!important;opacity:.2!important}
+
+#professionals::after{left:2%!important;right:auto!important;
+  top:34%!important;bottom:auto!important;transform:none!important;
+  width:min(440px,34vw)!important;opacity:.16!important}
+
+#community::before{left:2%!important;right:auto!important;
+  top:44%!important;bottom:auto!important;transform:scaleX(-1)!important;
+  width:min(440px,34vw)!important;opacity:.16!important}
+
+#mentoring::after{right:2%!important;left:auto!important;
+  top:auto!important;bottom:3%!important;transform:none!important;
+  width:min(500px,38vw)!important;opacity:.5!important}
+
+#schedule::after{left:50%!important;right:auto!important;
+  top:50%!important;bottom:auto!important;transform:translate(-50%,-50%)!important;
+  width:min(620px,48vw)!important;opacity:.16!important}
+
+/* --- 主役として見せる花：濃いまま、文字の横に --- */
+.hero-bouquet-art{right:2%!important;left:auto!important;
+  width:min(520px,40vw)!important;opacity:1!important}
+.cta-bouquet-art{right:2%!important;left:auto!important;
+  width:min(340px,26vw)!important;opacity:.85!important}
+.tf .tf-shot img{max-width:100%!important}
+
+/* --- スマホ：中央に、さらに薄く --- */
+@media(max-width:900px){
+  .vinv::after,#about.worry::after,#professionals::after,
+  #community::before,#mentoring::after,#schedule::after{
+    left:50%!important;right:auto!important;
+    transform:translateX(-50%)!important;
+    width:66vw!important;opacity:.1!important}
+  #community::before{transform:translateX(-50%) scaleX(-1)!important}
+  #about.worry::after,#schedule::after{transform:translate(-50%,-50%)!important}
+  #community::before{transform:translate(-50%,0) scaleX(-1)!important}
+  .hero-bouquet-art{position:relative!important;left:auto!important;right:auto!important;
+    display:block!important;margin:10px auto 0!important;width:min(340px,72vw)!important}
+  .cta-bouquet-art{width:56vw!important;right:auto!important}
+}
+
+/* 念のため、どの節も花を切り取らない */
+.vinv,#professionals,#mentoring,#community,#schedule,#about.worry,.cta,.tf,.hero{
+  overflow:visible!important}
+html,body{overflow-x:hidden}
 </style>
 <script>
 (function(){
