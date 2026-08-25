@@ -930,6 +930,20 @@ main>section{margin-top:-1px!important;margin-bottom:-1px!important}
 .hero .lightfall::after{background:linear-gradient(104deg,transparent 0 10%,rgba(213,229,246,.24) 12%,rgba(255,255,255,.72) 15%,transparent 20% 30%,rgba(226,216,242,.18) 33%,rgba(255,255,255,.78) 36%,transparent 42% 53%,rgba(208,228,245,.22) 56%,rgba(255,255,255,.66) 59%,transparent 65% 74%,rgba(226,217,241,.16) 77%,rgba(255,255,255,.75) 80%,transparent 86%),linear-gradient(180deg,rgba(255,255,255,.78),rgba(215,230,246,.12) 45%,transparent 94%)!important;opacity:1!important}
 .hero .lightfall i{box-shadow:0 0 8px #fff,0 0 20px rgba(194,220,245,.55),0 0 35px rgba(232,220,245,.32)!important}
 </style>
+
+<style id="miall-fullcover-flow">
+/* 光の水流を表紙全体へ展開 */
+.hero .lightfall{left:0!important;right:0!important;top:-4%!important;width:100%!important;height:106%!important;transform:none!important;opacity:.88!important;mask-image:linear-gradient(180deg,#000 0%,rgba(0,0,0,.96) 72%,transparent 100%)!important;-webkit-mask-image:linear-gradient(180deg,#000 0%,rgba(0,0,0,.96) 72%,transparent 100%)!important}
+.hero .lightfall::before{inset:-24% -8% -6%!important;background:linear-gradient(97deg,rgba(255,255,255,.12) 0 3%,rgba(208,226,245,.22) 5%,#fff 7%,transparent 10% 15%,rgba(255,255,255,.64) 18%,transparent 22% 27%,rgba(213,229,246,.27) 29%,#fff 31.5%,transparent 35% 41%,rgba(255,255,255,.76) 44%,transparent 48% 53%,rgba(219,231,246,.24) 55%,#fff 57.5%,transparent 61% 67%,rgba(255,255,255,.72) 70%,transparent 74% 80%,rgba(211,228,245,.26) 82%,#fff 84.5%,transparent 88% 93%,rgba(255,255,255,.68) 96%,transparent 100%),repeating-linear-gradient(178deg,transparent 0 17px,rgba(255,255,255,.82) 20px,rgba(204,224,244,.24) 23px,transparent 30px 52px)!important;background-size:128% 158%,100% 132px!important;animation:miallFullCoverCurrent 4.8s linear infinite!important}
+.hero .lightfall::after{inset:-12% -6% 0!important;background:linear-gradient(102deg,transparent 0 4%,rgba(255,255,255,.38) 8%,transparent 14% 21%,rgba(218,232,247,.2) 24%,rgba(255,255,255,.56) 28%,transparent 34% 43%,rgba(255,255,255,.46) 47%,transparent 53% 61%,rgba(226,218,242,.16) 65%,rgba(255,255,255,.54) 69%,transparent 75% 84%,rgba(255,255,255,.42) 88%,transparent 94%),linear-gradient(180deg,rgba(255,255,255,.62),rgba(255,255,255,.12) 54%,transparent 94%)!important;background-size:120% 100%,100% 100%!important;animation:miallFullCoverSway 4.2s ease-in-out infinite!important}
+.hero .lightfall i{height:125%!important;top:-22%!important;opacity:.7!important}
+.hero .lightfall i:nth-child(1){right:8%!important}.hero .lightfall i:nth-child(2){right:34%!important}.hero .lightfall i:nth-child(3){right:59%!important}.hero .lightfall i:nth-child(4){right:84%!important}
+.hero .lightfall .diamond-gem:nth-of-type(1){left:8%!important}.hero .lightfall .diamond-gem:nth-of-type(2){left:22%!important}.hero .lightfall .diamond-gem:nth-of-type(3){left:37%!important}.hero .lightfall .diamond-gem:nth-of-type(4){left:50%!important}.hero .lightfall .diamond-gem:nth-of-type(5){left:63%!important}.hero .lightfall .diamond-gem:nth-of-type(6){left:76%!important}.hero .lightfall .diamond-gem:nth-of-type(7){left:88%!important}.hero .lightfall .diamond-gem:nth-of-type(8){left:94%!important}
+@keyframes miallFullCoverCurrent{0%{background-position:12% -54%,0 -132px}100%{background-position:-12% 66%,0 396px}}
+@keyframes miallFullCoverSway{0%,100%{transform:translate3d(2%,-2%,0) skewX(-1deg);opacity:.54}50%{transform:translate3d(-3%,3%,0) skewX(2deg);opacity:.94}}
+@media(min-width:900px){.hero .lightfall{background:linear-gradient(90deg,rgba(250,248,244,.36) 0%,rgba(250,248,244,.1) 38%,transparent 62%)}}
+@media(max-width:899px){.hero .lightfall{left:0!important;right:0!important;width:100%!important;opacity:.54!important}.hero .lightfall i:nth-child(4){display:block!important}}
+</style>
 </head>
 <body>
 
