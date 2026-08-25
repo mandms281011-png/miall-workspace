@@ -315,6 +315,94 @@ footer .logo{}
 .todo{display:none!important}
 </style>
 <link rel="icon" type="image/png" href="images/miall-mark.png"><link rel="apple-touch-icon" href="images/miall-icon-ivory.png">
+
+<style id="miall-morning-window-light">
+/* 全ページ共通：窓から差し込む、一筋の朝日 */
+:root{
+  --morning-x:0px;
+  --morning-y:0px;
+  --morning-angle:0deg;
+  --morning-strength:.78;
+}
+body{position:relative;isolation:isolate}
+#miall-morning-light{
+  position:fixed;
+  inset:0;
+  z-index:8;
+  overflow:hidden;
+  pointer-events:none;
+  opacity:var(--morning-strength);
+  mix-blend-mode:screen;
+  contain:paint;
+}
+#miall-morning-light::before{
+  content:"";
+  position:absolute;
+  top:-28vh;
+  right:-24vw;
+  width:min(1080px,82vw);
+  height:158vh;
+  clip-path:polygon(67% 0,100% 0,73% 100%,0 100%);
+  background:
+    radial-gradient(ellipse at 82% 4%,
+      rgba(255,255,255,.98) 0 7%,
+      rgba(255,250,230,.86) 15%,
+      rgba(255,239,196,.48) 34%,
+      rgba(255,247,224,.20) 54%,
+      transparent 76%);
+  filter:blur(25px) saturate(1.04);
+  transform-origin:84% 2%;
+  transform:translate3d(var(--morning-x),var(--morning-y),0) rotate(var(--morning-angle));
+  animation:miallMorningDrift 11s ease-in-out infinite;
+}
+#miall-morning-light::after{
+  content:"";
+  position:absolute;
+  top:-12vh;
+  right:-12vw;
+  width:min(760px,62vw);
+  aspect-ratio:1;
+  border-radius:50%;
+  background:radial-gradient(circle,
+    rgba(255,255,255,.86) 0,
+    rgba(255,244,207,.36) 27%,
+    rgba(255,239,202,.13) 52%,
+    transparent 72%);
+  filter:blur(18px);
+  animation:miallMorningGlow 8s ease-in-out infinite;
+}
+@keyframes miallMorningDrift{
+  0%,100%{translate:0 0;scale:1;opacity:.68}
+  48%{translate:-3.2vw 2.5vh;scale:1.055;opacity:.98}
+  72%{translate:-1.4vw 4vh;scale:1.025;opacity:.82}
+}
+@keyframes miallMorningGlow{
+  0%,100%{transform:translate3d(0,0,0) scale(.96);opacity:.56}
+  50%{transform:translate3d(-3vw,3vh,0) scale(1.08);opacity:.9}
+}
+/* 旧来の複数光線・黄色い粒は停止 */
+.hero .lightfall::before,
+.hero .lightfall::after,
+.hero .lightfall .diamond-gem{display:none!important}
+.hero .lightfall{
+  opacity:.32!important;
+  background:radial-gradient(ellipse at 82% -4%,rgba(255,255,255,.72),rgba(255,244,211,.18) 28%,transparent 62%)!important;
+}
+/* 光の中でも文字・操作は鮮明に */
+header,.mio-fab,.mio-panel,.stickycta{z-index:50}
+@media(max-width:900px){
+  #miall-morning-light{opacity:calc(var(--morning-strength) * .7)}
+  #miall-morning-light::before{
+    right:-48vw;width:138vw;height:145vh;
+    filter:blur(21px);
+    clip-path:polygon(72% 0,100% 0,78% 100%,7% 100%);
+  }
+  #miall-morning-light::after{right:-30vw;width:92vw}
+}
+@media(prefers-reduced-motion:reduce){
+  #miall-morning-light::before,#miall-morning-light::after{animation:none!important}
+}
+</style>
 </head>
 <body>
 
@@ -986,5 +1074,36 @@ footer .logo img{height:56px}
 })();
 </script>
 
+
+<script id="miall-morning-window-motion">
+(function(){
+  function boot(){
+    if(!document.getElementById('miall-morning-light')){
+      var light=document.createElement('div');
+      light.id='miall-morning-light';
+      light.setAttribute('aria-hidden','true');
+      document.body.insertBefore(light,document.body.firstChild);
+    }
+    var root=document.documentElement,lastY=window.scrollY,ticking=false;
+    function paint(){
+      var y=window.scrollY,delta=y-lastY;
+      root.style.setProperty('--morning-x',Math.max(-34,Math.min(22,-y*.014))+'px');
+      root.style.setProperty('--morning-y',Math.max(-12,Math.min(48,y*.012))+'px');
+      root.style.setProperty('--morning-angle',Math.max(-1.1,Math.min(1.1,delta*.025))+'deg');
+      root.style.setProperty('--morning-strength',String(Math.min(.94,.74+Math.min(18,Math.abs(delta))*.009)));
+      lastY=y;ticking=false;
+    }
+    addEventListener('scroll',function(){if(!ticking){ticking=true;requestAnimationFrame(paint)}},{passive:true});
+    addEventListener('pointermove',function(e){
+      if(innerWidth<900)return;
+      root.style.setProperty('--morning-x',(((e.clientX/innerWidth)-.5)*-24)+'px');
+      root.style.setProperty('--morning-y',(((e.clientY/innerHeight)-.5)*14)+'px');
+    },{passive:true});
+    paint();
+  }
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot,{once:true});
+  else boot();
+})();
+</script>
 </body>
 </html>
