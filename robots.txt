@@ -5,7 +5,6 @@ Disallow: /privacy.html
 Disallow: /forms/
 Disallow: /tokushoho.html
 Disallow: /mentoring.html
-Disallow: /event.html
 Disallow: /board.html
 Disallow: /mio.html
 Disallow: /referral.html

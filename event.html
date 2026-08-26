@@ -5,7 +5,7 @@
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 <meta http-equiv="Pragma" content="no-cache">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>イベントのお申し込み｜miall メンバーズ</title>
+<title>イベントのお申し込み｜miall コミュニティワークスペース</title>
 <meta name="description" content="miall 会員向け、イベント・同好会のお申し込みページです。">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -544,7 +544,7 @@ textarea.finput{resize:vertical;min-height:110px}
 @media(max-width:560px){.applyline{text-align:center}.applyline .btn{max-width:none}}
 </style>
 
-<meta name="robots" content="noindex,nofollow">
+
 </head>
 <body>
 
@@ -568,9 +568,9 @@ textarea.finput{resize:vertical;min-height:110px}
 
 <section class="page-head">
   <div class="narrow">
-    <div class="breadcrumb">MEMBERS　/　イベントのお申し込み</div>
+    <div class="breadcrumb">EVENT　/　お申し込み</div>
     <h1 class="serif">イベントのお申し込み</h1>
-    <p>参加する回とお名前を教えてください。<br><b style="color:var(--ink);font-weight:500">ゲストは、会員1名につき1名までご一緒いただけます。</b></p>
+    <p>参加する回とお名前を教えてください。<br><b style="color:var(--ink);font-weight:500">会員でない方も、ご参加いただけます。</b></p>
     <p style="margin-top:14px;font-size:14.5px"><a href="events.html" style="color:var(--rose-700);text-decoration:underline;text-underline-offset:3px">今月の予定を見る</a></p>
   </div>
 </section>
@@ -579,6 +579,16 @@ textarea.finput{resize:vertical;min-height:110px}
   <div class="narrow">
     <form class="applyform" id="applyForm" method="POST" target="applySink" novalidate>
       <input type="hidden" name="f_kind" value="イベント">
+
+      <div class="fgroup">
+        <span class="flabel">ご参加のかたち <i>必須</i></span>
+        <div class="fradios">
+          <label class="fradio"><input type="radio" name="f_who" value="会員" required>
+            <span><b>miall の会員です</b></span></label>
+          <label class="fradio"><input type="radio" name="f_who" value="はじめての方">
+            <span><b>はじめて参加します</b><small>会員でない方も歓迎しています</small></span></label>
+        </div>
+      </div>
 
       <div class="fgroup">
         <label class="flabel" for="f_name">お名前 <i>必須</i></label>
@@ -597,7 +607,7 @@ textarea.finput{resize:vertical;min-height:110px}
           <label class="fradio"><input type="radio" name="f_guest" value="ひとりで参加します" required>
             <span><b>ひとりで参加します</b></span></label>
           <label class="fradio"><input type="radio" name="f_guest" value="ゲストを1名連れていきます">
-            <span><b>ゲストを1名連れていきます</b><small>会員1名につき1名までご一緒いただけます</small></span></label>
+            <span><b>ゲストを1名連れていきます</b><small>会員の方は1名につき1名までご一緒いただけます</small></span></label>
         </div>
       </div>
 
@@ -606,7 +616,7 @@ textarea.finput{resize:vertical;min-height:110px}
         <textarea class="finput" id="f_note" name="f_note" rows="3" placeholder="遅れて参加します、など"></textarea>
       </div>
       <p class="fnote">
-        会員の方向けのページです。<br>
+        miall は<b style="color:var(--ink);font-weight:500">女性限定</b>の場所です。<br>
         いただいた内容は、この件のご連絡にのみ使います。
       </p>
       <div class="fsubmit">
@@ -619,7 +629,7 @@ textarea.finput{resize:vertical;min-height:110px}
       <h2 class="serif">ありがとうございます。</h2>
       <p>
         お申し込みを受け付けました。<br>
-        日時のご連絡は、<b style="color:var(--ink);font-weight:500">会員専用の公式LINE</b>からお送りします。
+        日時などのご連絡は、<b style="color:var(--ink);font-weight:500">miall事務局</b>からお送りします。
       </p>
       <p style="margin-top:26px"><a href="index.html" style="color:var(--rose-700)">トップにもどる →</a></p>
     </div>
@@ -1216,6 +1226,14 @@ var GFORM = {
     }
 
     // 送信の直前だけ、name を Googleフォームの entry.XXXX に付け替える
+    /* ご参加のかたちは、フォームの項目を増やさずに「伝えておきたいこと」の先頭へ入れる
+       （項目を足すと、ほかのページからの送信が届かなくなるため） */
+    var who = document.querySelector('input[name="f_who"]:checked');
+    var noteEl = document.getElementById('f_note');
+    if(who && noteEl && noteEl.value.indexOf('【') !== 0){
+      noteEl.value = '【' + who.value + '】' + (noteEl.value ? '\n' + noteEl.value : '');
+    }
+
     Object.keys(GFORM.f).forEach(function(key){
       var entry = GFORM.f[key];
       if(!entry) return;
