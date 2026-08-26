@@ -481,7 +481,7 @@ html body *,html body *::before,html body *::after{
 
 <header>
   <div class="wrap hd">
-    <div class="logo"><img src="images/miall-logo-horizontal.png" alt="miall コミュニティワークスペース" width="1241" height="462"></div>
+    <div class="logo"><img src="images/miall-logo-header.png" alt="miall コミュニティワークスペース" width="1241" height="462"></div>
     <nav>
       <a href="index.html#about">この場所について</a>
       <a href="index.html#equipment">設備</a>
@@ -611,7 +611,7 @@ html body *,html body *::before,html body *::after{
   <div class="wrap">
     <div class="fgrid">
       <div>
-        <div class="logo"><img src="images/miall-logo-horizontal.png" alt="miall コミュニティワークスペース" width="1241" height="462"></div>
+        <div class="logo"><img src="images/miall-logo-header.png" alt="miall コミュニティワークスペース" width="1241" height="462"></div>
         <p style="margin-top:16px;max-width:26em;line-height:1.9">
           自分を見つけた人から、輝きはじめる。<br>前に進みたい女性のための、女性限定のコミュニティワークスペース。
         </p>
@@ -1116,6 +1116,20 @@ footer .logo img{height:56px}
   .hd .logo img,footer .logo img,.logo img{height:40px!important}}
 @media(max-width:520px){
   .hd .logo img,footer .logo img,.logo img{height:32px!important}}
+
+/* ヘッダー・フッターのロゴ（2026-08-25）
+   もとの横型ロゴは副題が画像内で25px（全体の5%）しかなく、
+   表示すると3px以下になって読めなかった。副題を外した版に差し替え、
+   「miall」がはっきり読める大きさで置く。 */
+.logo img{display:block;width:auto;height:44px!important;max-width:100%}
+footer .logo img{height:46px!important}
+@media(max-width:900px){.logo img,.hd .logo img,footer .logo img{height:36px!important}}
+@media(max-width:520px){.logo img,.hd .logo img,footer .logo img{height:30px!important}}
+
+/* ヘッダーのナビが全項目2行に折り返していたのを、1行に収める
+   （必要幅814px＞使える幅754px だったため、間隔と字を詰める） */
+.hd nav{gap:15px!important;font-size:12.5px!important}
+@media(max-width:1180px){.hd nav{gap:12px!important;font-size:12px!important}}
 </style>
 <script>
 (function(){
