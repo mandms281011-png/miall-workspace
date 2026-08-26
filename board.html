@@ -1231,7 +1231,11 @@ footer .logo img{height:56px}
   }
 
   /* ---------- 承認された投稿を読み込む ---------- */
-  var CSV = "https://docs.google.com/spreadsheets/d/1xKrpijPWgwWELNbXjQA-gqKYeTSbwYFqfG10K7nNbJw/pub?gid=2108637694&single=true&output=csv";
+  /* スプレッドシートの「公開用」タブを読む。
+     ウェブ公開ではなく、gviz（表示用の書き出し）を使っている。
+     Googleの「ウェブに公開」の画面がブラウザを固まらせるため、
+     共有＝リンクを知っている全員（閲覧のみ）＋この読み出し方に切り替えた。 */
+  var CSV = "https://docs.google.com/spreadsheets/d/1xKrpijPWgwWELNbXjQA-gqKYeTSbwYFqfG10K7nNbJw/gviz/tq?tqx=out:csv&gid=2108637694";
 
   function parseCSV(text){
     var rows = [], row = [], cell = '', q = false;
@@ -1252,9 +1256,16 @@ footer .logo img{height:56px}
   }
 
   function fmtDate(s){
-    var m = String(s).match(/(\d{4})\/(\d{1,2})\/(\d{1,2})/);
-    if(!m) return '';
-    return m[1] + '.' + ('0'+m[2]).slice(-2) + '.' + ('0'+m[3]).slice(-2);
+    var t = String(s).trim();
+    var m = t.match(/(\d{4})\/(\d{1,2})\/(\d{1,2})/);
+    if(m) return m[1] + '.' + ('0'+m[2]).slice(-2) + '.' + ('0'+m[3]).slice(-2);
+    /* gviz はシリアル値（1899/12/30 起点の日数）で返してくる */
+    var n = parseFloat(t);
+    if(!isNaN(n) && n > 20000){
+      var d = new Date(Date.UTC(1899, 11, 30) + Math.floor(n) * 86400000);
+      return d.getUTCFullYear() + '.' + ('0'+(d.getUTCMonth()+1)).slice(-2) + '.' + ('0'+d.getUTCDate()).slice(-2);
+    }
+    return '';
   }
 
   var wrap = document.getElementById('memberposts');
