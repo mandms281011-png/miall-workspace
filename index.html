@@ -1580,8 +1580,8 @@ html body *,html body *::before,html body *::after{
     <hr class="hairline"><span class="kicker">ACHIEVEMENT</span>
     <h2 class="sec">目標を決めて、達成する。<br>それを、一緒に<br class="brsp">喜んでくれる人がいる。</h2>
     <p class="sub" style="max-width:36em;margin-inline:auto">
-      ひとりで決めた目標は、ひとりで忘れられます。<br>
-      ここでは、決めたことを誰かが知っていて、できた日には一緒に喜びます。
+      決めたことは、誰かが知っているだけで続きます。<br>
+      できた日には、一緒に喜んでくれる人がいます。
     </p>
       <figure class="goal-photo">
         <img src="images/goal.jpg" alt="ノートパソコンを囲んで、拍手をしながら笑い合っている女性たち" width="1672" height="941">
@@ -1683,7 +1683,7 @@ html body *,html body *::before,html body *::after{
       </div>
       <div class="card">
         <h3>覚えている人がいる</h3>
-        <p>miall 会で話したことは、誰かが覚えています。<b>できた日には、一緒に喜ぶ人がいます。</b>ひとりで決めた目標は、ひとりで忘れられます。</p>
+        <p>miall 会で話したことは、誰かが覚えています。<b>できた日には、一緒に喜ぶ人がいます。</b>誰かが知っているから、決めたことが続きます。</p>
       </div>
     </div>
 
@@ -3122,6 +3122,10 @@ footer .logo img{height:56px}
   transform:scaleX(-1)!important}
 @media(max-width:900px){
   #community.bq-bl::after,#community::before{display:none!important}}
+
+/* リトリートの写真にかぶる花を削除（2026-08-25・ご指示）
+   コミュニティの節の上側にある流れる茎（::before）はそのまま残す。 */
+#community.bq-bl::after{display:none!important;content:none!important}
 </style>
 <script>
 (function(){
