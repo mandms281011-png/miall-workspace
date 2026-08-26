@@ -294,6 +294,12 @@ html body *,html body *::before,html body *::after{
 .memberapply a{display:inline-block;background:var(--ivory,#fdfbf6);color:var(--rose-700,#96762f);border:1px solid var(--gold-500,#cbae6b);text-decoration:none;padding:11px 24px;border-radius:3px;font-size:14px;letter-spacing:.06em;white-space:nowrap;transition:.25s}
 .memberapply a:hover{background:#fbf8f2;border-color:var(--rose-600,#ac8b41);color:var(--ink,#33312d)}
 </style>
+
+<style>
+.applysplit{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.applysplit .btn-ghost2{background:var(--ivory,#fdfbf6);color:var(--rose-700,#96762f);border:1px solid var(--gold-500,#cbae6b);box-shadow:none}
+.applysplit .btn-ghost2:hover{background:#fbf8f2;border-color:var(--rose-600,#ac8b41);color:var(--ink,#33312d)}
+</style>
 </head>
 <body>
 <div class="glow" id="glow"></div>
@@ -317,7 +323,7 @@ html body *,html body *::before,html body *::after{
     <p class="hero-copy">ラナンキュラスが幾重にも花びらをひらくように。<br>新しい学びやご縁が、あなたの可能性を華やかに広げます。</p>
     <div class="hero-actions">
       <a class="btn" href="#calendar">9月の予定を見る</a>
-      <a class="btn btn-light" href="event.html">イベントに申し込む</a>
+      <a class="btn btn-light" href="event-guest.html">イベントに申し込む</a>
     </div>
   </div>
   <div class="flower-word">miall</div>
@@ -350,7 +356,10 @@ html body *,html body *::before,html body *::after{
       <article class="event-card" id="eventDetail">
         <div class="event-date">9.12 <small>土曜日</small></div>
         <div class="event-body"><h3>オープニングセミナー <span class="tag tag-guest">ゲスト参加OK</span></h3><p>お時間は決まりしだい、公式LINEでお知らせします。</p></div>
-        <a class="btn" href="event.html">参加を申し込む</a>
+        <div class="applysplit">
+          <a class="btn" href="event-guest.html">はじめての方はこちら</a>
+          <a class="btn btn-ghost2" href="event.html">会員の方はこちら</a>
+        </div>
       </article>
       <div class="anytime"><b>随時　9:00〜21:00・事前予約制</b><span>面談（無料）／<a href="dropin.html" style="color:inherit;text-decoration:underline;text-underline-offset:3px">ドロップイン（1日利用・3,000円税込）</a>／メンタリング（会員限定）</span></div>
       <p class="note">そのほかの企画は、決まりしだい<a href="https://lin.ee/6v6NCVt" target="_blank" rel="noopener">公式LINE</a>でお知らせします。</p>
@@ -362,7 +371,7 @@ html body *,html body *::before,html body *::after{
   <div class="narrow">
     <small>LET YOUR CHARM BLOOM</small>
     <h2>あなたの魅力がひらく時間を、<br>miallで。</h2>
-    <a class="btn btn-light" href="event.html">イベントに申し込む</a>
+    <a class="btn btn-light" href="event-guest.html">イベントに申し込む</a>
   </div>
 </section>
 </main>

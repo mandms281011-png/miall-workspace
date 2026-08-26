@@ -8,3 +8,4 @@ Disallow: /mentoring.html
 Disallow: /board.html
 Disallow: /mio.html
 Disallow: /referral.html
+Disallow: /event.html
