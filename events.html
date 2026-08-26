@@ -467,6 +467,30 @@ footer .logo img{height:56px}
   .hd .logo img,footer .logo img,.logo img{height:40px!important}}
 @media(max-width:520px){
   .hd .logo img,footer .logo img,.logo img{height:32px!important}}
+
+/* 黒をやめて、サイトと同じトープに揃える（2026-08-25）
+   イベントページだけ真っ黒で、ほかのページと調和していなかった。
+   index のメンタリングと同じトープ（#6a6053 系）に置き換える。
+   白文字とのコントラストは 5.3:1 以上で、読みやすさの基準を満たす。 */
+:root{--wine-deep:#6a6053}
+
+.hero{background:#6a6053!important}
+.hero::before{
+  background:linear-gradient(90deg,rgba(93,84,71,.90) 0%,rgba(106,96,83,.72) 42%,rgba(106,96,83,.10) 77%),
+             linear-gradient(0deg,rgba(84,75,63,.34),transparent 52%)!important}
+@media(max-width:900px){
+  .hero::before{
+    background:linear-gradient(90deg,rgba(93,84,71,.88),rgba(106,96,83,.46))!important}}
+
+/* 見出しと本文は白のまま。読みやすさを確保する */
+.hero-inner{color:#fff!important}
+.hero h1{color:#fff!important}
+.hero-copy{color:rgba(255,255,255,.90)!important}
+
+.big-cta{
+  background:linear-gradient(rgba(93,84,71,.80),rgba(84,75,63,.90)),
+             url("images/flowers-noribbon.jpg") center/cover fixed!important}
+footer{background:#5d5447!important;color:rgba(255,255,255,.72)!important}
 </style>
 
 <button class="mio-fab" id="mioFab" aria-label="ミオに質問する">
