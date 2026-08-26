@@ -3107,6 +3107,21 @@ footer .logo img{height:56px}
 @media(max-width:900px){
   .hero.photobg::after,.ranunculus-bridge__image,.vinv::before,#faq::before{
     display:none!important}}
+
+/* コミュニティの花を戻す（2026-08-25）
+   もとからあった左下の花束（.bq-bl::after）と、あとから足した流れる茎。
+   写真や見出しにかぶらない位置へ寄せたうえで表示に戻す。 */
+#community.bq-bl::after{
+  display:block!important;content:""!important;
+  left:1%!important;right:auto!important;bottom:2%!important;top:auto!important;
+  width:min(360px,28vw)!important;opacity:.34!important}
+#community::before{
+  display:block!important;content:""!important;
+  left:1%!important;right:auto!important;top:8%!important;bottom:auto!important;
+  width:min(340px,26vw)!important;opacity:.3!important;
+  transform:scaleX(-1)!important}
+@media(max-width:900px){
+  #community.bq-bl::after,#community::before{display:none!important}}
 </style>
 <script>
 (function(){
