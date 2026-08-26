@@ -10,3 +10,4 @@ Disallow: /mio.html
 Disallow: /referral.html
 Disallow: /event.html
 Disallow: /leave.html
+Disallow: /welcome.html
