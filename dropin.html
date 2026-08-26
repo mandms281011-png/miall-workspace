@@ -599,7 +599,8 @@ textarea.finput{resize:vertical;min-height:110px}
       <div class="price">3,000<small>円（税込）／1日</small></div>
       <div class="meta">
         9:00〜21:00 のあいだ、何時間でもお使いいただけます。<br>
-        <b style="color:var(--ink);font-weight:500">館内の設備は、すべてお使いいただけます。</b>追加でかかるものはありません。
+        <b style="color:var(--ink);font-weight:500">館内の設備は、すべてお使いいただけます。</b>追加でかかるものはありません。<br>
+        事前予約制・事前払いです。<b style="color:var(--ink);font-weight:500">前日までのキャンセルは全額返金</b>いたします。
       </div>
       <ul class="dropfac">
         <li>スペース使い放題</li>
@@ -652,8 +653,10 @@ textarea.finput{resize:vertical;min-height:110px}
     </form>
 
     <div class="dropnote">
-      <b>お支払いは、当日その場で</b><br>
-      受付にQRコードを置いています。カメラで読み取って、カードか Apple Pay でお支払いいただけます。現金でも大丈夫です。<br><br>
+      <b>お支払いは、ご予約のあとに</b><br>
+      送信するとお支払いのご案内が出ます。カードまたは Apple Pay でお支払いいただけます。<br>
+      公式LINEでお申し込みの方には、同じお支払いのリンクをトークにお送りします。<br>
+      <b style="color:var(--ink);font-weight:500">お支払いの確認をもって、ご予約が確定します。</b><br><br>
       <b>ご予約のあと</b><br>
       miall事務局から、確認のメールをお送りします。空いていない時間帯のときは、近い日をご提案します。<br><br>
       <b>女性限定です</b><br>
@@ -661,7 +664,8 @@ textarea.finput{resize:vertical;min-height:110px}
       <b>駐車場はありません</b><br>
       近くのコインパーキングをご利用ください。駐車料金の補助はしていません。<br><br>
       <b>キャンセル</b><br>
-      前日までにご連絡ください。お支払いは当日なので、キャンセル料はいただきません。
+      <b style="color:var(--ink);font-weight:500">前日までにご連絡いただければ、全額をお返しします。</b>お支払いの方法により、返金までに数日いただくことがあります。<br>
+      当日のキャンセルと、ご連絡のないご欠席は、返金いたしかねます。ご都合が悪くなったら、前日までにお知らせください。
     </div>
 
     <iframe name="applySink" id="applySink" style="display:none" title="送信"></iframe>
@@ -692,7 +696,16 @@ var GFORM = {
     });
     document.getElementById('dSubmit').disabled = true;
     setTimeout(function(){
-      form.innerHTML = '<div style="background:var(--ivory);border:1px solid var(--gold-500);border-radius:3px;padding:26px;line-height:2">ご予約ありがとうございます😊<br>確認のメールをお送りしますので、少しお待ちください。<br>当日、お会いできるのを楽しみにしています。</div>';
+      form.innerHTML =
+        '<div style="background:var(--ivory);border:1px solid var(--gold-500);border-radius:3px;padding:26px 26px 30px;line-height:2">'
+        + 'ご予約ありがとうございます😊<br>'
+        + '続けて、お支払いにお進みください。<br>'
+        + '<b style="color:var(--ink);font-weight:500">お支払いの確認をもって、ご予約が確定します。</b>'
+        + '<div style="margin-top:22px"><a class="btn btn-lg" href="https://buy.stripe.com/3cIfZhbei04OesQfKV0RG0g" target="_blank" rel="noopener">お支払いへ進む（3,000円・税込）</a></div>'
+        + '<p style="margin-top:18px;font-size:13.5px;color:var(--ink-soft);line-height:1.95">'
+        + 'いま払えないときは、そのままで大丈夫です。miall事務局から、お支払いのご案内をお送りします。<br>'
+        + '前日までのキャンセルは全額をお返しします。当日のキャンセルは返金いたしかねます。</p>'
+        + '</div>';
     }, 700);
   };
 })();
