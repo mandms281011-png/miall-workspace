@@ -3089,6 +3089,24 @@ footer .logo img{height:56px}
 /* 帯の下でも花がつながって見えるよう、少しだけ濃くする */
 #about.worry::after{opacity:.3!important}
 @media(max-width:900px){#about.worry::after{opacity:.18!important}}
+
+/* 止めていた花を戻す（2026-08-25）
+   「切れて見える」対策で、もとからあった装飾の花まで止めてしまっていた。
+   これらは輪郭がぼかしてある（mask）ので、切れて見えない。戻す。 */
+.hero.photobg::after{display:block!important}
+.ranunculus-bridge__image{display:block!important}
+.vinv::before{display:block!important}
+#faq::before{display:block!important}
+#contact.cta::before{display:block!important}
+
+/* 戻したぶん、画面の外へ出ないように位置だけ整える */
+.hero.photobg::after{right:0!important}
+.ranunculus-bridge__image{right:0!important}
+.vinv::before{left:0!important}
+#faq::before{right:0!important}
+@media(max-width:900px){
+  .hero.photobg::after,.ranunculus-bridge__image,.vinv::before,#faq::before{
+    display:none!important}}
 </style>
 <script>
 (function(){
