@@ -7,4 +7,3 @@ Disallow: /tokushoho.html
 Disallow: /mentoring.html
 Disallow: /event.html
 Disallow: /board.html
-Disallow: /mio.html
