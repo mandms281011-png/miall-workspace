@@ -332,7 +332,7 @@ html body *,html body *::before,html body *::after{
 
 <section class="intro reveal">
   <div class="narrow">
-    <p class="kicker">SEPTEMBER 2026</p>
+    <p class="kicker" id="calKicker">SEPTEMBER 2026</p>
     <h2>ここで過ごす時間が、<br>次の一歩につながる。</h2>
     <p>イベントのある日をタップすると、詳しい内容をご覧いただけます。</p>
     <div class="legend"><span class="tag tag-guest">ゲスト参加OK</span><span class="tag tag-member">会員限定</span></div>
@@ -342,16 +342,10 @@ html body *,html body *::before,html body *::after{
 <section class="calendar-section" id="calendar">
   <div class="narrow">
     <div class="cal-shell reveal">
-      <div class="cal-head"><h2>2026年 <b>9</b>月</h2><span>SEPTEMBER</span></div>
-      <div class="cal-grid">
+      <div class="cal-head" id="calHead"><h2><span id="calY">2026年</span> <b id="calM">9</b>月</h2><span id="calEn">SEPTEMBER</span></div>
+      <div class="cal-grid" id="calGrid">
         <div class="cal-dow sun">日</div><div class="cal-dow">月</div><div class="cal-dow">火</div><div class="cal-dow">水</div><div class="cal-dow">木</div><div class="cal-dow">金</div><div class="cal-dow sat">土</div>
-        <div class="cal-cell empty"></div><div class="cal-cell empty"></div>
-        <div class="cal-cell"><span class="n">1</span></div><div class="cal-cell"><span class="n">2</span></div><div class="cal-cell"><span class="n">3</span></div><div class="cal-cell"><span class="n">4</span></div><div class="cal-cell sat"><span class="n">5</span></div>
-        <div class="cal-cell sun"><span class="n">6</span></div><div class="cal-cell"><span class="n">7</span></div><div class="cal-cell"><span class="n">8</span></div><div class="cal-cell"><span class="n">9</span></div><div class="cal-cell"><span class="n">10</span></div><div class="cal-cell"><span class="n">11</span></div>
-        <div class="cal-cell sat has" id="eventDay" tabindex="0" role="button" aria-label="9月12日 オープニングセミナーの詳細"><span class="n">12</span><span class="ev-name">オープニング<br>セミナー</span></div>
-        <div class="cal-cell sun"><span class="n">13</span></div><div class="cal-cell"><span class="n">14</span></div><div class="cal-cell"><span class="n">15</span></div><div class="cal-cell"><span class="n">16</span></div><div class="cal-cell"><span class="n">17</span></div><div class="cal-cell"><span class="n">18</span></div><div class="cal-cell sat"><span class="n">19</span></div>
-        <div class="cal-cell sun"><span class="n">20</span></div><div class="cal-cell"><span class="n">21</span></div><div class="cal-cell"><span class="n">22</span></div><div class="cal-cell"><span class="n">23</span></div><div class="cal-cell"><span class="n">24</span></div><div class="cal-cell"><span class="n">25</span></div><div class="cal-cell sat"><span class="n">26</span></div>
-        <div class="cal-cell sun"><span class="n">27</span></div><div class="cal-cell"><span class="n">28</span></div><div class="cal-cell"><span class="n">29</span></div><div class="cal-cell"><span class="n">30</span></div><div class="cal-cell empty"></div><div class="cal-cell empty"></div><div class="cal-cell empty"></div>
+      </div>
       </div>
       <div id="eventList">
       <!-- ここはスプレッドシート「miall イベント一覧（サイト連動）」から自動で作られます。
@@ -761,14 +755,19 @@ footer .logo img{height:46px!important}
 
 
 <script>
-/* ===== イベント一覧をスプレッドシートから読む =====
+/* ===== イベントページをスプレッドシートから作る =====
    シート：miall イベント一覧（サイト連動）
    列：A 公開 / B 日付 / C 曜日 / D タイトル / E 時間 / F 内容 / G 参加できる方 / H 備考
-   A列に ○ を入れた行だけ、このページに出ます。 */
+   A列に ○ を入れた行だけ出ます。
+   いちばん近い予定のある月を表示します（なければ今月）。 */
 (function(){
   var SHEET = "https://docs.google.com/spreadsheets/d/1OiBHtQ2lTUlF-7R3f9zWmb46eyCSzQBsDTrfTEMwhNU/gviz/tq?tqx=out:csv&gid=0";
-  var wrap = document.getElementById('eventList');
-  if(!wrap) return;
+  var grid = document.getElementById('calGrid');
+  var list = document.getElementById('eventList');
+  if(!grid || !list) return;
+
+  var EN = ['JANUARY','FEBRUARY','MARCH','APRIL','MAY','JUNE','JULY','AUGUST','SEPTEMBER','OCTOBER','NOVEMBER','DECEMBER'];
+  var DOW = ['日','月','火','水','木','金','土'];
 
   function parseCSV(text){
     var rows=[], row=[], cell='', q=false;
@@ -786,62 +785,123 @@ footer .logo img{height:46px!important}
     return rows;
   }
 
-  function md(s){
-    var m=String(s).match(/(\d{4})\/(\d{1,2})\/(\d{1,2})/);
-    if(m) return {y:+m[1], m:+m[2], d:+m[3]};
-    var n=parseFloat(s);
+  function toDate(v){
+    var m=String(v).match(/(\d{4})[\/\-](\d{1,2})[\/\-](\d{1,2})/);
+    if(m) return new Date(+m[1], +m[2]-1, +m[3]);
+    var n=parseFloat(v);
     if(!isNaN(n)&&n>20000){
-      var dt=new Date(Date.UTC(1899,11,30)+Math.floor(n)*86400000);
-      return {y:dt.getUTCFullYear(), m:dt.getUTCMonth()+1, d:dt.getUTCDate()};
+      var d=new Date(Date.UTC(1899,11,30)+Math.floor(n)*86400000);
+      return new Date(d.getUTCFullYear(), d.getUTCMonth(), d.getUTCDate());
     }
     return null;
+  }
+
+  function guestOK(v){ return String(v||'').indexOf('どなた') === 0; }
+
+  function buildCalendar(year, month, byDay){
+    grid.innerHTML = '';
+    DOW.forEach(function(d,i){
+      var el=document.createElement('div');
+      el.className='cal-dow' + (i===0?' sun':i===6?' sat':'');
+      el.textContent=d; grid.appendChild(el);
+    });
+    var first=new Date(year, month, 1).getDay();
+    var last=new Date(year, month+1, 0).getDate();
+    for(var i=0;i<first;i++){
+      var e=document.createElement('div'); e.className='cal-cell empty'; grid.appendChild(e);
+    }
+    for(var d=1; d<=last; d++){
+      var w=new Date(year, month, d).getDay();
+      var cell=document.createElement('div');
+      cell.className='cal-cell' + (w===0?' sun':w===6?' sat':'');
+      var n=document.createElement('span'); n.className='n'; n.textContent=d;
+      cell.appendChild(n);
+      var ev=byDay[d];
+      if(ev){
+        cell.className += ' has';
+        cell.setAttribute('tabindex','0');
+        cell.setAttribute('role','button');
+        cell.setAttribute('aria-label', (month+1)+'月'+d+'日 '+ev.title+'の詳細');
+        var name=document.createElement('span'); name.className='ev-name'; name.textContent=ev.title;
+        cell.appendChild(name);
+        (function(id){
+          function go(){ var t=document.getElementById(id); if(t) t.scrollIntoView({behavior:'smooth', block:'center'}); }
+          cell.addEventListener('click', go);
+          cell.addEventListener('keydown', function(e){ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); go(); } });
+        })(ev.id);
+      }
+      grid.appendChild(cell);
+    }
+    var tail=(7-((first+last)%7))%7;
+    for(var t=0;t<tail;t++){
+      var e2=document.createElement('div'); e2.className='cal-cell empty'; grid.appendChild(e2);
+    }
+    var y=document.getElementById('calY'), m=document.getElementById('calM'),
+        en=document.getElementById('calEn'), kicker=document.getElementById('calKicker');
+    if(y) y.textContent=year+'年';
+    if(m) m.textContent=(month+1);
+    if(en) en.textContent=EN[month];
+    if(kicker) kicker.textContent=EN[month]+' '+year;
+  }
+
+  function buildCards(events){
+    list.innerHTML='';
+    events.forEach(function(ev){
+      var el=document.createElement('article');
+      el.className='event-card'; el.id=ev.id;
+
+      var dt=document.createElement('div'); dt.className='event-date';
+      dt.innerHTML=(ev.date.getMonth()+1)+'.'+ev.date.getDate()+' <small>'+DOW[ev.date.getDay()]+'曜日</small>';
+
+      var body=document.createElement('div'); body.className='event-body';
+      var h=document.createElement('h3'); h.textContent=ev.title;
+      var tag=document.createElement('span');
+      tag.className='tag ' + (ev.guest?'tag-guest':'tag-member');
+      tag.textContent= ev.guest ? 'ゲスト参加OK' : '会員限定';
+      h.appendChild(document.createTextNode(' ')); h.appendChild(tag);
+      body.appendChild(h);
+
+      var p=document.createElement('p');
+      p.textContent=[ (ev.time && ev.time!=='未定') ? ev.time : '', ev.body ].filter(Boolean).join('　');
+      body.appendChild(p);
+      if(ev.note){ var n=document.createElement('p'); n.style.fontSize='13.5px'; n.style.opacity='.85'; n.textContent=ev.note; body.appendChild(n); }
+
+      var btns=document.createElement('div'); btns.className='applysplit';
+      btns.innerHTML = ev.guest
+        ? '<a class="btn" href="event-guest.html">はじめての方はこちら</a><a class="btn btn-ghost2" href="event.html">会員の方はこちら</a>'
+        : '<a class="btn" href="event.html">会員の方はこちら</a>';
+
+      el.appendChild(dt); el.appendChild(body); el.appendChild(btns);
+      list.appendChild(el);
+    });
   }
 
   fetch(SHEET,{cache:'no-store'})
     .then(function(r){ if(!r.ok) throw new Error(r.status); return r.text(); })
     .then(function(t){
-      var rows = parseCSV(t).slice(1).filter(function(r){
-        return r.length>=4 && String(r[0]).trim()==='○' && String(r[3]).trim();
-      });
-      if(!rows.length) return;
-      wrap.innerHTML = '';
-      rows.forEach(function(r){
-        var d = md(r[1]);
-        var el = document.createElement('article');
-        el.className = 'event-card';
+      var events = parseCSV(t).slice(1).map(function(r){
+        if(r.length<4 || String(r[0]).trim()!=='○') return null;
+        var d=toDate(r[1]); if(!d || !String(r[3]).trim()) return null;
+        return { date:d, title:String(r[3]).trim(), time:String(r[4]||'').trim(),
+                 body:String(r[5]||'').trim(), guest:guestOK(r[6]), note:String(r[7]||'').trim(),
+                 id:'ev-'+d.getFullYear()+'-'+(d.getMonth()+1)+'-'+d.getDate() };
+      }).filter(Boolean).sort(function(a,b){ return a.date-b.date; });
 
-        var dt = document.createElement('div');
-        dt.className = 'event-date';
-        dt.innerHTML = d ? (d.m + '.' + d.d + ' <small>' + (r[2]||'') + '曜日</small>') : '';
+      if(!events.length) return;
 
-        var body = document.createElement('div');
-        body.className = 'event-body';
-        var h = document.createElement('h3');
-        h.textContent = r[3];
-        if(String(r[6]||'').indexOf('どなた') === 0){
-          var tag = document.createElement('span');
-          tag.className = 'tag tag-guest';
-          tag.textContent = 'ゲスト参加OK';
-          h.appendChild(document.createTextNode(' '));
-          h.appendChild(tag);
-        }
-        body.appendChild(h);
-        var p = document.createElement('p');
-        p.textContent = [r[4] && r[4] !== '未定' ? r[4] : '', r[5]||''].filter(Boolean).join('　');
-        if(!p.textContent && r[5]) p.textContent = r[5];
-        body.appendChild(p);
-        if(r[7]){ var n=document.createElement('p'); n.style.fontSize='13.5px'; n.style.opacity='.8'; n.textContent=r[7]; body.appendChild(n); }
+      /* 表示する月：今日以降でいちばん近い予定の月。なければ最後の予定の月 */
+      var today=new Date(); today.setHours(0,0,0,0);
+      var next = events.filter(function(e){ return e.date>=today; })[0] || events[events.length-1];
+      var Y=next.date.getFullYear(), M=next.date.getMonth();
 
-        var btns = document.createElement('div');
-        btns.className = 'applysplit';
-        btns.innerHTML = '<a class="btn" href="event-guest.html">はじめての方はこちら</a>'
-                       + '<a class="btn btn-ghost2" href="event.html">会員の方はこちら</a>';
+      var inMonth = events.filter(function(e){ return e.date.getFullYear()===Y && e.date.getMonth()===M; });
+      var byDay={};
+      inMonth.forEach(function(e){ if(!byDay[e.date.getDate()]) byDay[e.date.getDate()]=e; });
 
-        el.appendChild(dt); el.appendChild(body); el.appendChild(btns);
-        wrap.appendChild(el);
-      });
+      buildCalendar(Y, M, byDay);
+      buildCards(inMonth);
     })
-    .catch(function(){ /* 読めないときは、いま出ている内容のまま */ });
+    .catch(function(){ /* 読めないときは、カレンダーは空のまま */ });
 })();
 </script>
 
