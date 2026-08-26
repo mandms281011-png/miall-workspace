@@ -353,14 +353,10 @@ html body *,html body *::before,html body *::after{
         <div class="cal-cell sun"><span class="n">20</span></div><div class="cal-cell"><span class="n">21</span></div><div class="cal-cell"><span class="n">22</span></div><div class="cal-cell"><span class="n">23</span></div><div class="cal-cell"><span class="n">24</span></div><div class="cal-cell"><span class="n">25</span></div><div class="cal-cell sat"><span class="n">26</span></div>
         <div class="cal-cell sun"><span class="n">27</span></div><div class="cal-cell"><span class="n">28</span></div><div class="cal-cell"><span class="n">29</span></div><div class="cal-cell"><span class="n">30</span></div><div class="cal-cell empty"></div><div class="cal-cell empty"></div><div class="cal-cell empty"></div>
       </div>
-      <article class="event-card" id="eventDetail">
-        <div class="event-date">9.12 <small>土曜日</small></div>
-        <div class="event-body"><h3>オープニングセミナー <span class="tag tag-guest">ゲスト参加OK</span></h3><p>お時間は決まりしだい、公式LINEでお知らせします。</p></div>
-        <div class="applysplit">
-          <a class="btn" href="event-guest.html">はじめての方はこちら</a>
-          <a class="btn btn-ghost2" href="event.html">会員の方はこちら</a>
-        </div>
-      </article>
+      <div id="eventList">
+      <!-- ここはスプレッドシート「miall イベント一覧（サイト連動）」から自動で作られます。
+           シートを直すだけで、このページが変わります。HTMLを触る必要はありません。 -->
+      </div>
       <div class="anytime"><b>随時　9:00〜21:00・事前予約制</b><span>面談（無料）／<a href="dropin.html" style="color:inherit;text-decoration:underline;text-underline-offset:3px">ドロップイン（1日利用・3,000円税込）</a>／メンタリング（会員限定）</span></div>
       <p class="note">そのほかの企画は、決まりしだい<a href="https://lin.ee/6v6NCVt" target="_blank" rel="noopener">公式LINE</a>でお知らせします。</p>
     </div>
@@ -762,6 +758,92 @@ footer .logo img{height:46px!important}
 </script>
 
 
+
+
+<script>
+/* ===== イベント一覧をスプレッドシートから読む =====
+   シート：miall イベント一覧（サイト連動）
+   列：A 公開 / B 日付 / C 曜日 / D タイトル / E 時間 / F 内容 / G 参加できる方 / H 備考
+   A列に ○ を入れた行だけ、このページに出ます。 */
+(function(){
+  var SHEET = "https://docs.google.com/spreadsheets/d/1OiBHtQ2lTUlF-7R3f9zWmb46eyCSzQBsDTrfTEMwhNU/gviz/tq?tqx=out:csv&gid=0";
+  var wrap = document.getElementById('eventList');
+  if(!wrap) return;
+
+  function parseCSV(text){
+    var rows=[], row=[], cell='', q=false;
+    for(var i=0;i<text.length;i++){
+      var c=text[i];
+      if(q){ if(c==='"'){ if(text[i+1]==='"'){cell+='"';i++;} else q=false; } else cell+=c; }
+      else{
+        if(c==='"') q=true;
+        else if(c===',') { row.push(cell); cell=''; }
+        else if(c==='\n'){ row.push(cell); rows.push(row); row=[]; cell=''; }
+        else if(c!=='\r') cell+=c;
+      }
+    }
+    if(cell!=='' || row.length){ row.push(cell); rows.push(row); }
+    return rows;
+  }
+
+  function md(s){
+    var m=String(s).match(/(\d{4})\/(\d{1,2})\/(\d{1,2})/);
+    if(m) return {y:+m[1], m:+m[2], d:+m[3]};
+    var n=parseFloat(s);
+    if(!isNaN(n)&&n>20000){
+      var dt=new Date(Date.UTC(1899,11,30)+Math.floor(n)*86400000);
+      return {y:dt.getUTCFullYear(), m:dt.getUTCMonth()+1, d:dt.getUTCDate()};
+    }
+    return null;
+  }
+
+  fetch(SHEET,{cache:'no-store'})
+    .then(function(r){ if(!r.ok) throw new Error(r.status); return r.text(); })
+    .then(function(t){
+      var rows = parseCSV(t).slice(1).filter(function(r){
+        return r.length>=4 && String(r[0]).trim()==='○' && String(r[3]).trim();
+      });
+      if(!rows.length) return;
+      wrap.innerHTML = '';
+      rows.forEach(function(r){
+        var d = md(r[1]);
+        var el = document.createElement('article');
+        el.className = 'event-card';
+
+        var dt = document.createElement('div');
+        dt.className = 'event-date';
+        dt.innerHTML = d ? (d.m + '.' + d.d + ' <small>' + (r[2]||'') + '曜日</small>') : '';
+
+        var body = document.createElement('div');
+        body.className = 'event-body';
+        var h = document.createElement('h3');
+        h.textContent = r[3];
+        if(String(r[6]||'').indexOf('どなた') === 0){
+          var tag = document.createElement('span');
+          tag.className = 'tag tag-guest';
+          tag.textContent = 'ゲスト参加OK';
+          h.appendChild(document.createTextNode(' '));
+          h.appendChild(tag);
+        }
+        body.appendChild(h);
+        var p = document.createElement('p');
+        p.textContent = [r[4] && r[4] !== '未定' ? r[4] : '', r[5]||''].filter(Boolean).join('　');
+        if(!p.textContent && r[5]) p.textContent = r[5];
+        body.appendChild(p);
+        if(r[7]){ var n=document.createElement('p'); n.style.fontSize='13.5px'; n.style.opacity='.8'; n.textContent=r[7]; body.appendChild(n); }
+
+        var btns = document.createElement('div');
+        btns.className = 'applysplit';
+        btns.innerHTML = '<a class="btn" href="event-guest.html">はじめての方はこちら</a>'
+                       + '<a class="btn btn-ghost2" href="event.html">会員の方はこちら</a>';
+
+        el.appendChild(dt); el.appendChild(body); el.appendChild(btns);
+        wrap.appendChild(el);
+      });
+    })
+    .catch(function(){ /* 読めないときは、いま出ている内容のまま */ });
+})();
+</script>
 
 </body>
 </html>
