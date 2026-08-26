@@ -555,6 +555,11 @@ textarea.finput{resize:vertical;min-height:110px}
 .dropnote{margin-top:40px;border-top:1px solid var(--rose-100);padding-top:32px;color:var(--ink-soft);font-size:14.5px;line-height:2}
 .dropnote b{color:var(--ink);font-weight:500}
 </style>
+
+<style>
+.dropfac{list-style:none;margin:22px 0 0;padding:0;display:flex;flex-wrap:wrap;justify-content:center;gap:8px}
+.dropfac li{font-size:13px;letter-spacing:.03em;color:var(--rose-700);border:1px solid var(--rose-200);background:var(--cream);border-radius:999px;padding:7px 15px;line-height:1.5}
+</style>
 </head>
 <body>
 
@@ -594,8 +599,22 @@ textarea.finput{resize:vertical;min-height:110px}
       <div class="price">3,000<small>円（税込）／1日</small></div>
       <div class="meta">
         9:00〜21:00 のあいだ、何時間でもお使いいただけます。<br>
-        Wi-Fi・電源・お飲みもの・複合機、トレーニングスペースとグッズ。すべて込みです。
+        <b style="color:var(--ink);font-weight:500">館内の設備は、すべてお使いいただけます。</b>追加でかかるものはありません。
       </div>
+      <ul class="dropfac">
+        <li>スペース使い放題</li>
+        <li>フリー Wi-Fi</li>
+        <li>コンセント</li>
+        <li>プリンター</li>
+        <li>プロジェクター・スクリーン・モニター・マイク</li>
+        <li>フリードリンク</li>
+        <li>おやつ</li>
+        <li>冷蔵庫</li>
+        <li>ロッカー・更衣室</li>
+        <li>トレーニングスペース</li>
+        <li>トレーニンググッズ</li>
+        <li>筆記用具</li>
+      </ul>
     </div>
 
     <form class="applyform" id="applyForm" method="POST" target="applySink" novalidate>
