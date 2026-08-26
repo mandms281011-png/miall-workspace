@@ -6,7 +6,7 @@
 <meta http-equiv="Pragma" content="no-cache">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>MIOと壁打ちする｜miall メンバーズ</title>
-<meta name="description" content="miall 会員向けの壁打ち相手、MIOです。">
+<meta name="description" content="miall 会員向けのAIチャット。壁打ちにも、日報にも使えます。">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
@@ -610,7 +610,7 @@ footer .logo img{height:56px}
   <div class="narrow">
     <div class="breadcrumb">MEMBERS　/　MIOと壁打ちする</div>
     <h1 class="serif">MIOと壁打ちする</h1>
-    <p>まとまっていない考えを、そのまま書いてください。<br><b style="color:var(--ink);font-weight:500">整理してから話す必要はありません。</b></p>
+    <p>迷っていることの相談にも、今日の日報にも使えます。<br><b style="color:var(--ink);font-weight:500">整理してから話す必要はありません。</b></p>
   </div>
 </section>
 
@@ -619,19 +619,21 @@ footer .logo img{height:56px}
     <div class="miobox">
       <div class="miolog" id="miolog"></div>
       <div class="mioseed" id="mioseed">
+        <button type="button">今日はこれをやります</button>
+        <button type="button">今日はこれができました</button>
         <button type="button">やることが多すぎて手がつかない</button>
         <button type="button">値段の決め方に迷っている</button>
         <button type="button">やりたいことがぼんやりしている</button>
-        <button type="button">断りたいのに断れない</button>
       </div>
       <form class="mioform" id="mioform">
-        <textarea id="mioinput" placeholder="ここに書いてください（Enterで送信、Shift+Enterで改行）" rows="1"></textarea>
+        <textarea id="mioinput" placeholder="日報でも、相談でも。（Enterで送信、Shift+Enterで改行）" rows="1"></textarea>
         <button type="submit" id="miosend">送る</button>
       </form>
     </div>
 
     <div class="miohint">
-      <b>ミオは答えを出す相手ではありません。</b>質問を返しながら、考えを外に出す手伝いをします。<br>
+      <b>日報としても使えます。</b>「今日はこれをやります」「これができました」と書けば、受け止めて、次の一手をひとつ返します。<br>
+      <b>迷っていることは、まとまっていないまま書いてください。</b>聞き返しながら整理して、ミオの考えもはっきり伝えます。<br>
       <b>会話は保存されません。</b>ページを閉じると消えます。安心して書いてください。<br>
       <b>会費のことや、館の細かいことは答えられません。</b>それは会員LINEで藤澤に直接聞いてください。
     </div>
@@ -658,7 +660,7 @@ footer .logo img{height:56px}
     return el;
   }
 
-  bubble('こんにちは、ミオです。\nいま、頭の中にあることを、そのまま書いてみてください。\nまとまっていなくて大丈夫です。', 'mio');
+  bubble('こんにちは、ミオです。\n今日やることでも、できたことでも、迷っていることでも。\nそのまま書いてみてください。', 'mio');
 
   function ask(text){
     if(busy || !text.trim()) return;
