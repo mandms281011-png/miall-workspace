@@ -3077,6 +3077,18 @@ footer .logo img{height:56px}
 /* コミュニティの節は花なし（2026-08-25）
    写真と見出し「教わる側から、教える側へ。」に重なって邪魔になっていた。 */
 #community::before{display:none!important;content:none!important}
+
+/* WHO：帯のデザインを戻す（2026-08-25）
+   花が帯で切られるのを避けるため帯を透明にしたが、
+   もとの縞のデザインが失われてしまった。
+   半透明の帯に戻し、花はその下からうっすら透けて見えるようにする。 */
+#about.worry .narrow ul li{
+  background-color:rgba(253,251,246,.72)!important;
+  backdrop-filter:blur(4px)!important;
+  border-left:2px solid rgba(203,174,107,.55)!important}
+/* 帯の下でも花がつながって見えるよう、少しだけ濃くする */
+#about.worry::after{opacity:.3!important}
+@media(max-width:900px){#about.worry::after{opacity:.18!important}}
 </style>
 <script>
 (function(){
