@@ -638,7 +638,15 @@ textarea.finput{resize:vertical;min-height:110px}
 <script>
 /* 送信先のGoogleフォームは、作成後にここへ入れます。
    未設定のあいだは、送信せずにご案内だけ出します。 */
-var GFORM = { action: "", f: {} };
+var GFORM = {
+  action: "https://docs.google.com/forms/d/e/1FAIpQLScU3P35tzZDixMeBbVOGE4ReYUbqzPoW33lg6LUn7fVKZ1l6g/formResponse",
+  f: {
+    l_name  : "entry.2005620554",
+    l_email : "entry.1045781291",
+    l_reason: "entry.1065046570",
+    l_month : "entry.1166974658"
+  }
+};
 (function(){
   var form = document.getElementById('applyForm');
   if(!form) return;
