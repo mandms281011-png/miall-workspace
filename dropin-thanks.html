@@ -5,13 +5,12 @@
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 <meta http-equiv="Pragma" content="no-cache">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>特定商取引法に基づく表記｜コミュニティワークスペース miall</title>
-<meta name="description" content="コミュニティワークスペース miall の会員規約。利用資格、会費、ゲストの同伴、セミナー開催、禁止事項などを定めています。">
+<title>ご予約が確定しました｜miall ドロップイン</title>
+<meta name="description" content="お手続きの完了ページです。">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
 <style>
-
 
 :root{
   /* 白とチャコールの中で、ゴールドは線と小さな面だけに */
@@ -58,15 +57,20 @@ header.scrolled{border-bottom-color:var(--rose-100)}
   radial-gradient(50% 60% at 12% 85%,var(--sage-100) 0%,transparent 62%),var(--cream)}
 .eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:12px;letter-spacing:.22em;color:var(--rose-700);border:1px solid var(--rose-200);background:var(--ivory);padding:7px 16px;border-radius:2px;margin-bottom:28px}
 .hero h1{font-family:var(--serif);font-weight:500;font-size:clamp(30px,6.2vw,58px);line-height:1.5;letter-spacing:.04em}
-.hero h1 em{font-style:normal;color:var(--rose-700)}
-.hero p.lead{margin-top:28px;font-size:clamp(15px,1.7vw,17.5px);color:var(--ink-soft);max-width:40em}
+.hero h1 em{font-style:normal;display:inline-block}
+.hero-quote{margin-top:26px;font-family:var(--serif);font-size:clamp(16px,2.1vw,21px);line-height:1.8;letter-spacing:.05em;color:var(--ink-soft);position:relative;padding-left:18px}
+.hero-quote b{display:inline-block;font-weight:500;font-size:clamp(21px,3.2vw,32px);letter-spacing:.06em;line-height:1.5}
+.hero-quote::before{content:"";position:absolute;left:0;top:.35em;bottom:.35em;width:2px;background:linear-gradient(180deg,var(--gold-500),rgba(203,174,107,0))}
+.hero p.lead{margin-top:26px;font-size:clamp(15px,1.7vw,17.5px);color:var(--ink-soft);max-width:40em}
 .hero-cta{display:flex;flex-wrap:wrap;gap:14px;margin-top:40px}
 .hero-facts{display:flex;flex-wrap:wrap;gap:0;margin-top:52px;border-top:1px solid var(--rose-100);padding-top:26px}
 .hero-facts div{padding-right:34px;margin-right:34px;border-right:1px solid var(--rose-100)}
 .hero-facts div:last-child{border:0}
 .hero-facts dt{font-size:11.5px;letter-spacing:.2em;color:var(--ink-mute)}
 .hero-facts dd{font-family:var(--serif);font-size:clamp(19px,2.4vw,25px);color:var(--ink);margin-top:5px}
-.hero-photo{margin-top:56px;aspect-ratio:16/7;border-radius:6px;background:linear-gradient(135deg,var(--blush) 0%,var(--sage-100) 100%);display:grid;place-items:center;color:var(--ink-mute);font-size:13px;letter-spacing:.12em;border:1px dashed var(--rose-200)}
+.hero-photo{margin-top:56px;position:relative;border-radius:6px;overflow:hidden;box-shadow:var(--shadow-photo)}
+.hero-photo img{width:100%;height:auto;display:block}
+.hero-photo figcaption{position:absolute;right:14px;bottom:12px;background:rgba(253,251,246,.84);backdrop-filter:blur(6px);color:var(--ink-soft);font-size:11px;letter-spacing:.1em;padding:5px 12px;border-radius:999px}
 
 /* ---------- headings ---------- */
 .kicker{font-size:11.5px;letter-spacing:.26em;color:var(--rose-700);margin-bottom:16px}
@@ -79,6 +83,7 @@ h2.sec + p.sub{margin-top:20px;color:var(--ink-soft);font-size:15.5px}
 .grid{display:grid;gap:20px}
 .g3{grid-template-columns:1fr}
 @media(min-width:760px){.g3{grid-template-columns:repeat(3,1fr)}}
+.g1{grid-template-columns:1fr}
 .g2{grid-template-columns:1fr}
 @media(min-width:760px){.g2{grid-template-columns:repeat(2,1fr)}}
 .card{background:var(--ivory);border:1px solid var(--rose-100);border-radius:4px;padding:30px 26px}
@@ -113,6 +118,12 @@ h2.sec + p.sub{margin-top:20px;color:var(--ink-soft);font-size:15.5px}
 .mentor-body p+p{margin-top:18px}
 .mentor-body .big{font-family:var(--serif);font-size:clamp(20px,2.8vw,27px);line-height:1.7;color:var(--ink)}
 
+/* ---------- mentoring photo ---------- */
+.mentor-photo{margin-top:38px;position:relative;border-radius:4px;overflow:hidden;box-shadow:var(--shadow-photo)}
+.mentor-photo img{width:100%;height:auto;display:block}
+.mentor-photo::after{content:"";position:absolute;inset:0;pointer-events:none;border-radius:4px;box-shadow:inset 0 0 0 1px rgba(203,174,107,.55)}
+.mentor-photo figcaption{position:absolute;right:12px;bottom:10px;background:rgba(253,251,246,.86);backdrop-filter:blur(6px);color:var(--ink-soft);font-size:11px;letter-spacing:.1em;padding:5px 12px;border-radius:999px}
+
 /* ---------- community ---------- */
 .club{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
 .club span{background:var(--blush);color:var(--rose-700);border:1px solid var(--rose-100);border-radius:2px;padding:7px 17px;font-size:13.5px}
@@ -127,9 +138,9 @@ h2.sec + p.sub{margin-top:20px;color:var(--ink-soft);font-size:15.5px}
 .price-rows>div{padding:22px 16px}
 @media(min-width:700px){.price-rows>div:first-child{border-right:1px solid var(--rose-100)}}
 .plabel{font-size:13px;letter-spacing:.18em;color:var(--ink-soft)}
-.pmain{font-family:var(--serif);color:var(--rose-700);margin-top:10px;line-height:1.2}
+.pmain{font-family:var(--serif);color:var(--rose-700);margin-top:10px;line-height:1.2;display:flex;flex-wrap:wrap;align-items:baseline;justify-content:center;gap:2px}
 .pmain b{font-size:clamp(38px,7vw,56px);font-weight:500}
-.pmain i{font-style:normal;font-size:16px;margin-left:4px;color:var(--ink-soft)}
+.pmain i{font-style:normal;font-size:15px;margin-left:5px;color:var(--ink-soft);white-space:nowrap}
 .psub{font-size:13px;color:var(--ink-mute);margin-top:10px}
 .badge{display:inline-block;background:var(--rose-700);color:#fff;font-size:12px;letter-spacing:.1em;padding:4px 13px;border-radius:2px;margin-top:12px}
 .price-note{margin-top:30px;padding-top:24px;border-top:1px dashed var(--rose-200);font-size:14px;color:var(--ink-soft)}
@@ -168,6 +179,56 @@ h2.sec + p.sub{margin-top:20px;color:var(--ink-soft);font-size:15.5px}
 .ref-flow div b{display:block;font-family:var(--serif);color:var(--rose-700);font-size:19px;margin-top:6px;font-weight:500}
 .ref-flow i{font-style:normal;color:var(--rose-400);font-size:20px}
 
+/* ---------- photo placeholder ---------- */
+.ph{background:linear-gradient(135deg,var(--blush) 0%,var(--sage-100) 100%);aspect-ratio:16/8.8;display:grid;place-items:center;color:var(--ink-mute);font-size:12.5px;letter-spacing:.1em;text-align:center;padding:20px}
+
+/* ---------- goal ---------- */
+.goal{background:var(--blush-soft);border-block:1px solid var(--gold-500);position:relative;overflow:hidden}
+.goal::after{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(56% 66% at 82% -8%,rgba(255,255,255,.9) 0%,transparent 62%),linear-gradient(104deg,transparent 36%,rgba(255,255,255,.5) 48%,transparent 60%)}
+.goal>*{position:relative}
+.goal-photo{margin-top:38px;position:relative;border-radius:4px;overflow:hidden;box-shadow:var(--shadow-photo)}
+.goal-photo img{width:100%;height:auto;display:block}
+.goal-photo::after{content:"";position:absolute;inset:0;pointer-events:none;border-radius:4px;box-shadow:inset 0 0 0 1px rgba(203,174,107,.55)}
+.goal-photo figcaption{position:absolute;right:12px;bottom:10px;background:rgba(253,251,246,.84);backdrop-filter:blur(6px);color:var(--ink-soft);font-size:11px;letter-spacing:.1em;padding:5px 12px;border-radius:999px}
+.goal-lines{display:grid;gap:14px;grid-template-columns:1fr;margin-top:36px;text-align:left}
+@media(min-width:820px){.goal-lines{grid-template-columns:repeat(3,1fr)}}
+.goal-lines div{background:var(--ivory);border:1px solid var(--rose-100);border-top:2px solid var(--gold-500);border-radius:0 0 3px 3px;padding:22px 22px}
+.goal-lines b{display:block;font-family:var(--serif);font-size:16.5px;font-weight:500;color:var(--rose-700);margin-bottom:8px}
+.goal-lines span{font-size:14.5px;color:var(--ink-soft);line-height:1.9}
+
+/* ---------- school ---------- */
+.band,.school-grid{display:grid;gap:clamp(28px,4vw,48px);grid-template-columns:1fr;align-items:center;margin-top:42px;text-align:left}
+@media(min-width:900px){.school-grid{grid-template-columns:1.05fr .95fr}
+.band{grid-template-columns:.95fr 1.05fr}
+.band .band-photo{order:2}.band .band-body{order:1}}
+.band-photo,.school-photo{position:relative;border-radius:4px;overflow:hidden;box-shadow:var(--shadow-photo)}
+.band-photo img,.school-photo img{width:100%;height:auto;display:block}
+.band-photo::after,.school-photo::after{content:"";position:absolute;inset:0;pointer-events:none;border-radius:4px;box-shadow:inset 0 0 0 1px rgba(203,174,107,.55)}
+.band-photo figcaption,.school-photo figcaption{position:absolute;right:12px;bottom:10px;background:rgba(253,251,246,.84);backdrop-filter:blur(6px);color:var(--ink-soft);font-size:11px;letter-spacing:.1em;padding:5px 12px;border-radius:999px}
+.school-list{display:grid;gap:12px;margin:26px 0 22px;list-style:none}
+.school-list li{background:var(--ivory);border:1px solid var(--rose-100);border-left:2px solid var(--gold-500);border-radius:0 3px 3px 0;padding:15px 20px;font-size:15px}
+.school-list b{font-family:var(--serif);font-weight:500;color:var(--rose-700);font-size:16.5px;margin-right:10px}
+
+/* ---------- referral logo ---------- */
+.gift{margin:30px auto 0;max-width:520px;background:var(--ivory);border:1px solid var(--gold-500);border-radius:4px;padding:30px 26px 26px;position:relative}
+.gift::before{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(112deg,transparent 36%,rgba(255,253,248,.6) 48%,transparent 60%)}
+.gift-logo{display:flex;align-items:center;justify-content:center;min-height:74px}
+.gift-logo img{max-height:74px;width:auto;filter:drop-shadow(0 8px 18px rgba(61,54,44,.14))}
+.gift-logo .fallback{display:none;font-family:var(--serif);font-size:22px;letter-spacing:.06em;color:#006241}
+.gift-amount{margin-top:16px;font-family:var(--serif);font-size:clamp(24px,4vw,34px);color:var(--rose-700);letter-spacing:.04em}
+.gift-amount small{display:block;font-family:var(--sans);font-size:13px;letter-spacing:.14em;color:var(--ink-mute);margin-bottom:6px}
+.gift-note{margin-top:14px;font-size:13px;color:var(--ink-mute)}
+
+/* ---------- rules band ---------- */
+.rband{background:var(--ivory)}
+.rband-inner{background:var(--cream);border:1px solid var(--rose-100);border-radius:6px;padding:clamp(32px,5vw,52px);text-align:center}
+.rband h2{font-family:var(--serif);font-weight:500;font-size:clamp(21px,3.4vw,31px);line-height:1.65;letter-spacing:.04em}
+.rband .two{display:grid;gap:16px;grid-template-columns:1fr;margin:32px 0 30px;text-align:left}
+@media(min-width:700px){.rband .two{grid-template-columns:1fr 1fr}}
+.rband .two div{background:var(--ivory);border:1px solid var(--rose-100);border-left:3px solid var(--rose-700);border-radius:0 4px 4px 0;padding:22px 24px}
+.rband .two b{display:block;font-family:var(--serif);font-size:18px;color:var(--rose-700);font-weight:500;margin-bottom:8px}
+.rband .two span{font-size:14px;color:var(--ink-soft);line-height:1.9}
+
 /* ---------- rules / faq ---------- */
 .rules{background:var(--ivory)}
 .rule-list{display:grid;gap:16px;margin-top:38px}
@@ -197,39 +258,6 @@ footer .logo{}
 .fmeta b{color:var(--ink);font-weight:500}
 .copy{margin-top:36px;padding-top:22px;border-top:1px solid var(--rose-200);font-size:12px;color:var(--ink-mute)}
 .todo{background:#fffbe8;border:1px dashed var(--gold-500);color:#7a5c17;font-size:12.5px;padding:3px 9px;border-radius:3px;display:inline-block}
-
-/* ---------- rules page ---------- */
-.page-head{padding:clamp(56px,8vw,96px) 0 clamp(30px,4vw,50px);background:radial-gradient(60% 80% at 78% 10%,var(--blush) 0%,transparent 62%),var(--cream)}
-.page-head h1{font-family:var(--serif);font-weight:500;font-size:clamp(26px,4.6vw,42px);line-height:1.55;letter-spacing:.04em;margin-top:8px}
-.page-head p{margin-top:22px;color:var(--ink-soft);font-size:15.5px;max-width:40em}
-.breadcrumb{font-size:12.5px;color:var(--ink-mute);letter-spacing:.08em}
-.breadcrumb a{color:var(--rose-700);text-decoration:none}
-.breadcrumb a:hover{text-decoration:underline}
-
-.creed{background:linear-gradient(158deg,var(--champagne) 0%,#fdf9ef 48%,var(--champagne-deep) 100%);color:var(--ink);text-align:center;border-block:1px solid var(--gold-500)}
-.creed .kicker{color:var(--rose-700)}
-.creed h2{font-family:var(--serif);font-weight:500;font-size:clamp(22px,3.8vw,34px);line-height:1.65;letter-spacing:.05em}
-.creed p{margin-top:24px;color:var(--ink-soft);font-size:15.5px}
-.creed-two{display:grid;gap:18px;grid-template-columns:1fr;margin-top:40px;text-align:left}
-@media(min-width:760px){.creed-two{grid-template-columns:1fr 1fr}}
-.creed-two div{background:var(--ivory);border:1px solid var(--gold-500);border-radius:4px;padding:26px 24px;box-shadow:0 10px 28px rgba(51,49,45,.06)}
-.creed-two b{display:block;font-family:var(--serif);font-size:19px;font-weight:500;margin-bottom:10px;color:var(--rose-700)}
-.creed-two span{font-size:14.5px;color:var(--ink-soft);line-height:1.9}
-
-.rulebook{counter-reset:r}
-.rule{display:grid;grid-template-columns:1fr;gap:8px;padding:30px 0;border-bottom:1px solid var(--rose-100)}
-@media(min-width:800px){.rule{grid-template-columns:52px 250px 1fr;gap:26px;align-items:baseline}}
-.rule .n{counter-increment:r;font-family:var(--serif);font-size:14px;color:var(--rose-400);letter-spacing:.1em}
-.rule .n::before{content:counter(r,decimal-leading-zero)}
-.rule h3{font-family:var(--serif);font-weight:500;font-size:17.5px;color:var(--rose-700);line-height:1.6}
-.rule p{font-size:14.5px;color:var(--ink-soft)}
-.rule p+p{margin-top:10px}
-.rule strong{color:var(--ink);font-weight:500}
-
-.hard{background:var(--blush-soft);border-left:3px solid var(--rose-700);padding:22px 26px;margin-top:14px;border-radius:0 4px 4px 0}
-.hard b{color:var(--rose-700);font-weight:500}
-.backlink{text-align:center;padding:clamp(50px,7vw,84px) 0;background:var(--cream)}
-
 
 /* ---------- shiny ---------- */
 .shine{
@@ -276,30 +304,13 @@ footer .logo{}
 }
 
 
-/* ---------- terms page ---------- */
-.toc{background:var(--ivory);border:1px solid var(--rose-100);border-top:2px solid var(--gold-500);border-radius:0 0 3px 3px;padding:26px 28px;margin-top:38px}
-.toc h3{font-family:var(--serif);font-size:14px;letter-spacing:.16em;color:var(--rose-700);margin-bottom:16px;font-weight:500}
-.toc ol{list-style:none;display:grid;gap:7px 22px;grid-template-columns:1fr;font-size:14px}
-@media(min-width:700px){.toc ol{grid-template-columns:1fr 1fr}}
-@media(min-width:1000px){.toc ol{grid-template-columns:repeat(3,1fr)}}
-.toc a{color:var(--ink-soft);text-decoration:none;display:block;padding:3px 0}
-.toc a:hover{color:var(--rose-700)}
-
-.terms{counter-reset:none;margin-top:44px}
-.terms article{padding:26px 0;border-bottom:1px solid var(--rose-100)}
-.terms h2{font-family:var(--serif);font-weight:500;font-size:18px;letter-spacing:.05em;color:var(--rose-700);margin-bottom:14px;scroll-margin-top:120px}
-.terms p{font-size:14.5px;color:var(--ink-soft);margin-bottom:10px}
-.terms ol,.terms ul{margin:0 0 10px 1.3em;font-size:14.5px;color:var(--ink-soft)}
-.terms li{padding:4px 0}
-.terms strong,.terms b{color:var(--ink);font-weight:500}
-.terms .sub{font-family:var(--serif);font-size:14px;color:var(--ink);margin:16px 0 8px;letter-spacing:.06em}
-.terms .note{font-size:13px;color:var(--ink-mute);margin-top:12px;line-height:1.85}
-.pending{background:#fffbe8;border:1px dashed var(--gold-600);border-radius:3px;padding:18px 20px;font-size:14px;color:#7a5c17;margin:12px 0}
-.pending b{color:#7a5c17}
-.terms-foot{margin-top:44px;background:var(--ivory);border:1px solid var(--rose-100);border-radius:3px;padding:28px}
-.terms-foot dl{display:grid;gap:10px;font-size:14.5px}
-.terms-foot dt{font-family:var(--serif);color:var(--rose-700);font-size:13.5px;letter-spacing:.1em}
-.terms-foot dd{color:var(--ink-soft);margin-bottom:8px}
+/* ---------- sub page head ---------- */
+.page-head{padding:clamp(56px,8vw,96px) 0 clamp(24px,3vw,40px);background:radial-gradient(60% 80% at 78% 10%,var(--blush) 0%,transparent 62%),var(--cream)}
+.page-head h1{font-family:var(--serif);font-weight:500;font-size:clamp(26px,4.6vw,42px);line-height:1.55;letter-spacing:.04em;margin-top:8px}
+.page-head p{margin-top:22px;color:var(--ink-soft);font-size:15.5px;max-width:40em}
+.breadcrumb{font-size:12.5px;color:var(--ink-mute);letter-spacing:.08em}
+.breadcrumb a{color:var(--rose-700);text-decoration:none}
+.breadcrumb a:hover{text-decoration:underline}
 
 .todo{display:none!important}
 </style>
@@ -471,158 +482,154 @@ html body *,html body *::before,html body *::after{
   transform:none!important;
 }
 </style>
+
+<style>
+/* ============ 申し込みフォーム ============ */
+/* このページでは下の固定バーを出さない。フォームに重なって入力を邪魔するため */
+.stickycta{display:none!important}
+@media(max-width:520px){ .applysec{padding-bottom:96px} } /* ミオのボタンぶんだけ余白 */
+
+.applysec{padding:clamp(30px,4vw,54px) 0 clamp(46px,6vw,80px);background:var(--cream)}
+.applyform{background:var(--ivory);border:1px solid var(--rose-100);border-radius:6px;
+  padding:clamp(24px,4vw,44px);box-shadow:0 18px 44px rgba(38,34,29,.07)}
+.fgroup{margin-bottom:clamp(22px,3vw,30px)}
+.fgroup:last-of-type{margin-bottom:0}
+.flabel{display:block;font-family:var(--sans);font-size:14.5px;font-weight:500;color:var(--ink);
+  letter-spacing:.06em;margin-bottom:10px;line-height:1.7}
+.flabel i{font-style:normal;font-size:11px;letter-spacing:.12em;color:var(--rose-700);
+  border:1px solid var(--rose-200);border-radius:2px;padding:2px 7px;margin-left:8px;vertical-align:2px}
+.flabel i.opt{color:var(--ink-mute);border-color:var(--rose-100)}
+.finput{width:100%;font-family:var(--sans);font-size:16px;color:var(--ink);line-height:1.7;
+  background:#fff;border:1px solid var(--rose-200);border-radius:3px;padding:13px 15px;
+  transition:border-color .2s, box-shadow .2s;-webkit-appearance:none;appearance:none}
+.finput::placeholder{color:var(--ink-mute)}
+.finput:focus{outline:none;border-color:var(--gold-500);box-shadow:0 0 0 3px rgba(203,174,107,.16)}
+/* 未入力のうちは赤くしない。送信を押したときだけエラー表示にする
+   （日付とプルダウンには placeholder が無いので、:invalid だけだと最初から赤くなる） */
+.applyform.checked .finput:invalid{border-color:#c0705f;background:#fffaf9}
+.applyform.checked .fradios:has(input:invalid) .fradio{border-color:#c0705f}
+select.finput{background-image:url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%238a8276' stroke-width='1.5'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;background-position:right 15px center;padding-right:40px}
+textarea.finput{resize:vertical;min-height:110px}
+.frow{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media(max-width:560px){.frow{grid-template-columns:1fr}}
+.fhelp{font-size:12.5px;color:var(--ink-mute);line-height:1.85;margin:9px 0 0}
+.fradios{display:grid;gap:10px}
+.fradio{display:flex;align-items:flex-start;gap:12px;background:#fff;border:1px solid var(--rose-200);
+  border-radius:3px;padding:14px 16px;cursor:pointer;transition:border-color .2s,background .2s}
+.fradio:hover{border-color:var(--rose-400)}
+.fradio input{margin:3px 0 0;accent-color:var(--rose-600);width:17px;height:17px;flex:none}
+.fradio b{display:block;font-family:var(--sans);font-size:15px;font-weight:500;color:var(--ink);letter-spacing:.04em}
+.fradio small{display:block;font-size:12.5px;color:var(--ink-mute);margin-top:4px;line-height:1.8}
+.fradio:has(input:checked){border-color:var(--gold-500);background:var(--blush-soft)}
+.fnote{font-size:12.5px;color:var(--ink-mute);line-height:1.9;margin:clamp(24px,3vw,32px) 0 0;
+  padding-top:clamp(20px,3vw,26px);border-top:1px solid var(--rose-100)}
+.fnote a{color:var(--rose-700)}
+.fsubmit{margin-top:22px;text-align:center}
+.fsubmit .btn{width:100%;max-width:340px}
+.fsubmit .btn[disabled]{opacity:.55;pointer-events:none}
+.ferr{color:#a3503f;font-size:13.5px;line-height:1.9;margin:14px 0 0}
+
+.applydone,.applyoff{background:var(--ivory);border:1px solid var(--gold-500);border-radius:6px;
+  padding:clamp(30px,5vw,52px);text-align:center;box-shadow:0 18px 44px rgba(38,34,29,.07)}
+.applydone h2,.applyoff h2{font-size:clamp(21px,3vw,27px);font-weight:500;color:var(--ink);margin:0 0 16px;letter-spacing:.08em}
+.applydone p,.applyoff p{font-size:15px;color:var(--ink-soft);line-height:2.05;margin:0}
+.applyoff .btn{margin-top:24px}
+.applyline{margin-top:clamp(28px,4vw,38px);padding:clamp(22px,3vw,30px);
+  background:var(--blush-soft);border:1px solid var(--rose-100);border-radius:4px;text-align:left}
+.applyline b{display:block;font-family:var(--serif);font-size:17px;font-weight:500;color:var(--ink);
+  letter-spacing:.08em;margin-bottom:12px}
+.applyline p{font-size:14px;line-height:2.05}
+.applyline .btn{margin-top:18px;width:100%;max-width:300px}
+@media(max-width:560px){.applyline{text-align:center}.applyline .btn{max-width:none}}
+</style>
+
+<meta name="robots" content="noindex,nofollow">
+<meta name="robots" content="noindex,nofollow">
+<style>
+.donebox{background:var(--ivory);border:1px solid var(--gold-500);border-radius:4px;padding:clamp(28px,4.5vw,42px);text-align:center}
+.donebox .mark{font-family:var(--serif);font-size:clamp(26px,4vw,34px);color:var(--rose-700);letter-spacing:.04em}
+.donebox p{margin-top:18px;color:var(--ink-soft);font-size:15px;line-height:2}
+.donenote{margin-top:38px;border-top:1px solid var(--rose-100);padding-top:30px;color:var(--ink-soft);font-size:14.5px;line-height:2}
+.donenote b{color:var(--ink);font-weight:500}
+</style>
 </head>
 <body>
 
-<div class="topbar">
-  <b>オープニング会員募集中</b>　いまなら<b class="free">入会金なし</b>
-</div>
 
 <header>
   <div class="wrap hd">
-    <div class="logo"><img src="images/miall-logo-header.png" alt="miall コミュニティワークスペース" width="1241" height="462"></div>
+    <div class="logo"><img src="images/miall-logo-horizontal.png" alt="miall コミュニティワークスペース" width="1241" height="462"></div>
     <nav>
       <a href="index.html#about">この場所について</a>
       <a href="index.html#equipment">設備</a>
+      <a href="index.html#mentoring">メンタリング</a>
       <a href="events.html">イベント</a>
       <a href="index.html#access">アクセス</a>
         <a href="price.html">会費</a>
       <a href="rules.html">ご利用ルール</a>
       <a href="terms.html">会員規約</a>
     </nav>
-    <a class="btn" href="apply.html">面談を申し込む</a>
   </div>
 </header>
 
+
 <section class="page-head">
   <div class="narrow">
-    <div class="breadcrumb"><a href="index.html">TOP</a>　/　特定商取引法に基づく表記</div>
-    <h1 class="serif">特定商取引法に基づく表記</h1>
-    <p>
-      コミュニティワークスペース miall の会員契約について、<br>
-      特定商取引に関する法律にもとづきご案内します。<br>
-      契約の内容そのものは、<a href="terms.html" style="color:var(--rose-700)">会員規約</a>に定めています。
+
+<section class="page-head">
+  <div class="narrow">
+    <div class="breadcrumb">MIALL　/　ご予約完了</div>
+    <h1 class="serif">ありがとうございます。</h1>
+    <p>お支払いが完了し、<b style="color:var(--ink);font-weight:500">ご予約が確定しました。</b><br>当日、お待ちしております。</p>
+  </div>
+</section>
+
+<section class="applysec">
+  <div class="narrow">
+
+    <div class="donebox">
+      <div class="mark">当日のご案内</div>
+      <p style="text-align:left;line-height:2.1">
+        <b style="color:var(--ink);font-weight:500">場所</b><br>
+        長野県長野市鶴賀問御所町1241-1<br>
+        長野銀座信越ビル 8階<br>
+        <span style="font-size:13.5px;color:var(--ink-mute)">長野駅から歩いて7分です。エレベーターで8階までお上がりください。</span>
+      </p>
+      <p style="text-align:left;line-height:2.1;margin-top:22px">
+        <b style="color:var(--ink);font-weight:500">ご利用時間</b><br>
+        9:00〜21:00 のあいだ、何時間でもお使いいただけます。
+      </p>
+      <p style="text-align:left;line-height:2.1;margin-top:22px">
+        <b style="color:var(--ink);font-weight:500">お持ちいただくもの</b><br>
+        とくにありません。Wi-Fi・電源・お飲みものはご用意しています。<br>
+        <span style="font-size:13.5px;color:var(--ink-mute)">パソコンでお仕事される方は、充電器をお持ちいただくと安心です。</span>
+      </p>
+      <p style="text-align:left;line-height:2.1;margin-top:22px">
+        <b style="color:var(--ink);font-weight:500">着いたら</b><br>
+        公式LINEのトークに「着きました」とお送りください。ご案内します。
+      </p>
+      <p style="margin-top:26px;text-align:center">
+        <a class="btn" href="https://lin.ee/6v6NCVt" target="_blank" rel="noopener">公式LINEを開く</a>
+      </p>
+    </div>
+
+    <div class="donenote">
+      <b>キャンセルについて</b><br>
+      前日までにご連絡いただければ、全額をお返しします。当日のキャンセルと、ご連絡のないご欠席は、返金いたしかねます。ご都合が悪くなったら、前日までに公式LINEへお知らせください。<br><br>
+      <b>領収書について</b><br>
+      Stripe からお支払いの控えがメールで届きます。届かないときは迷惑メールもご確認ください。<br><br>
+      <b>ご不明な点は</b><br>
+      公式LINEのトークにそのままお送りください。miall事務局からご案内します。
+    </div>
+
+    <p style="margin-top:34px;text-align:center">
+      <a class="btn btn-ghost" href="index.html">miall について見る</a>
     </p>
   </div>
 </section>
 
-<section style="padding-top:clamp(20px,3vw,40px)">
-  <div class="narrow">
-    <div class="terms">
-
-<article><h2>事業者名</h2>
-<p>株式会社Siayell</p>
-</article>
-
-<article><h2>運営統括責任者</h2>
-<p>藤澤 美嘉</p>
-</article>
-
-<article><h2>所在地</h2>
-<p>〒380-0834<br>長野県長野市鶴賀問御所町1241-1　長野銀座信越ビル 8階</p>
-</article>
-
-<article><h2>お問い合わせ</h2>
-<p><a href="mailto:siayell20240308@gmail.com" style="color:var(--rose-700)">siayell20240308@gmail.com</a><br>
-または<a href="https://lin.ee/6v6NCVt" target="_blank" rel="noopener" style="color:var(--rose-700)">公式LINE</a>からお願いいたします。</p>
-<p class="note">お電話でのご連絡をご希望の場合は、上記までご請求ください。遅滞なく電話番号をご案内いたします。</p>
-</article>
-
-<article><h2>販売価格</h2>
-<p>いずれも消費税込みの金額です。</p>
-<ol>
-<li>入会金：<strong>11,000円</strong>（本体10,000円）<br>
-<span class="note" style="display:block;margin-top:4px">当社が定める期間・条件においては、減額または無料とすることがあります。</span></li>
-<li>月払の会費：<strong>16,500円／月</strong>（本体15,000円）</li>
-<li>年払の会費：<strong>178,200円／年</strong>（本体162,000円）</li>
-<li>ドロップイン（1日利用）：<strong>3,000円</strong>（税込）</li>
-</ol>
-<p class="note">上記のほか、当社が個別にご案内する会員プランがあります。金額・条件は、ご案内のときに直接お伝えし、お申し込み前に決済画面でもご確認いただけます。</p>
-</article>
-
-<article><h2>会費に含まれないもの</h2>
-<p>次のものは会費に含まれません。参加される場合に、そのつど別途申し受けます。金額は開催ごとに定め、事前にご案内します。</p>
-<ul>
-<li>miall会の会費（飲食をともなうため）</li>
-<li>有料セミナー、学びの場（連続講座）、リトリートその他別途参加費を定める企画</li>
-</ul>
-<p>ゲスト1名の同時利用に、追加の料金はかかりません。</p>
-</article>
-
-<article><h2>お支払い方法</h2>
-<p>クレジットカードによるお支払い（Stripe による決済）</p>
-<p><strong>現金でのお支払いは、原則としてお受けしておりません。</strong>ただし、3ヶ月分をまとめて前納いただける場合に限り、現金でのお支払いに応じることがあります。</p>
-<p class="note">カード情報は決済会社の画面でご入力いただきます。当社がカード番号をお預かりすることはありません。</p>
-</article>
-
-<article><h2>お支払い時期</h2>
-<ol>
-<li>初回：お申し込み手続きの際にお支払いいただきます。</li>
-<li>2回目以降：<strong>登録いただいたカードから自動的に</strong>お支払いいただきます。月払は毎月、年払は毎年、初回と同じ日を起算とします。</li>
-</ol>
-<p><strong>年払の契約は、期間の満了日の翌日に、同一の条件で1年間、自動的に更新されます。</strong>当社は、満了する1ヶ月前までに更新のご案内を通知します（会員規約 第14条の2）。</p>
-</article>
-
-<article><h2>サービスの提供時期</h2>
-<p>お支払いの確認をもって会員資格が発生し、直ちにご利用いただけます。</p>
-<p>本施設の利用可能時間は 9:00〜21:00 です。</p>
-</article>
-
-<article><h2>退会・キャンセルについて</h2>
-<p>役務（サービス）の提供にあたるため、返品はございません。ご退会は次のとおりお受けします。</p>
-<ol>
-<li>ご退会を希望される月の<strong>前月末日まで</strong>に、公式LINEなど当社所定の方法でお届けください。</li>
-<li>お届けが期限を過ぎた場合、ご退会は翌々月の扱いとなり、当月分および翌月分の会費が発生します。</li>
-<li><strong>納入済みの会費は返金いたしません。</strong></li>
-<li><strong>年払の会費は、契約期間の途中でご退会される場合も返金いたしません。</strong>1年間ご利用いただくことを前提とした割引価格のため、日割り・月割りによる精算も行いません（会員規約 第14条）。ただし、当社の責めに帰すべき事由による場合はこの限りではありません。</li>
-<li><strong>休会の制度は設けておりません。</strong>長くお休みされる場合は一度ご退会いただき、再開されるときにあらためてご入会ください。このときの入会金は再度申し受けません（会員規約 第15条）。</li>
-</ol>
-</article>
-
-<article><h2>ドロップイン（1日利用）について</h2>
-<p>会員以外の方の1日利用です。<strong>3,000円（税込）</strong>。事前予約制・事前払いです。</p>
-<ol>
-<li>ご予約後、当社よりお支払いのご案内をお送りします。お支払いの確認をもってご予約が確定します。</li>
-<li><strong>ご利用日の前日までにキャンセルのお申し出があった場合は、全額を返金いたします。</strong>お支払いの方法により、返金までに数日いただくことがあります。</li>
-<li><strong>ご利用日当日のキャンセルおよび無連絡不参加の場合は、返金いたしません。</strong></li>
-<li>当社の都合により利用いただけなくなった場合は、全額を返金いたします。</li>
-</ol>
-</article>
-
-<article><h2>ご利用の条件</h2>
-<p>本施設は、更衣・化粧室等の設備の性質および会員が安心して利用できる環境を確保する必要から、<strong>女性の方のみ</strong>を利用対象としています。会員は満18歳以上であることを要します。</p>
-<p>当社は、理由を開示することなく入会をお断りすることがあります。</p>
-</article>
-
-<article><h2>表現および商品に関する注意書き</h2>
-<p>本サービスは場所と機会をご提供するものであり、収入・成果その他の結果を保証するものではありません。</p>
-</article>
-
-    </div>
-
-    <div class="terms-foot">
-      <p class="sub" style="margin-top:0">この表記について</p>
-      <p style="font-size:14.5px;color:var(--ink-soft)">2026年9月1日 現在の内容です。</p>
-      <dl style="margin-top:20px">
-        <dt>事業者名</dt><dd>株式会社Siayell</dd>
-        <dt>運営統括責任者</dt><dd>藤澤 美嘉</dd>
-        <dt>所在地</dt><dd>長野県長野市鶴賀問御所町1241-1 長野銀座信越ビル 8階</dd>
-        <dt>連絡先</dt><dd><a href="mailto:siayell20240308@gmail.com" style="color:var(--rose-700)">siayell20240308@gmail.com</a></dd>
-      </dl>
-    </div>
-
-    <div style="margin-top:38px;display:flex;flex-wrap:wrap;gap:14px;justify-content:center">
-      <a class="btn btn-lg btn-ghost" href="terms.html">会員規約を読む</a>
-      <a class="btn btn-lg" href="apply.html">面談を申し込む</a>
-    </div>
-  </div>
-</section>
-
-<footer>
-  <div class="wrap">
-    <div class="fgrid">
-      <div>
-        <div class="logo"><img src="images/miall-logo-header.png" alt="miall コミュニティワークスペース" width="1241" height="462"></div>
+        <div class="logo"><img src="images/miall-logo-horizontal.png" alt="miall コミュニティワークスペース" width="1241" height="462"></div>
         <p style="margin-top:16px;max-width:26em;line-height:1.9">
           自分を見つけた人から、輝きはじめる。<br>前に進みたい女性のための、女性限定のコミュニティワークスペース。
         </p>
@@ -648,7 +655,7 @@ html body *,html body *::before,html body *::after{
 <!-- ============ スマホ用の固定バー ============ -->
 <div class="stickycta">
   <a class="btn btn-ghost" href="video.html">魅力覚醒動画を見る</a>
-  <a class="btn" href="apply.html">面談を申し込む</a>
+  <a class="btn" href="event.html">イベントに申し込む</a>
 </div>
 
 <!-- ============ CHATBOT ミオ ============ -->
@@ -1127,28 +1134,6 @@ footer .logo img{height:56px}
   .hd .logo img,footer .logo img,.logo img{height:40px!important}}
 @media(max-width:520px){
   .hd .logo img,footer .logo img,.logo img{height:32px!important}}
-
-/* ヘッダー・フッターのロゴ（2026-08-25）
-   もとの横型ロゴは副題が画像内で25px（全体の5%）しかなく、
-   表示すると3px以下になって読めなかった。副題を外した版に差し替え、
-   「miall」がはっきり読める大きさで置く。 */
-.logo img{display:block;width:auto;height:44px!important;max-width:100%}
-footer .logo img{height:46px!important}
-@media(max-width:900px){.logo img,.hd .logo img,footer .logo img{height:36px!important}}
-@media(max-width:520px){.logo img,.hd .logo img,footer .logo img{height:30px!important}}
-
-/* ヘッダーのナビが全項目2行に折り返していたのを、1行に収める
-   （必要幅814px＞使える幅754px だったため、間隔と字を詰める） */
-.hd nav{gap:15px!important;font-size:12.5px!important}
-@media(max-width:1180px){.hd nav{gap:12px!important;font-size:12px!important}}
-
-/* ナビ：項目が押しつぶされて中で折り返していたのを直す（2026-08-25）
-   flexで各項目が自然幅より縮められ、6文字が2行になっていた。
-   縮まない指定にしたうえで、収まる字と間隔に詰める。 */
-.hd nav a{white-space:nowrap!important;flex:0 0 auto!important}
-.hd nav{gap:12px!important;font-size:11.5px!important;flex-wrap:nowrap!important;letter-spacing:.02em!important}
-.hd .btn{padding-inline:22px!important}
-@media(max-width:1180px){.hd nav{gap:9px!important;font-size:11px!important}}
 </style>
 <script>
 (function(){
@@ -1157,6 +1142,9 @@ footer .logo img{height:46px!important}
   });
 })();
 </script>
+
+
+
 
 
 

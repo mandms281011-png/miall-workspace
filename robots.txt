@@ -1,9 +1,7 @@
 User-agent: *
 Allow: /
 Disallow: /terms.html
-Disallow: /privacy.html
 Disallow: /forms/
-Disallow: /tokushoho.html
 Disallow: /mentoring.html
 Disallow: /board.html
 Disallow: /mio.html
@@ -11,3 +9,4 @@ Disallow: /referral.html
 Disallow: /event.html
 Disallow: /leave.html
 Disallow: /welcome.html
+Disallow: /dropin-thanks.html
