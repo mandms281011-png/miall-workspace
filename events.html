@@ -396,10 +396,13 @@ html body *,html body *::before,html body *::after{
   },{passive:true});
   var io=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting)e.target.classList.add("in")})},{threshold:.14});
   document.querySelectorAll(".reveal").forEach(function(el){io.observe(el)});
+  /* カレンダーはシートから作り直すため、固定の #eventDay は無い場合がある */
   var day=document.getElementById("eventDay"),detail=document.getElementById("eventDetail");
-  function showEvent(){detail.classList.add("active");detail.scrollIntoView({behavior:"smooth",block:"center"});setTimeout(function(){detail.classList.remove("active")},1600)}
-  day.addEventListener("click",showEvent);
-  day.addEventListener("keydown",function(e){if(e.key==="Enter"||e.key===" "){e.preventDefault();showEvent()}});
+  if(day && detail){
+    var showEvent=function(){detail.classList.add("active");detail.scrollIntoView({behavior:"smooth",block:"center"});setTimeout(function(){detail.classList.remove("active")},1600)};
+    day.addEventListener("click",showEvent);
+    day.addEventListener("keydown",function(e){if(e.key==="Enter"||e.key===" "){e.preventDefault();showEvent()}});
+  }
 })();
 </script>
 
