@@ -1150,3 +1150,23 @@ footer .logo img{height:56px}
 /* ============================================================
    メンタリングのお申し込み → Googleフォームへ送信
 
+<script>
+/* スマホなら、そのままエルメのアクションURLへ送る（LINEが自動で開き、会員タグが付く）。
+   パソコンだと、そのURLはQR画面しか出ないので、別の案内を見せる。 */
+(function(){
+  var ua = navigator.userAgent || '';
+  var isMobile = /iPhone|iPad|iPod|Android/i.test(ua);
+  var sp = document.getElementById('doneSp');
+  var pc = document.getElementById('donePc');
+  if(isMobile){
+    if(sp) sp.style.display = '';
+    setTimeout(function(){
+      location.href = 'https://s.lmes.jp/landing-qr/2011237264-Y66AYsb3?uLand=j7X2Ra';
+    }, 900);
+  } else {
+    if(pc) pc.style.display = '';
+  }
+})();
+</script>
+</body>
+</html>
