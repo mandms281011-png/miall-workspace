@@ -588,24 +588,34 @@ textarea.finput{resize:vertical;min-height:110px}
 <section class="applysec">
   <div class="narrow">
 
-    <div class="donebox">
+    <div class="donebox" id="doneSp" style="display:none">
+      <div class="mark">miall へようこそ。</div>
+      <p>
+        LINEに戻っています。<br>
+        <b style="color:var(--ink);font-weight:500">そのままお待ちください。</b>
+      </p>
+      <p style="margin-top:22px;font-size:13.5px;color:var(--ink-mute);line-height:1.95">
+        開かないときは、こちらを押してください。<br>
+        <a href="https://s.lmes.jp/landing-qr/2011237264-Y66AYsb3?uLand=j7X2Ra" style="color:var(--rose-700);text-decoration:underline;text-underline-offset:3px">LINEに戻る</a>
+      </p>
+    </div>
+
+    <div class="donebox" id="donePc" style="display:none">
       <div class="mark">miall へようこそ。</div>
       <p>
         あと1つで完了です。<br>
-        <b style="color:var(--ink);font-weight:500">下のボタンを押して、LINEにお戻りください。</b>
+        <b style="color:var(--ink);font-weight:500">スマートフォンで、続きのお手続きをお願いします。</b>
       </p>
-      <p style="margin-top:26px">
-        <a class="btn btn-lg" href="https://s.lmes.jp/landing-qr/2011237264-Y66AYsb3?uLand=j7X2Ra">
-          LINEに戻って、手続きを終える
-        </a>
+      <p style="margin-top:22px;color:var(--ink-soft);font-size:14.5px;line-height:2;text-align:left;max-width:30em;margin-left:auto;margin-right:auto">
+        いちばん簡単なのは、<b style="color:var(--ink);font-weight:500">公式LINEのトークに「支払いました」とお送りいただく</b>ことです。miall事務局から、会員の方だけのLINEをご案内します。
       </p>
-      <p style="margin-top:20px;font-size:13.5px;color:var(--ink-mute);line-height:1.95">
-        押すとLINEが開きます。会員の方だけのLINEのご案内が、そのままトークに届きます。
+      <p style="margin-top:24px;font-size:13.5px;color:var(--ink-mute);line-height:1.95">
+        スマートフォンでこのページを開き直していただいても、そのまま進みます。
       </p>
     </div>
 
     <div class="donenote">
-      <b>ボタンを押しそびれたとき</b><br>
+      <b>うまく進まないとき</b><br>
       このページを閉じてしまっても大丈夫です。公式LINEのトークに「支払いました」とお送りください。miall事務局からご案内します。<br><br>
       <b>領収書について</b><br>
       Stripe からお支払いの控えがメールで届きます。届かないときは迷惑メールもご確認ください。<br><br>
