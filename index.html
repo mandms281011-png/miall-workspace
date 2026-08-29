@@ -3156,6 +3156,25 @@ footer .logo img{height:46px!important}
 #mentoring .mentor-body p{color:#ebe5db!important}
 #mentoring .mentor-body p b,#mentoring .mentor-body p strong{color:#f7f2e6!important}
 #mentoring .mentor-body p a{color:#f2e5c4!important}
+
+/* 花束の四角い縁を溶かす（2026-08-27）
+   content:url で画像を差し替えたときに、元の mask-image が効かなくなっていた。
+   縁がそのまま出て「途中で切れている」ように見えていたので、周囲へ溶かし直す。
+   あわせて、見出しと競合しないよう濃さも落とす。 */
+.hero-bouquet-art,
+.cta-bouquet-art,
+#contact .cta-bouquet-art{
+  -webkit-mask-image:radial-gradient(ellipse 84% 88% at 50% 56%,#000 46%,rgba(0,0,0,.72) 70%,transparent 93%)!important;
+          mask-image:radial-gradient(ellipse 84% 88% at 50% 56%,#000 46%,rgba(0,0,0,.72) 70%,transparent 93%)!important;
+  -webkit-mask-repeat:no-repeat;mask-repeat:no-repeat;
+  -webkit-mask-size:100% 100%;mask-size:100% 100%}
+
+/* 見出し「私って、もっと魅力的？」に花がかぶらないよう、少し引く */
+#contact .cta-bouquet-art{opacity:.6!important}
+.hero-bouquet-art{opacity:.9!important}
+@media(max-width:900px){
+  #contact .cta-bouquet-art{opacity:.26!important}
+  .hero-bouquet-art{opacity:.5!important}}
 </style>
 <script>
 (function(){
