@@ -87,7 +87,9 @@ h2 .g{background:var(--gold-grad);-webkit-background-clip:text;background-clip:t
   @page{size:A4 landscape;margin:0}
   html,body{background:#fff;margin:0;padding:0}
   /* 用紙とぴったり同寸だと丸め誤差で次の紙へ送られるので、わずかに小さく */
-  .slide{width:297mm;height:208.6mm;margin:0;box-shadow:none;overflow:hidden}
+  .slide{width:297mm;height:208.6mm;margin:0;box-shadow:none;overflow:hidden;
+    break-inside:avoid;page-break-inside:avoid}
+  .slide > *{break-inside:avoid;page-break-inside:avoid}
   .bar{display:none!important}
   *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
 }
