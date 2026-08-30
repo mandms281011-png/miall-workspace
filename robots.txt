@@ -10,3 +10,5 @@ Disallow: /event.html
 Disallow: /leave.html
 Disallow: /welcome.html
 Disallow: /dropin-thanks.html
+Disallow: /a4-rules.html
+Disallow: /a4-terms.html

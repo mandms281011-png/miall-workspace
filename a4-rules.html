@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>ご利用ルール（A4印刷用）｜miall コミュニティワークスペース</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#33312d; --ink-soft:#5f5b53; --ink-mute:#8b867e;
+  --gold:#b09349; --gold-l:#dcc9a0; --line:#e3dccd;
+  --serif:"Shippori Mincho","Hiragino Mincho ProN",serif;
+  --sans:"Noto Sans JP","Hiragino Sans","Yu Gothic",sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#e9e6df;font-family:var(--sans);color:var(--ink);
+  font-weight:400;line-height:1.85;-webkit-font-smoothing:antialiased}
+
+/* ---- A4の紙 ---- */
+.sheet{width:210mm;min-height:297mm;margin:10mm auto;padding:16mm 17mm 15mm;
+  background:#fff;box-shadow:0 6px 28px rgba(60,54,44,.16);position:relative}
+
+/* ---- 表紙まわり ---- */
+.head{display:flex;align-items:flex-end;justify-content:space-between;
+  gap:12mm;border-bottom:1px solid var(--line);padding-bottom:5mm}
+.head img{width:34mm;height:auto;display:block}
+.head .meta{text-align:right;font-size:8.4pt;color:var(--ink-mute);letter-spacing:.1em;line-height:1.7}
+.title{margin-top:9mm}
+.title .kicker{font-size:8.6pt;letter-spacing:.3em;color:var(--gold)}
+.title h1{font-family:var(--serif);font-weight:500;font-size:21pt;
+  letter-spacing:.1em;margin-top:2.5mm;line-height:1.5}
+.title .lead{margin-top:4mm;font-size:9.6pt;color:var(--ink-soft);line-height:1.95;max-width:150mm}
+
+/* ---- 2つの約束 ---- */
+.creed{margin-top:8mm;border:1px solid var(--gold-l);padding:7mm 8mm;background:#fdfbf6}
+.creed h2{font-family:var(--serif);font-size:11.5pt;font-weight:500;
+  letter-spacing:.08em;color:var(--gold);margin-bottom:4mm}
+.creed .two{display:grid;grid-template-columns:1fr 1fr;gap:7mm}
+.creed h3{font-family:var(--serif);font-size:12pt;font-weight:500;margin-bottom:2mm}
+.creed p{font-size:9pt;line-height:1.9;color:var(--ink-soft)}
+
+/* ---- 各項目 ---- */
+.rules{margin-top:8mm;display:grid;grid-template-columns:1fr 1fr;gap:6mm 9mm}
+.rule{break-inside:avoid;page-break-inside:avoid}
+.rule h3{font-family:var(--serif);font-size:10.8pt;font-weight:500;
+  letter-spacing:.04em;padding-bottom:1.6mm;margin-bottom:2.4mm;
+  border-bottom:1px solid var(--line);position:relative}
+.rule h3::after{content:"";position:absolute;left:0;bottom:-1px;width:14mm;height:1px;background:var(--gold)}
+.rule p{font-size:8.8pt;line-height:1.88;color:var(--ink-soft)}
+.rule p + p{margin-top:1.8mm}
+.rule b{font-weight:500;color:var(--ink)}
+.wide{grid-column:1 / -1}
+
+/* ---- 締め ---- */
+.foot{margin-top:9mm;border-top:1px solid var(--line);padding-top:5mm;
+  display:flex;justify-content:space-between;align-items:flex-end;gap:10mm}
+.foot .msg{font-family:var(--serif);font-size:9.6pt;color:var(--ink-soft);line-height:1.95}
+.foot .org{text-align:right;font-size:8.2pt;color:var(--ink-mute);line-height:1.8;white-space:nowrap}
+
+/* ---- 画面だけの操作 ---- */
+.bar{position:fixed;right:16px;bottom:16px;display:flex;gap:10px;z-index:9}
+.bar button{font-family:inherit;font-size:13.5px;letter-spacing:.06em;
+  padding:11px 20px;border-radius:3px;cursor:pointer;
+  border:1px solid var(--gold);background:#fff;color:#96762f;transition:.2s}
+.bar button:hover{background:#fbf8f2}
+
+@media print{
+  @page{size:A4;margin:0}
+  body{background:#fff}
+  .sheet{width:auto;min-height:auto;margin:0;padding:15mm 16mm 13mm;box-shadow:none}
+  .bar{display:none!important}
+  *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+}
+@media(max-width:840px){
+  .sheet{width:auto;margin:0;padding:22px 18px}
+  .creed .two,.rules{grid-template-columns:1fr}
+  .head{flex-direction:column;align-items:flex-start;gap:10px}
+  .head .meta{text-align:left}
+  .foot{flex-direction:column;align-items:flex-start}
+  .foot .org{text-align:left}
+}
+</style>
+</head>
+<body>
+
+<div class="sheet">
+
+  <div class="head">
+    <img src="images/miall-logo-horizontal.png" alt="miall コミュニティワークスペース">
+    <div class="meta">
+      女性限定コミュニティワークスペース<br>
+      長野県長野市鶴賀問御所町1241-1 長野銀座信越ビル 8階<br>
+      9:00 – 21:00
+    </div>
+  </div>
+
+  <div class="title">
+    <div class="kicker">HOUSE RULES</div>
+    <h1>ご利用ルール</h1>
+    <p class="lead">
+      ルールというより、ここにいる人たちへの約束のようなものです。<br>
+      安心して前を向ける場所であるために、いくつかだけお願いしています。
+    </p>
+  </div>
+
+  <div class="creed">
+    <h2>まず、ふたつだけ</h2>
+    <div class="two">
+      <div>
+        <h3>悪口を言わない</h3>
+        <p>ほかの会員さま、ご不在の方、同業の方、ご自身のお客様。どなたのことであっても、悪口や噂話はお控えください。陰口はその場では盛り上がりますが、聞いていた人は「自分もいないところで言われるのだろうな」と受け取ります。安心して話せる場所は、それだけで壊れます。</p>
+      </div>
+      <div>
+        <h3>人を応援できる人でいる</h3>
+        <p>うまくいっている人には「すごいですね」を。始めたばかりの人には「いいですね」を。ここでは、それが普通であってほしいと思っています。<b>人を応援できない方には、ご退会をお願いすることがあります。</b></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="rules">
+
+    <div class="rule">
+      <h3>女性限定です</h3>
+      <p>気を使わずに集中していただけることを大切にしています。男性のご入館はご遠慮いただいています（設備業者・配送等をのぞく）。ゲストとしてお越しの方も同様です。</p>
+      <p>防犯のため、<b>入り口と室内に防犯カメラを設置</b>しています（更衣室・化粧室にはありません）。映像は防犯と安全確保の目的にのみ使用します。</p>
+    </div>
+
+    <div class="rule">
+      <h3>営業時間</h3>
+      <p><b>9:00〜21:00</b>。お片づけを含めて、時間内にお願いしています。</p>
+    </div>
+
+    <div class="rule">
+      <h3>ゲストは1名まで</h3>
+      <p>会員さまおひとりにつき、<b>同時に1名まで</b>ご一緒いただけます。追加料金はいただきません。打合せや商談にもお使いください。</p>
+      <p>ゲストの方だけでのご利用はできません。ゲストの方の過ごし方については、お連れになった会員さまにご配慮をお願いしています。</p>
+    </div>
+
+    <div class="rule">
+      <h3>お電話・オンライン会議</h3>
+      <p>周りにご配慮いただきながらお願いいたします。イヤホンのご使用をおすすめしています。</p>
+    </div>
+
+    <div class="rule wide">
+      <h3>セミナー・講座を開くとき</h3>
+      <p>会員さまがこの場で講座を開かれるのは大歓迎です。プロジェクター、スクリーン、マイクをお使いいただけます。ただし<b>集客をともなう場合は、参加者名簿にお名前のある方のみご入館いただけます。</b>開催の2日前までに、日時・内容・名簿を運営までお知らせください。不特定多数の方が出入りする状態になると、女性限定という前提が守れなくなるためです。</p>
+    </div>
+
+    <div class="rule wide">
+      <h3>勧誘はお断りしています</h3>
+      <p>ネットワークビジネス、投資・保険の勧誘、宗教・政治の勧誘はご遠慮ください。断りにくい状況をつくることも同じです。いっぽうで、<b>会員さま同士がお仕事を依頼し合うことは、この場が目指していることそのもの</b>です。線引きはシンプルに、<b>「相手が求めていないものを、こちらから持ちかけない」</b>。判断に迷われたときは、その場で断らず運営にご相談ください。間に入ります。</p>
+    </div>
+
+    <div class="rule">
+      <h3>お飲みもの・お食事</h3>
+      <p>フリードリンクとおやつはご自由にどうぞ。無農薬・オーガニックにこだわった良質なものをご用意しています。</p>
+      <p>冷蔵庫をお使いになるときは<b>お名前を書いて、当日中</b>にお持ち帰りください。使ったものは各自でお片づけをお願いします。</p>
+    </div>
+
+    <div class="rule">
+      <h3>お帰りのとき</h3>
+      <p>机の上を空にして、椅子を戻してください。私物の置きっぱなしはご遠慮ください。忘れ物は1ヶ月お預かりし、その後は処分いたします。</p>
+    </div>
+
+    <div class="rule">
+      <h3>撮影・SNS</h3>
+      <p>ご自分の手元や作業風景の撮影はご自由に。ただし<b>ほかの会員さまが写り込む撮影・投稿は、必ずご本人の許可を得てから</b>お願いします。場の全景を投稿されるときは、人が写っていないかご確認ください。</p>
+    </div>
+
+    <div class="rule">
+      <h3>ここで知ったこと</h3>
+      <p>会員さま同士の会話には、まだ表に出していないお仕事の話が含まれます。<b>ここで聞いたことは、ここに置いていってください。</b></p>
+    </div>
+
+  </div>
+
+  <div class="foot">
+    <p class="msg">
+      読んでみて「そういう場所ならいいな」と思われたら、<br>
+      ぜひ一度いらしてください。
+    </p>
+    <div class="org">
+      入会や会費などの取り決めは、会員規約にまとめています。<br>
+      運営：株式会社Siayell　／　miall community workspace
+    </div>
+  </div>
+
+</div>
+
+<div class="bar">
+  <button type="button" onclick="window.print()">A4で印刷する</button>
+</div>
+
+</body>
+</html>
