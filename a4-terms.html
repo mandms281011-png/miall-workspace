@@ -16,7 +16,7 @@
   --sans:"Noto Sans JP","Hiragino Sans","Yu Gothic",sans-serif;
 }
 *{box-sizing:border-box;margin:0;padding:0}
-body{background:#e9e6df;font-family:var(--sans);color:var(--ink);line-height:1.85}
+body{background:#e9e6df;font-family:var(--sans);color:var(--ink);line-height:1.95}
 
 .sheet{width:210mm;margin:10mm auto;padding:16mm 17mm 15mm;
   background:#fff;box-shadow:0 6px 28px rgba(60,54,44,.16)}
@@ -24,28 +24,28 @@ body{background:#e9e6df;font-family:var(--sans);color:var(--ink);line-height:1.8
 .head{display:flex;align-items:flex-end;justify-content:space-between;
   gap:12mm;border-bottom:1px solid var(--line);padding-bottom:5mm}
 .head img{width:34mm;height:auto;display:block}
-.head .meta{text-align:right;font-size:8.4pt;color:var(--ink-mute);letter-spacing:.1em;line-height:1.7}
+.head .meta{text-align:right;font-size:9.2pt;color:var(--ink-mute);letter-spacing:.1em;line-height:1.7}
 .title{margin-top:8mm;margin-bottom:7mm}
 .title .kicker{font-size:8.6pt;letter-spacing:.3em;color:var(--gold)}
-.title h1{font-family:var(--serif);font-weight:500;font-size:20pt;letter-spacing:.1em;margin-top:2.5mm}
-.title .lead{margin-top:3.5mm;font-size:9.2pt;color:var(--ink-soft);line-height:1.9}
+.title h1{font-family:var(--serif);font-weight:500;font-size:23pt;letter-spacing:.1em;margin-top:2.5mm}
+.title .lead{margin-top:4mm;font-size:11pt;color:var(--ink-soft);line-height:2.0}
 
 /* ---- 条文（2段組で紙数を抑える） ---- */
-.terms{column-count:2;column-gap:9mm;column-rule:1px solid #f0ece2}
-.terms article{break-inside:avoid;page-break-inside:avoid;margin-bottom:4.5mm}
-.terms h2{font-family:var(--serif);font-size:9.8pt;font-weight:500;letter-spacing:.03em;
-  color:var(--ink);margin-bottom:1.6mm;padding-left:2.6mm;border-left:2px solid var(--gold)}
-.terms p{font-size:8.4pt;line-height:1.82;color:var(--ink-soft)}
+.terms{column-count:1}
+.terms article{break-inside:avoid;page-break-inside:avoid;margin-bottom:6.5mm}
+.terms h2{font-family:var(--serif);font-size:12.5pt;font-weight:500;letter-spacing:.04em;
+  color:var(--ink);margin-bottom:2.6mm;padding-left:3.4mm;border-left:2.5px solid var(--gold)}
+.terms p{font-size:10.5pt;line-height:1.95;color:var(--ink-soft)}
 .terms p + p{margin-top:1.4mm}
-.terms ol,.terms ul{margin:1.2mm 0 0 4.6mm;font-size:8.4pt;line-height:1.82;color:var(--ink-soft)}
-.terms li{margin-bottom:1mm}
+.terms ol,.terms ul{margin:1.8mm 0 0 5.6mm;font-size:10.5pt;line-height:1.95;color:var(--ink-soft)}
+.terms li{margin-bottom:1.6mm}
 .terms li ol,.terms li ul{margin-top:.8mm}
 .terms strong,.terms b{font-weight:500;color:var(--ink)}
 .terms a{color:var(--ink);text-decoration:underline;text-underline-offset:2px}
 
-.foot{margin-top:8mm;border-top:1px solid var(--line);padding-top:4.5mm;
+.foot{margin-top:9mm;border-top:1px solid var(--line);padding-top:5mm;
   display:flex;justify-content:space-between;align-items:flex-end;gap:10mm;
-  font-size:8.2pt;color:var(--ink-mute);line-height:1.8}
+  font-size:9pt;color:var(--ink-mute);line-height:1.8}
 .foot .r{text-align:right;white-space:nowrap}
 
 .bar{position:fixed;right:16px;bottom:16px;z-index:9}
