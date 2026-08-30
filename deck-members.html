@@ -25,7 +25,7 @@ body{background:#e9e6df;font-family:var(--sans);color:var(--ink);line-height:1.9
   background:var(--cream);box-shadow:0 8px 30px rgba(60,54,44,.17);
   position:relative;overflow:hidden;display:flex;flex-direction:column;
   page-break-after:always;break-after:page}
-.slide:last-child{page-break-after:auto;break-after:auto}
+.slide:last-of-type{page-break-after:auto;break-after:auto}
 
 /* 右上の通し番号 */
 .slide::after{content:attr(data-n);position:absolute;right:14mm;bottom:10mm;
@@ -85,8 +85,9 @@ h2 .g{background:var(--gold-grad);-webkit-background-clip:text;background-clip:t
 
 @media print{
   @page{size:338.67mm 190.5mm;margin:0}
-  body{background:#fff}
-  .slide{margin:0;box-shadow:none}
+  html,body{background:#fff;margin:0;padding:0;width:338.67mm}
+  /* 用紙とぴったり同寸だと、丸め誤差で次の紙へ送られる。わずかに小さくする */
+  .slide{width:338.67mm;height:189.6mm;margin:0;box-shadow:none;overflow:hidden}
   .bar{display:none!important}
   *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
 }
