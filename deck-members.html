@@ -19,20 +19,22 @@
 *{box-sizing:border-box;margin:0;padding:0}
 body{background:#e9e6df;font-family:var(--sans);color:var(--ink);line-height:1.9}
 
-.slide{width:297mm;height:210mm;margin:8mm auto;padding:14mm 18mm 12mm;
+.slide{width:297mm;height:210mm;margin:8mm auto;padding:17mm 23mm 15mm;
   background:var(--cream);box-shadow:0 8px 30px rgba(60,54,44,.16);
   position:relative;overflow:hidden;
   display:flex;flex-direction:column;
   page-break-after:always;break-after:page}
 .slide:last-of-type{page-break-after:auto;break-after:auto}
-.slide::after{content:attr(data-n);position:absolute;right:14mm;bottom:8mm;
+.slide::after{content:attr(data-n);position:absolute;right:16mm;bottom:9mm;
   font-size:9pt;letter-spacing:.2em;color:var(--ink-mute)}
 
-.kicker{font-size:9pt;letter-spacing:.34em;color:var(--gold);margin-bottom:3.5mm}
+.kicker{font-size:9pt;letter-spacing:.34em;color:var(--gold);margin:2mm 0 4mm}
 h2{font-family:var(--serif);font-weight:500;font-size:25pt;letter-spacing:.05em;line-height:1.45}
 h2 .g{color:var(--gold)}
 .sub{margin-top:3.5mm;font-size:11.5pt;color:var(--ink-soft);line-height:1.9}
-.body{flex:1;display:flex;flex-direction:column;justify-content:center;margin-top:4mm}
+.head{flex:none}
+.body{flex:1;display:flex;flex-direction:column;justify-content:center;
+  gap:6mm;margin-top:7mm;padding-bottom:2mm}
 .svgwrap{display:flex;justify-content:center;align-items:center}
 .svgwrap>svg{display:block;width:100%;max-width:none;height:auto}
 
@@ -76,7 +78,7 @@ h2 .g{color:var(--gold)}
 @media print{
   @page{size:A4 landscape;margin:0}
   html,body{background:#fff;margin:0;padding:0}
-  .slide{width:297mm;height:207.5mm;margin:0;box-shadow:none}
+  .slide{width:297mm;height:207.5mm;padding:16mm 23mm 14mm;margin:0;box-shadow:none}
   .bar{display:none!important}
   *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
 }
@@ -100,7 +102,8 @@ h2 .g{color:var(--gold)}
 <section class="slide" data-n="1">
   <div class="kicker">OVERVIEW</div>
   <h2>miall には、<span class="g">3つ</span>あります。</h2>
-  <div class="body svgwrap">
+  <div class="body">
+   <div class="svgwrap">
     <svg viewBox="0 0 700 272">
       <circle cx="200" cy="150" r="103" fill="#f6f1e6" stroke="#d9c49a" stroke-width="1.2" opacity=".78"/>
       <circle cx="350" cy="150" r="103" fill="#f1eee6" stroke="#d9c49a" stroke-width="1.2" opacity=".78"/>
@@ -118,8 +121,8 @@ h2 .g{color:var(--gold)}
       <text class="sm" x="550" y="134" text-anchor="middle">月1回の</text>
       <text class="sm" x="550" y="150" text-anchor="middle">メンタリング</text>
     </svg>
+    <p class="sub" style="text-align:center;margin-top:0">この3つが重なるところに、次の一歩があります。</p>
   </div>
-  <p class="sub" style="text-align:center">この3つが重なるところに、次の一歩があります。</p>
 </section>
 
 <section class="slide" data-n="2">
@@ -147,7 +150,8 @@ h2 .g{color:var(--gold)}
 <section class="slide" data-n="3">
   <div class="kicker">MENTORING</div>
   <h2>月に1度、30分。<br><span class="g">次の一手</span>を、ひとつ決めます。</h2>
-  <div class="body svgwrap">
+  <div class="body">
+   <div class="svgwrap">
     <svg viewBox="0 0 740 250">
       <circle cx="115" cy="110" r="58" fill="#fdfbf6" stroke="#d9c49a" stroke-width="1.3"/>
       <text class="mj" x="115" y="104" text-anchor="middle" font-size="15">話す</text>
@@ -166,11 +170,12 @@ h2 .g{color:var(--gold)}
       <path d="M121 182 l-6 -10 -6 10" fill="none" stroke="#d9c49a" stroke-width="1.2"/>
       <text class="sm" x="328" y="238" text-anchor="middle">翌月「先月決めたこと、どうなりました？」から始まります</text>
     </svg>
+   </div>
+   <p class="sub" style="text-align:center;margin-top:0">
+     担当は代表の藤澤美嘉。値段の上げ方、次の広げ方、売れる形の作り方をご一緒に。<br>
+     <b style="color:var(--ink);font-weight:500">ご予約は会員専用LINEのメニューから。</b>
+   </p>
   </div>
-  <p class="sub" style="text-align:center">
-    担当は代表の藤澤美嘉。値段の上げ方、次の広げ方、売れる形の作り方をご一緒に。<br>
-    <b style="color:var(--ink);font-weight:500">ご予約は会員専用LINEのメニューから。</b>
-  </p>
 </section>
 
 <section class="slide" data-n="4">
