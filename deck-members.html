@@ -43,7 +43,8 @@ h2 .g{background:var(--gold-grad);-webkit-background-clip:text;background-clip:t
 .cover img{width:58mm;height:auto;margin-bottom:8mm}
 .cover h1{font-family:var(--serif);font-weight:500;font-size:32pt;letter-spacing:.1em;line-height:1.5}
 .cover .sub{margin-top:7mm;font-size:13pt;color:var(--ink-soft);letter-spacing:.06em}
-.cover .foot{position:absolute;bottom:12mm;font-size:9.5pt;color:var(--ink-mute);letter-spacing:.12em}
+.cover .foot{position:absolute;bottom:12mm;left:0;right:0;text-align:center;
+  font-size:9.5pt;color:var(--ink-mute);letter-spacing:.12em}
 
 /* カード群 */
 .cards{margin-top:7mm;display:grid;gap:5mm;flex:1}
@@ -99,6 +100,8 @@ h2 .g{background:var(--gold-grad);-webkit-background-clip:text;background-clip:t
   .card p,.card ul{font-size:10.5pt!important;line-height:1.85!important}
   .card li{margin-bottom:1.2mm!important}
   /* カードが縦に引き伸ばされて紙を越えていた。内容の高さで止める */
+  /* 表紙は block 指定だと上に寄るので、上余白で中央に見せる */
+  .slide.cover{padding-top:46mm!important;text-align:center}
   .cards{align-content:start!important}
   .card{align-self:start!important}
   .bar{display:none!important}
