@@ -3156,6 +3156,25 @@ footer .logo img{height:46px!important}
 #mentoring .mentor-body p{color:#ebe5db!important}
 #mentoring .mentor-body p b,#mentoring .mentor-body p strong{color:#f7f2e6!important}
 #mentoring .mentor-body p a{color:#f2e5c4!important}
+
+/* 垂れ下がる花は使わない（2026-08-30）
+   専門家の節で、茎が上から垂れる絵柄になっていたため、
+   下から立ち上がる絵柄に差し替える。 */
+#professionals::after{
+  background-image:url("images/ranunculus-rise.webp")!important;
+  aspect-ratio:1067/1200!important;
+  left:auto!important;right:1%!important;
+  top:auto!important;bottom:2%!important;
+  width:min(360px,27vw)!important;opacity:.26!important}
+@media(max-width:900px){#professionals::after{width:56vw!important;opacity:.14!important}}
+
+/* MOVIE の花が左端に大きく寄って、右が空いていたのを整える（2026-08-30）
+   文字は中央にあるので、花は左下の隅に小さく控えめに置く。 */
+.vinv::after{
+  left:-2%!important;right:auto!important;
+  top:auto!important;bottom:-2%!important;
+  width:min(330px,25vw)!important;opacity:.24!important}
+@media(max-width:900px){.vinv::after{width:58vw!important;opacity:.12!important}}
 </style>
 <script>
 (function(){
