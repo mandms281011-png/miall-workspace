@@ -21,7 +21,7 @@
 body{background:#e9e6df;font-family:var(--sans);color:var(--ink);line-height:1.9}
 
 /* ---- 1枚 = 16:9 ---- */
-.slide{width:297mm;height:210mm;margin:8mm auto;padding:15mm 18mm;
+.slide{width:297mm;height:210mm;margin:8mm auto;padding:12mm 17mm;
   background:var(--cream);box-shadow:0 8px 30px rgba(60,54,44,.17);
   position:relative;overflow:hidden;display:flex;flex-direction:column;
   page-break-after:always;break-after:page}
@@ -31,25 +31,25 @@ body{background:#e9e6df;font-family:var(--sans);color:var(--ink);line-height:1.9
 .slide::after{content:attr(data-n);position:absolute;right:14mm;bottom:10mm;
   font-size:9pt;letter-spacing:.2em;color:var(--ink-mute)}
 
-.kicker{font-size:9.5pt;letter-spacing:.32em;color:var(--gold);margin-bottom:5mm}
+.kicker{font-size:9.5pt;letter-spacing:.32em;color:var(--gold);margin-bottom:4mm}
 h2{font-family:var(--serif);font-weight:500;font-size:26pt;letter-spacing:.06em;line-height:1.45}
 h2 .g{background:var(--gold-grad);-webkit-background-clip:text;background-clip:text;color:transparent}
-.lead{margin-top:6mm;font-size:13pt;color:var(--ink-soft);line-height:1.95;max-width:230mm}
+.lead{margin-top:5mm;font-size:13pt;color:var(--ink-soft);line-height:1.95;max-width:230mm}
 
 /* 表紙 */
 .cover{justify-content:center;align-items:center;text-align:center;
   background:radial-gradient(60% 70% at 76% 20%,var(--blush) 0%,transparent 62%),
              radial-gradient(52% 62% at 14% 84%,#f1eee6 0%,transparent 64%),var(--cream)}
-.cover img{width:64mm;height:auto;margin-bottom:10mm}
-.cover h1{font-family:var(--serif);font-weight:500;font-size:34pt;letter-spacing:.1em;line-height:1.5}
+.cover img{width:58mm;height:auto;margin-bottom:8mm}
+.cover h1{font-family:var(--serif);font-weight:500;font-size:32pt;letter-spacing:.1em;line-height:1.5}
 .cover .sub{margin-top:7mm;font-size:13pt;color:var(--ink-soft);letter-spacing:.06em}
 .cover .foot{position:absolute;bottom:12mm;font-size:9.5pt;color:var(--ink-mute);letter-spacing:.12em}
 
 /* カード群 */
-.cards{margin-top:9mm;display:grid;gap:6mm;flex:1}
+.cards{margin-top:7mm;display:grid;gap:5mm;flex:1}
 .c3{grid-template-columns:repeat(3,1fr)}
 .c2{grid-template-columns:repeat(2,1fr)}
-.card{background:var(--ivory);border:1px solid var(--line);border-radius:3px;padding:8mm 8mm 7mm}
+.card{background:var(--ivory);border:1px solid var(--line);border-radius:3px;padding:7mm 7mm 6mm}
 .card h3{font-family:var(--serif);font-size:15pt;font-weight:500;margin-bottom:4mm;
   padding-bottom:2.5mm;border-bottom:1px solid var(--line);position:relative}
 .card h3::after{content:"";position:absolute;left:0;bottom:-1px;width:16mm;height:1.5px;background:var(--gold)}
@@ -60,13 +60,13 @@ h2 .g{background:var(--gold-grad);-webkit-background-clip:text;background-clip:t
 .card b{font-weight:500;color:var(--ink)}
 
 /* 大きな2つの約束 */
-.creed{margin-top:10mm;display:grid;grid-template-columns:1fr 1fr;gap:9mm;flex:1;align-content:center}
-.creed div{border:1.5px solid var(--gold-l);background:var(--ivory);padding:11mm 10mm;border-radius:3px}
+.creed{margin-top:8mm;display:grid;grid-template-columns:1fr 1fr;gap:8mm;flex:1;align-content:center}
+.creed div{border:1.5px solid var(--gold-l);background:var(--ivory);padding:9mm 9mm;border-radius:3px}
 .creed h3{font-family:var(--serif);font-size:19pt;font-weight:500;margin-bottom:5mm}
 .creed p{font-size:11.5pt;line-height:2;color:var(--ink-soft)}
 
 /* 手順 */
-.steps{margin-top:10mm;display:grid;grid-template-columns:repeat(4,1fr);gap:7mm;flex:1;align-content:center}
+.steps{margin-top:8mm;display:grid;grid-template-columns:repeat(4,1fr);gap:7mm;flex:1;align-content:center}
 .step{position:relative;padding-top:12mm}
 .step .n{position:absolute;top:0;left:0;font-family:var(--serif);font-size:22pt;color:var(--gold-l)}
 .step h3{font-family:var(--serif);font-size:14pt;font-weight:500;margin-bottom:3mm}
@@ -87,7 +87,7 @@ h2 .g{background:var(--gold-grad);-webkit-background-clip:text;background-clip:t
   @page{size:A4 landscape;margin:0}
   html,body{background:#fff;margin:0;padding:0}
   /* 用紙とぴったり同寸だと丸め誤差で次の紙へ送られるので、わずかに小さく */
-  .slide{width:297mm;height:208.6mm;margin:0;box-shadow:none;overflow:hidden;
+  .slide{width:297mm;height:207mm;padding:12mm 17mm;margin:0;box-shadow:none;overflow:hidden;
     break-inside:avoid;page-break-inside:avoid}
   .slide > *{break-inside:avoid;page-break-inside:avoid}
   .bar{display:none!important}
