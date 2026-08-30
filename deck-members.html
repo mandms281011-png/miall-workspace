@@ -87,8 +87,11 @@ h2 .g{background:var(--gold-grad);-webkit-background-clip:text;background-clip:t
   @page{size:A4 landscape;margin:0}
   html,body{background:#fff;margin:0;padding:0}
   /* 用紙とぴったり同寸だと丸め誤差で次の紙へ送られるので、わずかに小さく */
-  .slide{width:297mm;height:207mm;padding:12mm 17mm;margin:0;box-shadow:none;overflow:hidden;
+  .slide{width:297mm;height:207mm;min-height:207mm;padding:12mm 17mm;margin:0;
+    box-shadow:none;overflow:hidden;display:block;
     break-inside:avoid;page-break-inside:avoid}
+  /* flex をやめたぶん、中身の伸縮指定も無効にする */
+  .cards,.creed,.steps{flex:none!important}
   .slide > *{break-inside:avoid;page-break-inside:avoid}
   .bar{display:none!important}
   *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
