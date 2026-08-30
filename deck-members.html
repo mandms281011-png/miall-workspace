@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>miall のご案内（会員のみなさまへ）</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --cream:#faf8f4; --ivory:#fdfbf6; --blush:#f4efe4;
+  --ink:#33312d; --ink-soft:#5f5b53; --ink-mute:#8b867e;
+  --gold:#b09349; --gold-l:#dcc9a0; --line:#e6dfd0;
+  --gold-grad:linear-gradient(105deg,#e8d5a6 0%,#c2a35f 38%,#9a7a31 62%,#dcc492 100%);
+  --serif:"Shippori Mincho","Hiragino Mincho ProN",serif;
+  --sans:"Noto Sans JP","Hiragino Sans","Yu Gothic",sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#e9e6df;font-family:var(--sans);color:var(--ink);line-height:1.9}
+
+/* ---- 1枚 = 16:9 ---- */
+.slide{width:338.67mm;height:190.5mm;margin:8mm auto;padding:16mm 20mm;
+  background:var(--cream);box-shadow:0 8px 30px rgba(60,54,44,.17);
+  position:relative;overflow:hidden;display:flex;flex-direction:column;
+  page-break-after:always;break-after:page}
+.slide:last-child{page-break-after:auto;break-after:auto}
+
+/* 右上の通し番号 */
+.slide::after{content:attr(data-n);position:absolute;right:14mm;bottom:10mm;
+  font-size:9pt;letter-spacing:.2em;color:var(--ink-mute)}
+
+.kicker{font-size:9.5pt;letter-spacing:.32em;color:var(--gold);margin-bottom:5mm}
+h2{font-family:var(--serif);font-weight:500;font-size:26pt;letter-spacing:.06em;line-height:1.45}
+h2 .g{background:var(--gold-grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.lead{margin-top:6mm;font-size:13pt;color:var(--ink-soft);line-height:1.95;max-width:230mm}
+
+/* 表紙 */
+.cover{justify-content:center;align-items:center;text-align:center;
+  background:radial-gradient(60% 70% at 76% 20%,var(--blush) 0%,transparent 62%),
+             radial-gradient(52% 62% at 14% 84%,#f1eee6 0%,transparent 64%),var(--cream)}
+.cover img{width:64mm;height:auto;margin-bottom:10mm}
+.cover h1{font-family:var(--serif);font-weight:500;font-size:34pt;letter-spacing:.1em;line-height:1.5}
+.cover .sub{margin-top:7mm;font-size:13pt;color:var(--ink-soft);letter-spacing:.06em}
+.cover .foot{position:absolute;bottom:12mm;font-size:9.5pt;color:var(--ink-mute);letter-spacing:.12em}
+
+/* カード群 */
+.cards{margin-top:9mm;display:grid;gap:6mm;flex:1}
+.c3{grid-template-columns:repeat(3,1fr)}
+.c2{grid-template-columns:repeat(2,1fr)}
+.card{background:var(--ivory);border:1px solid var(--line);border-radius:3px;padding:8mm 8mm 7mm}
+.card h3{font-family:var(--serif);font-size:15pt;font-weight:500;margin-bottom:4mm;
+  padding-bottom:2.5mm;border-bottom:1px solid var(--line);position:relative}
+.card h3::after{content:"";position:absolute;left:0;bottom:-1px;width:16mm;height:1.5px;background:var(--gold)}
+.card p{font-size:11pt;line-height:1.95;color:var(--ink-soft)}
+.card ul{margin-top:1mm;font-size:11pt;line-height:1.95;color:var(--ink-soft);list-style:none}
+.card li{padding-left:5.5mm;position:relative;margin-bottom:1.5mm}
+.card li::before{content:"—";position:absolute;left:0;color:var(--gold-l)}
+.card b{font-weight:500;color:var(--ink)}
+
+/* 大きな2つの約束 */
+.creed{margin-top:10mm;display:grid;grid-template-columns:1fr 1fr;gap:9mm;flex:1;align-content:center}
+.creed div{border:1.5px solid var(--gold-l);background:var(--ivory);padding:11mm 10mm;border-radius:3px}
+.creed h3{font-family:var(--serif);font-size:19pt;font-weight:500;margin-bottom:5mm}
+.creed p{font-size:11.5pt;line-height:2;color:var(--ink-soft)}
+
+/* 手順 */
+.steps{margin-top:10mm;display:grid;grid-template-columns:repeat(4,1fr);gap:7mm;flex:1;align-content:center}
+.step{position:relative;padding-top:12mm}
+.step .n{position:absolute;top:0;left:0;font-family:var(--serif);font-size:22pt;color:var(--gold-l)}
+.step h3{font-family:var(--serif);font-size:14pt;font-weight:500;margin-bottom:3mm}
+.step p{font-size:10.5pt;line-height:1.9;color:var(--ink-soft)}
+
+/* 締め */
+.end{justify-content:center;align-items:center;text-align:center}
+.end h2{font-size:30pt}
+.end .box{margin-top:11mm;border:1px solid var(--gold-l);background:var(--ivory);
+  padding:9mm 14mm;border-radius:3px;font-size:12.5pt;line-height:2.1;color:var(--ink-soft)}
+
+.bar{position:fixed;right:16px;bottom:16px;z-index:9}
+.bar button{font-family:inherit;font-size:13.5px;letter-spacing:.06em;padding:11px 20px;
+  border-radius:3px;cursor:pointer;border:1px solid var(--gold);background:#fff;color:#96762f}
+.bar button:hover{background:#fbf8f2}
+
+@media print{
+  @page{size:338.67mm 190.5mm;margin:0}
+  body{background:#fff}
+  .slide{margin:0;box-shadow:none}
+  .bar{display:none!important}
+  *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+}
+@media(max-width:900px){
+  .slide{width:auto;height:auto;margin:0 0 10px;padding:26px 20px}
+  .cards,.creed,.steps{grid-template-columns:1fr!important}
+  h2{font-size:21pt}.cover h1{font-size:26pt}
+}
+</style>
+</head>
+<body>
+
+<!-- 1 -->
+<section class="slide cover" data-n="">
+  <img src="images/miall-logo-vertical.png" alt="miall">
+  <h1>miall のご案内</h1>
+  <p class="sub">会員のみなさまへ</p>
+  <div class="foot">女性限定コミュニティワークスペース　／　長野駅から徒歩7分</div>
+</section>
+
+<!-- 2 -->
+<section class="slide" data-n="1">
+  <div class="kicker">WHAT YOU HAVE</div>
+  <h2>会費に、<span class="g">これだけ</span>入っています。</h2>
+  <p class="lead">追加のお支払いなく、そのままお使いいただけるものです。</p>
+  <div class="cards c3">
+    <div class="card">
+      <h3>場所</h3>
+      <ul>
+        <li>スペース使い放題</li>
+        <li>フリーWi-Fi・電源</li>
+        <li>ロッカー・更衣室</li>
+        <li>トレーニングスペース</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>設備</h3>
+      <ul>
+        <li>プリンター</li>
+        <li>プロジェクター（4K）</li>
+        <li>スクリーン・モニター</li>
+        <li>マイク・筆記用具</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>お飲みもの</h3>
+      <ul>
+        <li>フリードリンク</li>
+        <li>おやつ（無農薬・オーガニック）</li>
+        <li>冷蔵庫（記名・当日中）</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- 3 -->
+<section class="slide" data-n="2">
+  <div class="kicker">MENTORING</div>
+  <h2>月に1度、<span class="g">30分</span>。<br>次の一手を、ひとつ決めます。</h2>
+  <div class="cards c2">
+    <div class="card">
+      <h3>何を話すか</h3>
+      <ul>
+        <li>値段をどう上げるか</li>
+        <li>次にどこへ広げるか</li>
+        <li>その商品は、どうすれば売れる形になるか</li>
+      </ul>
+      <p style="margin-top:4mm">担当は代表の藤澤美嘉。国内外の金融機関で、お金と事業の相談を受けてきました。</p>
+    </div>
+    <div class="card">
+      <h3>話して終わりにしない</h3>
+      <p>30分の最後に、<b>次の一手をひとつだけ決めて、記録に残します。</b></p>
+      <p style="margin-top:3mm">翌月は「先月決めたこと、どうなりました？」から始まります。ひとりだと、決めたことは忘れられます。忘れないようにする仕組みです。</p>
+      <p style="margin-top:4mm"><b>ご予約は会員専用LINEのメニューから。</b></p>
+    </div>
+  </div>
+</section>
+
+<!-- 4 -->
+<section class="slide" data-n="3">
+  <div class="kicker">CONNECTION</div>
+  <h2>人と、<span class="g">つながる</span>ための場。</h2>
+  <div class="cards c3">
+    <div class="card">
+      <h3>miall 会</h3>
+      <p>月1回。お食事をしながら、会員のみなさんで集まります。<b>ゲストの方もご一緒いただけます。</b></p>
+      <p style="margin-top:3mm;font-size:10pt">※お食事代は別途、そのつど申し受けます。</p>
+    </div>
+    <div class="card">
+      <h3>同好会</h3>
+      <p><b>3名集まれば、自由に結成できます。</b></p>
+      <p style="margin-top:3mm">AI、占い、金融など。テーマは問いません。やってみたいことがあれば、事務局までお知らせください。</p>
+    </div>
+    <div class="card">
+      <h3>学びの場</h3>
+      <ul>
+        <li>無料セミナー（オンライン）</li>
+        <li>会員による勉強会</li>
+        <li>ご自身で講座を開くこともできます</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- 5 -->
+<section class="slide" data-n="4">
+  <div class="kicker">MEMBERS LINE</div>
+  <h2>会員専用LINEから、<br><span class="g">ぜんぶ</span>できます。</h2>
+  <p class="lead">お知らせもお申し込みも、ここに集めています。下のメニューをタップしてください。</p>
+  <div class="cards c3">
+    <div class="card">
+      <h3>申し込む</h3>
+      <ul>
+        <li>メンタリング</li>
+        <li>イベント</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>つながる</h3>
+      <ul>
+        <li>掲示板（自由に書き込めます）</li>
+        <li>ご紹介特典</li>
+      </ul>
+      <p style="margin-top:3mm;font-size:10pt">おすすめのお店、レシピ、イベント情報。素敵なことを共有しましょう。</p>
+    </div>
+    <div class="card">
+      <h3>相談する</h3>
+      <p><b>ミオ</b>（AIチャット）が、いつでもお相手します。</p>
+      <p style="margin-top:3mm">日報の報告でも、迷っていることの壁打ちでも。褒めるのではなく、次にどうするかを一緒に考えます。</p>
+    </div>
+  </div>
+</section>
+
+<!-- 6 -->
+<section class="slide" data-n="5">
+  <div class="kicker">HOW TO USE</div>
+  <h2>使い方は、<span class="g">かんたん</span>です。</h2>
+  <div class="steps">
+    <div class="step"><div class="n">01</div>
+      <h3>いつでもどうぞ</h3>
+      <p>9:00〜21:00。予約は要りません。お片づけを含めて、時間内にお願いしています。</p></div>
+    <div class="step"><div class="n">02</div>
+      <h3>着いたら</h3>
+      <p>会員専用LINEに「着きました」とお送りください。ご案内します。</p></div>
+    <div class="step"><div class="n">03</div>
+      <h3>ゲストは1名まで</h3>
+      <p>おひとりにつき同時に1名まで。追加料金はいただきません。打合せにもどうぞ。</p></div>
+    <div class="step"><div class="n">04</div>
+      <h3>お帰りのとき</h3>
+      <p>机の上を空にして、椅子を戻してください。使ったものは各自でお片づけを。</p></div>
+  </div>
+</section>
+
+<!-- 7 -->
+<section class="slide" data-n="6">
+  <div class="kicker">OUR PROMISE</div>
+  <h2>ルールは、<span class="g">ふたつ</span>だけ。</h2>
+  <div class="creed">
+    <div>
+      <h3>悪口を言わない</h3>
+      <p>どなたのことであっても、悪口や噂話はお控えください。陰口はその場では盛り上がりますが、聞いていた人は「自分もいないところで言われるのだろうな」と受け取ります。安心して話せる場所は、それだけで壊れます。</p>
+    </div>
+    <div>
+      <h3>人を応援できる人でいる</h3>
+      <p>うまくいっている人には「すごいですね」を。始めたばかりの人には「いいですね」を。ここでは、それが普通であってほしいと思っています。やりたいことを、やりたいと言っていい場所であるために。</p>
+    </div>
+  </div>
+</section>
+
+<!-- 8 -->
+<section class="slide end" data-n="7">
+  <div class="kicker">ANY TIME</div>
+  <h2>わからないことは、<br><span class="g">そのまま</span>お送りください。</h2>
+  <div class="box">
+    会員専用LINEのトークに、そのまま書いていただければ大丈夫です。<br>
+    miall事務局からお返事します。<br><br>
+    お急ぎのときは、館内でスタッフにお声がけください。
+  </div>
+</section>
+
+<div class="bar"><button type="button" onclick="window.print()">スライドを印刷 / PDF</button></div>
+
+</body>
+</html>
