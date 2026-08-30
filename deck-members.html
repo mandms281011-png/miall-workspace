@@ -21,7 +21,7 @@
 body{background:#e9e6df;font-family:var(--sans);color:var(--ink);line-height:1.9}
 
 /* ---- 1枚 = 16:9 ---- */
-.slide{width:338.67mm;height:190.5mm;margin:8mm auto;padding:16mm 20mm;
+.slide{width:297mm;height:210mm;margin:8mm auto;padding:15mm 18mm;
   background:var(--cream);box-shadow:0 8px 30px rgba(60,54,44,.17);
   position:relative;overflow:hidden;display:flex;flex-direction:column;
   page-break-after:always;break-after:page}
@@ -84,10 +84,10 @@ h2 .g{background:var(--gold-grad);-webkit-background-clip:text;background-clip:t
 .bar button:hover{background:#fbf8f2}
 
 @media print{
-  @page{size:338.67mm 190.5mm;margin:0}
-  html,body{background:#fff;margin:0;padding:0;width:338.67mm}
-  /* 用紙とぴったり同寸だと、丸め誤差で次の紙へ送られる。わずかに小さくする */
-  .slide{width:338.67mm;height:189.6mm;margin:0;box-shadow:none;overflow:hidden}
+  @page{size:A4 landscape;margin:0}
+  html,body{background:#fff;margin:0;padding:0}
+  /* 用紙とぴったり同寸だと丸め誤差で次の紙へ送られるので、わずかに小さく */
+  .slide{width:297mm;height:208.6mm;margin:0;box-shadow:none;overflow:hidden}
   .bar{display:none!important}
   *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
 }
