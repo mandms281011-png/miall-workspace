@@ -635,6 +635,11 @@ html body *,html body *::before,html body *::after{
   </div>
 </section>
 
+
+<p style="text-align:center;margin-top:8px">
+  <button class="printbtn" type="button" onclick="window.print()">この会員規約を印刷する</button>
+</p>
+
 <footer>
   <div class="wrap">
     <div class="fgrid">
@@ -1166,6 +1171,55 @@ footer .logo img{height:46px!important}
 .hd nav{gap:12px!important;font-size:11.5px!important;flex-wrap:nowrap!important;letter-spacing:.02em!important}
 .hd .btn{padding-inline:22px!important}
 @media(max-width:1180px){.hd nav{gap:9px!important;font-size:11px!important}}
+
+/* ============ 紙で読むための体裁（2026-08-27） ============
+   館内に置いて、会員の方が紙でも確認できるようにする。
+   画面の飾りはすべて落とし、本文だけを黒い字で残す。 */
+@media print{
+  @page{size:A4;margin:16mm 15mm 18mm}
+
+  /* 画面のためのものは、紙には出さない */
+  header,footer,.topbar,.stickycta,.backlink,
+  .mio-fab,.mio-panel,.mio-chips,.mio-head,.mio-log,.mio-form,.mio-note,
+  .printbtn,.hero-bouquet-art,.cta-bouquet-art{display:none!important}
+
+  /* 地色と飾りを落として、字を黒く */
+  *{background:transparent!important;box-shadow:none!important;
+    text-shadow:none!important;color:#000!important;
+    -webkit-print-color-adjust:exact;print-color-adjust:exact}
+  *::before,*::after{background-image:none!important;opacity:1!important}
+  body{font-size:10.5pt;line-height:1.75;background:#fff!important}
+  .wrap,.narrow{width:auto!important;max-width:none!important;margin:0!important;padding:0!important}
+  section{padding:0!important;margin:0 0 6mm!important;border:0!important}
+
+  /* 見出しが紙の切れ目でひとりにならないように */
+  h1,h2,h3{page-break-after:avoid;break-after:avoid;
+    font-size:13pt;margin:6mm 0 2mm}
+  h1{font-size:16pt;margin-bottom:4mm}
+  li,p,dd,dt{page-break-inside:avoid;break-inside:avoid;orphans:3;widows:3}
+  ol,ul{padding-left:6mm}
+
+  /* 条文・ルールのまとまりは、途中で切らない */
+  .rule,.creed,.creed-two,.hard,article{page-break-inside:avoid;break-inside:avoid;
+    border:0!important;padding:0!important;margin:0 0 4mm!important}
+
+  /* リンクは下線だけ（URLは長くなるので出さない） */
+  a{text-decoration:underline!important}
+  a[href^="http"]::after{content:""!important}
+
+  /* 紙の頭に、何の書類かを出す */
+  .page-head::before{content:"miall コミュニティワークスペース";
+    display:block;font-size:9pt;letter-spacing:.12em;margin-bottom:3mm}
+  .breadcrumb{display:none!important}
+}
+
+/* 印刷ボタン（画面だけに出す） */
+.printbtn{display:inline-flex;align-items:center;gap:8px;
+  margin-top:22px;padding:11px 22px;border-radius:3px;
+  border:1px solid var(--gold-500,#cbae6b);background:var(--ivory,#fdfbf6);
+  color:var(--rose-700,#96762f);font-size:14px;letter-spacing:.06em;
+  cursor:pointer;transition:.25s;font-family:inherit}
+.printbtn:hover{background:var(--blush-soft,#fbf8f2);border-color:var(--rose-600,#ac8b41)}
 </style>
 <script>
 (function(){
