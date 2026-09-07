@@ -3175,6 +3175,13 @@ footer .logo img{height:46px!important}
   top:auto!important;bottom:-2%!important;
   width:min(330px,25vw)!important;opacity:.24!important}
 @media(max-width:900px){.vinv::after{width:58vw!important;opacity:.12!important}}
+
+/* CTAの四角い継ぎ目をなくす（2026-09-07）
+   最後の節の背景に、560px幅の写真（hero-flower.jpg）を1枚だけ敷いていた。
+   左右は薄くぼかしてあったが上下は直線のままで、
+   地の色との差が四角い枠のように見えていた。
+   花は切り抜き画像（.cta-bouquet-art）だけで足りるので、背景写真はやめる。 */
+.cta::before{background-image:none!important}
 </style>
 <script>
 (function(){
