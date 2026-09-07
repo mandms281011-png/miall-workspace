@@ -120,7 +120,7 @@ footer .logo{color:var(--gold-light)}
 .mio-fab img{width:43px;height:43px;object-fit:cover;border-radius:50%}
 @keyframes pop{from{opacity:0;transform:translateY(12px) scale(.96)}}
 .stickycta{display:none}
-@media(max-width:900px){nav{display:none}.hero{min-height:620px}.hero::before{background:linear-gradient(90deg,rgba(33,31,26,.89),rgba(58,53,44,.45))}.event-card{grid-template-columns:110px 1fr}.event-card .btn{grid-column:1/-1}.cal-cell{min-height:78px}.ev-name{font-size:9px}}
+@media(max-width:900px){nav{display:none}.hero{min-height:620px}.hero::before{background:linear-gradient(90deg,rgba(33,31,26,.89),rgba(58,53,44,.45))}.event-card{grid-template-columns:110px 1fr}.event-card .applysplit{grid-column:1/-1}.event-card .btn{grid-column:1/-1}.cal-cell{min-height:78px}.ev-name{font-size:9px}}
 @media(max-width:620px){
   .hd{min-height:65px}.hd>.btn{padding:0 16px;min-height:42px;font-size:11px}
   .hero{min-height:590px}.hero-inner{padding:75px 0 105px}.hero h1{font-size:39px}.hero-copy{font-size:13px}
@@ -777,7 +777,9 @@ footer .logo img{height:46px!important}
 <script>
 /* ===== イベントページをスプレッドシートから作る =====
    シート：miall イベント一覧（サイト連動）
-   列：A 公開 / B 日付 / C 曜日 / D タイトル / E 時間 / F 内容 / G 参加できる方 / H 備考
+   列：A 公開 / B 日付 / C 曜日 / D タイトル / E 時間 / F 内容 / G 参加できる方 / H 備考 / I 申込URL
+   申し込みはフォームのみ。I列にURLを入れた回だけ「申込はこちらから」のボタンが出ます。
+   I列が空の回はボタンなしで、日付と内容だけのご案内になります。
    A列に ○ を入れた行だけ出ます。
    いちばん近い予定のある月を表示します（なければ今月）。 */
 (function(){
@@ -817,6 +819,12 @@ footer .logo img{height:46px!important}
   }
 
   function guestOK(v){ return String(v||'').indexOf('どなた') === 0; }
+
+  /* シートの文字列をそのままhrefに入れないための確認。http/https以外は捨てる。 */
+  function safeUrl(v){
+    var u=String(v||'').trim();
+    return /^https?:\/\//i.test(u) ? u : '';
+  }
 
   function buildCalendar(year, month, byDay){
     grid.innerHTML = '';
@@ -864,6 +872,13 @@ footer .logo img{height:46px!important}
     if(kicker) kicker.textContent=EN[month]+' '+year;
   }
 
+  function mkBtn(href, label){
+    var a=document.createElement('a');
+    a.className='btn'; a.href=href; a.target='_blank'; a.rel='noopener';
+    a.textContent=label;
+    return a;
+  }
+
   function buildCards(events){
     list.innerHTML='';
     events.forEach(function(ev){
@@ -886,11 +901,13 @@ footer .logo img{height:46px!important}
       body.appendChild(p);
       if(ev.note){ var n=document.createElement('p'); n.style.fontSize='13.5px'; n.style.opacity='.85'; n.textContent=ev.note; body.appendChild(n); }
 
-      var btns=document.createElement('div'); btns.className='applysplit';
-      /* 申し込みは公式LINEに一本化したので、ボタンはひとつ。 */
-      btns.innerHTML = '<a class="btn" href="https://lin.ee/6v6NCVt" target="_blank" rel="noopener">公式LINEで申し込む</a>';
-
-      el.appendChild(dt); el.appendChild(body); el.appendChild(btns);
+      /* 申し込みはフォームのみ。URLのない回はボタンを出さない。 */
+      el.appendChild(dt); el.appendChild(body);
+      if(ev.apply){
+        var btns=document.createElement('div'); btns.className='applysplit';
+        btns.appendChild(mkBtn(ev.apply, '申込はこちらから'));
+        el.appendChild(btns);
+      }
       list.appendChild(el);
     });
   }
@@ -903,6 +920,7 @@ footer .logo img{height:46px!important}
         var d=toDate(r[1]); if(!d || !String(r[3]).trim()) return null;
         return { date:d, title:String(r[3]).trim(), time:String(r[4]||'').trim(),
                  body:String(r[5]||'').trim(), guest:guestOK(r[6]), note:String(r[7]||'').trim(),
+                 apply:safeUrl(r[8]),
                  id:'ev-'+d.getFullYear()+'-'+(d.getMonth()+1)+'-'+d.getDate() };
       }).filter(Boolean).sort(function(a,b){ return a.date-b.date; });
 
