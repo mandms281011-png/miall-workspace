@@ -45,6 +45,25 @@ h2{font-family:var(--serif);font-weight:500;font-size:clamp(18px,2.8vw,21px);let
 
 .note{margin-top:12px;font-size:12.5px;color:var(--ink-mute);line-height:2}
 
+h2.grp{font-size:clamp(15px,2.2vw,17px);letter-spacing:.16em;color:var(--gold);
+  border-bottom:0;padding-bottom:0;margin-top:clamp(52px,7vw,76px)}
+h2.grp+h2{margin-top:20px}
+
+.tbl{width:100%;border-collapse:collapse;margin-top:14px;font-size:13.5px;line-height:1.9}
+.tbl th{text-align:left;font-weight:500;color:var(--ink-mute);font-size:12px;letter-spacing:.1em;
+  padding:0 12px 8px 0;border-bottom:1px solid var(--line)}
+.tbl td{padding:11px 12px 11px 0;border-bottom:1px solid var(--line);vertical-align:top;color:var(--ink)}
+.tbl td:first-child{color:var(--ink-mute);width:48%}
+.tbl td.same{color:var(--ink-mute)}
+.tag{display:inline-block;margin-left:8px;font-size:11px;letter-spacing:.08em;color:var(--gold);
+  border:1px solid var(--gold-l);border-radius:2px;padding:1px 7px;vertical-align:1px}
+
+.fixlist{list-style:none;margin-top:16px;padding:0}
+.fixlist li{position:relative;padding-left:22px;font-size:14px;line-height:2.05;color:var(--ink-soft)}
+.fixlist li+li{margin-top:14px}
+.fixlist li::before{content:"";position:absolute;left:0;top:calc(1em - 1px);width:12px;height:1px;background:var(--gold-l)}
+.fixlist b{font-weight:500;color:var(--ink)}
+
 footer{margin-top:clamp(56px,8vw,88px);padding-top:22px;border-top:1px solid var(--line);
   font-size:12px;color:var(--ink-mute);line-height:2}
 </style>
@@ -55,30 +74,90 @@ footer{margin-top:clamp(56px,8vw,88px);padding-top:22px;border-top:1px solid var
   <div class="kicker">FOR STAFF</div>
   <h1>公式LINEに貼る文面</h1>
   <p class="lead">
-    集客用の公式LINEから送る文面の下書きです。サイトには出していません（noindex）。
-    そのままコピーして、LINE公式アカウントマネージャーに貼ってください。
+    集客用の公式LINEまわりの文面の下書きです。サイトには出していません（noindex）。
+    そのままコピーして、L Message または LINE公式アカウントマネージャーに貼ってください。
   </p>
 
   <div class="warnbox">
-    リッチメニューの<b>「まずは話を聞いてみる」</b>は申し込みフォーム（apply.html）へ飛びます。
-    タップしたときの自動応答は要りません。ここにあるのは、<b>申し込みを受け取ったあと</b>に送る文面です。<br>
+    リッチメニューの<b>「まずは話を聞いてみる」</b>は、L Message の予約フォーム（s.lmes.jp）へ飛びます。<br>
+    前半が<b>フォームの中に置く文言</b>、後半が<b>予約のあとに送る文面</b>です。
     【　】の中は、送るときに書き換えてください。
   </div>
 
-  <h2>1　申し込みを受け取ったとき</h2>
-  <p class="when">フォームが届いたら、その日のうちに。友だち追加のある方だけ。</p>
+
+  <h2 class="grp">A　予約フォームの中の文言</h2>
+
+  <h2>A-1　フォームのいちばん上に置く説明</h2>
+  <p class="when">いまは、お名前の入力欄からいきなり始まっている。押した人は、何を予約するのか分からないまま名前を書くことになる。</p>
   <div class="block">
-<pre>面談のお申し込み、ありがとうございます。
+<pre>面談は無料です。30分ほど、ゆっくりお話しします。
+その日に決めていただく必要は、まったくありません。
 
-日にちのご相談は、いただいたメールアドレスにお送りします。
-1営業日以内にお返事しますので、少しだけお待ちください。
-
-迷惑メールに入ってしまうことがあります。
-届かないときは、このトークに「メールが来ない」と送ってください。</pre>
+日程は、このあとLINEで改めてご相談します。
+いまの時点では、確定ではありません。</pre>
     <div class="foot"><button type="button">コピーする</button></div>
   </div>
 
-  <h2>2　前日のリマインド（miall に来られる方）</h2>
+  <h2>A-2　項目名</h2>
+  <p class="when">いまは全部が「〜してください」で終わっている。入力欄の上に命令が5つ並ぶと、それだけで重い。ラベルは名前だけでいい。</p>
+  <table class="tbl">
+    <tr><th>いま</th><th>変えるなら</th></tr>
+    <tr><td>お名前を入力してください</td><td>お名前</td></tr>
+    <tr><td>どちらでお話ししますか</td><td class="same">そのまま</td></tr>
+    <tr><td>第1希望の日を選んでください</td><td>第1希望の日</td></tr>
+    <tr><td>第1希望の時間帯を選んでください</td><td>第1希望の時間帯</td></tr>
+    <tr><td>第2希望の日を選んでください</td><td>第2希望の日<span class="tag">任意に</span></td></tr>
+    <tr><td>第2希望の時間帯を選んでください</td><td>第2希望の時間帯<span class="tag">任意に</span></td></tr>
+  </table>
+
+  <h2>A-3　選択肢に添える一言</h2>
+  <p class="when">サイトのフォームには入っているが、L Message 版では落ちている。補足を入れられるなら、この2つは戻したい。</p>
+  <div class="block">
+<pre>miall に来て話す（長野・対面）
+　→ 長野駅から歩いて7分。場内をご案内します
+
+オンラインで話す（Zoom）
+　→ カメラはオフのままでも大丈夫です</pre>
+    <div class="foot"><button type="button">コピーする</button></div>
+  </div>
+
+  <h2>A-4　送信ボタンと、送ったあとの画面</h2>
+  <div class="block">
+<pre>［ボタン］この内容で送る</pre>
+    <div class="foot"><button type="button">コピーする</button></div>
+  </div>
+  <div class="block">
+<pre>ありがとうございます。受け取りました。
+
+日にちのご相談は、このトークにお送りします。
+1営業日以内にお返事しますので、少しだけお待ちください。</pre>
+    <div class="foot"><button type="button">コピーする</button></div>
+  </div>
+
+  <h2>A-5　文面ではないが、直したいところ</h2>
+  <ul class="fixlist">
+    <li><b>日付の初期値が今日になっている</b>　プルダウンに 2026 / 09 / 07 が入ったままです。何も選ばずに送ると、今日で予約が入ります。空にしておくほうが安全です。</li>
+    <li><b>第2希望が必須</b>　「まずは話を聞いてみる」を押した段階の人に、候補日を2つ出させるのは重い。任意にするか、「第2希望はなくても大丈夫です」を添えるか。</li>
+    <li><b>「どの時間でも大丈夫です」を時間帯のいちばん上へ</b>　いまは5番目です。迷っている人がいちばん選びたい答えなので、先頭にあると早く終わります。（欲しい情報が減るので、そこは判断してください）</li>
+    <li><b>メールアドレスの項目があれば、任意に</b>　LINEの中で完結するので、返事もLINEで届きます。メールを必須にすると、そこで止まる人が出ます。</li>
+  </ul>
+
+  <h2 class="grp">B　予約のあとに送る文面</h2>
+
+  <h2>B-1　申し込みを受け取ったとき</h2>
+  <p class="when">フォームが届いたら、その日のうちに。</p>
+  <div class="block">
+<pre>面談のお申し込み、ありがとうございます。
+
+いただいた候補日で空いているかを確かめて、
+1営業日以内にこのトークからお返事します。
+
+どちらの日も都合が変わったときは、
+そのままここに書いてください。日を取り直します。</pre>
+    <div class="foot"><button type="button">コピーする</button></div>
+  </div>
+
+  <h2>B-2　前日のリマインド（miall に来られる方）</h2>
   <p class="when">面談の前日、夕方ごろ。</p>
   <div class="block">
 <pre>明日、お待ちしています。
@@ -97,7 +176,7 @@ footer{margin-top:clamp(56px,8vw,88px);padding-top:22px;border-top:1px solid var
     <div class="foot"><button type="button">コピーする</button></div>
   </div>
 
-  <h2>3　前日のリマインド（オンラインの方）</h2>
+  <h2>B-3　前日のリマインド（オンラインの方）</h2>
   <p class="when">面談の前日、夕方ごろ。URLを入れてから送る。</p>
   <div class="block">
 <pre>明日、Zoomでお話しします。
@@ -112,7 +191,7 @@ footer{margin-top:clamp(56px,8vw,88px);padding-top:22px;border-top:1px solid var
     <div class="foot"><button type="button">コピーする</button></div>
   </div>
 
-  <h2>4　面談のあと</h2>
+  <h2>B-4　面談のあと</h2>
   <p class="when">当日の夜か、翌日。決めていない方にも同じものを送る。</p>
   <div class="block">
 <pre>今日はありがとうございました。
@@ -126,12 +205,12 @@ footer{margin-top:clamp(56px,8vw,88px);padding-top:22px;border-top:1px solid var
   </div>
 
   <p class="note">
-    ※ 送る仕組み（自動にするか、手で送るか）はまだ決めていません。
-    いまは手で送る前提で書いてあります。
+    ※ B の4本は、いまのところ手で送る前提で書いてあります。
+    L Message のステップ配信に載せるなら、日時とURLの差し込みだけ組み直してください。
   </p>
 
   <footer>
-    miall 事務局用　／　この文面を変えたら、apply.html の完了画面の説明とずれていないか確認してください。
+    miall 事務局用　／　この文面を変えたら、サイト側のフォーム（apply.html）の説明とずれていないか確認してください。
   </footer>
 
 </div>
