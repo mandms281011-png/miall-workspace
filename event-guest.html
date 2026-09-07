@@ -571,7 +571,7 @@ textarea.finput{resize:vertical;min-height:110px}
     <div class="breadcrumb">EVENT　/　はじめての方のお申し込み</div>
     <h1 class="serif">イベントのお申し込み</h1>
     <p>miall の会員でない方も、ご参加いただけます。<br><b style="color:var(--ink);font-weight:500">おひとりでも、大丈夫です。</b></p>
-    <p style="margin-top:14px;font-size:14.5px"><a href="events.html" style="color:var(--rose-700);text-decoration:underline;text-underline-offset:3px">今月の予定を見る</a></p>
+    <p style="margin-top:14px;font-size:14.5px"><a href="events.html" style="color:var(--rose-700);text-decoration:underline;text-underline-offset:3px">これからの予定を見る</a></p>
   </div>
 </section>
 
@@ -587,8 +587,10 @@ textarea.finput{resize:vertical;min-height:110px}
 
       <div class="fgroup">
         <label class="flabel" for="f_event">参加する回 <i>必須</i></label>
-        <input class="finput" type="text" id="f_event" name="f_event" placeholder="例：9月12日 オープニングセミナー" required>
-        <p class="fhelp">今月の予定は<a href="events.html" style="color:var(--rose-700)">イベントページ</a>でご確認いただけます。</p>
+        <select class="finput" id="f_event" name="f_event" required>
+          <option value="">選んでください</option>
+        </select>
+        <p class="fhelp">これからの予定は<a href="events.html" style="color:var(--rose-700)">イベントページ</a>でご確認いただけます。</p>
       </div>
 
       <div class="fgroup">
@@ -739,6 +741,87 @@ textarea.finput{resize:vertical;min-height:110px}
 </div>
 
 <script>
+/* ============================================================
+   「参加する回」の選択肢を、イベント一覧シートから作る。
+   events.html と同じシート・同じ読み方（A列が ○ の行だけ）。
+   これから先の回だけを、日付順に並べる。
+   読み込めなかったときは、自由入力の欄に戻す。
+   ============================================================ */
+(function(){
+  var SHEET = "https://docs.google.com/spreadsheets/d/1OiBHtQ2lTUlF-7R3f9zWmb46eyCSzQBsDTrfTEMwhNU/gviz/tq?tqx=out:csv&gid=0";
+  var sel = document.getElementById('f_event');
+  if(!sel || sel.tagName !== 'SELECT') return;
+  var DOW = ['日','月','火','水','木','金','土'];
+
+  function parseCSV(text){
+    var rows=[], row=[], cell='', q=false;
+    for(var i=0;i<text.length;i++){
+      var c=text[i];
+      if(q){ if(c==='"'){ if(text[i+1]==='"'){cell+='"';i++;} else q=false; } else cell+=c; }
+      else{
+        if(c==='"') q=true;
+        else if(c===',') { row.push(cell); cell=''; }
+        else if(c==='\n'){ row.push(cell); rows.push(row); row=[]; cell=''; }
+        else if(c!=='\r') cell+=c;
+      }
+    }
+    if(cell!=='' || row.length){ row.push(cell); rows.push(row); }
+    return rows;
+  }
+
+  function toDate(v){
+    var m=String(v).match(/(\d{4})[\/\-](\d{1,2})[\/\-](\d{1,2})/);
+    if(m) return new Date(+m[1], +m[2]-1, +m[3]);
+    var n=parseFloat(v);
+    if(!isNaN(n)&&n>20000){
+      var d=new Date(Date.UTC(1899,11,30)+Math.floor(n)*86400000);
+      return new Date(d.getUTCFullYear(), d.getUTCMonth(), d.getUTCDate());
+    }
+    return null;
+  }
+
+  /* 選択肢が作れないときは、書いていただく欄に戻す（申し込めなくなるのを防ぐ） */
+  function fallback(){
+    if(!sel.parentNode) return;
+    var inp=document.createElement('input');
+    inp.className='finput'; inp.type='text';
+    inp.id='f_event'; inp.name='f_event';
+    inp.placeholder='例：9月15日 オープニングセミナー';
+    inp.required=true;
+    sel.parentNode.replaceChild(inp, sel);
+  }
+
+  fetch(SHEET).then(function(r){ return r.text(); }).then(function(text){
+    var today=new Date(); today.setHours(0,0,0,0);
+    var list=[];
+    parseCSV(text).forEach(function(r){
+      if(r.length<4 || String(r[0]).trim()!=='○') return;
+      var d=toDate(r[1]); if(!d || d<today) return;
+      var title=String(r[3]).trim(); if(!title) return;
+      var time=String(r[4]||'').trim();
+      list.push({
+        d:d,
+        label:(d.getMonth()+1)+'月'+d.getDate()+'日（'+DOW[d.getDay()]+'）　'+title
+              + ((time && time!=='未定') ? '　'+time : '')
+      });
+    });
+    if(!list.length){ fallback(); return; }
+    list.sort(function(a,b){ return a.d - b.d; });
+    list.forEach(function(o){
+      var op=document.createElement('option');
+      op.value=o.label; op.textContent=o.label;
+      sel.appendChild(op);
+    });
+    var other=document.createElement('option');
+    other.value='まだ決めていません';
+    other.textContent='まだ決めていません';
+    sel.appendChild(other);
+  }).catch(fallback);
+})();
+</script>
+
+
+<script>
 (function(){
   /* AIの返答を返すエンドポイント。空文字にするとキーワード応答だけで動く。 */
   var API_URL = "https://miall-lp.vercel.app/api/workspace-chat";
@@ -774,7 +857,7 @@ textarea.finput{resize:vertical;min-height:110px}
     {k:["専門家","プロ","講師","誰がいる","サポート","経営者","コミュニティ","人脈","つながり先","ファスティング","化粧品","メイク","カウンセラー","心理","栄養士","管理栄養士","栄養"],
      a:'✨ <b>心身ともに支えられる専門家</b>が集まっています。<br><br>🌱 <b>ファスティングの専門家</b>／日本一の実績<br>💼 <b>金融と接遇のプロ</b>／大手証券で法人個人とも日本一<br>💄 <b>オーガニック化粧品の開発者</b>／AI×人間力講師<br>🤝 <b>経営者コミュニティの主宰</b>／1,000人以上を運営<br><br>ほかに心理カウンセラーや管理栄養士も。<br>まだまだたくさんいらっしゃいます。<br><br>お名前や詳しいご経歴は、面談のときにご紹介しますね。<br>※それぞれの専門サービスは会費とは別です。会員価格があります。'},
     {k:["リトリート","イベント","農業","遠く","旅","予定","日程","いつ","オープニングセミナー"],
-     a:'📅 直近は <b>9月12日（土）のオープニングセミナー</b>です。<br>ゲストの方もご参加いただけます。<br>お時間は決まりしだい公式LINEでお知らせします。<br><br>そのほか、miall会・同好会・学びの場・リトリートなどの企画があります。<br><a href="events.html">今月の予定を見る →</a>'},
+     a:'📅 直近は <b>9月12日（土）のオープニングセミナー</b>です。<br>ゲストの方もご参加いただけます。<br>お時間は決まりしだい公式LINEでお知らせします。<br><br>そのほか、miall会・同好会・学びの場・リトリートなどの企画があります。<br><a href="events.html">これからの予定を見る →</a>'},
     {k:["場所","住所","アクセス","どこ","地図"],
      a:'📍 長野県長野市鶴賀問御所町1241-1<br>長野銀座信越ビル 8階です。<br><br>長野駅から歩いていただけます。<br>お車の方は近隣のコインパーキングをご利用ください。'},
     {k:["駐車","駐車場","車","パーキング","停め","とめ"],
