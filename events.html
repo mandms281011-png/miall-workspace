@@ -64,6 +64,12 @@ nav a:hover::after{right:0}
 .calendar-section{padding:15px 0 115px;background:linear-gradient(180deg,var(--ivory),var(--cream))}
 .cal-shell{position:relative;background:rgba(255,253,249,.93);border:1px solid rgba(150,118,47,.12);border-radius:28px;padding:clamp(22px,4vw,48px);box-shadow:0 35px 90px rgba(61,54,44,.12);overflow:hidden}
 .cal-shell::before{content:"RANUNCULUS";position:absolute;right:-18px;top:55px;writing-mode:vertical-rl;font:500 10px var(--serif);letter-spacing:.35em;color:rgba(150,118,47,.2)}
+.cal-head{flex-wrap:wrap;gap:14px}
+.cal-nav{display:flex;gap:8px;margin-left:auto}
+.cal-nav button{font-family:inherit;font-size:12.5px;letter-spacing:.06em;color:var(--rose-700);background:transparent;border:1px solid var(--rose-200);border-radius:999px;padding:7px 16px;cursor:pointer;transition:.2s}
+.cal-nav button:hover:not(:disabled){background:var(--champagne);border-color:var(--gold-500)}
+.cal-nav button:disabled{opacity:.3;cursor:default}
+.cal-nav button:focus-visible{outline:2px solid var(--rose-600);outline-offset:2px}
 .cal-head{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:30px;padding-right:22px}
 .cal-head h2{font:500 25px var(--serif);color:var(--wine)}
 .cal-head h2 b{font-size:55px;line-height:.8;margin:0 5px;color:var(--wine-deep)}
@@ -342,7 +348,7 @@ html body *,html body *::before,html body *::after{
 <section class="calendar-section" id="calendar">
   <div class="narrow">
     <div class="cal-shell reveal">
-      <div class="cal-head" id="calHead"><h2><span id="calY">2026年</span> <b id="calM">9</b>月</h2><span id="calEn">SEPTEMBER</span></div>
+      <div class="cal-head" id="calHead"><h2><span id="calY">2026年</span> <b id="calM">9</b>月</h2><span id="calEn">SEPTEMBER</span><div class="cal-nav" id="calNav"><button type="button" id="calPrev">← 前の月</button><button type="button" id="calNext">次の月 →</button></div></div>
       <div class="cal-grid" id="calGrid">
         <div class="cal-dow sun">日</div><div class="cal-dow">月</div><div class="cal-dow">火</div><div class="cal-dow">水</div><div class="cal-dow">木</div><div class="cal-dow">金</div><div class="cal-dow sat">土</div>
       </div>
@@ -892,17 +898,43 @@ footer .logo img{height:46px!important}
 
       if(!events.length) return;
 
-      /* 表示する月：今日以降でいちばん近い予定の月。なければ最後の予定の月 */
+      /* 予定のある月だけを拾って、その間を行き来できるようにする。
+         予定のない月は飛ばすので、空のカレンダーは出ない。 */
+      var months=[];
+      events.forEach(function(e){
+        var k=e.date.getFullYear()+'-'+e.date.getMonth();
+        if(months.indexOf(k)<0) months.push(k);
+      });
+
       var today=new Date(); today.setHours(0,0,0,0);
       var next = events.filter(function(e){ return e.date>=today; })[0] || events[events.length-1];
-      var Y=next.date.getFullYear(), M=next.date.getMonth();
+      var cur = months.indexOf(next.date.getFullYear()+'-'+next.date.getMonth());
+      if(cur<0) cur=0;
 
-      var inMonth = events.filter(function(e){ return e.date.getFullYear()===Y && e.date.getMonth()===M; });
-      var byDay={};
-      inMonth.forEach(function(e){ if(!byDay[e.date.getDate()]) byDay[e.date.getDate()]=e; });
+      var prevBtn=document.getElementById('calPrev');
+      var nextBtn=document.getElementById('calNext');
+      var nav=document.getElementById('calNav');
 
-      buildCalendar(Y, M, byDay);
-      buildCards(inMonth);
+      function render(){
+        var p=months[cur].split('-'), Y=+p[0], M=+p[1];
+        var inMonth = events.filter(function(e){
+          return e.date.getFullYear()===Y && e.date.getMonth()===M;
+        });
+        var byDay={};
+        inMonth.forEach(function(e){ if(!byDay[e.date.getDate()]) byDay[e.date.getDate()]=e; });
+        buildCalendar(Y, M, byDay);
+        buildCards(inMonth);
+        if(prevBtn) prevBtn.disabled = (cur===0);
+        if(nextBtn) nextBtn.disabled = (cur===months.length-1);
+      }
+
+      if(prevBtn) prevBtn.addEventListener('click', function(){ if(cur>0){ cur--; render(); } });
+      if(nextBtn) nextBtn.addEventListener('click', function(){ if(cur<months.length-1){ cur++; render(); } });
+
+      /* 予定がひと月ぶんしかないときは、送りのボタン自体を出さない */
+      if(nav && months.length<2) nav.hidden = true;
+
+      render();
     })
     .catch(function(){ /* 読めないときは、カレンダーは空のまま */ });
 })();
