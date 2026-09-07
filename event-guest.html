@@ -571,7 +571,7 @@ textarea.finput{resize:vertical;min-height:110px}
     <div class="breadcrumb">EVENT　/　はじめての方のお申し込み</div>
     <h1 class="serif">イベントのお申し込み</h1>
     <p>miall の会員でない方も、ご参加いただけます。<br><b style="color:var(--ink);font-weight:500">おひとりでも、大丈夫です。</b></p>
-    <p style="margin-top:14px;font-size:14.5px"><a href="events.html" style="color:var(--rose-700);text-decoration:underline;text-underline-offset:3px">今月の予定を見る</a></p>
+    <p style="margin-top:14px;font-size:14.5px"><a href="events.html" style="color:var(--rose-700);text-decoration:underline;text-underline-offset:3px">これからの予定を見る</a></p>
   </div>
 </section>
 
@@ -588,7 +588,7 @@ textarea.finput{resize:vertical;min-height:110px}
       <div class="fgroup">
         <label class="flabel" for="f_event">参加する回 <i>必須</i></label>
         <input class="finput" type="text" id="f_event" name="f_event" placeholder="例：9月12日 オープニングセミナー" required>
-        <p class="fhelp">今月の予定は<a href="events.html" style="color:var(--rose-700)">イベントページ</a>でご確認いただけます。</p>
+        <p class="fhelp">これからの予定は<a href="events.html" style="color:var(--rose-700)">イベントページ</a>でご確認いただけます。</p>
       </div>
 
       <div class="fgroup">
@@ -626,8 +626,10 @@ textarea.finput{resize:vertical;min-height:110px}
     </div>
 
     <div class="applyoff" id="applyOff" hidden>
-      <h2 class="serif">ただいま準備中です</h2>
-      <p>このページのフォームは、まもなく使えるようになります。<br>お急ぎの方は、会員専用LINEのトークにそのままお送りください。</p>
+      <h2 class="serif">お申し込みは、公式LINEから</h2>
+      <p>イベントのお申し込みは、公式LINEで承っています。<br>ご希望の回を、そのままトークにお送りください。<br>「9/15いきたい」くらいで大丈夫です。</p>
+      <p style="margin-top:22px"><a class="btn" href="https://lin.ee/6v6NCVt" target="_blank" rel="noopener">公式LINEをひらく</a></p>
+      <p style="margin-top:22px"><a href="events.html" style="color:var(--rose-700)">これからの予定を見る →</a></p>
     </div>
 
     <iframe name="applySink" id="applySink" style="display:none" title="送信"></iframe>
@@ -774,7 +776,7 @@ textarea.finput{resize:vertical;min-height:110px}
     {k:["専門家","プロ","講師","誰がいる","サポート","経営者","コミュニティ","人脈","つながり先","ファスティング","化粧品","メイク","カウンセラー","心理","栄養士","管理栄養士","栄養"],
      a:'✨ <b>心身ともに支えられる専門家</b>が集まっています。<br><br>🌱 <b>ファスティングの専門家</b>／日本一の実績<br>💼 <b>金融と接遇のプロ</b>／大手証券で法人個人とも日本一<br>💄 <b>オーガニック化粧品の開発者</b>／AI×人間力講師<br>🤝 <b>経営者コミュニティの主宰</b>／1,000人以上を運営<br><br>ほかに心理カウンセラーや管理栄養士も。<br>まだまだたくさんいらっしゃいます。<br><br>お名前や詳しいご経歴は、面談のときにご紹介しますね。<br>※それぞれの専門サービスは会費とは別です。会員価格があります。'},
     {k:["リトリート","イベント","農業","遠く","旅","予定","日程","いつ","オープニングセミナー"],
-     a:'📅 直近は <b>9月12日（土）のオープニングセミナー</b>です。<br>14:00〜（13:00開場）／参加費無料・軽食付き。<br>どなたでもご参加いただけます。施設内のご見学もしていただけます。<br><br>そのほか、miall会・同好会・学びの場・リトリートなどの企画があります。<br><a href="events.html">今月の予定を見る →</a>'},
+     a:'📅 これからの予定は、イベントページにまとめています。<br>オープニングセミナー、miall会、同好会、学びの場、リトリートなど。<br><br>お申し込みは<b>公式LINE</b>から承っています。<br>ご希望の回を、そのままトークにお送りください。<br>「9/15いきたい」くらいで大丈夫です。<br><a href="events.html">これからの予定を見る →</a>'},
     {k:["場所","住所","アクセス","どこ","地図"],
      a:'📍 長野県長野市鶴賀問御所町1241-1<br>長野銀座信越ビル 8階です。<br><br>長野駅から歩いていただけます。<br>お車の方は近隣のコインパーキングをご利用ください。'},
     {k:["駐車","駐車場","車","パーキング","停め","とめ"],
@@ -1166,7 +1168,7 @@ footer .logo img{height:56px}
    「準備中です」の案内と公式LINEのボタンだけが出ます。
    ============================================================ */
 var GFORM = {
-  action: "https://docs.google.com/forms/d/e/1FAIpQLSeaykVOen6EVCOUlt0pwBbXXBOAJlz-CPui3v1_voBKHlXz0w/formResponse",
+  action: "",
   f: {
     f_kind : "entry.2005620554",
     f_name : "entry.1354337502",
