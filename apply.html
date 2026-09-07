@@ -542,6 +542,19 @@ textarea.finput{resize:vertical;min-height:110px}
 .applyline p{font-size:14px;line-height:2.05}
 .applyline .btn{margin-top:18px;width:100%;max-width:300px}
 @media(max-width:560px){.applyline{text-align:center}.applyline .btn{max-width:none}}
+
+/* ---- フォームの手前に置く、面談の中身の案内 ---- */
+.warmsec{background:var(--cream);padding:clamp(26px,3.6vw,40px) 0 0}
+.warm{background:var(--blush-soft);border:1px solid var(--rose-100);border-radius:6px;
+  padding:clamp(22px,3.4vw,34px)}
+.warm b{display:block;font-family:var(--serif);font-size:clamp(17px,2.4vw,20px);font-weight:500;
+  color:var(--ink);letter-spacing:.08em;margin-bottom:16px}
+.warm ul{list-style:none;margin:0 0 18px;padding:0}
+.warm li{position:relative;padding-left:20px;font-size:14.5px;line-height:2.05;color:var(--ink-soft)}
+.warm li+li{margin-top:6px}
+.warm li::before{content:"";position:absolute;left:0;top:calc(1em - 1px);width:11px;height:1px;background:var(--gold-500)}
+.warm p{font-size:14.5px;line-height:2.05;color:var(--ink-soft);margin:0}
+.warm p+p{margin-top:12px}
 </style>
 
 </head>
@@ -570,13 +583,27 @@ textarea.finput{resize:vertical;min-height:110px}
 
 <section class="page-head">
   <div class="narrow">
-    <div class="breadcrumb"><a href="index.html">TOP</a>　/　面談のお申し込み</div>
-    <h1 class="serif">面談のお申し込み</h1>
+    <div class="breadcrumb"><a href="index.html">TOP</a>　/　まずは話を聞いてみる</div>
+    <h1 class="serif">まずは、話を聞いてみる。</h1>
     <p>
       面談は<b style="color:var(--ink);font-weight:500">無料</b>です。30分ほど、ゆっくりお話しします。<br>
       <b style="color:var(--ink);font-weight:500">miall に来ていただく</b>か、<b style="color:var(--ink);font-weight:500">オンライン（Zoom）</b>か、どちらでも大丈夫です。<br>
       その日に決めていただく必要は、まったくありません。
     </p>
+  </div>
+</section>
+
+<section class="warmsec">
+  <div class="narrow">
+    <div class="warm">
+      <b>30分、こんなふうに過ごします</b>
+      <ul>
+        <li>場内をご案内します。オンラインのときは、画面でお見せしながらお話しします</li>
+        <li>気になっていることを、そのまま聞いてください</li>
+      </ul>
+      <p>会費のご案内も、この時間に直接お伝えしています。金額だけを見て決めるより、何が使えるのかを知ってからのほうが選びやすいと思うからです。</p>
+      <p>その日に決めていただかなくて大丈夫です。持ち帰って、考えてから決めてください。入会をお勧めすることはしていません。</p>
+    </div>
   </div>
 </section>
 
@@ -660,7 +687,7 @@ textarea.finput{resize:vertical;min-height:110px}
       </p>
 
       <div class="fsubmit">
-        <button class="btn btn-lg" type="submit" id="applySubmit">この内容で申し込む</button>
+        <button class="btn btn-lg" type="submit" id="applySubmit">この内容で送る</button>
         <p class="ferr" id="applyErr" hidden></p>
       </div>
     </form>
