@@ -13,3 +13,4 @@ Disallow: /dropin-thanks.html
 Disallow: /a4-rules.html
 Disallow: /a4-terms.html
 Disallow: /deck-members.html
+Disallow: /line-copy.html
