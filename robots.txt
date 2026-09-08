@@ -1,6 +1,7 @@
 User-agent: *
 Allow: /
 Disallow: /terms.html
+Disallow: /video.html
 Disallow: /forms/
 Disallow: /mentoring.html
 Disallow: /board.html

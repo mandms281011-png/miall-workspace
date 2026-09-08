@@ -1159,7 +1159,6 @@ html body *,html body *::before,html body *::after{
   <div class="wrap hd">
     <div class="logo"><img src="images/miall-logo-header.png" alt="miall コミュニティワークスペース" width="1241" height="462"></div>
     <nav>
-      <a href="video.html">魅力覚醒動画</a>
       <a href="#about">この場所について</a>
       <a href="#equipment">設備</a>
       <a href="#mentoring">メンタリング</a>
@@ -1193,7 +1192,6 @@ html body *,html body *::before,html body *::after{
     </p>
     <div class="hero-cta">
       <a class="btn btn-lg" href="#contact">まずは話を聞いてみる</a>
-      <a class="btn btn-lg btn-ghost" href="video.html">魅力覚醒動画を見る（20分）</a>
     </div>
     <dl class="hero-facts">
       <div><dt>MENTORING</dt><dd>月1回・30分</dd></div>
@@ -1204,27 +1202,6 @@ html body *,html body *::before,html body *::after{
       <img src="images/hero.jpg" alt="観葉植物と大きな窓のある明るいスペースで、コーヒーを片手に笑いながら話している女性たち" width="1692" height="929">
     </figure>
     <!-- TODO: 実際の店内写真が撮れたら差し替える（現在はイメージ写真） -->
-  </div>
-</section>
-
-<!-- ============ VIDEO INVITE ============ -->
-<section class="vinv softbg" style="--bg:url('images/flowers-round.jpg');--bgpos:center 70%;--bgop:.12">
-  <div class="wrap">
-    <div class="vinv-inner">
-      <div>
-        <hr class="hairline" style="max-width:120px"><span class="kicker" style="display:block">MOVIE</span>
-        <h2>「私って、もっと<span class="shine" style="font-weight:500">魅力的？</span>」<br>そう思いたい方へ。</h2>
-        <p>
-          どんな場所で、どんな人がいて、何ができるのか。<br>
-          代表の藤澤が、20分でぜんぶお話しします。<b style="color:var(--ink);font-weight:500">登録は必要ありません。</b>
-        </p>
-        <div class="cta-row">
-          <a class="btn btn-lg" href="video.html">魅力覚醒動画を見る</a>
-          <a class="btn btn-lg btn-ghost" href="#contact">先に話を聞いてみる</a>
-        </div>
-        <p class="mins">約20分・登録不要でそのままご覧いただけます</p>
-      </div>
-    </div>
   </div>
 </section>
 
@@ -1812,15 +1789,6 @@ html body *,html body *::before,html body *::after{
 
       </div>
     </div>
-
-    <div class="askme">
-      <q>「私って、<br class="brsp">もっと<span class="shine">魅力的？</span>」</q>
-      <p class="sub">
-        そう思いたい方のための、20分の<b style="color:var(--ink);font-weight:500">魅力覚醒動画</b>があります。<br>
-        登録は必要ありません。
-      </p>
-      <a class="btn btn-lg" href="video.html">魅力覚醒動画を見る</a>
-    </div>
   </div>
 </section>
 
@@ -1853,7 +1821,6 @@ html body *,html body *::before,html body *::after{
 </script>
 <!-- ============ スマホ用の固定バー ============ -->
 <div class="stickycta">
-  <a class="btn btn-ghost" href="video.html">魅力覚醒動画を見る</a>
   <a class="btn" href="apply.html">面談を申し込む</a>
 </div>
 
@@ -1988,8 +1955,6 @@ html body *,html body *::before,html body *::after{
      a:'🤍 約束は、ふたつだけです。<br><br><b>悪口を言わない。</b><br><b>人を応援できる人でいる。</b><br><br>これだけで、安心して過ごせる場所になります。<br><a href="rules.html">ご利用ルール →</a>　<a href="terms.html">会員規約 →</a>'},
     {k:["カメラ","防犯","セキュリティ","安全"],
      a:'🔒 防犯のため、入り口と室内にカメラがあります。<br><b>更衣室・化粧室にはありません。</b><br><br>映像は3ヶ月保存し、防犯と安全確保のためだけに使います。'},
-    {k:["動画","ムービー","覚醒"],
-     a:'🎥 約20分の<b>魅力覚醒動画</b>を準備しています。<br>まもなく公開しますので、もう少しお待ちくださいね。<br>公開のお知らせは公式LINEでお送りします。<br><a href="video.html">くわしくはこちら →</a>'},
     {k:["休会","休み","お休み"],
      a:'🌙 休会の制度は設けていません。<br><br>長くお休みされる場合は一度ご退会いただき、<br>再開されるときにまたご入会ください。<br><b>そのときの入会金はいただきません。</b>'},
     {k:["インボイス","領収書","経費"],
@@ -3182,6 +3147,16 @@ footer .logo img{height:46px!important}
    地の色との差が四角い枠のように見えていた。
    花は切り抜き画像（.cta-bouquet-art）だけで足りるので、背景写真はやめる。 */
 .cta::before{background-image:none!important}
+
+/* 動画の節を外したぶん、CTAの高さが縮んだ（2026-09-07）
+   右下の花束は節の下端に置いてあるため、そのままだと本文に重なって
+   「ドロップイン…」の行が読みづらくなる。下の余白を足して、
+   花束が文字にかからない居場所をつくる。 */
+.cta{padding-bottom:clamp(250px,30vw,400px)!important}
+#contact .cta-bouquet-art{width:min(320px,25vw)!important}
+@media(max-width:900px){
+  .cta{padding-bottom:clamp(150px,30vw,240px)!important}
+}
 </style>
 <script>
 (function(){
