@@ -798,7 +798,7 @@ footer .logo img{height:46px!important}
     var e = { date: date }; for(var k in SEMINAR) e[k] = SEMINAR[k]; return e;
   }
   var EXTRA  = [seminarOn("2026/09/15"), seminarOn("2026/09/24"), seminarOn("2026/09/29")];
-  var HIDDEN = ["2026/09/12"];   /* 中止になった回 */
+  var HIDDEN = [];   /* 出したくない回があれば "2026/09/12" のように日付を入れる */
   /* ---- 暫定ここまで ---- */
   var grid = document.getElementById('calGrid');
   var list = document.getElementById('eventList');
