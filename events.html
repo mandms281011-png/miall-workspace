@@ -834,6 +834,22 @@ footer .logo img{height:46px!important}
    いちばん近い予定のある月を表示します（なければ今月）。 */
 (function(){
   var SHEET = "https://docs.google.com/spreadsheets/d/1OiBHtQ2lTUlF-7R3f9zWmb46eyCSzQBsDTrfTEMwhNU/gviz/tq?tqx=out:csv&gid=0";
+
+  /* ---- シートを直せるようになるまでの暫定。直したら消す。 ---- */
+  var SEMINAR = {
+    title: "オープニングセミナー",
+    time : "19:00〜20:30",
+    body : "「私らしく生きる 自分軸の見つけ方」ワークをしながら、ご自身の現在地を見つける時間です。参加費無料・軽食付き。施設内の見学もしていただけます。",
+    who  : "どなたでも",
+    note : "会員でない方もご参加いただけます。",
+    apply: "https://forms.gle/9ZQiia1sP96jvWWdA"
+  };
+  function seminarOn(date){
+    var e = { date: date }; for(var k in SEMINAR) e[k] = SEMINAR[k]; return e;
+  }
+  var EXTRA  = [seminarOn("2026/09/15"), seminarOn("2026/09/24"), seminarOn("2026/09/29")];
+  var HIDDEN = ["2026/09/12"];   /* 中止になった回 */
+  /* ---- 暫定ここまで ---- */
   var grid = document.getElementById('calGrid');
   var list = document.getElementById('eventList');
   if(!grid || !list) return;
@@ -869,6 +885,10 @@ footer .logo img{height:46px!important}
   }
 
   function guestOK(v){ return String(v||'').indexOf('どなた') === 0; }
+
+  function dateKey(d){
+    return d.getFullYear() + '/' + ('0'+(d.getMonth()+1)).slice(-2) + '/' + ('0'+d.getDate()).slice(-2);
+  }
 
   /* シートの文字列をそのままhrefに入れないための確認。http/https以外は捨てる。 */
   function safeUrl(v){
@@ -972,7 +992,26 @@ footer .logo img{height:46px!important}
                  body:String(r[5]||'').trim(), guest:guestOK(r[6]), note:String(r[7]||'').trim(),
                  apply:safeUrl(r[8]),
                  id:'ev-'+d.getFullYear()+'-'+(d.getMonth()+1)+'-'+d.getDate() };
-      }).filter(Boolean).sort(function(a,b){ return a.date-b.date; });
+      }).filter(Boolean);
+
+      /* ---- シートを直せるようになるまでの暫定 --------------------------
+         オープニングセミナーの3回はシートにまだ無く、中止になった9/12は
+         シートに残ったままなので、ここで補正している。
+         シートを直したら、EXTRA と HIDDEN を空にしてこのブロックごと消す。
+         EXTRA は、同じ日付がシートにあればシートを優先する。 */
+      events = events.filter(function(e){ return HIDDEN.indexOf(dateKey(e.date)) < 0; });
+      var onSheet = {};
+      events.forEach(function(e){ onSheet[dateKey(e.date)] = true; });
+      EXTRA.forEach(function(x){
+        var d = toDate(x.date);
+        if(!d || onSheet[dateKey(d)]) return;
+        events.push({ date:d, title:x.title, time:x.time, body:x.body,
+                      guest:guestOK(x.who), note:x.note, apply:safeUrl(x.apply),
+                      id:'ev-'+d.getFullYear()+'-'+(d.getMonth()+1)+'-'+d.getDate() });
+      });
+      /* ---- 暫定ここまで ---------------------------------------------- */
+
+      events.sort(function(a,b){ return a.date-b.date; });
 
       if(!events.length) return;
 
