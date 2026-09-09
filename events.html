@@ -106,6 +106,33 @@ nav a:hover::after{right:0}
 .anytime b{font-family:var(--serif);color:var(--wine)}
 .note{text-align:center;margin-top:30px;color:var(--muted);font-size:12.5px}
 .note a{color:var(--wine);font-weight:500}
+
+/* オープニングセミナーの案内。会期が終わったらこのブロックとHTMLの section ごと消す。 */
+.seminar{padding:76px 0 10px;background:radial-gradient(circle at 85% 0,rgba(232,213,166,.22),transparent 32%),var(--ivory)}
+.seminar-panel{position:relative;padding:clamp(34px,5vw,58px) clamp(24px,4vw,50px);border:1px solid var(--line);border-radius:22px;background:var(--cream);text-align:center;box-shadow:0 18px 50px rgba(150,118,47,.07)}
+.seminar-eyebrow{font-size:10.5px;letter-spacing:.32em;color:var(--wine)}
+.seminar-title{margin-top:16px;font:500 clamp(26px,4.2vw,44px)/1.45 var(--serif);color:var(--wine-deep)}
+.seminar-title em{display:block;font-style:normal;color:var(--wine)}
+.seminar-lead{margin-top:16px;color:var(--muted);font-size:14px}
+.seminar-dates{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-top:32px;list-style:none;padding:0}
+.seminar-dates li{display:flex;align-items:baseline;gap:8px;padding:13px 20px;border:1px solid var(--gold);border-radius:12px;background:var(--ivory)}
+.seminar-dates b{font:500 24px/1 var(--serif);color:var(--wine)}
+.seminar-dates span{font-size:12.5px;color:var(--muted)}
+.seminar-same{margin-top:16px;font-size:12.5px;color:var(--muted)}
+.seminar-catch{margin-top:36px;font:500 clamp(24px,3.6vw,38px)/1.4 var(--serif);color:var(--wine)}
+.seminar-body{margin-top:12px;font-size:14.5px}
+.seminar-meta{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:30px;list-style:none;padding:0}
+.seminar-meta li{padding:7px 16px;border-radius:999px;font-size:12px;letter-spacing:.04em}
+.seminar-meta li:first-child{background:var(--wine);color:#fff}
+.seminar-meta li:last-child{border:1px solid var(--line);color:var(--muted)}
+.seminar-place{margin-top:18px;font-size:12.5px;color:var(--muted)}
+.seminar-panel .btn{margin-top:30px}
+@media(max-width:620px){
+  .seminar{padding-top:54px}
+  .seminar-dates{flex-direction:column;align-items:stretch}
+  .seminar-dates li{justify-content:center}
+  .seminar-panel .btn{width:100%}
+}
 .big-cta{padding:105px 0;text-align:center;color:#fff;background:linear-gradient(rgba(43,40,35,.78),rgba(43,40,35,.88)),url("images/flowers-noribbon.jpg") center/cover fixed}
 .big-cta small{letter-spacing:.3em;color:var(--gold-light)}
 .big-cta h2{font:500 clamp(28px,4.5vw,48px)/1.55 var(--serif);margin:17px 0 30px}
@@ -344,6 +371,34 @@ html body *,html body *::before,html body *::after{
   </div>
   <div class="flower-word">miall</div>
   <div class="scroll-cue">SCROLL</div>
+</section>
+
+<section class="seminar reveal" id="opening-seminar">
+  <div class="narrow">
+    <div class="seminar-panel">
+      <p class="seminar-eyebrow">OPENING SEMINAR</p>
+      <h2 class="seminar-title">私らしく生きる<em>自分軸の見つけ方</em></h2>
+      <p class="seminar-lead">ワークをしながら、ご自身の現在地を見つける時間</p>
+
+      <ul class="seminar-dates">
+        <li><b>9/15</b><span>（火）19:00–20:30</span></li>
+        <li><b>9/24</b><span>（木）19:00–20:30</span></li>
+        <li><b>9/29</b><span>（火）19:00–20:30</span></li>
+      </ul>
+      <p class="seminar-same">どの回も同じ内容です。ご都合のよい日を1回お選びください。</p>
+
+      <p class="seminar-catch">私って魅力的！！</p>
+      <p class="seminar-body">なりたい自分を、もう一度さがしてみませんか。<br>自分軸でワクワクしながら、楽しい毎日を。</p>
+
+      <ul class="seminar-meta">
+        <li>参加費無料・軽食付き・施設見学OK</li>
+        <li>会員でない方もご参加いただけます</li>
+      </ul>
+      <p class="seminar-place">長野県長野市鶴賀問御所町1241-1　長野銀座信越ビル 8階</p>
+
+      <a class="btn" href="https://forms.gle/9ZQiia1sP96jvWWdA" target="_blank" rel="noopener">申込はこちらから</a>
+    </div>
+  </div>
 </section>
 
 <section class="intro reveal">
