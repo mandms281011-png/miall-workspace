@@ -5,7 +5,7 @@
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>イベント｜コミュニティワークスペース miall</title>
-<meta name="description" content="miallのイベントカレンダー。ラナンキュラスのように、一人ひとりの魅力がひらく時間を。">
+<meta name="description" content="miallのイベント一覧。女性限定の交流会、セミナー、ワークショップの日時・参加費とお申し込み方法をご案内します。">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600&family=Noto+Sans+JP:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -106,8 +106,28 @@ nav a:hover::after{right:0}
 .anytime b{font-family:var(--serif);color:var(--wine)}
 .note{text-align:center;margin-top:30px;color:var(--muted);font-size:12.5px}
 .note a{color:var(--wine);font-weight:500}
-
-}
+/* 2026年10月以降のイベント一覧 */
+.events-section{padding:20px 0 105px;background:linear-gradient(180deg,var(--ivory),var(--cream));scroll-margin-top:90px}
+.events-intro{max-width:730px;margin:0 auto 36px;text-align:center;color:var(--muted);font-size:14px}
+.payment-note{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:20px 26px;margin:0 0 50px;background:#f7f0e2;border:1px solid var(--gold);border-radius:12px;color:var(--ink)}
+.payment-note p{font-size:14px;line-height:1.75}
+.payment-note a{color:var(--wine);font-weight:600;text-decoration:underline;text-underline-offset:4px;white-space:nowrap}
+.month-title{display:flex;align-items:center;gap:18px;margin:48px 0 22px;font:500 clamp(23px,3vw,31px)/1.5 var(--serif);color:var(--wine-deep)}
+.month-title::after{content:"";height:1px;flex:1;background:var(--line)}
+.events-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.listing-card{display:flex;flex-direction:column;min-width:0;padding:30px;background:#fffdf9;border:1px solid var(--line);border-radius:14px;box-shadow:0 12px 32px rgba(61,54,44,.05)}
+.listing-date{color:var(--wine);font-size:13px;font-weight:600;letter-spacing:.05em}
+.listing-card h3{margin:8px 0 12px;font:500 clamp(19px,2.3vw,25px)/1.5 var(--serif);color:var(--ink)}
+.listing-card .description{color:var(--muted);font-size:14px;line-height:1.85;margin-bottom:18px}
+.listing-meta{list-style:none;border-top:1px solid var(--line);padding:16px 0 0;margin-top:auto;color:var(--ink);font-size:13px;line-height:1.7}
+.listing-meta li+li{margin-top:4px}
+.listing-meta b{color:var(--wine);font-weight:600;margin-right:8px}
+.booking-actions{text-align:center;margin-top:50px;padding:38px 24px;background:#fffdf9;border:1px solid var(--line);border-radius:14px}
+.booking-actions h2{font:500 clamp(21px,3vw,28px)/1.5 var(--serif);margin-bottom:18px}
+.booking-actions .btn{min-width:230px}
+.booking-actions .payment-note{margin:28px auto 0;text-align:left;max-width:780px}
+.booking-actions .btn:focus-visible,.payment-note a:focus-visible{outline:3px solid var(--wine);outline-offset:4px}
+@media(max-width:760px){.events-grid{grid-template-columns:1fr}.payment-note{display:block}.payment-note a{display:inline-block;margin-top:8px}.listing-card{padding:24px}.events-section{padding-bottom:80px}}
 .big-cta{padding:105px 0;text-align:center;color:#fff;background:linear-gradient(rgba(43,40,35,.78),rgba(43,40,35,.88)),url("images/flowers-noribbon.jpg") center/cover fixed}
 .big-cta small{letter-spacing:.3em;color:var(--gold-light)}
 .big-cta h2{font:500 clamp(28px,4.5vw,48px)/1.55 var(--serif);margin:17px 0 30px}
@@ -326,7 +346,7 @@ html body *,html body *::before,html body *::after{
   <div class="wrap hd">
     <a class="logo" href="index.html" style="text-decoration:none"><img src="images/miall-logo-header.png" alt="miall コミュニティワークスペース" width="1241" height="462"></a>
     <nav>
-      <a href="index.html#about">この場所について</a><a href="events.html">イベント</a><a href="clubs.html">同好会</a><a href="index.html#access">アクセス</a><a href="price.html">会費</a><a href="rules.html">ご利用ルール</a>
+      <a href="index.html#about">この場所について</a><a href="#events-list">イベント</a><a href="clubs.html">同好会</a><a href="index.html#access">アクセス</a><a href="price.html">会費</a><a href="rules.html">ご利用ルール</a>
     </nav>
     <a class="btn" href="apply.html">面談を申し込む</a>
   </div>
@@ -336,11 +356,11 @@ html body *,html body *::before,html body *::after{
 <section class="hero">
   <div class="hero-photo" id="heroPhoto"></div>
   <div class="wrap hero-inner">
-    <p class="eyebrow">MIALL EVENT CALENDAR</p>
-    <h1>出会いから、<br>魅力がひらく。<span>イベントカレンダー</span></h1>
+    <p class="eyebrow">MIALL EVENTS</p>
+    <h1>出会いから、<br>魅力がひらく。<span>イベント一覧</span></h1>
     <p class="hero-copy">ラナンキュラスが幾重にも花びらをひらくように。<br>新しい学びやご縁が、あなたの可能性を華やかに広げます。</p>
     <div class="hero-actions">
-      <a class="btn" href="#calendar">これからの予定を見る</a>
+      <a class="btn" href="#events-list">これからのイベントを見る</a>
       <a class="btn btn-light" href="https://lin.ee/6v6NCVt" target="_blank" rel="noopener">公式LINEで相談する</a>
     </div>
   </div>
@@ -350,28 +370,41 @@ html body *,html body *::before,html body *::after{
 
 <section class="intro reveal">
   <div class="narrow">
-    <p class="kicker" id="calKicker">SEPTEMBER 2026</p>
+    <p class="kicker">OCTOBER – DECEMBER 2026</p>
     <h2>ここで過ごす時間が、<br>次の一歩につながる。</h2>
-    <p>イベントのある日をタップすると、詳しい内容をご覧いただけます。</p>
-    <div class="legend"><span class="tag tag-guest">ゲスト参加OK</span><span class="tag tag-member">会員限定</span></div>
+    <p>交流会、セミナー、手作りの時間。気になるイベントからご参加ください。</p>
   </div>
 </section>
 
-<section class="calendar-section" id="calendar">
-  <div class="narrow">
-    <div class="cal-shell reveal">
-      <div class="cal-head" id="calHead"><h2 id="calTitle"><span id="calY">2026年</span> <b id="calM">9</b>月</h2><span id="calEn">SEPTEMBER</span><div class="cal-nav" id="calNav"><button type="button" id="calPrev">← 前の月</button><button type="button" id="calNext">次の月 →</button><button type="button" id="calMode" class="mode">1年分を見る</button></div></div>
-      <div class="cal-grid" id="calGrid">
-        <div class="cal-dow sun">日</div><div class="cal-dow">月</div><div class="cal-dow">火</div><div class="cal-dow">水</div><div class="cal-dow">木</div><div class="cal-dow">金</div><div class="cal-dow sat">土</div>
-      </div>
-      <div class="cal-year" id="calYear" hidden></div>
-      </div>
-      <div id="eventList">
-      <!-- ここはスプレッドシート「miall イベント一覧（サイト連動）」から自動で作られます。
-           シートを直すだけで、このページが変わります。HTMLを触る必要はありません。 -->
-      </div>
-      <div class="anytime"><b>随時　9:00〜21:00・事前予約制</b><span>面談（無料）／<a href="dropin.html" style="color:inherit;text-decoration:underline;text-underline-offset:3px">ドロップイン（1日利用・3,000円税込）</a>／メンタリング（会員限定）</span></div>
-      <p class="note">そのほかの企画は、決まりしだい<a href="https://lin.ee/6v6NCVt" target="_blank" rel="noopener">公式LINE</a>でお知らせします。</p>
+<section class="events-section" id="events-list" aria-label="miallイベント一覧">
+  <div class="wrap">
+    <p class="events-intro">気になるイベントをご覧ください。お申し込み方法は一覧の下にご案内しています。</p>
+
+    <h2 class="month-title">2026年10月</h2>
+    <div class="events-grid">
+      <article class="listing-card"><p class="listing-date">10月9日（金）10:00〜12:00</p><h3>運気と風水 幸せの整え方</h3><p class="description">風水・お金・ご縁をテーマに、お茶を飲みながら気軽に語り合う女性限定の茶話会。初めての方やお一人での参加も歓迎です。</p><ul class="listing-meta"><li><b>会場</b>miall コミュニティワークスペース</li><li><b>参加費</b>無料（お茶・お菓子付き）</li><li><b>定員</b>10名</li></ul></article>
+      <article class="listing-card"><p class="listing-date">10月16日（金）18:00〜19:00</p><h3>LUCE LINK SESSION Vol.1</h3><p class="description">占い師同士の交換セッション、写真・動画撮影、SNSでの相互紹介。活動の魅力を伝え合う1時間です。飲み物・お菓子付き。</p><ul class="listing-meta"><li><b>会場</b>miall コミュニティワークスペース</li><li><b>対象</b>現在、お客様に占いを提供している方</li><li><b>参加費</b>miall会員 無料／非会員 500円（当日現金）</li><li><b>定員</b>8名</li></ul></article>
+      <article class="listing-card"><p class="listing-date">10月16日（金）19:30〜21:30</p><h3>10月のmiall会</h3><p class="description">仕事のことも、これからの夢も。食事とお酒を囲んで自然に話せる女性限定のディナー交流会。会員・非会員ともに参加できます。</p><ul class="listing-meta"><li><b>会場</b>シロッコ ピザ＆ワイン酒場</li><li><b>参加費</b>6,000円（食事・飲み放題付き）</li></ul></article>
+    </div>
+
+    <h2 class="month-title">2026年11月</h2>
+    <div class="events-grid">
+      <article class="listing-card"><p class="listing-date">11月3日（火・祝）14:00〜15:00／開場13:30</p><h3>miall特別セミナー｜あなたらしく、自分軸で生きる</h3><p class="description">山本悠介さんによる自分軸のセミナーと、SNS運用のコツを学ぶプチセミナー。お茶・デザート付きです。</p><ul class="listing-meta"><li><b>会場</b>miall コミュニティワークスペース</li><li><b>参加費</b>miall会員 1,000円／非会員 2,000円</li></ul></article>
+      <article class="listing-card"><p class="listing-date">11月13日（金）10:00〜13:00</p><h3>miall流 米粉ベーグル教室</h3><p class="description">抹茶とプレーンの米粉ベーグルを一緒に作ります。レシピ、ランチ、お土産付き。少人数で手作りの時間を楽しみましょう。</p><ul class="listing-meta"><li><b>会場</b>miall コミュニティワークスペース</li><li><b>参加費</b>miall会員 2,000円／非会員 3,500円</li><li><b>定員</b>5名</li></ul></article>
+      <article class="listing-card"><p class="listing-date">11月20日（金）19:00〜21:00</p><h3>11月のmiall会</h3><p class="description">スペイン食堂で食事とお酒を楽しむ女性限定の交流会。仕事や暮らし、これからの挑戦を気軽に話せる夜です。</p><ul class="listing-meta"><li><b>会場</b>スペイン食堂 Gastrobar CERO</li><li><b>参加費</b>6,000円（飲み放題付き）</li></ul></article>
+    </div>
+
+    <h2 class="month-title">2026年12月</h2>
+    <div class="events-grid">
+      <article class="listing-card"><p class="listing-date">12月11日（金）19:00〜21:00</p><h3>miall忘年会</h3><p class="description">一年の頑張りを一緒に楽しむ女性限定のディナー交流会。新しいつながりと笑顔を増やしましょう。</p><ul class="listing-meta"><li><b>会場</b>シロッコ ピザ＆ワイン酒場</li><li><b>参加費</b>6,000円（飲み放題付き）</li></ul></article>
+      <article class="listing-card"><p class="listing-date">12月18日（金）10:00〜12:00</p><h3>miall流 米粉クッキー作り</h3><p class="description">チョコチップソルトと抹茶の米粉クッキーを一緒に作ります。手を動かしながらおしゃべりする少人数の教室です。</p><ul class="listing-meta"><li><b>会場</b>miall コミュニティワークスペース</li><li><b>参加費</b>miall会員 2,000円／非会員 3,000円</li><li><b>定員</b>5名</li></ul></article>
+      <article class="listing-card"><p class="listing-date">12月18日（金）19:00〜20:30</p><h3>そのNISA、なぜ選びましたか？</h3><p class="description">なんとなく始めた方も、これから考えたい方も。西尾真友子さんとNISAの基本や選び方を学ぶセミナーです。</p><ul class="listing-meta"><li><b>会場</b>miall コミュニティワークスペース</li><li><b>参加費</b>miall会員 1,000円／非会員 2,000円</li></ul></article>
+      <article class="listing-card"><p class="listing-date">12月25日（金）19:00〜21:00</p><h3>miall Christmas会</h3><p class="description">一年の締めくくりに、笑顔でつながる女性限定のクリスマス。おいしい時間と新しいご縁を楽しみましょう。</p><ul class="listing-meta"><li><b>会場</b>miall コミュニティワークスペース</li><li><b>参加費</b>miall会員 3,000円／非会員 4,000円</li></ul></article>
+    </div>
+    <div class="booking-actions">
+      <h2>イベントへのお申し込み</h2>
+      <a class="btn" href="https://peatix.com/group/16596660/events" target="_blank" rel="noopener noreferrer">申し込みはこちら →</a>
+      <div class="payment-note"><p>当日現金にてお支払いの方は、公式LINEにお問い合わせください。</p><a href="https://lin.ee/6v6NCVt" target="_blank" rel="noopener noreferrer">公式LINEに問い合わせる →</a></div>
     </div>
   </div>
 </section>
@@ -610,7 +643,7 @@ footer .logo img{height:46px!important}
     {k:["専門家","プロ","講師","誰がいる","サポート","経営者","コミュニティ","人脈","つながり先","ファスティング","化粧品","メイク","カウンセラー","心理","栄養士","管理栄養士","栄養"],
      a:'✨ <b>心身ともに支えられる専門家</b>が集まっています。<br><br>🌱 <b>ファスティングの専門家</b>／日本一の実績<br>💼 <b>金融と接遇のプロ</b>／大手証券で法人個人とも日本一<br>💄 <b>オーガニック化粧品の開発者</b>／AI×人間力講師<br>🤝 <b>経営者コミュニティの主宰</b>／1,000人以上を運営<br><br>ほかに心理カウンセラーや管理栄養士も。<br>まだまだたくさんいらっしゃいます。<br><br>お名前や詳しいご経歴は、面談のときにご紹介しますね。<br>※それぞれの専門サービスは会費とは別です。会員価格があります。'},
     {k:["リトリート","イベント","農業","遠く","旅","予定","日程","いつ","オープニングセミナー"],
-     a:'📅 これからの予定は、イベントページにまとめています。<br>オープニングセミナー、miall会、同好会、学びの場、リトリートなど。<br><br>お申し込みは<b>フォーム</b>から承っています。<br>イベントページの各回にある「申込はこちらから」のボタンからお進みください。<br><a href="events.html">これからの予定を見る →</a>'},
+     a:'📅 これからの予定は、イベントページにまとめています。<br>オープニングセミナー、miall会、同好会、学びの場、リトリートなど。<br><br>イベント一覧からご希望の回をお選びください。<br>一覧の下にある「申し込みはこちら」からPeatixへ進めます。当日現金でお支払いの方は公式LINEにお問い合わせください。<br><a href="events.html">これからの予定を見る →</a>'},
     {k:["場所","住所","アクセス","どこ","地図"],
      a:'📍 長野県長野市鶴賀問御所町1241-1<br>長野銀座信越ビル 8階です。<br><br>長野駅から歩いて7分です。<br>お車の方は近隣のコインパーキングをご利用ください。'},
     {k:["駐車","駐車場","車","パーキング","停め","とめ"],
@@ -774,304 +807,6 @@ footer .logo img{height:46px!important}
 
 
 
-<script>
-/* ===== イベントページをスプレッドシートから作る =====
-   シート：miall イベント一覧（サイト連動）
-   列：A 公開 / B 日付 / C 曜日 / D タイトル / E 時間 / F 内容 / G 参加できる方 / H 備考 / I 申込URL
-   申し込みはフォームのみ。I列にURLを入れた回だけ「申込はこちらから」のボタンが出ます。
-   I列が空の回はボタンなしで、日付と内容だけのご案内になります。
-   A列に ○ を入れた行だけ出ます。
-   いちばん近い予定のある月を表示します（なければ今月）。 */
-(function(){
-  var SHEET = "https://docs.google.com/spreadsheets/d/1OiBHtQ2lTUlF-7R3f9zWmb46eyCSzQBsDTrfTEMwhNU/gviz/tq?tqx=out:csv&gid=0";
-
-  /* ---- シートを直せるようになるまでの暫定。直したら消す。 ---- */
-  var SEMINAR = {
-    title: "オープニングセミナー",
-    time : "19:00〜20:30",
-    body : "「私らしく生きる 自分軸の見つけ方」ワークをしながら、ご自身の現在地を見つける時間です。参加費無料・軽食付き。施設内の見学もしていただけます。",
-    who  : "どなたでも",
-    note : "会員でない方もご参加いただけます。",
-    apply: "https://forms.gle/9ZQiia1sP96jvWWdA"
-  };
-  function seminarOn(date){
-    var e = { date: date }; for(var k in SEMINAR) e[k] = SEMINAR[k]; return e;
-  }
-  var EXTRA  = [seminarOn("2026/09/15"), seminarOn("2026/09/24"), seminarOn("2026/09/29")];
-  var HIDDEN = [];   /* 出したくない回があれば "2026/09/12" のように日付を入れる */
-  /* ---- 暫定ここまで ---- */
-  var grid = document.getElementById('calGrid');
-  var list = document.getElementById('eventList');
-  if(!grid || !list) return;
-
-  var EN = ['JANUARY','FEBRUARY','MARCH','APRIL','MAY','JUNE','JULY','AUGUST','SEPTEMBER','OCTOBER','NOVEMBER','DECEMBER'];
-  var DOW = ['日','月','火','水','木','金','土'];
-
-  function parseCSV(text){
-    var rows=[], row=[], cell='', q=false;
-    for(var i=0;i<text.length;i++){
-      var c=text[i];
-      if(q){ if(c==='"'){ if(text[i+1]==='"'){cell+='"';i++;} else q=false; } else cell+=c; }
-      else{
-        if(c==='"') q=true;
-        else if(c===',') { row.push(cell); cell=''; }
-        else if(c==='\n'){ row.push(cell); rows.push(row); row=[]; cell=''; }
-        else if(c!=='\r') cell+=c;
-      }
-    }
-    if(cell!=='' || row.length){ row.push(cell); rows.push(row); }
-    return rows;
-  }
-
-  function toDate(v){
-    var m=String(v).match(/(\d{4})[\/\-](\d{1,2})[\/\-](\d{1,2})/);
-    if(m) return new Date(+m[1], +m[2]-1, +m[3]);
-    var n=parseFloat(v);
-    if(!isNaN(n)&&n>20000){
-      var d=new Date(Date.UTC(1899,11,30)+Math.floor(n)*86400000);
-      return new Date(d.getUTCFullYear(), d.getUTCMonth(), d.getUTCDate());
-    }
-    return null;
-  }
-
-  function guestOK(v){ return String(v||'').indexOf('どなた') === 0; }
-
-  function dateKey(d){
-    return d.getFullYear() + '/' + ('0'+(d.getMonth()+1)).slice(-2) + '/' + ('0'+d.getDate()).slice(-2);
-  }
-
-  /* シートの文字列をそのままhrefに入れないための確認。http/https以外は捨てる。 */
-  function safeUrl(v){
-    var u=String(v||'').trim();
-    return /^https?:\/\//i.test(u) ? u : '';
-  }
-
-  function buildCalendar(year, month, byDay){
-    grid.innerHTML = '';
-    DOW.forEach(function(d,i){
-      var el=document.createElement('div');
-      el.className='cal-dow' + (i===0?' sun':i===6?' sat':'');
-      el.textContent=d; grid.appendChild(el);
-    });
-    var first=new Date(year, month, 1).getDay();
-    var last=new Date(year, month+1, 0).getDate();
-    for(var i=0;i<first;i++){
-      var e=document.createElement('div'); e.className='cal-cell empty'; grid.appendChild(e);
-    }
-    for(var d=1; d<=last; d++){
-      var w=new Date(year, month, d).getDay();
-      var cell=document.createElement('div');
-      cell.className='cal-cell' + (w===0?' sun':w===6?' sat':'');
-      var n=document.createElement('span'); n.className='n'; n.textContent=d;
-      cell.appendChild(n);
-      var ev=byDay[d];
-      if(ev){
-        cell.className += ' has';
-        cell.setAttribute('tabindex','0');
-        cell.setAttribute('role','button');
-        cell.setAttribute('aria-label', (month+1)+'月'+d+'日 '+ev.title+'の詳細');
-        var name=document.createElement('span'); name.className='ev-name'; name.textContent=ev.title;
-        cell.appendChild(name);
-        (function(id){
-          function go(){ var t=document.getElementById(id); if(t) t.scrollIntoView({behavior:'smooth', block:'center'}); }
-          cell.addEventListener('click', go);
-          cell.addEventListener('keydown', function(e){ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); go(); } });
-        })(ev.id);
-      }
-      grid.appendChild(cell);
-    }
-    var tail=(7-((first+last)%7))%7;
-    for(var t=0;t<tail;t++){
-      var e2=document.createElement('div'); e2.className='cal-cell empty'; grid.appendChild(e2);
-    }
-    var y=document.getElementById('calY'), m=document.getElementById('calM'),
-        en=document.getElementById('calEn'), kicker=document.getElementById('calKicker');
-    if(y) y.textContent=year+'年';
-    if(m) m.textContent=(month+1);
-    if(en) en.textContent=EN[month];
-    if(kicker) kicker.textContent=EN[month]+' '+year;
-  }
-
-  function mkBtn(href, label){
-    var a=document.createElement('a');
-    a.className='btn'; a.href=href; a.target='_blank'; a.rel='noopener';
-    a.textContent=label;
-    return a;
-  }
-
-  function buildCards(events){
-    list.innerHTML='';
-    events.forEach(function(ev){
-      var el=document.createElement('article');
-      el.className='event-card'; el.id=ev.id;
-
-      var dt=document.createElement('div'); dt.className='event-date';
-      dt.innerHTML=(ev.date.getMonth()+1)+'.'+ev.date.getDate()+' <small>'+DOW[ev.date.getDay()]+'曜日</small>';
-
-      var body=document.createElement('div'); body.className='event-body';
-      var h=document.createElement('h3'); h.textContent=ev.title;
-      var tag=document.createElement('span');
-      tag.className='tag ' + (ev.guest?'tag-guest':'tag-member');
-      tag.textContent= ev.guest ? 'ゲスト参加OK' : '会員限定';
-      h.appendChild(document.createTextNode(' ')); h.appendChild(tag);
-      body.appendChild(h);
-
-      var p=document.createElement('p');
-      p.textContent=[ (ev.time && ev.time!=='未定') ? ev.time : '', ev.body ].filter(Boolean).join('　');
-      body.appendChild(p);
-      if(ev.note){ var n=document.createElement('p'); n.style.fontSize='13.5px'; n.style.opacity='.85'; n.textContent=ev.note; body.appendChild(n); }
-
-      /* 申し込みはフォームのみ。URLのない回はボタンを出さない。 */
-      el.appendChild(dt); el.appendChild(body);
-      if(ev.apply){
-        var btns=document.createElement('div'); btns.className='applysplit';
-        btns.appendChild(mkBtn(ev.apply, '申込はこちらから'));
-        el.appendChild(btns);
-      }
-      list.appendChild(el);
-    });
-  }
-
-  fetch(SHEET,{cache:'no-store'})
-    .then(function(r){ return r.ok ? r.text() : ''; })
-    /* シートが読めなくても、ページに持っている予定だけは出す。
-       ここで失敗を受け止めないと、この先の描画が丸ごと動かず、
-       カレンダーもカードも空のままになる。 */
-    .catch(function(){ return ''; })
-    .then(function(t){
-      var events = parseCSV(t).slice(1).map(function(r){
-        if(r.length<4 || String(r[0]).trim()!=='○') return null;
-        var d=toDate(r[1]); if(!d || !String(r[3]).trim()) return null;
-        return { date:d, title:String(r[3]).trim(), time:String(r[4]||'').trim(),
-                 body:String(r[5]||'').trim(), guest:guestOK(r[6]), note:String(r[7]||'').trim(),
-                 apply:safeUrl(r[8]),
-                 id:'ev-'+d.getFullYear()+'-'+(d.getMonth()+1)+'-'+d.getDate() };
-      }).filter(Boolean);
-
-      /* ---- シートを直せるようになるまでの暫定 --------------------------
-         オープニングセミナーの3回はシートにまだ無く、中止になった9/12は
-         シートに残ったままなので、ここで補正している。
-         シートを直したら、EXTRA と HIDDEN を空にしてこのブロックごと消す。
-         EXTRA は、同じ日付がシートにあればシートを優先する。 */
-      events = events.filter(function(e){ return HIDDEN.indexOf(dateKey(e.date)) < 0; });
-      var onSheet = {};
-      events.forEach(function(e){ onSheet[dateKey(e.date)] = true; });
-      EXTRA.forEach(function(x){
-        var d = toDate(x.date);
-        if(!d || onSheet[dateKey(d)]) return;
-        events.push({ date:d, title:x.title, time:x.time, body:x.body,
-                      guest:guestOK(x.who), note:x.note, apply:safeUrl(x.apply),
-                      id:'ev-'+d.getFullYear()+'-'+(d.getMonth()+1)+'-'+d.getDate() });
-      });
-      /* ---- 暫定ここまで ---------------------------------------------- */
-
-      events.sort(function(a,b){ return a.date-b.date; });
-
-      if(!events.length) return;
-
-      /* 予定のある月だけを拾って、その間を行き来できるようにする。
-         予定のない月は飛ばすので、空のカレンダーは出ない。 */
-      var months=[];
-      events.forEach(function(e){
-        var k=e.date.getFullYear()+'-'+e.date.getMonth();
-        if(months.indexOf(k)<0) months.push(k);
-      });
-
-      var today=new Date(); today.setHours(0,0,0,0);
-      var next = events.filter(function(e){ return e.date>=today; })[0] || events[events.length-1];
-      var cur = months.indexOf(next.date.getFullYear()+'-'+next.date.getMonth());
-      if(cur<0) cur=0;
-
-      var prevBtn=document.getElementById('calPrev');
-      var nextBtn=document.getElementById('calNext');
-      var nav=document.getElementById('calNav');
-
-      function render(){
-        var p=months[cur].split('-'), Y=+p[0], M=+p[1];
-        var inMonth = events.filter(function(e){
-          return e.date.getFullYear()===Y && e.date.getMonth()===M;
-        });
-        var byDay={};
-        inMonth.forEach(function(e){ if(!byDay[e.date.getDate()]) byDay[e.date.getDate()]=e; });
-        buildCalendar(Y, M, byDay);
-        buildCards(inMonth);
-        if(prevBtn) prevBtn.disabled = (cur===0);
-        if(nextBtn) nextBtn.disabled = (cur===months.length-1);
-      }
-
-      if(prevBtn) prevBtn.addEventListener('click', function(){ if(cur>0){ cur--; render(); } });
-      if(nextBtn) nextBtn.addEventListener('click', function(){ if(cur<months.length-1){ cur++; render(); } });
-
-      /* 予定がひと月ぶんしかないときは、月送りだけ隠す（1年分のボタンは残す） */
-      if(months.length<2){
-        if(prevBtn) prevBtn.hidden = true;
-        if(nextBtn) nextBtn.hidden = true;
-      }
-
-      /* ---- 1年分の表示 ---- */
-      var yearWrap=document.getElementById('calYear');
-      var modeBtn=document.getElementById('calMode');
-      var grid=document.getElementById('calGrid');
-      var titleEl=document.getElementById('calTitle');
-      var titleHTML=titleEl ? titleEl.innerHTML : '';
-
-      function buildYear(){
-        yearWrap.innerHTML='';
-        var to=new Date(today.getFullYear()+1, today.getMonth(), today.getDate());
-        var items=events.filter(function(e){ return e.date>=today && e.date<to; });
-        if(!items.length) items=events.slice();
-        var lastKey='';
-        items.forEach(function(e){
-          var key=e.date.getFullYear()+'-'+e.date.getMonth();
-          if(key!==lastKey){
-            var h=document.createElement('div'); h.className='cal-year-m';
-            h.textContent=e.date.getFullYear()+'年 '+(e.date.getMonth()+1)+'月';
-            yearWrap.appendChild(h); lastKey=key;
-          }
-          var row=document.createElement('div'); row.className='cal-year-row';
-          var d=document.createElement('span'); d.className='cy-d';
-          d.appendChild(document.createTextNode(e.date.getDate()));
-          var w=document.createElement('small'); w.textContent=DOW[e.date.getDay()];
-          d.appendChild(w);
-          var b=document.createElement('span'); b.className='cy-b';
-          var t=document.createElement('b'); t.textContent=e.title; b.appendChild(t);
-          var meta=document.createElement('span');
-          meta.textContent=[(e.time && e.time!=='未定') ? e.time : '時間は調整中',
-                            e.guest ? 'どなたでも' : '会員限定'].join('　');
-          b.appendChild(meta);
-          row.appendChild(d); row.appendChild(b);
-          yearWrap.appendChild(row);
-        });
-      }
-
-      function setMode(on){
-        /* .cal-grid は display:grid を持つので、hidden 属性では消えない。
-           表示の切り替えは style で行う。 */
-        if(grid) grid.style.display = on ? 'none' : '';
-        if(list) list.style.display = on ? 'none' : '';
-        yearWrap.style.display = on ? 'flex' : 'none';
-        yearWrap.hidden = !on;
-        var enEl=document.getElementById('calEn');
-        if(enEl && on) enEl.textContent='';
-        if(prevBtn) prevBtn.hidden=on;
-        if(nextBtn) nextBtn.hidden=on;
-        if(modeBtn) modeBtn.textContent = on ? '月ごとに見る' : '1年分を見る';
-        if(on){
-          if(titleEl) titleEl.textContent='これから1年の予定';
-          buildYear();
-        }else{
-          if(titleEl) titleEl.innerHTML=titleHTML;
-          render();
-        }
-      }
-
-      if(modeBtn) modeBtn.addEventListener('click', function(){ setMode(yearWrap.style.display!=='flex'); });
-
-      render();
-    })
-    .catch(function(){ /* 読めないときは、カレンダーは空のまま */ });
-})();
-</script>
 
 </body>
 </html>
