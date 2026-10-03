@@ -117,6 +117,9 @@ nav a:hover::after{right:0}
 .events-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
 .listing-card{display:flex;flex-direction:column;min-width:0;padding:30px;background:#fffdf9;border:1px solid var(--line);border-radius:14px;box-shadow:0 12px 32px rgba(61,54,44,.05)}
 .listing-date{color:var(--wine);font-size:13px;font-weight:600;letter-spacing:.05em}
+.listing-card.is-finished{background:#f6f3ed;border-color:#ded8cd}
+.listing-card.is-finished .listing-date{color:var(--muted)}
+.status-ended{display:inline-block;margin-left:12px;padding:2px 11px;border-radius:999px;background:#e4dfd6;color:#514d47;font-size:11px;line-height:1.6;vertical-align:middle}
 .listing-card h3{margin:8px 0 12px;font:500 clamp(19px,2.3vw,25px)/1.5 var(--serif);color:var(--ink)}
 .listing-card .description{color:var(--muted);font-size:14px;line-height:1.85;margin-bottom:18px}
 .listing-meta{list-style:none;border-top:1px solid var(--line);padding:16px 0 0;margin-top:auto;color:var(--ink);font-size:13px;line-height:1.7}
@@ -382,25 +385,25 @@ html body *,html body *::before,html body *::after{
 
     <h2 class="month-title">2026年10月</h2>
     <div class="events-grid">
-      <article class="listing-card"><p class="listing-date">10月9日（金）10:00〜12:00</p><h3>運気と風水 幸せの整え方</h3><p class="description">風水・お金・ご縁をテーマに、お茶を飲みながら気軽に語り合う女性限定の茶話会。初めての方やお一人での参加も歓迎です。</p><ul class="listing-meta"><li><b>会場</b>miall コミュニティワークスペース</li><li><b>参加費</b>無料（お茶・お菓子付き）</li><li><b>定員</b>10名</li></ul></article>
-      <article class="listing-card"><p class="listing-date">10月14日（水）19:00〜20:30</p><h3>MIALL見学会＆茶話会｜「いつかは…」の不安を笑い飛ばす</h3><p class="description">若林実佳さんの介護体験と藤澤美嘉さんの「介護とお金」のお話。お茶を飲みながらこれからの暮らしを考え、MIALLのスペースも見学できる女性限定の茶話会です。</p><ul class="listing-meta"><li><b>会場</b>miall コミュニティワークスペース</li><li><b>参加費</b>無料</li><li><b>定員</b>20名</li></ul></article>
-      <article class="listing-card"><p class="listing-date">10月16日（金）18:00〜19:00</p><h3>LUCE LINK SESSION Vol.1</h3><p class="description">占い師同士の交換セッション、写真・動画撮影、SNSでの相互紹介。活動の魅力を伝え合う1時間です。飲み物・お菓子付き。</p><ul class="listing-meta"><li><b>会場</b>miall コミュニティワークスペース</li><li><b>対象</b>現在、お客様に占いを提供している方</li><li><b>参加費</b>miall会員 無料／非会員 500円（当日現金）</li><li><b>定員</b>8名</li></ul></article>
-      <article class="listing-card"><p class="listing-date">10月16日（金）19:30〜21:30</p><h3>10月のmiall会</h3><p class="description">仕事のことも、これからの夢も。食事とお酒を囲んで自然に話せる女性限定のディナー交流会。会員・非会員ともに参加できます。</p><ul class="listing-meta"><li><b>会場</b>シロッコ ピザ＆ワイン酒場</li><li><b>参加費</b>6,000円（食事・飲み放題付き）</li></ul></article>
+      <article class="listing-card" data-event-date="2026-10-09"><p class="listing-date">10月9日（金）10:00〜12:00</p><h3>運気と風水 幸せの整え方</h3><p class="description">風水・お金・ご縁をテーマに、お茶を飲みながら気軽に語り合う女性限定の茶話会。初めての方やお一人での参加も歓迎です。</p><ul class="listing-meta"><li><b>会場</b>miall コミュニティワークスペース</li><li><b>参加費</b>無料（お茶・お菓子付き）</li><li><b>定員</b>10名</li></ul></article>
+      <article class="listing-card" data-event-date="2026-10-14"><p class="listing-date">10月14日（水）19:00〜20:30</p><h3>MIALL見学会＆茶話会｜「いつかは…」の不安を笑い飛ばす</h3><p class="description">若林実佳さんの介護体験と藤澤美嘉さんの「介護とお金」のお話。お茶を飲みながらこれからの暮らしを考え、MIALLのスペースも見学できる女性限定の茶話会です。</p><ul class="listing-meta"><li><b>会場</b>miall コミュニティワークスペース</li><li><b>参加費</b>無料</li><li><b>定員</b>20名</li></ul></article>
+      <article class="listing-card" data-event-date="2026-10-16"><p class="listing-date">10月16日（金）18:00〜19:00</p><h3>LUCE LINK SESSION Vol.1</h3><p class="description">占い師同士の交換セッション、写真・動画撮影、SNSでの相互紹介。活動の魅力を伝え合う1時間です。飲み物・お菓子付き。</p><ul class="listing-meta"><li><b>会場</b>miall コミュニティワークスペース</li><li><b>対象</b>現在、お客様に占いを提供している方</li><li><b>参加費</b>miall会員 無料／非会員 500円（当日現金）</li><li><b>定員</b>8名</li></ul></article>
+      <article class="listing-card" data-event-date="2026-10-16"><p class="listing-date">10月16日（金）19:30〜21:30</p><h3>10月のmiall会</h3><p class="description">仕事のことも、これからの夢も。食事とお酒を囲んで自然に話せる女性限定のディナー交流会。会員・非会員ともに参加できます。</p><ul class="listing-meta"><li><b>会場</b>シロッコ ピザ＆ワイン酒場</li><li><b>参加費</b>6,000円（食事・飲み放題付き）</li></ul></article>
     </div>
 
     <h2 class="month-title">2026年11月</h2>
     <div class="events-grid">
-      <article class="listing-card"><p class="listing-date">11月3日（火・祝）14:00〜15:00／開場13:30</p><h3>miall特別セミナー｜あなたらしく、自分軸で生きる</h3><p class="description">山本悠介さんによる自分軸のセミナーと、SNS運用のコツを学ぶプチセミナー。お茶・デザート付きです。</p><ul class="listing-meta"><li><b>会場</b>miall コミュニティワークスペース</li><li><b>参加費</b>miall会員 1,000円／非会員 2,000円</li></ul></article>
-      <article class="listing-card"><p class="listing-date">11月13日（金）10:00〜13:00</p><h3>miall流 米粉ベーグル教室</h3><p class="description">抹茶とプレーンの米粉ベーグルを一緒に作ります。レシピ、ランチ、お土産付き。少人数で手作りの時間を楽しみましょう。</p><ul class="listing-meta"><li><b>会場</b>miall コミュニティワークスペース</li><li><b>参加費</b>miall会員 2,000円／非会員 3,500円</li><li><b>定員</b>5名</li></ul></article>
-      <article class="listing-card"><p class="listing-date">11月20日（金）19:00〜21:00</p><h3>11月のmiall会</h3><p class="description">スペイン食堂で食事とお酒を楽しむ女性限定の交流会。仕事や暮らし、これからの挑戦を気軽に話せる夜です。</p><ul class="listing-meta"><li><b>会場</b>スペイン食堂 Gastrobar CERO</li><li><b>参加費</b>6,000円（飲み放題付き）</li></ul></article>
+      <article class="listing-card" data-event-date="2026-11-03"><p class="listing-date">11月3日（火・祝）14:00〜15:00／開場13:30</p><h3>miall特別セミナー｜あなたらしく、自分軸で生きる</h3><p class="description">山本悠介さんによる自分軸のセミナーと、SNS運用のコツを学ぶプチセミナー。お茶・デザート付きです。</p><ul class="listing-meta"><li><b>会場</b>miall コミュニティワークスペース</li><li><b>参加費</b>miall会員 1,000円／非会員 2,000円</li></ul></article>
+      <article class="listing-card" data-event-date="2026-11-13"><p class="listing-date">11月13日（金）10:00〜13:00</p><h3>miall流 米粉ベーグル教室</h3><p class="description">抹茶とプレーンの米粉ベーグルを一緒に作ります。レシピ、ランチ、お土産付き。少人数で手作りの時間を楽しみましょう。</p><ul class="listing-meta"><li><b>会場</b>miall コミュニティワークスペース</li><li><b>参加費</b>miall会員 2,000円／非会員 3,500円</li><li><b>定員</b>5名</li></ul></article>
+      <article class="listing-card" data-event-date="2026-11-20"><p class="listing-date">11月20日（金）19:00〜21:00</p><h3>11月のmiall会</h3><p class="description">スペイン食堂で食事とお酒を楽しむ女性限定の交流会。仕事や暮らし、これからの挑戦を気軽に話せる夜です。</p><ul class="listing-meta"><li><b>会場</b>スペイン食堂 Gastrobar CERO</li><li><b>参加費</b>6,000円（飲み放題付き）</li></ul></article>
     </div>
 
     <h2 class="month-title">2026年12月</h2>
     <div class="events-grid">
-      <article class="listing-card"><p class="listing-date">12月11日（金）19:00〜21:00</p><h3>miall忘年会</h3><p class="description">一年の頑張りを一緒に楽しむ女性限定のディナー交流会。新しいつながりと笑顔を増やしましょう。</p><ul class="listing-meta"><li><b>会場</b>シロッコ ピザ＆ワイン酒場</li><li><b>参加費</b>6,000円（飲み放題付き）</li></ul></article>
-      <article class="listing-card"><p class="listing-date">12月18日（金）10:00〜12:00</p><h3>miall流 米粉クッキー作り</h3><p class="description">チョコチップソルトと抹茶の米粉クッキーを一緒に作ります。手を動かしながらおしゃべりする少人数の教室です。</p><ul class="listing-meta"><li><b>会場</b>miall コミュニティワークスペース</li><li><b>参加費</b>miall会員 2,000円／非会員 3,000円</li><li><b>定員</b>5名</li></ul></article>
-      <article class="listing-card"><p class="listing-date">12月18日（金）19:00〜20:30</p><h3>そのNISA、なぜ選びましたか？</h3><p class="description">なんとなく始めた方も、これから考えたい方も。西尾真友子さんとNISAの基本や選び方を学ぶセミナーです。</p><ul class="listing-meta"><li><b>会場</b>miall コミュニティワークスペース</li><li><b>参加費</b>miall会員 1,000円／非会員 2,000円</li></ul></article>
-      <article class="listing-card"><p class="listing-date">12月25日（金）19:00〜21:00</p><h3>miall Christmas会</h3><p class="description">一年の締めくくりに、笑顔でつながる女性限定のクリスマス。おいしい時間と新しいご縁を楽しみましょう。</p><ul class="listing-meta"><li><b>会場</b>miall コミュニティワークスペース</li><li><b>参加費</b>miall会員 3,000円／非会員 4,000円</li></ul></article>
+      <article class="listing-card" data-event-date="2026-12-11"><p class="listing-date">12月11日（金）19:00〜21:00</p><h3>miall忘年会</h3><p class="description">一年の頑張りを一緒に楽しむ女性限定のディナー交流会。新しいつながりと笑顔を増やしましょう。</p><ul class="listing-meta"><li><b>会場</b>シロッコ ピザ＆ワイン酒場</li><li><b>参加費</b>6,000円（飲み放題付き）</li></ul></article>
+      <article class="listing-card" data-event-date="2026-12-18"><p class="listing-date">12月18日（金）10:00〜12:00</p><h3>miall流 米粉クッキー作り</h3><p class="description">チョコチップソルトと抹茶の米粉クッキーを一緒に作ります。手を動かしながらおしゃべりする少人数の教室です。</p><ul class="listing-meta"><li><b>会場</b>miall コミュニティワークスペース</li><li><b>参加費</b>miall会員 2,000円／非会員 3,000円</li><li><b>定員</b>5名</li></ul></article>
+      <article class="listing-card" data-event-date="2026-12-18"><p class="listing-date">12月18日（金）19:00〜20:30</p><h3>そのNISA、なぜ選びましたか？</h3><p class="description">なんとなく始めた方も、これから考えたい方も。西尾真友子さんとNISAの基本や選び方を学ぶセミナーです。</p><ul class="listing-meta"><li><b>会場</b>miall コミュニティワークスペース</li><li><b>参加費</b>miall会員 1,000円／非会員 2,000円</li></ul></article>
+      <article class="listing-card" data-event-date="2026-12-25"><p class="listing-date">12月25日（金）19:00〜21:00</p><h3>miall Christmas会</h3><p class="description">一年の締めくくりに、笑顔でつながる女性限定のクリスマス。おいしい時間と新しいご縁を楽しみましょう。</p><ul class="listing-meta"><li><b>会場</b>miall コミュニティワークスペース</li><li><b>参加費</b>miall会員 3,000円／非会員 4,000円</li></ul></article>
     </div>
     <div class="booking-actions">
       <h2>イベントへのお申し込み</h2>
@@ -809,5 +812,39 @@ footer .logo img{height:46px!important}
 
 
 
+<script>
+/* 開催日の翌日から「終了」を表示。日付は会場のある日本時間で判定する。 */
+(function(){
+  var formatter = new Intl.DateTimeFormat('ja-JP', {
+    timeZone:'Asia/Tokyo', year:'numeric', month:'2-digit', day:'2-digit'
+  });
+  function todayInJapan(){
+    var parts = {};
+    formatter.formatToParts(new Date()).forEach(function(part){ parts[part.type] = part.value; });
+    return parts.year + '-' + parts.month + '-' + parts.day;
+  }
+  function updateEventStatus(){
+    var today = todayInJapan();
+    document.querySelectorAll('.listing-card[data-event-date]').forEach(function(card){
+      var finished = card.getAttribute('data-event-date') < today;
+      var badge = card.querySelector('.status-ended');
+      card.classList.toggle('is-finished', finished);
+      if(finished && !badge){
+        badge = document.createElement('span');
+        badge.className = 'status-ended';
+        badge.textContent = '終了';
+        card.querySelector('.listing-date').appendChild(badge);
+      }else if(!finished && badge){
+        badge.remove();
+      }
+    });
+  }
+  updateEventStatus();
+  setInterval(updateEventStatus, 60000);
+  document.addEventListener('visibilitychange', function(){
+    if(document.visibilityState === 'visible') updateEventStatus();
+  });
+})();
+</script>
 </body>
 </html>
