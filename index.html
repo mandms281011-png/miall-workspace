@@ -488,26 +488,6 @@ footer .logo{}
 .hairline{height:1px;border:0;background:linear-gradient(90deg,transparent 0%,var(--gold-500) 22%,#f0e2bd 50%,var(--gold-500) 78%,transparent 100%);margin:0 0 18px}
 .center .hairline{max-width:180px;margin-inline:auto}
 
-/* オープニングセミナーの案内。会期が終わったらこのブロックと #schedule 内の div ごと消す。 */
-.lp-seminar{position:relative;width:min(760px,92vw);margin:34px auto 0;padding:clamp(26px,4vw,40px) clamp(20px,3.5vw,38px);border:1px solid var(--gold-500);border-radius:4px;background:var(--ivory);text-align:center}
-#schedule>.lp-seminar{z-index:3}
-.lp-seminar-eyebrow{font-size:10.5px;letter-spacing:.3em;color:var(--rose-700)}
-.lp-seminar-title{margin-top:12px;font:500 clamp(21px,3.2vw,31px)/1.5 var(--serif);color:var(--ink)}
-.lp-seminar-title em{display:block;font-style:normal;color:var(--rose-700)}
-.lp-seminar-lead{margin-top:12px;font-size:13.5px;color:var(--ink-soft)}
-.lp-seminar-dates{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:24px;list-style:none;padding:0}
-.lp-seminar-dates li{display:flex;align-items:baseline;gap:7px;padding:11px 18px;border:1px solid var(--rose-100);border-radius:3px;background:var(--blush-soft)}
-.lp-seminar-dates b{font:500 20px/1 var(--serif);color:var(--rose-700)}
-.lp-seminar-dates span{font-size:12px;color:var(--ink-soft)}
-.lp-seminar-note{margin-top:20px;font-size:13px;color:var(--ink-soft)}
-.lp-seminar-note b{color:var(--ink);font-weight:500}
-.lp-seminar .btn{margin-top:24px}
-@media(max-width:620px){
-  .lp-seminar-dates{flex-direction:column;align-items:stretch}
-  .lp-seminar-dates li{justify-content:center}
-  .lp-seminar .btn{display:block}
-}
-
 /* 濃い面に光沢をのせる */
 .mentor,.creed{position:relative;isolation:isolate}
 .mentor::after,.creed::after{
@@ -1569,19 +1549,6 @@ html body *,html body *::before,html body *::after{
     </p>
   </div>
 
-  <div class="lp-seminar">
-    <p class="lp-seminar-eyebrow">OPENING SEMINAR</p>
-    <h3 class="lp-seminar-title">私らしく生きる<em>自分軸の見つけ方</em></h3>
-    <p class="lp-seminar-lead">ワークをしながら、ご自身の現在地を見つける時間</p>
-    <ul class="lp-seminar-dates">
-      <li><b>9/15</b><span>（火）19:00–20:30</span></li>
-      <li><b>9/24</b><span>（木）19:00–20:30</span></li>
-      <li><b>9/29</b><span>（火）19:00–20:30</span></li>
-    </ul>
-    <p class="lp-seminar-note">参加費無料・軽食付き・施設見学OK<br><b>会員でない方もご参加いただけます。</b></p>
-    <a class="btn" href="https://forms.gle/9ZQiia1sP96jvWWdA" target="_blank" rel="noopener">申込はこちらから</a>
-  </div>
-
   <div class="narrow center">
     <div style="margin-top:30px;display:flex;flex-wrap:wrap;gap:12px;justify-content:center">
       <a class="btn btn-lg" href="events.html">イベントの予定を見る</a>
@@ -1970,7 +1937,7 @@ html body *,html body *::before,html body *::after{
      a:'💰 <b>資金調達や助成金のご相談もできます。</b><br><br>借りるべきか、使える制度があるか、そもそも今なのか。<br>金融の現場を長く見てきた人間が近くにいますので、<br>調べる前にまず聞いていただけます。<br><br>🤝 <b>エンジェル投資家コミュニティとも連携</b>しています。<br>借りる以外の道を考えたいときにも、その世界を知っている方に話を聞けます。<br><br>ご相談はメンタリングの中でも大丈夫です。<br>※お受けするのはご相談とお引き合わせまでです。申請の代行はしておりませんし、出資をお約束するものでもありません。'},
     {k:["専門家","プロ","講師","誰がいる","サポート","経営者","コミュニティ","人脈","つながり先","ファスティング","化粧品","メイク","カウンセラー","心理","栄養士","管理栄養士","栄養"],
      a:'✨ <b>心身ともに支えられる専門家</b>が集まっています。<br><br>🌱 <b>ファスティングの専門家</b>／日本一の実績<br>💼 <b>金融と接遇のプロ</b>／大手証券で法人個人とも日本一<br>💄 <b>オーガニック化粧品の開発者</b>／AI×人間力講師<br>🤝 <b>経営者コミュニティの主宰</b>／1,000人以上を運営<br><br>ほかに心理カウンセラーや管理栄養士も。<br>まだまだたくさんいらっしゃいます。<br><br>お名前や詳しいご経歴は、面談のときにご紹介しますね。<br>※それぞれの専門サービスは会費とは別です。会員価格があります。'},
-    {k:["リトリート","イベント","農業","遠く","旅","予定","日程","いつ","オープニングセミナー"],
+    {k:["リトリート","イベント","農業","遠く","旅","予定","日程","いつ"],
      a:'📅 これからの予定は、イベントページにまとめています。<br>交流会、同好会、学びの場、リトリートなど。<br><br>イベント一覧からご希望の回をお選びください。<br>一覧の下にある「申し込みはこちら」からPeatixへ進めます。当日現金でお支払いの方は公式LINEにお問い合わせください。<br><a href="events.html">これからの予定を見る →</a>'},
     {k:["場所","住所","アクセス","どこ","地図"],
      a:'📍 長野県長野市鶴賀問御所町1241-1<br>長野銀座信越ビル 8階です。<br><br>長野駅から歩いて7分です。<br>お車の方は近隣のコインパーキングをご利用ください。'},
